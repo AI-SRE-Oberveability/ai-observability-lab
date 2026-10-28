@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.8 CI active and guarded Terraform delivery. Updated: 29 October 2026, Asia/Dubai. Execution: **all four main-branch CI runs verified; protected Terraform workflow tested while disabled; Azure provisioning remains gated**.
+Version: 0.9 AKS architecture elaboration. Updated: 29 October 2026, Asia/Dubai. Execution: **four CI pipelines verified; AKS/Azure AI architecture documented as a proposed target; Azure execution remains disabled**.
 
 ## Purpose
 
@@ -23,35 +23,23 @@ flowchart LR
 
 Solid arrows describe the local service behavior exercised in the earlier 18-test run. Dashed arrows remain unproven as a complete running backend path. Existing in-memory trace assertions do not establish Jaeger ingestion. Collector and Jaeger binaries are present; local lifecycle coordination still needs work. The dependency-lock input is supplied and all four active main-branch CI workflows passed. This does not establish backend delivery. No live model, Azure or Managed deployment is present.
 
-## Proposed personal Azure target
+## Proposed AKS and Azure AI target
 
-```mermaid
-flowchart TB
-  O[AI-SRE-Oberveability organization] --> G[Four public GitHub repositories]
-  O --> P[Shared GitHub Project]
-  P --> T[POC tasks and evidence]
-  G --> W[Scoped GitHub Actions workflows]
-  W --> F[Terraform plan and authorized apply]
-  F -->|OIDC and scoped RBAC| Z[Dedicated personal Azure lab scope]
-  W -->|Runner with verified connectivity| K[AKS workloads]
-  Z --> K
-  U[Authenticated synthetic caller] --> A[Policy or status agent on AKS]
-  K --- A
-  A --> R[Allowlisted retrieval and status tools]
-  A --> M[Mock or approved Azure model]
-  A -->|Selected SDK signals| C[OTel Collector]
-  R -->|Selected SDK signals| C
-  C -->|Verified supported endpoints| B[Chosen telemetry backend]
-  N[OneAgent and compatible Operator] -->|Native supported path| D[Licensed Managed backend on supported hosts]
-  K --- N
-  B -.->|Managed profile after validation| D
-```
+[Editable architecture board](https://www.figma.com/board/JxOlJjtrEmIFrhRU8ltID0) and [implementation plan with all three views](docs/architecture/README.md).
 
-This diagram is a proposed target, not deployment proof. Infra owns Azure, state, identity and budgets; workloads owns applications/images/deployments; observability-config owns shared telemetry/monitoring; lab owns coordination/evidence. A release manifest pins their tested versions. The OneAgent native path stays independent of the arbitrary Collector. Separate experiments compare instrumentation modes and duplication.
+![Proposed AKS runtime, optional RAG and Azure AI reuse](docs/architecture/runtime.png)
 
-Azure choices remain open: exact subscription/tenant, region, node sizes, public/private connectivity, reachable CI runner, model/quota, retention and active/idle cost. A costed plan precedes cloud spending. Managed choices additionally require entitlement, approved host/storage sizing and version compatibility.
+AKS hosts separate policy/status/SRE Deployments, bounded tool APIs and the Collector. Per-service AKS Workload ID provides scoped pod-to-Azure access; GitHub OIDC remains the separate deployment identity boundary. Proposed namespaces are ai-lab, observability and experiments. Helm/manifests remain with their owning workload/monitoring repositories; Terraform owns new Azure infrastructure and scoped identity/state.
 
-## Read-only SRE path â€” planned
+The user selected an **optional existing Azure AI project reuse path**. Candidate Foundry/OpenAI endpoints, project resources, Search/Blob, ACR/Key Vault or AKS are referenced only after personal ownership, compatibility, quota, networking and cost are verified. No resource inventory, migration, import or adoption has occurred. Custom agent runtimes stay on AKS; a Foundry-hosted agent would be a separate comparison profile.
+
+The first cluster cohort retains the deterministic model and bundled synthetic documents. Approved live-model and optional RAG cohorts follow later. Blob/Search, Prometheus storage and the expanded platform modules are proposed additions. The current Terraform code still covers one resource group; full AKS/ACR/Key Vault/networking and release deployment remain to implement.
+
+Native OneAgent telemetry follows its supported route independently of the arbitrary Collector. Managed remains a licensed, version/sizing-gated backend on supported hosts. Read-only SRE adapters use only bounded, verified backend reads. No SaaS-specific feature is assumed on Managed.
+
+Personal targets/region/budget, node/storage/network/runner sizing, retention, model quota and active/idle costs remain open. This diagram records the intended design, not deployed resources or cloud authorization.
+
+## Read-only SRE path — planned
 
 ```mermaid
 flowchart LR
@@ -101,11 +89,11 @@ After every work step the tracker supplies current status, next executable work 
 | ai-observability-config | `9d81a64e0fea` | Pushed and verified |
 | ai-observability-lab | `0d5cf9f01db8` | Pushed and verified |
 
-The lab receipt pins the initial reviewed source commit; later coordination updates are descendants. Source publication does not establish a running backend, active CI, Terraform deployment or Managed compatibility. Component ownership is unchanged.
+The lab receipt pins the initial reviewed source commit; later coordination updates are descendants. Initial source publication alone did not establish backend delivery, CI execution or cloud/Managed deployment; later CI evidence is recorded separately. Component ownership is unchanged.
 
 ## Organization migration status
 
-`AI-SRE-Oberveability` is created on GitHub Free, and authenticated membership verifies javedkumail as active owner. 4/4 repositories have transferred with IDs, commits and public visibility preserved. [Shared Project #1](https://github.com/orgs/AI-SRE-Oberveability/projects/1) is verified with 36 unique task issues, all four repository links, Delivery board and All tasks views. GitLab credentials and global Git helpers remain unchanged.
+`AI-SRE-Oberveability` is created on GitHub Free, and authenticated membership verifies javedkumail as active owner. 4/4 repositories have transferred with IDs, commits and public visibility preserved. [Shared Project #1](https://github.com/orgs/AI-SRE-Oberveability/projects/1) is verified with 38 unique task issues, all four repository links, Delivery board and All tasks views. GitLab credentials and global Git helpers remain unchanged.
 
 | Repository | Actual owner | Transfer verification |
 | --- | --- | --- |
@@ -116,7 +104,7 @@ The lab receipt pins the initial reviewed source commit; later coordination upda
 
 Organization grouping changes repository ownership and future OIDC inputs, not component responsibilities. Verify the actual new owner/repository OIDC subject before configuring Azure federation. No Azure federation was deployed before this move.
 
-## Project setup continuation â€” 29 October 2026
+## Project setup continuation — 29 October 2026
 
 The existing organization Project #1 was completed after browser reconnection and verified as AI SRE Observability POC. Project-capable authentication is verified as javedkumail with the user-approved project scope; no duplicate Project was created. The CLI uses isolated local configuration, and Git authentication setup was declined. Existing GitHub repository authentication remains available; no GitLab credential/global helper changes were made.
 
@@ -126,7 +114,7 @@ Project #1 is shared across the four repositories. Managed issues mirror task ac
 
 The Project retains private visibility for authorized organization members. Public repository source and sanitized evidence remain public. Local plan/state are authoritative; human notes outside managed issue blocks are preserved. Draft, blocked and pending decisions remain distinct in Evidence status. A task moves to Done and its issue closes only when the local tracker accepts its evidence. Live verification checks issue identity/state, all managed fields, and repository links. Interrupted synchronization resumes from saved task mappings and discovers existing managed issues to avoid duplicates. See evidence/shared-project-completion.json for the setup receipt and evidence/shared-project-verification.json for the latest synchronization result.
 
-## Actions implementation boundary â€” 29 October 2026
+## Actions implementation boundary — 29 October 2026
 
 The user authorized four independent CI workflows plus guarded Terraform delivery. Current status: planning complete; implementation and GitHub runs pending. CI stays read only. Manual Terraform plan/apply will use separate protected environments and OIDC; the initial root covers only a tagged resource group. Cloud execution stays disabled until personal targets, budget, state and scoped identities are confirmed. No AKS/Managed resource or Azure identity is created in this setup. See docs/actions-delivery-plan.md. Next: implement CI, validate Terraform/guards, publish PRs, then capture actual workflow conclusions.
 
@@ -166,3 +154,9 @@ The user explicitly approved the four named PR merges and the final HLD/tracker-
 The manually dispatched Terraform plan was intentionally tested with AZURE_DEPLOYMENT_ENABLED=false. It failed at the named preflight guard with the expected disabled-execution message; the entire Terraform job was skipped and Azure login did not run. This expected rejection is safety verification, not a failed Azure deployment. No target IDs, credentials, Entra identities, role assignments or Azure resources were created. GitLab credentials and global Git configuration remain unchanged. Exact source/run/merge evidence is in evidence/actions-main-activation.json and evidence/actions-disabled-deployment-verification.json.
 
 **Current delivery boundary:** CI is active in all four repositories; manual Terraform plan/apply code and protected environments are configured. Actual Azure execution remains disabled pending G2/G3, state bootstrap, separate scoped plan/apply identities and verification of environment-specific immutable OIDC claims. The concrete Terraform root currently owns one tagged resource group. AKS/platform resources, registry publication, workload rollout, local backend proof, Managed and live models remain later work.
+
+## Architecture step — 29 October 2026
+
+Three editable diagrams now cover the AKS application target, telemetry/read-only SRE profiles and the CI-to-Terraform-to-AKS implementation sequence. The implementation guide defines namespace/resource ownership, separate runner/pod identities, optional existing-resource checks, cost/access gates and stage exits. The user chose an optional Azure AI reuse path; no existing cloud project is assumed available. The current accepted count remains 11/38: diagram completion does not close P1 backend, P3 cost/deployment, Managed or live-model tasks.
+
+**Next implementation:** prove the local policy/telemetry slice, then confirm personal Azure targets and costs; build bootstrap/platform Terraform and image/release/Helm delivery before any approved AKS deployment. See docs/architecture/README.md for the full sequence and public design references. GitLab credentials and global Git configuration remain unchanged.

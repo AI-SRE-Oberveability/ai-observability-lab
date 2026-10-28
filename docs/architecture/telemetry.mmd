@@ -1,0 +1,38 @@
+flowchart LR
+  subgraph client ["Controlled POC scenarios"]
+    scenarios["Synthetic requests / incidents"]
+  end
+  subgraph gateway ["Authenticated API access"]
+    ingress["Agent ingress"]
+  end
+  subgraph service ["Planned AKS workloads and observability components"]
+    workloads["Instrumented AI workload"]
+    sreCopilot["Read-only SRE copilot"]
+    evidenceApi["Bounded evidence adapter"]
+    collector["OTel Collector - allowlist"]
+    oneAgent["OneAgent native cohort"]
+    activeGate["Compatible ActiveGate"]
+  end
+  subgraph datastore ["Baseline profile - backend proof still required"]
+    jaeger["Jaeger traces"]
+    metrics["Prometheus metrics - planned"]
+  end
+  subgraph external ["Separate licensed backend on supported hosts"]
+    managed["Dynatrace Managed - G4"]
+  end
+  scenarios -->|"Runs synthetic cases"| ingress
+  ingress -->|"Calls workload"| workloads
+  ingress -->|"Requests explanation"| sreCopilot
+  workloads -->|"Custom SDK signals"| collector
+  workloads -->|"Native instrumentation cohort"| oneAgent
+  oneAgent -->|"Native telemetry route"| activeGate
+  collector -->|"Exports traces"| jaeger
+  collector -->|"Serves scraped metrics"| metrics
+  collector -->|"Supported OTLP only"| activeGate
+  activeGate -.->|"Managed: Validated ingest"| managed
+  sreCopilot -->|"Allowlisted evidence reads"| evidenceApi
+  sreCopilot -->|"Audit metadata"| collector
+  evidenceApi -->|"Reads bounded traces"| jaeger
+  evidenceApi -->|"Reads bounded metrics"| metrics
+  evidenceApi -.->|"Managed: Supported reads"| managed
+  evidenceApi -->|"Audit metadata"| collector

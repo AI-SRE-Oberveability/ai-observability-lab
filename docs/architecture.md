@@ -1,26 +1,16 @@
-# Architecture and resource ownership
+# Architecture and ownership
 
-```mermaid
-flowchart LR
-  U[Synthetic test runner] -->|local lab key| A[Policy agent API]
-  A --> P[Deterministic model adapter]
-  A -->|HTTP + W3C trace context| R[Retrieval tool]
-  R --> D[Invented policy fixtures]
-  A -->|OTLP traces / metrics| C[OpenTelemetry Collector]
-  R -->|OTLP traces / metrics| C
-  C --> J[Jaeger trace view]
-  C --> M[Prometheus-format metrics endpoint]
-```
+The current proposed target is documented in [AKS AI agents and observability architecture](architecture/README.md), with editable [FigJam diagrams](https://www.figma.com/board/JxOlJjtrEmIFrhRU8ltID0), Mermaid sources and stable previews. [HLD.md](../HLD.md) distinguishes verified work from planned cloud components.
 
-| Directory / proposed repository | Sole ownership | Current state |
-| --- | --- | --- |
-| ai-agent-workloads | APIs, contracts, fixtures, images, app deployment | Local implementation and workload CI definition |
-| ai-observability-config | Collector, trace backend, telemetry contract, future Operator and dashboards | Local configuration; Managed/SaaS prerequisite records |
-| ai-observability-infra | Azure, bootstrap identity, state, budgets, eventual AKS and optional Managed hosts | Design and placeholders only |
-| ai-observability-lab | Coordination, release manifest, experiments, evidence, instructions | Local coordinator and documentation |
+| Repository | Sole ownership |
+| --- | --- |
+| AI-SRE-Oberveability/AI-Observability-Infra | Terraform, new Azure resources, bootstrap/state, scoped identities and cost controls |
+| AI-SRE-Oberveability/ai-agent-workloads | Agent/tool contracts, synthetic fixtures, images and app Helm/manifests |
+| AI-SRE-Oberveability/ai-observability-config | Shared Collector/backends, instrumentation/vendor config and monitoring profiles |
+| AI-SRE-Oberveability/ai-observability-lab | HLD/diagrams, release coordination, tracker, experiments and evidence |
 
-The parent is a multi-repository workspace, not a repository containing nested repositories. The four independent GitHub repositories under javedkumail now contain reviewed source; exact names and initial commits are in the repository mapping and publication receipts. Keep the original handoff outside published repositories, especially before any public release.
+Four independent repositories share a parent workspace, not a containing Git repository. GitLab credentials and unrelated repositories remain untouched.
 
-Cloud target: authenticated ingress to the agent on AKS, workload identity and secret delivery, synthetic tool services, optional approved Azure model. The native OneAgent path leads to its supported Dynatrace infrastructure; it never passes through this arbitrary Collector. Explicit custom spans may use a supported SDK/Collector path after endpoint validation. Monitoring configuration has one owner per resource.
+Current proof covers local prototype tests, image builds, config/Terraform validation and four main CI pipelines. Azure execution remains disabled. AKS/platform deployment, real backend trace proof, image registry publication, Managed compatibility and live models remain later work.
 
-Read-only SRE path (not implemented): synthetic incident -> profile-specific monitoring adapter -> bounded evidence -> explanation with evidence IDs -> human review. Managed APIs and optional SaaS Grail/DQL configuration must stay separate.
+Optional existing personal Azure AI resources are candidates only, pending ownership, region, endpoint/SDK, quota, network, identity and cost validation. No automatic migration/import or customer-resource reuse is authorized by the diagram.
