@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T01:05:24+04:00",
+  "updated_at": "2026-10-29T01:11:45+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 11,
@@ -66,7 +66,7 @@
       "evidence": [
         "ai-observability-lab/evidence/actions-main-activation.json"
       ],
-      "note": "HLD updated after four approved merges, four passing main CI runs and a verified disabled Terraform preflight stop; actual Azure remains gated",
+      "note": "Revalidated final committed HLD and main-activation evidence after Git LF normalization; only line endings differed and all verified outcomes remain unchanged",
       "ready": false
     },
     {
@@ -103,7 +103,7 @@
       "evidence": [
         "ai-observability-lab/evidence/actions-main-activation.json"
       ],
-      "note": "Hosted main lab CI passed all 20 tracker/sync tests; final plan/HLD and 38-task model remain evidence based",
+      "note": "Revalidated tracker completion evidence against the Git-normalized checkout; 20 hosted tracker/sync tests passed and task model is unchanged",
       "ready": false
     },
     {
@@ -556,7 +556,7 @@
       "evidence": [
         "ai-observability-lab/evidence/actions-main-activation.json"
       ],
-      "note": "All four CI implementations merged at reviewed heads; all four main-branch CI runs passed, including container and real Collector validation",
+      "note": "Four merged main CI pipelines remain verified; completion receipt now hashes the exact Git-normalized immutable evidence",
       "ready": false
     },
     {
@@ -594,7 +594,7 @@
         "ai-observability-lab/evidence/actions-disabled-deployment-verification.json",
         "ai-observability-lab/evidence/actions-environment-protections.json"
       ],
-      "note": "Strict locked Terraform CI, 11 safety tests, two mocked scope tests, protected environments and the live disabled-dispatch stop all verified; no Azure provisioning occurred",
+      "note": "Protected Terraform workflow and disabled preflight proof remain verified; immutable evidence rehashed against committed LF content",
       "ready": false
     },
     {
