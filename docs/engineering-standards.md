@@ -1,6 +1,6 @@
 # Engineering standards and definition of done
 
-User decisions on 28 October 2026: plan before implementation; HLD/current/next/remaining updates; tracking after each step; four GitHub repositories under `javedkumail` (subsequently created public by the user); preserve GitLab credentials; **Terraform for Azure IaC**; apply best practices throughout.
+User decisions on 28 October 2026: plan before implementation; HLD/current/next/remaining updates; tracking after each step; four public GitHub repositories under `AI-SRE-Oberveability`, administered by `javedkumail`; preserve GitLab credentials; **Terraform for Azure IaC**; apply best practices throughout.
 
 These are acceptance requirements for implementation and review, not claims that the existing drafts already satisfy them. Keep the POC small and record a justified, accepted trade-off whenever a practice is not appropriate for the selected lab scope. Do not add enterprise components without a concrete experiment.
 

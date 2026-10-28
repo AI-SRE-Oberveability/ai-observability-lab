@@ -1,12 +1,12 @@
 # High-level design — current, target and remaining work
 
-Version: 0.4 approved baseline. Updated: 28 October 2026, Asia/Dubai. Execution: **plan approved; reviewed source published to all four repositories**.
+Version: 0.5 organization migration authorized. Updated: 29 October 2026, Asia/Dubai. Execution: **organization and four transfers verified; shared Project setup in progress**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
-Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and four repositories under `javedkumail` separate resource ownership. All four were verified public and empty on 28 October 2026, as reported by the user. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
+Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and four repositories under `AI-SRE-Oberveability` separate resource ownership. The organization is owned by the personal account `javedkumail`. All four transferred repositories retain their IDs, published commits and public visibility. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
 
 ## Current local draft
 
@@ -27,7 +27,10 @@ Solid arrows describe the local service behavior exercised in the earlier 18-tes
 
 ```mermaid
 flowchart TB
-  G[Four public GitHub repositories] --> W[Scoped GitHub Actions workflows]
+  O[AI-SRE-Oberveability organization] --> G[Four public GitHub repositories]
+  O --> P[Shared GitHub Project]
+  P --> T[POC tasks and evidence]
+  G --> W[Scoped GitHub Actions workflows]
   W --> F[Terraform plan and authorized apply]
   F -->|OIDC and scoped RBAC| Z[Dedicated personal Azure lab scope]
   W -->|Runner with verified connectivity| K[AKS workloads]
@@ -79,7 +82,7 @@ The adapter cannot execute arbitrary queries, shell commands or Azure/Kubernetes
 | 0.3 | Verified four public, empty GitHub destinations created by the user; recorded exact infrastructure name | Read-only API evidence saved; no push or architecture boundary change |
 | 0.4 | User approved the plan and public pushes; review sanitizes reference-environment names and fixes repository-local evidence links | Review passed: 18 workload tests, 11 tracker tests, zero staged secret findings; GitLab credentials preserved |
 
-**What we are going to do next:** complete the local vertical-slice review and prove Collector-to-Jaeger delivery. Reviewed source is published in all four repositories, and remote commits are verified. The next implementation package is the local vertical-slice review and backend validation.
+**What we are going to do next:** finish the shared GitHub Project and task mapping, then publish its verified URL. Organization creation, ownership verification and all four repository transfers are complete. The next application implementation package remains local vertical-slice/backend validation.
 
 **What remains:** backend ingestion/lifecycle evidence; repository/CI completion; personal targets and budget; costed Azure IaC/deployment; Managed entitlement and compatibility; status agent; SRE adapter/copilot; live-provider and comparison experiments; demo, rebuild and teardown.
 
@@ -97,3 +100,20 @@ After every work step the tracker supplies current status, next executable work 
 | ai-observability-lab | `0d5cf9f01db8` | Pushed and verified |
 
 The lab receipt pins the initial reviewed source commit; later coordination updates are descendants. Source publication does not establish a running backend, active CI, Terraform deployment or Managed compatibility. Component ownership is unchanged.
+
+## Organization migration status
+
+`AI-SRE-Oberveability` is created on GitHub Free, and authenticated membership verifies javedkumail as active owner. 4/4 repositories have transferred with IDs, commits and public visibility preserved. The shared GitHub Project is pending. GitLab credentials and global Git helpers remain unchanged.
+
+| Repository | Actual owner | Transfer verification |
+| --- | --- | --- |
+| AI-Observability-Infra | AI-SRE-Oberveability | transferred_and_verified |
+| ai-agent-workloads | AI-SRE-Oberveability | transferred_and_verified |
+| ai-observability-config | AI-SRE-Oberveability | transferred_and_verified |
+| ai-observability-lab | AI-SRE-Oberveability | transferred_and_verified |
+
+Organization grouping changes repository ownership and future OIDC inputs, not component responsibilities. Verify the actual new owner/repository OIDC subject before configuring Azure federation. No Azure federation was deployed before this move.
+
+## Project setup continuation — 29 October 2026
+
+The shared Project remains uncreated in the local mapping. Chrome browser control is disconnected, so Project creation is not claimed. Repository mapping, documentation and transfer evidence can be published independently. Existing GitHub repository authentication remains available; no GitLab credential/global helper changes are needed.

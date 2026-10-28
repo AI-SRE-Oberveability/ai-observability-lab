@@ -2,7 +2,7 @@
 
 The user selected updates **after each work step**. There is no scheduled job, external service, account connection or deployment permission in this tracker. It uses Python's standard library.
 
-`tracking/plan.json` defines 33 tasks, owners, dependencies, gates, source/artifact paths and acceptance criteria. `tracking/state.json` stores current outcomes and user decisions. `tracking/events.jsonl` retains the update history. Refresh generates `POC_TRACKER.md`, `REMAINING.md` and `tracking/status.json`.
+`tracking/plan.json` defines 36 tasks, owners, dependencies, gates, source/artifact paths and acceptance criteria. `tracking/state.json` stores current outcomes and user decisions. `tracking/events.jsonl` retains the update history. Refresh generates `POC_TRACKER.md`, `REMAINING.md` and `tracking/status.json`.
 
 From the `personal-ai-observability` parent workspace:
 

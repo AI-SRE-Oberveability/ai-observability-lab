@@ -1,0 +1,15 @@
+{
+  "organization": "AI-SRE-Oberveability",
+  "project_title": "AI SRE Observability POC",
+  "status": "not_created",
+  "repository_names": [
+    "AI-Observability-Infra",
+    "ai-agent-workloads",
+    "ai-observability-config",
+    "ai-observability-lab"
+  ],
+  "task_count": 36,
+  "project_id": null,
+  "project_url": null,
+  "items": {}
+}

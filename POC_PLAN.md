@@ -4,11 +4,11 @@ Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial r
 
 The immediate deliverable is this plan, a maintained high-level design (HLD), and an automated progress tracker. The user has accepted the plan and authorized public-source review and pushes to all four repositories; cloud spending retains its separate gates. Previously created local files are retained as drafts and assessed against the plan; they do not imply acceptance or deployment.
 
-Confirmed choices: Terraform for Azure IaC; four repositories under personal GitHub owner `javedkumail`; GitLab credentials preserved; tracker updates after each work step; continuous HLD/current/next/remaining updates. The user created all four repositories as public; their existence and empty contents were verified on 28 October 2026. Source review passed and initial pushes to all four repositories were verified; receipts are in evidence/publication-receipts.json. [Engineering standards](docs/engineering-standards.md) are part of every work package's definition of done.
+Confirmed choices: Terraform for Azure IaC; four repositories under organization `AI-SRE-Oberveability`, owned by the personal GitHub account `javedkumail`; GitLab credentials preserved; tracker updates after each work step; continuous HLD/current/next/remaining updates. The user created all four repositories as public; their existence and empty contents were verified on 28 October 2026. Source review passed and initial pushes to all four repositories were verified; receipts are in evidence/publication-receipts.json. [Engineering standards](docs/engineering-standards.md) are part of every work package's definition of done.
 
 ## 1. Outcome and boundaries
 
-Build a reproducible personal lab that demonstrates observability **of AI** and read-only **AI for observability**. Three use cases remain distinct: synthetic policy assistant, synthetic service-status investigator, and evidence-citing SRE copilot. Dynatrace Managed is the preferred compatibility target for the reported reference enterprise environment environment, subject to entitlement and supported sizing/version checks.
+Build a reproducible personal lab that demonstrates observability **of AI** and read-only **AI for observability**. Three use cases remain distinct: synthetic policy assistant, synthetic service-status investigator, and evidence-citing SRE copilot. Dynatrace Managed is the preferred compatibility target for the reported reference enterprise environment, subject to entitlement and supported sizing/version checks.
 
 Use only invented documents, requests, incidents and telemetry. Confirm the exact personal Azure tenant/subscription and GitHub owner before using either account. Customer systems and prior customer artifacts are outside the lab. The initial private recommendation is superseded by the user-created public repositories; review source for public publication before the first push. Local/mock evidence, live-model evidence, Azure evidence and Managed/SaaS results must be labelled independently.
 
@@ -19,7 +19,7 @@ Use only invented documents, requests, incidents and telemetry. Confirm the exac
 - An observed local run completed with **18 tests passing and one deprecation warning**. It exercised local HTTP and in-memory telemetry assertions. This is historical evidence; there is no stored JUnit result from that run.
 - The pinned Collector configuration passed its CLI validation. Windows Collector/Jaeger archives were downloaded and checksum checked. A running Collector-to-Jaeger demonstration was not completed.
 - Docker's engine was unreachable. Workload CI is an inactive draft under `.github/workflow-drafts` and references a missing `requirements-dev.lock.txt`; it has not run on GitHub.
-- The user has now created four public, empty GitHub repositories; exact destinations are in docs/repository-layout.md. No local push, Azure identity/resource, live model deployment or Dynatrace environment has been created. Azure targets, budget and Managed entitlement remain unknown.
+- The reviewed source was published to four public repositories and then transferred to AI-SRE-Oberveability with repository IDs/history preserved; exact current destinations are in docs/repository-layout.md. No Azure identity/resource, live model deployment or Dynatrace environment has been created. Azure targets, budget and Managed entitlement remain unknown.
 
 ## 3. Milestones and order
 
@@ -137,3 +137,7 @@ After **each work step**, record the outcome/evidence and refresh `POC_TRACKER.m
 Tracker updates are event driven, as requested. There is no daily schedule or background deployment. A refresh inventories artifacts and detects stale evidence; file presence cannot prove backend ingestion, cloud deployment or answer quality. Preserve failed results and label observed historical results explicitly.
 
 Source review and the four initial pushes are complete. Immediate next step: local vertical-slice review and backend validation. G0 and G1 are accepted. The next implementation package is P1.1: review the existing drafts against the local acceptance criteria; cloud spending remains separately gated.
+
+## Approved organization and shared Project extension
+
+The user authorized creation of `AI-SRE-Oberveability`, transfer of all four repositories and one shared GitHub Project. Added tasks P2.5 (organization), P2.6 (verified transfers/remotes) and P2.7 (shared Project/task mapping) bring the live tracker to 36 tasks. These coordination tasks precede further GitHub identity/OIDC configuration. GitLab credentials and global Git helpers remain unchanged. GitHub Free and personal ownership are selected; terms/contact prerequisites must finish before creation. Existing application and Azure spending gates remain in effect.

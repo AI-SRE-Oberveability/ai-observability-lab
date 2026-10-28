@@ -223,7 +223,7 @@
     },
     {
       "id": "P2.1",
-      "title": "Confirm recommended repository destinations for javedkumail",
+      "title": "Confirm organization repository destinations and public visibility",
       "owner": "User",
       "repo": "lab",
       "depends_on": [
@@ -296,6 +296,54 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented."
+    },
+    {
+      "id": "P2.5",
+      "title": "Create AI-SRE-Oberveability organization under personal ownership",
+      "owner": "Codex; user confirms account terms",
+      "repo": "lab",
+      "depends_on": [
+        "P2.2"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Requested exact organization exists on GitHub Free; javedkumail ownership verified; no GitLab credential changes."
+    },
+    {
+      "id": "P2.6",
+      "title": "Transfer four repositories and verify history, visibility and remotes",
+      "owner": "Codex",
+      "repo": "all four",
+      "depends_on": [
+        "P2.5"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Each repository ID and branch history is preserved under the requested organization; public visibility retained; local remotes and current source links updated."
+    },
+    {
+      "id": "P2.7",
+      "title": "Set up shared GitHub Project and map POC tasks",
+      "owner": "Codex",
+      "repo": "lab/all four",
+      "depends_on": [
+        "P2.6"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "One organization Project links the four repositories, contains the current task set with accurate statuses/dependencies, and has a documented after-step synchronization path."
     },
     {
       "id": "P3.1",
