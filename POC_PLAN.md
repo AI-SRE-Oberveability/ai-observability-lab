@@ -1,10 +1,10 @@
 # Personal Azure AI Agents and Observability POC — delivery plan
 
-Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial public publication in progress**.
+Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial reviewed source published**.
 
 The immediate deliverable is this plan, a maintained high-level design (HLD), and an automated progress tracker. The user has accepted the plan and authorized public-source review and pushes to all four repositories; cloud spending retains its separate gates. Previously created local files are retained as drafts and assessed against the plan; they do not imply acceptance or deployment.
 
-Confirmed choices: Terraform for Azure IaC; four repositories under personal GitHub owner `javedkumail`; GitLab credentials preserved; tracker updates after each work step; continuous HLD/current/next/remaining updates. The user created all four repositories as public; their existence and empty contents were verified on 28 October 2026. Source review and initial pushes remain pending. [Engineering standards](docs/engineering-standards.md) are part of every work package's definition of done.
+Confirmed choices: Terraform for Azure IaC; four repositories under personal GitHub owner `javedkumail`; GitLab credentials preserved; tracker updates after each work step; continuous HLD/current/next/remaining updates. The user created all four repositories as public; their existence and empty contents were verified on 28 October 2026. Source review passed and initial pushes to all four repositories were verified; receipts are in evidence/publication-receipts.json. [Engineering standards](docs/engineering-standards.md) are part of every work package's definition of done.
 
 ## 1. Outcome and boundaries
 
@@ -136,4 +136,4 @@ After **each work step**, record the outcome/evidence and refresh `POC_TRACKER.m
 
 Tracker updates are event driven, as requested. There is no daily schedule or background deployment. A refresh inventories artifacts and detects stale evidence; file presence cannot prove backend ingestion, cloud deployment or answer quality. Preserve failed results and label observed historical results explicitly.
 
-Immediate next step: complete the authorized source review and initial pushes. G0 and G1 are accepted. The next implementation package is P1.1: review the existing drafts against the local acceptance criteria; cloud spending remains separately gated.
+Source review and the four initial pushes are complete. Immediate next step: local vertical-slice review and backend validation. G0 and G1 are accepted. The next implementation package is P1.1: review the existing drafts against the local acceptance criteria; cloud spending remains separately gated.

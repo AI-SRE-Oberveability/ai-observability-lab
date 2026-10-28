@@ -1,11 +1,10 @@
 {
-  "updated_at": "2026-10-28T23:39:43+04:00",
+  "updated_at": "2026-10-28T23:41:40+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
-    "done": 5,
+    "done": 6,
     "draft": 8,
     "planned": 16,
-    "in_progress": 1,
     "waiting_for_decision": 3
   },
   "tasks": [
@@ -64,9 +63,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/publication-planning-revalidation.md"
+        "ai-observability-lab/evidence/publication-planning-revalidation.md",
+        "ai-observability-lab/evidence/publication-completion.md"
       ],
-      "note": "Approved plan and current HLD reviewed after public-source changes; three initial pushes verified and lab publication pending",
+      "note": "Approved plan and HLD revalidated after all four reviewed source baselines were published; remaining implementation work is explicit",
       "ready": false
     },
     {
@@ -359,16 +359,17 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Four exact private remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved.",
-      "status": "in_progress",
+      "status": "done",
       "blocked_by": [],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/publication-review.md",
-        "ai-observability-lab/evidence/publication-receipts.json"
+        "ai-observability-lab/evidence/publication-receipts.json",
+        "ai-observability-lab/evidence/publication-completion.md"
       ],
-      "note": "Three repositories published and remote main verified; HLD records commits; lab coordination repository is the final initial push",
-      "ready": true
+      "note": "All four reviewed source baselines pushed to main and remote commits verified; HLD updated after each push; GitLab credentials and global configuration preserved",
+      "ready": false
     },
     {
       "id": "P2.3",
@@ -399,7 +400,6 @@
       "acceptance": "Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.",
       "status": "draft",
       "blocked_by": [
-        "P2.2",
         "P1.6"
       ],
       "artifacts_present": [

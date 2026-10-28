@@ -8,7 +8,8 @@
       "commit": "b21c746acac65274bd59682696c0b6af4a988c80",
       "tree": "8a8d01439379d891b0b76fff821a74bc52d0edc9",
       "remote_verified": true,
-      "secret_scan": "zero findings on exact staged tree"
+      "secret_scan": "zero findings on exact staged tree",
+      "commit_kind": "initial_reviewed_source_publication"
     },
     "ai-agent-workloads": {
       "url": "https://github.com/javedkumail/ai-agent-workloads",
@@ -16,7 +17,8 @@
       "commit": "6fc332a2cddf9798f7c1d174bb88acb61437742e",
       "tree": "5bc29031ea911de08e5d24f408514c4dbe13ff61",
       "remote_verified": true,
-      "secret_scan": "zero findings on exact staged tree"
+      "secret_scan": "zero findings on exact staged tree",
+      "commit_kind": "initial_reviewed_source_publication"
     },
     "ai-observability-config": {
       "url": "https://github.com/javedkumail/ai-observability-config",
@@ -24,7 +26,18 @@
       "commit": "9d81a64e0fea907f650ce67bcecc42fd0edd7a0f",
       "tree": "3a0844a80a84b1871ff241f8276da29d856208c8",
       "remote_verified": true,
-      "secret_scan": "zero findings on exact staged tree"
+      "secret_scan": "zero findings on exact staged tree",
+      "commit_kind": "initial_reviewed_source_publication"
+    },
+    "ai-observability-lab": {
+      "url": "https://github.com/javedkumail/ai-observability-lab",
+      "branch": "main",
+      "commit": "0d5cf9f01db8afe1fc9589129ba0aab18ce55ae4",
+      "tree": "1155e02f853bfc319a967218818890c5149ea968",
+      "remote_verified": true,
+      "secret_scan": "zero findings on exact staged tree",
+      "commit_kind": "initial_reviewed_source_publication"
     }
-  }
+  },
+  "coordinator_note": "The lab receipt pins its initial reviewed commit. Later HLD/tracker updates are descendant commits; use origin/main for the current coordination state."
 }

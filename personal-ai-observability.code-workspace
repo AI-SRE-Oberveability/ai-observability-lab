@@ -1,0 +1,20 @@
+{
+  "folders": [
+    {
+      "name": "01 Lab - Plan HLD Tracker",
+      "path": "."
+    },
+    {
+      "name": "02 Workloads - Three POCs",
+      "path": "../ai-agent-workloads"
+    },
+    {
+      "name": "03 Observability Configuration",
+      "path": "../ai-observability-config"
+    },
+    {
+      "name": "04 Azure Infrastructure",
+      "path": "../ai-observability-infra"
+    }
+  ]
+}

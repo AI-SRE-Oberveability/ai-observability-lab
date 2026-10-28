@@ -1,12 +1,12 @@
 # High-level design — current, target and remaining work
 
-Version: 0.4 approved baseline. Updated: 28 October 2026, Asia/Dubai. Execution: **plan approved; public-source review and publication in progress**.
+Version: 0.4 approved baseline. Updated: 28 October 2026, Asia/Dubai. Execution: **plan approved; reviewed source published to all four repositories**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
-Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and four repositories under `javedkumail` separate resource ownership. All four were verified public and empty on 28 October 2026, as reported by the user. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Source review and initial pushes remain pending. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
+Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and four repositories under `javedkumail` separate resource ownership. All four were verified public and empty on 28 October 2026, as reported by the user. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
 
 ## Current local draft
 
@@ -79,7 +79,7 @@ The adapter cannot execute arbitrary queries, shell commands or Azure/Kubernetes
 | 0.3 | Verified four public, empty GitHub destinations created by the user; recorded exact infrastructure name | Read-only API evidence saved; no push or architecture boundary change |
 | 0.4 | User approved the plan and public pushes; review sanitizes reference-environment names and fixes repository-local evidence links | Review passed: 18 workload tests, 11 tracker tests, zero staged secret findings; GitLab credentials preserved |
 
-**What we are going to do next:** push and verify the reviewed source in all four repositories. Publication checks passed; GitHub authentication is verified. The next implementation package is the local vertical-slice review and backend validation.
+**What we are going to do next:** complete the local vertical-slice review and prove Collector-to-Jaeger delivery. Reviewed source is published in all four repositories, and remote commits are verified. The next implementation package is the local vertical-slice review and backend validation.
 
 **What remains:** backend ingestion/lifecycle evidence; repository/CI completion; personal targets and budget; costed Azure IaC/deployment; Managed entitlement and compatibility; status agent; SRE adapter/copilot; live-provider and comparison experiments; demo, rebuild and teardown.
 
@@ -89,11 +89,11 @@ After every work step the tracker supplies current status, next executable work 
 
 ## Verified source publication
 
-| Repository | Remote commit | Status |
+| Repository | Initial reviewed commit | Status |
 | --- | --- | --- |
-| ai-observability-infra | `b21c746acac6` | Remote main verified |
-| ai-agent-workloads | `6fc332a2cddf` | Remote main verified |
-| ai-observability-config | `9d81a64e0fea` | Remote main verified |
-| ai-observability-lab | — | First push pending |
+| ai-observability-infra | `b21c746acac6` | Pushed and verified |
+| ai-agent-workloads | `6fc332a2cddf` | Pushed and verified |
+| ai-observability-config | `9d81a64e0fea` | Pushed and verified |
+| ai-observability-lab | `0d5cf9f01db8` | Pushed and verified |
 
-Source publication does not establish a running backend, active CI, Terraform deployment or Managed compatibility. Component ownership is unchanged.
+The lab receipt pins the initial reviewed source commit; later coordination updates are descendants. Source publication does not establish a running backend, active CI, Terraform deployment or Managed compatibility. Component ownership is unchanged.

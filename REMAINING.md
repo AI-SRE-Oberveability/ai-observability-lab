@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-10-28T23:39:43+04:00 (Asia/Dubai).
+Updated: 2026-10-28T23:41:40+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -17,7 +17,6 @@ Next action: select a ready step from POC_TRACKER.md.
 
 ## P2 — Establish personal GitHub delivery
 
-- **P2.2 Review source and push to four user-created public repositories** (in_progress). Acceptance: Four exact private remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved.
 - **P2.3 Complete reproducible CI, contract tests and builds** (draft). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (planned). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
 

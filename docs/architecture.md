@@ -19,7 +19,7 @@ flowchart LR
 | ai-observability-infra | Azure, bootstrap identity, state, budgets, eventual AKS and optional Managed hosts | Design and placeholders only |
 | ai-observability-lab | Coordination, release manifest, experiments, evidence, instructions | Local coordinator and documentation |
 
-The parent is a multi-repository workspace, not a repository containing nested repositories. Create repositories independently after `<GITHUB_OWNER>` is confirmed. Repository names remain proposed. Keep the original handoff outside published repositories, especially before any public release.
+The parent is a multi-repository workspace, not a repository containing nested repositories. The four independent GitHub repositories under javedkumail now contain reviewed source; exact names and initial commits are in the repository mapping and publication receipts. Keep the original handoff outside published repositories, especially before any public release.
 
 Cloud target: authenticated ingress to the agent on AKS, workload identity and secret delivery, synthetic tool services, optional approved Azure model. The native OneAgent path leads to its supported Dynatrace infrastructure; it never passes through this arbitrary Collector. Explicit custom spans may use a supported SDK/Collector path after endpoint validation. Monitoring configuration has one owner per resource.
 
