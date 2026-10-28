@@ -31,40 +31,48 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "Revalidated final committed HLD and main-activation evidence after Git LF normalization; only line endings differed and all verified outcomes remain unchanged",
-      "at": "2026-10-29T01:11:38+04:00",
+      "note": "Three editable architecture views and phased AKS implementation guide reviewed; optional Azure AI reuse is explicitly unverified and cloud gates remain pending",
+      "at": "2026-10-29T01:43:00+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-main-activation.json"
+        "ai-observability-lab/evidence/architecture-design-review.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "aa305c7397afc82981a4ac804cf04727ebb0234830d61b946a52269f93138591",
-        "ai-observability-lab/HLD.md": "98d79c126a6ce114385f493aa1350c355ee4c9c17794732f0c646af29e376613",
+        "ai-observability-lab/HLD.md": "fdf3e7f0c6106a84ccb6a581d84fac067843e134546b082a9ca7762bd8db256c",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
-        "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28"
+        "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
+        "ai-observability-lab/docs/architecture.md": "6b36e6e10ff13bddf131a92a32786d2eb4d8e32f858aebe619e2a3692907bef8",
+        "ai-observability-lab/docs/architecture/delivery.mmd": "e1bb0b6535eb9fe96e792041838c597fd5b424ce776a49b0c2ae971f5533abed",
+        "ai-observability-lab/docs/architecture/delivery.svg": "9ea536d9f5395a4ea50013b45b16c23cc83e65464d7cb8c28a8aabd4974b860d",
+        "ai-observability-lab/docs/architecture/README.md": "e5d1f35dd51dd411d8dc22e483e77fa3dc984c997dc3e74cfa107c1544718a26",
+        "ai-observability-lab/docs/architecture/runtime.mmd": "5f28a548bb8a6ab05aaa01228eeeed1582d374efd400e5450b11e6418f316d4b",
+        "ai-observability-lab/docs/architecture/runtime.png": "f8a29f07eb074fd335786b91b70185939a1fc069c2f4e9b2967c3e7054bf948c",
+        "ai-observability-lab/docs/architecture/telemetry.mmd": "43b660ddcccfa526c306a082533b79d9638ed2d7d8de67727dc1be089cb53a19",
+        "ai-observability-lab/docs/architecture/telemetry.png": "96a2ad55cd2edeb0edeadc64a89b35a40dc96c4338ea913bba34e0e33471216f"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-main-activation.json": "b7a6b013a80367125cfa598135c67c175f82c4f9208e622b41335b6425cb346c"
+        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "Revalidated tracker completion evidence against the Git-normalized checkout; 20 hosted tracker/sync tests passed and task model is unchanged",
-      "at": "2026-10-29T01:11:40+04:00",
+      "note": "Architecture source watch paths added without changing tracker behavior; 20 tracker/sync tests passed and 38-task model remains valid",
+      "at": "2026-10-29T01:43:02+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-main-activation.json"
+        "ai-observability-lab/evidence/architecture-design-review.json"
       ],
       "source_hashes": {
         "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "cb5baf3f435b49cb0da5c715a505ad4377c7aee504a814eefb6a085b027afe3b",
+        "ai-observability-lab/tracking/plan.json": "3b149c77effe7aea40e59d1d38376f54b34ccfa61ed958fb6fd68461722b8e36",
         "ai-observability-lab/TRACKER_GUIDE.md": "7daeba4e8ed99175b356d123228e6f0aa38cf3a2e2c72276836fbeede50c36ee",
         "ai-observability-lab/AGENTS.md": "48783d87303784ce0e1251074a124adf1ac5f6c12281f90ec0056fbb315506ec",
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-main-activation.json": "b7a6b013a80367125cfa598135c67c175f82c4f9208e622b41335b6425cb346c"
+        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250"
       }
     },
     "P2.2": {
@@ -171,6 +179,20 @@
         "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02",
         "ai-observability-lab/evidence/actions-environment-protections.json": "224c2afdd15df18078b3fefecfda0925aed1c9bdcea82067bfdd7ed499c190c0"
       }
+    },
+    "P3.2": {
+      "status": "draft",
+      "note": "AKS runtime, telemetry and delivery architecture elaborated; costed node/network/runner design and personal target/resource verification still require G2",
+      "at": "2026-10-29T01:43:04+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/architecture-design-review.json"
+      ],
+      "source_hashes": {
+        "ai-observability-infra/README.md": "0d1a12d0ef9b6e6be269b0b2184cb4d3bca7d0de294dbd7954752fab09c048c5"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250"
+      }
     }
   },
   "known_gaps": [
@@ -189,9 +211,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "All four main-branch CI pipelines are verified. Protected Terraform foundation plan/apply is configured and its disabled guard is proven before Azure login. Actual Azure, local backend and Managed delivery remain separately gated.",
+    "current": "Four CI pipelines verified; proposed AKS/Kubernetes architecture and implementation sequence documented with optional existing Azure AI reuse. Azure execution is disabled; local backend, full platform, Managed and live-model proof remain open.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P2.9: Protected Terraform workflow and disabled preflight proof remain verified; immutable evidence rehashed against committed LF content"
+    "last_change": "P3.2: AKS runtime, telemetry and delivery architecture elaborated; costed node/network/runner design and personal target/resource verification still require G2"
   },
   "repository_verification": {
     "date": "2026-10-28",

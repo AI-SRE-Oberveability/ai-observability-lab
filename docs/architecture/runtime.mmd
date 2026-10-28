@@ -1,0 +1,45 @@
+flowchart LR
+  subgraph client ["Synthetic lab users"]
+    labUser["Test user / runner"]
+  end
+  subgraph gateway ["Planned access boundary"]
+    ingress["Authenticated HTTPS ingress"]
+  end
+  subgraph service ["AKS target - Kubernetes Deployments and per-service Workload ID"]
+    policyAgent["Policy agent - prototype"]
+    statusAgent["Status agent - planned"]
+    sreCopilot["SRE copilot - planned"]
+    retrievalApi["Retrieval tool API"]
+    demoApi["Synthetic status API"]
+    evidenceApi["Read-only monitoring adapter"]
+    collector["OTel Collector"]
+  end
+  subgraph datastore ["Optional Azure RAG extension"]
+    corpus["Blob corpus - optional"]
+    searchIndex["AI Search - optional"]
+  end
+  subgraph external ["Managed services outside AKS - approval and compatibility gates"]
+    modelApi["Foundry / Azure OpenAI models - optional reuse"]
+    telemetryBackend["Selected monitoring backend"]
+    keyVault["Key Vault scoped tokens"]
+  end
+  labUser -->|"HTTPS request"| ingress
+  ingress -->|"Routes policy"| policyAgent
+  ingress -->|"Routes status"| statusAgent
+  ingress -->|"Routes investigation"| sreCopilot
+  policyAgent -->|"Calls retrieval"| retrievalApi
+  retrievalApi -->|"Reads synthetic documents"| corpus
+  retrievalApi -->|"Queries approved index"| searchIndex
+  statusAgent -->|"Reads bounded health"| demoApi
+  sreCopilot -->|"Requests bounded evidence"| evidenceApi
+  policyAgent -.->|"Foundry: Model calls"| modelApi
+  statusAgent -.->|"Foundry: Model calls"| modelApi
+  sreCopilot -.->|"Foundry: Model calls"| modelApi
+  evidenceApi -.->|"Backend: Read evidence"| telemetryBackend
+  policyAgent -->|"Emits safe metadata"| collector
+  statusAgent -->|"Emits safe metadata"| collector
+  sreCopilot -->|"Emits safe metadata"| collector
+  demoApi -->|"Emits safe metadata"| collector
+  collector -.->|"Backend: Approved OTLP"| telemetryBackend
+  collector -.->|"Key Vault: Ingest token"| keyVault
+  evidenceApi -.->|"Key Vault: Query token"| keyVault

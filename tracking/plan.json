@@ -50,7 +50,9 @@
         "ai-observability-lab/HLD.md",
         "ai-observability-lab/docs/engineering-standards.md",
         "ai-observability-lab/docs/repository-layout.md",
-        "ai-observability-lab/docs/actions-delivery-plan.md"
+        "ai-observability-lab/docs/actions-delivery-plan.md",
+        "ai-observability-lab/docs/architecture.md",
+        "ai-observability-lab/docs/architecture"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",

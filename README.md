@@ -13,3 +13,5 @@ The local coordinator expects sibling clones under one parent directory. `compos
 CI in .github/workflows/ci.yaml runs tracker/Project-sync tests and lint from an independent checkout. It uses synthetic fixtures and does not synchronize the Project or contact Azure. See [Actions delivery plan](docs/actions-delivery-plan.md) for the current CI/Terraform implementation scope.
 
 The four CI setup PRs are merged and all four initial main-branch runs passed. [Activation evidence](evidence/actions-main-activation.json) records tested commits and runs; [disabled deployment verification](evidence/actions-disabled-deployment-verification.json) proves the Terraform preflight stopped before Azure login. Azure provisioning remains disabled pending the personal target/budget and bootstrap decisions.
+
+[Architecture diagrams and implementation sequence](docs/architecture/README.md): proposed AKS runtime, telemetry/SRE boundaries and gated delivery, with optional existing Azure AI resource reuse. Current cloud deployment status is unchanged.

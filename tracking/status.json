@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T01:11:45+04:00",
+  "updated_at": "2026-10-29T01:43:05+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 11,
@@ -49,7 +49,9 @@
         "ai-observability-lab/HLD.md",
         "ai-observability-lab/docs/engineering-standards.md",
         "ai-observability-lab/docs/repository-layout.md",
-        "ai-observability-lab/docs/actions-delivery-plan.md"
+        "ai-observability-lab/docs/actions-delivery-plan.md",
+        "ai-observability-lab/docs/architecture.md",
+        "ai-observability-lab/docs/architecture"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -64,9 +66,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-main-activation.json"
+        "ai-observability-lab/evidence/architecture-design-review.json"
       ],
-      "note": "Revalidated final committed HLD and main-activation evidence after Git LF normalization; only line endings differed and all verified outcomes remain unchanged",
+      "note": "Three editable architecture views and phased AKS implementation guide reviewed; optional Azure AI reuse is explicitly unverified and cloud gates remain pending",
       "ready": false
     },
     {
@@ -101,9 +103,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-main-activation.json"
+        "ai-observability-lab/evidence/architecture-design-review.json"
       ],
-      "note": "Revalidated tracker completion evidence against the Git-normalized checkout; 20 hosted tracker/sync tests passed and task model is unchanged",
+      "note": "Architecture source watch paths added without changing tracker behavior; 20 tracker/sync tests passed and 38-task model remains valid",
       "ready": false
     },
     {
@@ -650,8 +652,10 @@
         "ai-observability-infra/README.md"
       ],
       "artifacts_missing": [],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/architecture-design-review.json"
+      ],
+      "note": "AKS runtime, telemetry and delivery architecture elaborated; costed node/network/runner design and personal target/resource verification still require G2",
       "ready": false
     },
     {
