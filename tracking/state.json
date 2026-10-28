@@ -31,26 +31,26 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD updated after four approved merges, four passing main CI runs and a verified disabled Terraform preflight stop; actual Azure remains gated",
-      "at": "2026-10-29T01:05:20+04:00",
+      "note": "Revalidated final committed HLD and main-activation evidence after Git LF normalization; only line endings differed and all verified outcomes remain unchanged",
+      "at": "2026-10-29T01:11:38+04:00",
       "evidence": [
         "ai-observability-lab/evidence/actions-main-activation.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "aa305c7397afc82981a4ac804cf04727ebb0234830d61b946a52269f93138591",
-        "ai-observability-lab/HLD.md": "37600290c5ac8597d243841191bceb6d58a9ce42f5ff656c202760fe92525ec0",
+        "ai-observability-lab/HLD.md": "98d79c126a6ce114385f493aa1350c355ee4c9c17794732f0c646af29e376613",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629"
+        "ai-observability-lab/evidence/actions-main-activation.json": "b7a6b013a80367125cfa598135c67c175f82c4f9208e622b41335b6425cb346c"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "Hosted main lab CI passed all 20 tracker/sync tests; final plan/HLD and 38-task model remain evidence based",
-      "at": "2026-10-29T01:05:21+04:00",
+      "note": "Revalidated tracker completion evidence against the Git-normalized checkout; 20 hosted tracker/sync tests passed and task model is unchanged",
+      "at": "2026-10-29T01:11:40+04:00",
       "evidence": [
         "ai-observability-lab/evidence/actions-main-activation.json"
       ],
@@ -64,7 +64,7 @@
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629"
+        "ai-observability-lab/evidence/actions-main-activation.json": "b7a6b013a80367125cfa598135c67c175f82c4f9208e622b41335b6425cb346c"
       }
     },
     "P2.2": {
@@ -121,8 +121,8 @@
     },
     "P2.8": {
       "status": "done",
-      "note": "All four CI implementations merged at reviewed heads; all four main-branch CI runs passed, including container and real Collector validation",
-      "at": "2026-10-29T01:05:22+04:00",
+      "note": "Four merged main CI pipelines remain verified; completion receipt now hashes the exact Git-normalized immutable evidence",
+      "at": "2026-10-29T01:11:42+04:00",
       "evidence": [
         "ai-observability-lab/evidence/actions-main-activation.json"
       ],
@@ -140,13 +140,13 @@
         "ai-observability-infra/requirements-ci.txt": "1da72b5f1985267346a9dfeec8358f909b78637a70119b4e08bb4872a31abf22"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629"
+        "ai-observability-lab/evidence/actions-main-activation.json": "b7a6b013a80367125cfa598135c67c175f82c4f9208e622b41335b6425cb346c"
       }
     },
     "P2.9": {
       "status": "done",
-      "note": "Strict locked Terraform CI, 11 safety tests, two mocked scope tests, protected environments and the live disabled-dispatch stop all verified; no Azure provisioning occurred",
-      "at": "2026-10-29T01:05:23+04:00",
+      "note": "Protected Terraform workflow and disabled preflight proof remain verified; immutable evidence rehashed against committed LF content",
+      "at": "2026-10-29T01:11:44+04:00",
       "evidence": [
         "ai-observability-lab/evidence/actions-main-activation.json",
         "ai-observability-lab/evidence/actions-disabled-deployment-verification.json",
@@ -167,7 +167,7 @@
         "ai-observability-infra/tests/test_deployment.py": "7104098f5860d85c51afcf210ca08188e51cbd0b734cbb47a1daa415caac1647"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629",
+        "ai-observability-lab/evidence/actions-main-activation.json": "b7a6b013a80367125cfa598135c67c175f82c4f9208e622b41335b6425cb346c",
         "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02",
         "ai-observability-lab/evidence/actions-environment-protections.json": "224c2afdd15df18078b3fefecfda0925aed1c9bdcea82067bfdd7ed499c190c0"
       }
@@ -191,7 +191,7 @@
   "hld": {
     "current": "All four main-branch CI pipelines are verified. Protected Terraform foundation plan/apply is configured and its disabled guard is proven before Azure login. Actual Azure, local backend and Managed delivery remain separately gated.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P2.9: Strict locked Terraform CI, 11 safety tests, two mocked scope tests, protected environments and the live disabled-dispatch stop all verified; no Azure provisioning occurred"
+    "last_change": "P2.9: Protected Terraform workflow and disabled preflight proof remain verified; immutable evidence rehashed against committed LF content"
   },
   "repository_verification": {
     "date": "2026-10-28",
