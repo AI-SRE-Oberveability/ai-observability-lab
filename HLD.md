@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.7 Actions preparation. Updated: 29 October 2026, Asia/Dubai. Execution: **organization/shared Project verified; four CI PRs validated; main activation awaits merge approval; Azure execution disabled**.
+Version: 0.8 CI active and guarded Terraform delivery. Updated: 29 October 2026, Asia/Dubai. Execution: **all four main-branch CI runs verified; protected Terraform workflow tested while disabled; Azure provisioning remains gated**.
 
 ## Purpose
 
@@ -21,7 +21,7 @@ flowchart LR
   C -.->|End-to-end validation pending| J[Jaeger]
 ```
 
-Solid arrows describe the local service behavior exercised in the earlier 18-test run. Dashed arrows remain unproven as a complete running backend path. Existing in-memory trace assertions do not establish Jaeger ingestion. Collector and Jaeger binaries are present; local lifecycle coordination still needs work. The dependency-lock input is now supplied and all four CI definitions passed PR checks. Main-branch activation awaits explicit merge approval. No live model, Azure or Managed deployment is present.
+Solid arrows describe the local service behavior exercised in the earlier 18-test run. Dashed arrows remain unproven as a complete running backend path. Existing in-memory trace assertions do not establish Jaeger ingestion. Collector and Jaeger binaries are present; local lifecycle coordination still needs work. The dependency-lock input is supplied and all four active main-branch CI workflows passed. This does not establish backend delivery. No live model, Azure or Managed deployment is present.
 
 ## Proposed personal Azure target
 
@@ -84,7 +84,7 @@ The adapter cannot execute arbitrary queries, shell commands or Azure/Kubernetes
 | 0.5 | Organization created; all four public repositories transferred and local remotes updated | IDs/history/ownership verified; organization documentation pushed to all four repositories |
 | 0.6 | Shared Project #1 links all four repositories and mirrors 36 task issues through event-driven synchronization | Live task/link/view checks and 20 tracker/sync tests passed; source/cloud validation boundaries unchanged |
 
-**What we are going to do next:** merge the four validated Actions PRs after explicit approval, verify main CI and the disabled-cloud preflight, then resume P1.1 local review/backend proof and collect personal Azure decisions when needed. Organization, transfers and shared tracking are verified.
+**What we are going to do next:** resume P1.1 local review and backend proof. Before enabling Azure execution, confirm personal targets/region/budget, review the concrete scope/cost, and establish protected state and scoped OIDC identities. Organization, shared tracking and four main-branch CI pipelines are verified.
 
 **What remains:** backend ingestion/lifecycle evidence; repository/CI completion; personal targets and budget; costed Azure IaC/deployment; Managed entitlement and compatibility; status agent; SRE adapter/copilot; live-provider and comparison experiments; demo, rebuild and teardown.
 
@@ -144,7 +144,7 @@ Terraform foundation validation passed with AzureRM 5.11.0, and both mocked inva
 
 All four implementation PRs passed hosted CI. Workloads passed 18 tests and built its container; observability passed Compose and the real Collector validator; lab passed 20 tracker/sync tests; infra passed 11 safety tests, strict backend-disabled Linux init/validate and two mocked Terraform scope tests. The Linux lock mismatch was fixed by generating its real package hash from an official archive verified against signed registry metadata; strict readonly checks remain enabled. No cloud authentication or provisioning ran. See evidence/actions-pr-validation.json and evidence/actions-provider-lock-review.json.
 
-The automatic approval review rejected merging workload PR 9 because explicit merge authorization was not present. All PRs remain open for one concrete approval; main CI activation and a live disabled-dispatch check follow that approval. Both protected infra environments are verified main-only with owner review and no administrator bypass. AZURE_DEPLOYMENT_ENABLED remains false. No Azure target values, roles or identities were added. Source and global Git configuration checks preserve GitLab access.
+The automatic approval review rejected merging workload PR 9 because explicit merge authorization was not present. At this review stage the PRs remained open. The user subsequently approved the four merges and final tracking receipt update; main CI and the live disabled-dispatch check are now verified in step 5 below. Both protected infra environments are verified main-only with owner review and no administrator bypass. AZURE_DEPLOYMENT_ENABLED remains false. No Azure target values, roles or identities were added. Source and global Git configuration checks preserve GitLab access.
 
 ```mermaid
 flowchart LR
@@ -158,3 +158,11 @@ flowchart LR
   S --> P[Private Terraform plan and review fingerprint]
   P --> A[Matching saved-plan apply: one resource group]
 ```
+
+### Actions step 5 — verified activation after approved merges
+
+The user explicitly approved the four named PR merges and the final HLD/tracker-only receipt update. All four PRs merged at their verified tested heads. All four resulting main-branch CI runs succeeded: workload tests/container build; observability source/Compose/Collector validation; lab tracker/sync tests; infra lint, 11 safety tests, strict locked Terraform initialization/validation and two mocked scope tests. The final documentation-only receipt PR is subject to the same CI checks.
+
+The manually dispatched Terraform plan was intentionally tested with AZURE_DEPLOYMENT_ENABLED=false. It failed at the named preflight guard with the expected disabled-execution message; the entire Terraform job was skipped and Azure login did not run. This expected rejection is safety verification, not a failed Azure deployment. No target IDs, credentials, Entra identities, role assignments or Azure resources were created. GitLab credentials and global Git configuration remain unchanged. Exact source/run/merge evidence is in evidence/actions-main-activation.json and evidence/actions-disabled-deployment-verification.json.
+
+**Current delivery boundary:** CI is active in all four repositories; manual Terraform plan/apply code and protected environments are configured. Actual Azure execution remains disabled pending G2/G3, state bootstrap, separate scoped plan/apply identities and verification of environment-specific immutable OIDC claims. The concrete Terraform root currently owns one tagged resource group. AKS/platform resources, registry publication, workload rollout, local backend proof, Managed and live models remain later work.

@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Dubai",
+  "scope": "All four CI workflows active on main; guarded Terraform delivery prepared with Azure disabled",
+  "repositories": [
+    {
+      "repository": "ai-agent-workloads",
+      "github_repository": "ai-agent-workloads",
+      "head": "e6bf84997664ea493a91fc27f66afe26898f203b",
+      "runs": [
+        {
+          "id": 40768511373,
+          "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/40768511373",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "ai-observability-config",
+      "github_repository": "ai-observability-config",
+      "head": "35a122588c546205b92d4abec9b50a95677fc3c6",
+      "runs": [
+        {
+          "id": 40768523620,
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/40768523620",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "ai-observability-infra",
+      "github_repository": "AI-Observability-Infra",
+      "head": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+      "runs": [
+        {
+          "id": 40768534559,
+          "url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/40768534559",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "ai-observability-lab",
+      "github_repository": "ai-observability-lab",
+      "head": "19328b401e2b57e2721959de65a696705aec4969",
+      "runs": [
+        {
+          "id": 40768546475,
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/40768546475",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "merged_prs": [
+    {
+      "repository": "ai-agent-workloads",
+      "github_repository": "ai-agent-workloads",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/9",
+      "pr_number": 9,
+      "reviewed_head": "5ebb78bbfef932e2906db7502038a6820d0df78b",
+      "successful_pr_run": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/40767032597",
+      "merge_commit": "e6bf84997664ea493a91fc27f66afe26898f203b",
+      "merged": true
+    },
+    {
+      "repository": "ai-observability-config",
+      "github_repository": "ai-observability-config",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/4",
+      "pr_number": 4,
+      "reviewed_head": "5c9309f0b6d08cbb034d1d5a1ef116b74b98d889",
+      "successful_pr_run": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/40767063870",
+      "merge_commit": "35a122588c546205b92d4abec9b50a95677fc3c6",
+      "merged": true
+    },
+    {
+      "repository": "ai-observability-infra",
+      "github_repository": "AI-Observability-Infra",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/pull/11",
+      "pr_number": 11,
+      "reviewed_head": "bba35ccaa23d3c10e944bc81d5acc53a4f58d8fe",
+      "successful_pr_run": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/40767833186",
+      "merge_commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+      "merged": true
+    },
+    {
+      "repository": "ai-observability-lab",
+      "github_repository": "ai-observability-lab",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/18",
+      "pr_number": 18,
+      "reviewed_head": "5d19e9b383f07006c9c3ab7e9346ecff0296f5e3",
+      "successful_pr_run": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/40768120447",
+      "merge_commit": "19328b401e2b57e2721959de65a696705aec4969",
+      "merged": true
+    }
+  ],
+  "disabled_deployment_test": {
+    "run_id": 40768812338,
+    "run_url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/40768812338",
+    "expected_failure": true,
+    "reason": "Azure execution is disabled; confirm personal targets, budget and G2/G3 first",
+    "preflight_job_id": 123100126319,
+    "cloud_job_conclusion": "skipped",
+    "azure_login_executed": false
+  },
+  "deployment_environments": "azure-lab-plan and azure-lab-apply: main only, owner review, no administrator bypass",
+  "azure_execution_enabled": false,
+  "azure_resources_or_identities_created": false,
+  "global_git_configuration_unchanged": true,
+  "gitlab_credential_changes": false,
+  "limitations": [
+    "No real Azure plan/apply, state bootstrap or federation tested",
+    "No AKS workload rollout or image-registry publication implemented",
+    "CI results do not prove local Jaeger ingestion, live-model usage or Managed compatibility",
+    "One pre-existing Starlette/httpx test-client deprecation warning remains for P1.1"
+  ]
+}

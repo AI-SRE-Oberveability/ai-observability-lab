@@ -31,42 +31,40 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD and delivery plan reflect four passing PR pipelines; explicit merge approval and later Azure decisions remain distinct",
-      "at": "2026-10-29T00:58:51+04:00",
+      "note": "HLD updated after four approved merges, four passing main CI runs and a verified disabled Terraform preflight stop; actual Azure remains gated",
+      "at": "2026-10-29T01:05:20+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-pr-validation.json",
-        "ai-observability-lab/evidence/actions-environment-protections.json"
+        "ai-observability-lab/evidence/actions-main-activation.json"
       ],
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "85d96c1809a921b8eea004787bcf9df2b9cac0f1f25c81e9194bb8a87f5e8f24",
-        "ai-observability-lab/HLD.md": "9e72d82507d0ae309370eaeb4456caa0a36277e2b307362f52c015abf887ce8e",
+        "ai-observability-lab/POC_PLAN.md": "aa305c7397afc82981a4ac804cf04727ebb0234830d61b946a52269f93138591",
+        "ai-observability-lab/HLD.md": "37600290c5ac8597d243841191bceb6d58a9ce42f5ff656c202760fe92525ec0",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-pr-validation.json": "082383d56784a973b18fe951494058e2c294e8bf4e52eeca3e90d02b8386fd18",
-        "ai-observability-lab/evidence/actions-environment-protections.json": "5a1cb41ecea7b4410ecdded104838e998109ac941d55e1e9add3cba1793afdd7"
+        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "38-task model and public-repository acceptance wording reviewed; 20 tracker tests passed in hosted CI",
-      "at": "2026-10-29T00:58:51+04:00",
+      "note": "Hosted main lab CI passed all 20 tracker/sync tests; final plan/HLD and 38-task model remain evidence based",
+      "at": "2026-10-29T01:05:21+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-pr-validation.json"
+        "ai-observability-lab/evidence/actions-main-activation.json"
       ],
       "source_hashes": {
         "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "8d1f2ed39d4e5efd8f1774d1dfa2a72f1d1febfd1d7bec9fe719f142e4b9ca47",
+        "ai-observability-lab/tracking/plan.json": "cb5baf3f435b49cb0da5c715a505ad4377c7aee504a814eefb6a085b027afe3b",
         "ai-observability-lab/TRACKER_GUIDE.md": "7daeba4e8ed99175b356d123228e6f0aa38cf3a2e2c72276836fbeede50c36ee",
-        "ai-observability-lab/AGENTS.md": "5badfa1b1a0c684b9d989a446b7c3962f06802a770c06bfdda6d437a9d55289e",
+        "ai-observability-lab/AGENTS.md": "48783d87303784ce0e1251074a124adf1ac5f6c12281f90ec0056fbb315506ec",
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-pr-validation.json": "082383d56784a973b18fe951494058e2c294e8bf4e52eeca3e90d02b8386fd18"
+        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629"
       }
     },
     "P2.2": {
@@ -122,41 +120,41 @@
       }
     },
     "P2.8": {
-      "status": "in_progress",
-      "note": "All four PR CI pipelines passed; main-branch activation awaits explicit merge approval required by automatic review",
-      "at": "2026-10-29T00:58:52+04:00",
+      "status": "done",
+      "note": "All four CI implementations merged at reviewed heads; all four main-branch CI runs passed, including container and real Collector validation",
+      "at": "2026-10-29T01:05:22+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-pr-validation.json"
+        "ai-observability-lab/evidence/actions-main-activation.json"
       ],
       "source_hashes": {
-        "ai-observability-infra/.github/workflows/ci.yaml": "97f6440a93c0663c8c3036ea424c58a3622f853d43b8007d31360f810231e9d5",
-        "ai-agent-workloads/.github/workflows/ci.yaml": "1de7517532a5301b37e33f74c6dbb6c605488f831c8b3c226f243a03079a913a",
-        "ai-observability-config/.github/workflows/ci.yaml": "a07e94e891ca80b6faea65cab6817c57e81326d70d9d10e38c05ca7f93c33eea",
-        "ai-observability-lab/.github/workflows/ci.yaml": "f0405a7f73e6ce7c13e65fc645cb9d41c16bb47800867a5d6dbecafe54df70d8",
+        "ai-observability-infra/.github/workflows/ci.yaml": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e",
+        "ai-agent-workloads/.github/workflows/ci.yaml": "3cf80dc2bb3224bd381c7202622b3ea8b872c4065ae1ba7750a20853cf23694e",
+        "ai-observability-config/.github/workflows/ci.yaml": "8c1ec08d45eaf74bcdaa6e9beb7838510127ea8e40fa2a383a3ffc61ca6bad9c",
+        "ai-observability-lab/.github/workflows/ci.yaml": "b91013fff52a7df7448075337166c25b296018eefa83f4274e7e53c32b62d834",
         "ai-agent-workloads/requirements-dev.lock.txt": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506",
         "ai-agent-workloads/requirements.lock.txt": "9047e7c693769c11b2a7ff06acd23fd8d1d41bd339756c66b3d27ad168ccb45b",
         "ai-agent-workloads/Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
         "ai-observability-config/requirements-ci.txt": "ffb1c8d1dfed561f430bff92499d46b65fe791c45e4492dcaf4798ff77100d7b",
-        "ai-observability-config/scripts/check_config.py": "ae4be419be948f0d3d41839c58f2251fd34347657e43eb3bb89461e00b4b63de",
+        "ai-observability-config/scripts/check_config.py": "1f52be40c999325299facfbed71c6c4922e6de0e7c271cb18e690db249983e54",
         "ai-observability-lab/requirements-ci.txt": "1c80175b2026277fbef779eb50099e1477c5437146b2aa5eaf7d90e5e7e5ee3e",
         "ai-observability-infra/requirements-ci.txt": "1da72b5f1985267346a9dfeec8358f909b78637a70119b4e08bb4872a31abf22"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-pr-validation.json": "082383d56784a973b18fe951494058e2c294e8bf4e52eeca3e90d02b8386fd18"
+        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629"
       }
     },
     "P2.9": {
-      "status": "in_progress",
-      "note": "Guarded Terraform code and protected environments verified; strict Linux lock, validation and safety tests pass; main disabled-dispatch check follows merge approval",
-      "at": "2026-10-29T00:58:53+04:00",
+      "status": "done",
+      "note": "Strict locked Terraform CI, 11 safety tests, two mocked scope tests, protected environments and the live disabled-dispatch stop all verified; no Azure provisioning occurred",
+      "at": "2026-10-29T01:05:23+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-pr-validation.json",
-        "ai-observability-lab/evidence/actions-provider-lock-review.json",
+        "ai-observability-lab/evidence/actions-main-activation.json",
+        "ai-observability-lab/evidence/actions-disabled-deployment-verification.json",
         "ai-observability-lab/evidence/actions-environment-protections.json"
       ],
       "source_hashes": {
-        "ai-observability-infra/.github/workflows/ci.yaml": "97f6440a93c0663c8c3036ea424c58a3622f853d43b8007d31360f810231e9d5",
-        "ai-observability-infra/.github/workflows/terraform-deploy.yaml": "d0aa6cf04c4ec416e254b2558388bb42b3b2a32e219ab707d3901501f8855d0a",
+        "ai-observability-infra/.github/workflows/ci.yaml": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e",
+        "ai-observability-infra/.github/workflows/terraform-deploy.yaml": "27fd0dba8867b3ff42fbdac32c52cff93fc4cebf3d6948f4b2db5594a97d9fbf",
         "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/LICENSE.txt": "4e2bb185ebd706f76329206869ccb348b92b6236100cfb07775fe31530dab0d5",
         "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/terraform-provider-azurerm_v5.11.0_x5.exe": "13af584640b372255c6fa3913505df5b4b7a1beb2081fd7d0e8c562533e1a950",
         "ai-observability-infra/foundation/.terraform.lock.hcl": "0eb93cf29237e7e73aaec364317b91dda3023338cefdb329214360f11f05eff8",
@@ -169,9 +167,9 @@
         "ai-observability-infra/tests/test_deployment.py": "7104098f5860d85c51afcf210ca08188e51cbd0b734cbb47a1daa415caac1647"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-pr-validation.json": "082383d56784a973b18fe951494058e2c294e8bf4e52eeca3e90d02b8386fd18",
-        "ai-observability-lab/evidence/actions-provider-lock-review.json": "1b2fb5d015b643e16db0a21594e203c06e531cf2518ff239238fa8b04f2e84f6",
-        "ai-observability-lab/evidence/actions-environment-protections.json": "5a1cb41ecea7b4410ecdded104838e998109ac941d55e1e9add3cba1793afdd7"
+        "ai-observability-lab/evidence/actions-main-activation.json": "6c88afed8ad360475c33f475cc06016dc587df3e0e835fbf700b223dc76c5629",
+        "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02",
+        "ai-observability-lab/evidence/actions-environment-protections.json": "224c2afdd15df18078b3fefecfda0925aed1c9bdcea82067bfdd7ed499c190c0"
       }
     }
   },
@@ -191,9 +189,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "Four repository CI implementations passed hosted PR checks. Protected Terraform delivery is prepared with Azure disabled; main activation awaits explicit merge approval. Local backend and actual Azure deployment remain unverified.",
+    "current": "All four main-branch CI pipelines are verified. Protected Terraform foundation plan/apply is configured and its disabled guard is proven before Azure login. Actual Azure, local backend and Managed delivery remain separately gated.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P2.9: Guarded Terraform code and protected environments verified; strict Linux lock, validation and safety tests pass; main disabled-dispatch check follows merge approval"
+    "last_change": "P2.9: Strict locked Terraform CI, 11 safety tests, two mocked scope tests, protected environments and the live disabled-dispatch stop all verified; no Azure provisioning occurred"
   },
   "repository_verification": {
     "date": "2026-10-28",

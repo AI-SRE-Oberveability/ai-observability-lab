@@ -1,0 +1,9 @@
+{
+  "run_id": 40768812338,
+  "run_url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/40768812338",
+  "expected_failure": true,
+  "reason": "Azure execution is disabled; confirm personal targets, budget and G2/G3 first",
+  "preflight_job_id": 123100126319,
+  "cloud_job_conclusion": "skipped",
+  "azure_login_executed": false
+}
