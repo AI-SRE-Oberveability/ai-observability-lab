@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-29",
+  "suite": "python -m unittest discover -s ai-observability-lab/tests -v",
+  "tests": 20,
+  "passed": 20,
+  "failures": 0,
+  "checks": [
+    "existing tracker evidence freshness and gates",
+    "repository-local evidence links",
+    "only accepted done tasks map to Done",
+    "managed issue repository ownership",
+    "human note preservation",
+    "unmanaged body overwrite rejection",
+    "evidence URL generation",
+    "GraphQL metadata union regression",
+    "Project workflow state-transition race verifies actual desired issue state",
+    "Atomic save retries transient Windows file locks",
+    "Permanent file lock preserves prior JSON and raises failure"
+  ],
+  "lint": "passed: Ruff 0.17.3 E4,E7,E9,F,I,UP",
+  "format": "passed: five Python files",
+  "dry_run": "36 local task rows; no network mutation",
+  "live_project_sync": "36 task identities, repository links and views verified; final accepted-status report is evidence/shared-project-verification.json",
+  "resolved_live_findings": [
+    "GraphQL returns empty objects for unselected metadata field union types; verifier now filters them with a regression test.",
+    "A state update returned HTTP 422 while the issue was already closed as completed; sync now reads back desired state before accepting a concurrent transition.",
+    "OneDrive destination lock interrupted an atomic mapping save; bounded retries now retain atomic replacement and preserve prior state on permanent failure."
+  ]
+}

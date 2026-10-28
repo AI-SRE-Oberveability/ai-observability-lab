@@ -42,3 +42,20 @@ Status meanings:
 The tracker never starts applications, reruns their tests, contacts Azure/GitHub/Dynatrace or changes infrastructure. Engineering steps and their actual checks remain separately authorized work. There is no claim that the tracker can independently verify external environments from local file presence.
 
 Every progress update follows the HLD rhythm: current design, change, next step, remaining work. Update HLD.md when the architecture changes, then refresh the tracker. Read the generated remaining-work list before selecting the next task.
+
+## Shared GitHub Project synchronization
+
+The shared Project is owned by `AI-SRE-Oberveability`. `tracking/github-project.json` pins its existing ID/number and maps task IDs to managed issues and Project items across the four repositories. Setup reuses the existing Project; it never creates a duplicate or changes its visibility.
+
+After each work step, record the actual local result, refresh the tracker, then synchronize:
+
+```powershell
+python ai-observability-lab/scripts/sync_github_project.py
+python ai-observability-lab/scripts/sync_github_project.py --apply
+```
+
+The default is a local dry-run. `--apply` is the explicit network mutation step and updates only the approved organization's four repositories and mapped Project. It preserves human notes outside managed issue-body blocks. Done is assigned only to locally accepted `done` tasks; drafts, blocked work and pending decisions keep their exact value in Evidence status. The board's three normal columns summarize Todo, In Progress and Done. Dependencies and acceptance/evidence remain visible on each issue and in Project fields.
+
+Use GitHub CLI signed in as the approved personal administrator with `project` scope. The user explicitly approved that additional scope. On a fresh machine, use the supported secure `gh auth login --scopes project` flow and decline Git helper reconfiguration if offered. Existing GitLab credentials/global helpers must remain unchanged. The script captures the token privately from CLI authentication; it never stores tokens in repository files or logs. It supports a normal CLI installation or the ignored portable runtime used for this setup.
+
+New task IDs are created idempotently using stable managed markers; existing unrelated issues are preserved. A run stops on owner, identity, duplicate-task or API verification errors instead of claiming a successful sync. Project and issue pagination is intentionally bounded for this small lab; extend it before exceeding the documented 100-item/page limits.

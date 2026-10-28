@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-10-29T00:07:07+04:00 (Asia/Dubai).
+Updated: 2026-10-29T00:28:25+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -19,7 +19,6 @@ Next action: select a ready step from POC_TRACKER.md.
 
 - **P2.3 Complete reproducible CI, contract tests and builds** (draft). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (planned). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
-- **P2.7 Set up shared GitHub Project and map POC tasks** (in_progress). Acceptance: One organization Project links the four repositories, contains the current task set with accurate statuses/dependencies, and has a documented after-step synchronization path.
 
 ## P3 — Plan and deploy personal Azure
 

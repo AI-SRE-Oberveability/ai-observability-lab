@@ -4,6 +4,7 @@ import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 SPEC = importlib.util.spec_from_file_location(
     "poc_tracker", Path(__file__).parents[1] / "scripts/poc_tracker.py"
@@ -13,6 +14,38 @@ SPEC.loader.exec_module(tracker)
 
 
 class TrackerChecks(unittest.TestCase):
+    def test_atomic_json_save_survives_transient_destination_lock(self):
+        target = self.base / "state.json"
+        target.write_text('{"old": true}', encoding="utf-8")
+        original = Path.replace
+        calls = []
+
+        def briefly_locked(source, destination):
+            calls.append(destination)
+            if len(calls) < 3:
+                self.assertEqual(target.read_text(), '{"old": true}')
+                raise PermissionError("Temporary sync lock")
+            return original(source, destination)
+
+        with (
+            patch.object(Path, "replace", briefly_locked),
+            patch.object(tracker.time, "sleep"),
+        ):
+            tracker.write_json(target, {"new": True})
+        self.assertEqual(tracker.json.loads(target.read_text()), {"new": True})
+        self.assertEqual(len(calls), 3)
+
+    def test_permanent_destination_lock_preserves_previous_json(self):
+        target = self.base / "state.json"
+        target.write_text('{"old": true}', encoding="utf-8")
+        with (
+            patch.object(Path, "replace", side_effect=PermissionError("Locked")),
+            patch.object(tracker.time, "sleep"),
+            self.assertRaises(PermissionError),
+        ):
+            tracker.write_json(target, {"new": True})
+        self.assertEqual(tracker.json.loads(target.read_text()), {"old": True})
+
     def setUp(self):
         runtime = Path(__file__).resolve().parents[2] / ".runtime" / "tracker-tests"
         runtime.mkdir(parents=True, exist_ok=True)

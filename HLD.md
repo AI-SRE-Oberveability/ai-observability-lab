@@ -81,8 +81,10 @@ The adapter cannot execute arbitrary queries, shell commands or Azure/Kubernetes
 | 0.2 | Confirmed Terraform, four private repositories under javedkumail, GitLab coexistence, event-driven tracker and engineering standards | User choices recorded; implementation still paused |
 | 0.3 | Verified four public, empty GitHub destinations created by the user; recorded exact infrastructure name | Read-only API evidence saved; no push or architecture boundary change |
 | 0.4 | User approved the plan and public pushes; review sanitizes reference-environment names and fixes repository-local evidence links | Review passed: 18 workload tests, 11 tracker tests, zero staged secret findings; GitLab credentials preserved |
+| 0.5 | Organization created; all four public repositories transferred and local remotes updated | IDs/history/ownership verified; organization documentation pushed to all four repositories |
+| 0.6 | Shared Project #1 links all four repositories and mirrors 36 task issues through event-driven synchronization | Live task/link/view checks and 20 tracker/sync tests passed; source/cloud validation boundaries unchanged |
 
-**What we are going to do next:** finish the shared GitHub Project and task mapping, then publish its verified URL. Organization creation, ownership verification and all four repository transfers are complete. The next application implementation package remains local vertical-slice/backend validation.
+**What we are going to do next:** P1.1, review the existing local drafts, dependencies and acceptance gaps before completing the local vertical slice and backend validation. Organization creation, all four repository transfers and shared Project task mapping are verified.
 
 **What remains:** backend ingestion/lifecycle evidence; repository/CI completion; personal targets and budget; costed Azure IaC/deployment; Managed entitlement and compatibility; status agent; SRE adapter/copilot; live-provider and comparison experiments; demo, rebuild and teardown.
 
@@ -103,7 +105,7 @@ The lab receipt pins the initial reviewed source commit; later coordination upda
 
 ## Organization migration status
 
-`AI-SRE-Oberveability` is created on GitHub Free, and authenticated membership verifies javedkumail as active owner. 4/4 repositories have transferred with IDs, commits and public visibility preserved. The shared GitHub Project is pending. GitLab credentials and global Git helpers remain unchanged.
+`AI-SRE-Oberveability` is created on GitHub Free, and authenticated membership verifies javedkumail as active owner. 4/4 repositories have transferred with IDs, commits and public visibility preserved. [Shared Project #1](https://github.com/orgs/AI-SRE-Oberveability/projects/1) is verified with 36 unique task issues, all four repository links, Delivery board and All tasks views. GitLab credentials and global Git helpers remain unchanged.
 
 | Repository | Actual owner | Transfer verification |
 | --- | --- | --- |
@@ -116,4 +118,10 @@ Organization grouping changes repository ownership and future OIDC inputs, not c
 
 ## Project setup continuation — 29 October 2026
 
-The shared Project remains uncreated in the local mapping. Chrome browser control is disconnected, so Project creation is not claimed. Repository mapping, documentation and transfer evidence can be published independently. Existing GitHub repository authentication remains available; no GitLab credential/global helper changes are needed.
+The existing organization Project #1 was completed after browser reconnection and verified as AI SRE Observability POC. Project-capable authentication is verified as javedkumail with the user-approved project scope; no duplicate Project was created. The CLI uses isolated local configuration, and Git authentication setup was declined. Existing GitHub repository authentication remains available; no GitLab credential/global helper changes were made.
+
+## Shared Project tracking design
+
+Project #1 is shared across the four repositories. Managed issues mirror task acceptance, dependencies, gates and evidence; Project fields expose task ID, phase, responsible owner and exact evidence status. The board summarizes Todo/In Progress/Done. Synchronization is event driven after local work-step recording via scripts/sync_github_project.py --apply; there is no scheduled job. New authentication is limited to the separately approved GitHub CLI scope and does not alter GitLab credentials or global Git helpers.
+
+The Project retains private visibility for authorized organization members. Public repository source and sanitized evidence remain public. Local plan/state are authoritative; human notes outside managed issue blocks are preserved. Draft, blocked and pending decisions remain distinct in Evidence status. A task moves to Done and its issue closes only when the local tracker accepts its evidence. Live verification checks issue identity/state, all managed fields, and repository links. Interrupted synchronization resumes from saved task mappings and discovers existing managed issues to avoid duplicates. See evidence/shared-project-completion.json for the setup receipt and evidence/shared-project-verification.json for the latest synchronization result.

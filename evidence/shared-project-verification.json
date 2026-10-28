@@ -1,0 +1,42 @@
+{
+  "organization": "AI-SRE-Oberveability",
+  "project_url": "https://github.com/orgs/AI-SRE-Oberveability/projects/1",
+  "project_id": "PVT_kwDOFNUgOM4BpL99",
+  "verified_at": "2026-10-29T00:28:32+04:00",
+  "tasks": 36,
+  "status_counts": {
+    "done": 9,
+    "draft": 8,
+    "planned": 16,
+    "waiting_for_decision": 3
+  },
+  "board_counts": {
+    "Done": 9,
+    "Todo": 27
+  },
+  "repositories": [
+    "AI-Observability-Infra",
+    "ai-agent-workloads",
+    "ai-observability-config",
+    "ai-observability-lab"
+  ],
+  "linked_repositories": [
+    "AI-SRE-Oberveability/AI-Observability-Infra",
+    "AI-SRE-Oberveability/ai-agent-workloads",
+    "AI-SRE-Oberveability/ai-observability-config",
+    "AI-SRE-Oberveability/ai-observability-lab"
+  ],
+  "visibility": "private",
+  "views": [
+    {
+      "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",
+      "name": "Delivery board",
+      "layout": "BOARD_LAYOUT"
+    },
+    {
+      "id": "PVTV_lADOFNUgOM4BpL99zgMSlrs",
+      "name": "All tasks",
+      "layout": "TABLE_LAYOUT"
+    }
+  ]
+}

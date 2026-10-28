@@ -71,7 +71,8 @@
         "ai-observability-lab/tests",
         "ai-observability-lab/tracking/plan.json",
         "ai-observability-lab/TRACKER_GUIDE.md",
-        "ai-observability-lab/AGENTS.md"
+        "ai-observability-lab/AGENTS.md",
+        "ai-observability-lab/scripts/sync_github_project.py"
       ],
       "artifacts": [
         "ai-observability-lab/scripts/poc_tracker.py",

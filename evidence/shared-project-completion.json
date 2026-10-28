@@ -1,0 +1,40 @@
+{
+  "verified_at": "2026-10-29T00:24:11+04:00",
+  "project_url": "https://github.com/orgs/AI-SRE-Oberveability/projects/1",
+  "project_id": "PVT_kwDOFNUgOM4BpL99",
+  "title": "AI SRE Observability POC",
+  "visibility": "private",
+  "tasks": 36,
+  "linked_repositories": [
+    "AI-SRE-Oberveability/AI-Observability-Infra",
+    "AI-SRE-Oberveability/ai-agent-workloads",
+    "AI-SRE-Oberveability/ai-observability-config",
+    "AI-SRE-Oberveability/ai-observability-lab"
+  ],
+  "board_counts": {
+    "Done": 8,
+    "Todo": 27,
+    "In Progress": 1
+  },
+  "views": [
+    {
+      "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",
+      "name": "Delivery board",
+      "layout": "BOARD_LAYOUT"
+    },
+    {
+      "id": "PVTV_lADOFNUgOM4BpL99zgMSlrs",
+      "name": "All tasks",
+      "layout": "TABLE_LAYOUT"
+    }
+  ],
+  "checks": [
+    "36 unique task IDs",
+    "all four repositories linked",
+    "expected Project identity/title",
+    "board and table views present"
+  ],
+  "limitations": [
+    "Task acceptance is defined by local recorded evidence; this coordination result does not prove backend, CI or Azure delivery."
+  ]
+}
