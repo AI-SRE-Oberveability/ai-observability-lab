@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-29T00:47:58+04:00",
+  "repository": "AI-SRE-Oberveability/AI-Observability-Infra",
+  "environments": [
+    {
+      "environment": "azure-lab-plan",
+      "required_reviewer": "javedkumail",
+      "prevent_self_review": false,
+      "administrator_bypass": false,
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "branches": [
+        {
+          "name": "main",
+          "type": "branch"
+        }
+      ]
+    },
+    {
+      "environment": "azure-lab-apply",
+      "required_reviewer": "javedkumail",
+      "prevent_self_review": false,
+      "administrator_bypass": false,
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "branches": [
+        {
+          "name": "main",
+          "type": "branch"
+        }
+      ]
+    }
+  ],
+  "azure_deployment_enabled": false,
+  "oidc_subject_configuration": {
+    "use_default": true,
+    "use_immutable_subject": true,
+    "sub_claim_prefix": "repo:AI-SRE-Oberveability@349511736/AI-Observability-Infra@1437529000"
+  },
+  "azure_identities_or_role_assignments_created": false,
+  "azure_target_variables_set": false,
+  "gitlab_credential_changes": false
+}

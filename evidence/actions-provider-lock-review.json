@@ -1,0 +1,20 @@
+{
+  "initial_failed_run": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/40767396091",
+  "finding": "Linux validate needed the unpacked Linux provider h1 hash; strict readonly init alone verified the archive but could not add that hash.",
+  "resolution": "Downloaded the official Linux archive, matched its SHA256 to the signed registry-generated lock, then used Terraform providers lock with that verified filesystem mirror to add the real Linux h1. Readonly CI was retained.",
+  "linux_archive": {
+    "platform": "linux_amd64",
+    "official_archive_sha256": "2345a6104bb485141afb8f0047a48a5f27c3bb4e6eeb360c7955f381227d88dd",
+    "present_in_generated_lock": true
+  },
+  "rerun": {
+    "conclusion": "success",
+    "url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/40767833186"
+  },
+  "local_windows_validate": "passed",
+  "terraform_mocked_tests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "no_azure_login_or_apply": true
+}

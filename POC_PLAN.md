@@ -141,3 +141,7 @@ Source review and the four initial pushes are complete. Immediate next step: loc
 ## Approved organization and shared Project extension
 
 The user authorized creation of `AI-SRE-Oberveability`, transfer of all four repositories and one shared GitHub Project. Added tasks P2.5 (organization), P2.6 (verified transfers/remotes) and P2.7 (shared Project/task mapping) bring the live tracker to 36 tasks. These coordination tasks are verified complete: GitHub Free organization with personal administration, four preserved repository histories/remotes, and Project #1 with 36 unique task issues and board/table views. GitLab credentials and global Git helpers remain unchanged. After each work step, record local evidence and synchronize the shared Project. Existing application and Azure spending gates remain in effect.
+
+## Authorized Actions setup — 29 October 2026
+
+The user explicitly requested CI across all four repositories and Terraform deployment workflows. Follow [the staged delivery plan](docs/actions-delivery-plan.md). P2.8/P2.9 track this preparation independently of full P2.3 release acceptance and P3 cloud delivery; the model now has 38 tasks. Azure targets/budget and concrete spending authorization remain pending.

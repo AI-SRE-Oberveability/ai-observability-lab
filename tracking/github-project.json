@@ -8,7 +8,7 @@
     "ai-observability-config",
     "ai-observability-lab"
   ],
-  "task_count": 36,
+  "task_count": 38,
   "project_id": "PVT_kwDOFNUgOM4BpL99",
   "project_url": "https://github.com/orgs/AI-SRE-Oberveability/projects/1",
   "items": {
@@ -1019,11 +1019,67 @@
           "singleSelectOptionId": "f75ad846"
         }
       }
+    },
+    "P2.8": {
+      "repository": "ai-observability-lab",
+      "issue_number": 17,
+      "issue_node_id": "I_kwDOVa78x88AAAABatHR2g",
+      "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/issues/17",
+      "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETj9c",
+      "evidence_status": "in_progress",
+      "values": {
+        "Task ID": {
+          "text": "P2.8"
+        },
+        "Phase": {
+          "singleSelectOptionId": "2dfbe738"
+        },
+        "Evidence status": {
+          "text": "in_progress"
+        },
+        "Dependencies": {
+          "text": "P2.7"
+        },
+        "Responsible": {
+          "text": "Codex"
+        },
+        "Status": {
+          "singleSelectOptionId": "47fc9ee4"
+        }
+      }
+    },
+    "P2.9": {
+      "repository": "AI-Observability-Infra",
+      "issue_number": 10,
+      "issue_node_id": "I_kwDOVa7zqM8AAAABatHYOw",
+      "issue_url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/issues/10",
+      "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETkCM",
+      "evidence_status": "in_progress",
+      "values": {
+        "Task ID": {
+          "text": "P2.9"
+        },
+        "Phase": {
+          "singleSelectOptionId": "2dfbe738"
+        },
+        "Evidence status": {
+          "text": "in_progress"
+        },
+        "Dependencies": {
+          "text": "P2.8"
+        },
+        "Responsible": {
+          "text": "Codex"
+        },
+        "Status": {
+          "singleSelectOptionId": "47fc9ee4"
+        }
+      }
     }
   },
   "project_number": 1,
   "visibility": "private",
-  "verified_at": "2026-10-29T00:28:32+04:00",
+  "verified_at": "2026-10-29T00:59:08+04:00",
   "views": [
     {
       "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",

@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-29",
+  "actions": {
+    "actions/checkout": {
+      "version": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+      "url": "https://github.com/actions/checkout/releases/tag/v7.0.1"
+    },
+    "actions/setup-python": {
+      "version": "v7.1.0",
+      "sha": "6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+      "url": "https://github.com/actions/setup-python/releases/tag/v7.1.0"
+    },
+    "hashicorp/setup-terraform": {
+      "version": "v4.0.1",
+      "sha": "dfe3c3f87815947d99a8997f908cb6525fc44e9e",
+      "url": "https://github.com/hashicorp/setup-terraform/releases/tag/v4.0.1"
+    },
+    "azure/login": {
+      "version": "v3.1.0",
+      "sha": "a641126d1b8aa4d1fa005f4f92df94a3a4c4c906",
+      "url": "https://github.com/Azure/login/releases/tag/v3.1.0"
+    }
+  },
+  "tools": [
+    {
+      "tool": "terraform",
+      "archive": "terraform_1.17.1_windows_amd64.zip",
+      "sha256": "a3b71365cff94c0f978cf75d86addb075ea1bb6409055ea0ab359bf057d7898a",
+      "official_checksums_verified": true
+    },
+    {
+      "tool": "actionlint",
+      "archive": "actionlint_1.7.12_windows_amd64.zip",
+      "sha256": "6e7241b51e6817ea6a047693d8e6fed13b31819c9a0dd6c5a726e1592d22f6e9",
+      "official_checksums_verified": true
+    }
+  ],
+  "terraform": "1.17.1",
+  "azurerm": "5.11.0"
+}
