@@ -1026,7 +1026,7 @@
       "issue_node_id": "I_kwDOVa78x88AAAABatHR2g",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/issues/17",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETj9c",
-      "evidence_status": "in_progress",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P2.8"
@@ -1035,7 +1035,7 @@
           "singleSelectOptionId": "2dfbe738"
         },
         "Evidence status": {
-          "text": "in_progress"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P2.7"
@@ -1044,7 +1044,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "47fc9ee4"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -1054,7 +1054,7 @@
       "issue_node_id": "I_kwDOVa7zqM8AAAABatHYOw",
       "issue_url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/issues/10",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETkCM",
-      "evidence_status": "in_progress",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P2.9"
@@ -1063,7 +1063,7 @@
           "singleSelectOptionId": "2dfbe738"
         },
         "Evidence status": {
-          "text": "in_progress"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P2.8"
@@ -1072,14 +1072,14 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "47fc9ee4"
+          "singleSelectOptionId": "98236657"
         }
       }
     }
   },
   "project_number": 1,
   "visibility": "private",
-  "verified_at": "2026-10-29T00:59:08+04:00",
+  "verified_at": "2026-10-29T01:05:44+04:00",
   "views": [
     {
       "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",
