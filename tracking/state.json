@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "decisions": {
+    "G0": {
+      "status": "accepted",
+      "note": "User explicitly approved the plan and requested public source review and pushes to all four repositories; Terraform/cloud deployment remains separately gated",
+      "at": "2026-10-28T23:29:38+04:00"
+    },
+    "G1": {
+      "status": "accepted",
+      "note": "User owns javedkumail, created the four public repositories, and explicitly authorized pushes to all four; preserve GitLab credentials",
+      "at": "2026-10-28T23:29:38+04:00"
+    }
+  },
+  "steps": {
+    "P0.1": {
+      "status": "done",
+      "note": "Sanitized historical inventory revalidated for public publication; draft and deployed evidence remain distinct",
+      "at": "2026-10-28T23:39:42+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/initial-inventory.md",
+        "ai-observability-lab/evidence/publication-planning-revalidation.md"
+      ],
+      "source_hashes": {
+        "ai-observability-lab/evidence/initial-inventory.md": "a9fb6eff80e5077118841124cc22eb8daacf063da19687e780b0accaa839bd77"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/initial-inventory.md": "a9fb6eff80e5077118841124cc22eb8daacf063da19687e780b0accaa839bd77",
+        "ai-observability-lab/evidence/publication-planning-revalidation.md": "9ac90a7998602ce0cfaefafde45ee5cee9d830752372e531debc3c07fa0956dd"
+      }
+    },
+    "P0.2": {
+      "status": "done",
+      "note": "Approved plan and current HLD reviewed after public-source changes; three initial pushes verified and lab publication pending",
+      "at": "2026-10-28T23:39:42+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/publication-planning-revalidation.md"
+      ],
+      "source_hashes": {
+        "ai-observability-lab/POC_PLAN.md": "8fe186bf57ad307fb63ac6efb8b3fbbbffcd478b0db94770f575f24e815c5300",
+        "ai-observability-lab/HLD.md": "4fe6a49defd2904795f8973a52101fd6797e4082298b865b2c9eb1d65693eaee",
+        "ai-observability-lab/docs/engineering-standards.md": "04c95daf215e167a3fc5a55f108a1a2c80ffc3a20b0ba39757cf3d1beb890685",
+        "ai-observability-lab/docs/repository-layout.md": "b2df9c210961d7e31478d590150a1ab2eed3b0f58aea32b12d01d4342440ebb5"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/publication-planning-revalidation.md": "9ac90a7998602ce0cfaefafde45ee5cee9d830752372e531debc3c07fa0956dd"
+      }
+    },
+    "P0.3": {
+      "status": "done",
+      "note": "Tracker portability, local evidence links, 11 tests and current planning requirements verified for publication",
+      "at": "2026-10-28T23:39:43+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/tracker-tests.txt",
+        "ai-observability-lab/evidence/publication-planning-revalidation.md"
+      ],
+      "source_hashes": {
+        "ai-observability-lab/scripts/poc_tracker.py": "b3b3000ecd612c71c626bad8f9e343d6cae89abef8b4515980a8456e718f34df",
+        "ai-observability-lab/tests/test_tracker.py": "4994106a65969cd42facc86829cfb5322fea521e8031423ef8ed9630275ef257",
+        "ai-observability-lab/tracking/plan.json": "ab25aa29c27d770626aa551a22e71283a4847818579e31747671e0fe4e5e88a0",
+        "ai-observability-lab/TRACKER_GUIDE.md": "112727984d21bbe2c7759e9c141db0b9d0dd11c393d88a63c3e7e9421037178f",
+        "ai-observability-lab/AGENTS.md": "5aa790621dfd5709098a85020193a9a4c5a7fe5028012a836cc0d4563ba9e69f"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/tracker-tests.txt": "b0ffb4f77fbd58a7eaa6028b6be5b2b8fe41ed893dfabc867bda500c3601f43f",
+        "ai-observability-lab/evidence/publication-planning-revalidation.md": "9ac90a7998602ce0cfaefafde45ee5cee9d830752372e531debc3c07fa0956dd"
+      }
+    },
+    "P2.2": {
+      "status": "in_progress",
+      "note": "Three repositories published and remote main verified; HLD records commits; lab coordination repository is the final initial push",
+      "at": "2026-10-28T23:39:36+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/publication-review.md",
+        "ai-observability-lab/evidence/publication-receipts.json"
+      ],
+      "source_hashes": {},
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/publication-review.md": "d21a42c966cb9c41b8d716ee038a9b34c09cde18b6fb4d2961e71e8a9635ab8d",
+        "ai-observability-lab/evidence/publication-receipts.json": "1ebb5bc72619476b479699bfd304f036b08069f7da68af28ff21578271614297"
+      }
+    }
+  },
+  "known_gaps": [
+    "Plan approved; public-source review and initial pushes are authorized. Azure deployment and live-model spending remain separately gated.",
+    "Earlier local workload run: 18 passed, one deprecation warning; no saved JUnit artifact. Historical observation only.",
+    "Collector CLI configuration validation passed; complete export to Jaeger is unverified.",
+    "Docker engine was unreachable; the pinned native Windows backend alternative is not yet demonstrated end to end.",
+    "Inactive CI draft under .github/workflow-drafts references missing requirements-dev.lock.txt; no GitHub workflow has run.",
+    "Four public repositories and authenticated GitHub identity verified; first pushes are pending. Azure targets/budget, Managed entitlement and live-model scope remain pending."
+  ],
+  "confirmed_choices": [
+    "Personal GitHub owner: javedkumail; user-created four repositories verified public and empty on 28 October 2026; source review and initial pushes pending.",
+    "Terraform for Azure infrastructure; Helm/Kubernetes manifests for application and shared observability deployments.",
+    "Preserve GitLab credentials/helpers/remotes; separate GitHub settings or optional WSL.",
+    "Refresh tracker after each work step; always report HLD/current/change/next/remaining.",
+    "Apply documented engineering standards and record validation or accepted deviations."
+  ],
+  "hld": {
+    "current": "Draft policy agent with deterministic adapter and HTTP retrieval; complete Collector-to-Jaeger backend delivery remains unverified.",
+    "target": "Four public GitHub repositories -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and a separate read-only SRE evidence path.",
+    "last_change": "P0.3: Tracker portability, local evidence links, 11 tests and current planning requirements verified for publication"
+  },
+  "repository_verification": {
+    "date": "2026-10-28",
+    "owner": "javedkumail",
+    "visibility": "public",
+    "repositories": [
+      "AI-Observability-Infra",
+      "ai-agent-workloads",
+      "ai-observability-config",
+      "ai-observability-lab"
+    ],
+    "all_empty": true,
+    "write_access_verified": true,
+    "pushed": false,
+    "evidence": "ai-observability-lab/evidence/github-repository-verification-20261028.md",
+    "published_count": 3,
+    "publication_receipts": "ai-observability-lab/evidence/publication-receipts.json"
+  }
+}

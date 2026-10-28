@@ -1,0 +1,959 @@
+{
+  "updated_at": "2026-10-28T23:39:43+04:00",
+  "execution": "Plan accepted; follow task gates",
+  "counts": {
+    "done": 5,
+    "draft": 8,
+    "planned": 16,
+    "in_progress": 1,
+    "waiting_for_decision": 3
+  },
+  "tasks": [
+    {
+      "id": "P0.1",
+      "title": "Inventory existing drafts and validation evidence",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [],
+      "gates": [],
+      "watch": [
+        "ai-observability-lab/evidence/initial-inventory.md"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/initial-inventory.md"
+      ],
+      "acceptance": "Current files, actual validations and gaps are documented without claiming deployment.",
+      "status": "done",
+      "blocked_by": [],
+      "artifacts_present": [
+        "ai-observability-lab/evidence/initial-inventory.md"
+      ],
+      "artifacts_missing": [],
+      "evidence": [
+        "ai-observability-lab/evidence/initial-inventory.md",
+        "ai-observability-lab/evidence/publication-planning-revalidation.md"
+      ],
+      "note": "Sanitized historical inventory revalidated for public publication; draft and deployed evidence remain distinct",
+      "ready": false
+    },
+    {
+      "id": "P0.2",
+      "title": "Prepare phased plan and current/target HLD",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P0.1"
+      ],
+      "gates": [],
+      "watch": [
+        "ai-observability-lab/POC_PLAN.md",
+        "ai-observability-lab/HLD.md",
+        "ai-observability-lab/docs/engineering-standards.md",
+        "ai-observability-lab/docs/repository-layout.md"
+      ],
+      "artifacts": [
+        "ai-observability-lab/POC_PLAN.md",
+        "ai-observability-lab/HLD.md"
+      ],
+      "acceptance": "Plan includes steps, owners, dependencies, estimates, gates and exits; HLD distinguishes drafts and target.",
+      "status": "done",
+      "blocked_by": [],
+      "artifacts_present": [
+        "ai-observability-lab/POC_PLAN.md",
+        "ai-observability-lab/HLD.md"
+      ],
+      "artifacts_missing": [],
+      "evidence": [
+        "ai-observability-lab/evidence/publication-planning-revalidation.md"
+      ],
+      "note": "Approved plan and current HLD reviewed after public-source changes; three initial pushes verified and lab publication pending",
+      "ready": false
+    },
+    {
+      "id": "P0.3",
+      "title": "Validate event-driven tracker and update agreement",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P0.2"
+      ],
+      "gates": [],
+      "watch": [
+        "ai-observability-lab/scripts/poc_tracker.py",
+        "ai-observability-lab/tests",
+        "ai-observability-lab/tracking/plan.json",
+        "ai-observability-lab/TRACKER_GUIDE.md",
+        "ai-observability-lab/AGENTS.md"
+      ],
+      "artifacts": [
+        "ai-observability-lab/scripts/poc_tracker.py",
+        "ai-observability-lab/TRACKER_GUIDE.md",
+        "ai-observability-lab/AGENTS.md"
+      ],
+      "acceptance": "Refresh produces status/remaining work; gates, failed and stale evidence are handled; tracker tests pass.",
+      "status": "done",
+      "blocked_by": [],
+      "artifacts_present": [
+        "ai-observability-lab/scripts/poc_tracker.py",
+        "ai-observability-lab/TRACKER_GUIDE.md",
+        "ai-observability-lab/AGENTS.md"
+      ],
+      "artifacts_missing": [],
+      "evidence": [
+        "ai-observability-lab/evidence/tracker-tests.txt",
+        "ai-observability-lab/evidence/publication-planning-revalidation.md"
+      ],
+      "note": "Tracker portability, local evidence links, 11 tests and current planning requirements verified for publication",
+      "ready": false
+    },
+    {
+      "id": "P0.4",
+      "title": "Review and accept plan/HLD or request amendments",
+      "owner": "User",
+      "repo": "lab",
+      "depends_on": [
+        "P0.2",
+        "P0.3"
+      ],
+      "gates": [],
+      "decision": "G0",
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Explicit user acceptance recorded; implementation remains paused while pending.",
+      "status": "done",
+      "blocked_by": [],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P1.1",
+      "title": "Review existing draft code, dependencies and gaps",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P0.4"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [
+        "ai-agent-workloads/src",
+        "ai-agent-workloads/pyproject.toml"
+      ],
+      "artifacts": [
+        "ai-agent-workloads/src",
+        "ai-agent-workloads/uv.lock"
+      ],
+      "acceptance": "Draft review records corrections, supported versions and treatment of the deprecation/incomplete CI input.",
+      "status": "draft",
+      "blocked_by": [],
+      "artifacts_present": [
+        "ai-agent-workloads/src",
+        "ai-agent-workloads/uv.lock"
+      ],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": true
+    },
+    {
+      "id": "P1.2",
+      "title": "Validate API and retrieval contracts",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P1.1"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [
+        "ai-agent-workloads/contracts"
+      ],
+      "artifacts": [
+        "ai-agent-workloads/contracts/agent.openapi.yaml",
+        "ai-agent-workloads/contracts/retrieval.openapi.yaml"
+      ],
+      "acceptance": "Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.",
+      "status": "draft",
+      "blocked_by": [
+        "P1.1"
+      ],
+      "artifacts_present": [
+        "ai-agent-workloads/contracts/agent.openapi.yaml",
+        "ai-agent-workloads/contracts/retrieval.openapi.yaml"
+      ],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P1.3",
+      "title": "Complete synthetic policy workload and adapter",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P1.2"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [
+        "ai-agent-workloads/src",
+        "ai-agent-workloads/evaluations"
+      ],
+      "artifacts": [
+        "ai-agent-workloads/src",
+        "ai-agent-workloads/evaluations/policy-v1.json"
+      ],
+      "acceptance": "Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.",
+      "status": "draft",
+      "blocked_by": [
+        "P1.2"
+      ],
+      "artifacts_present": [
+        "ai-agent-workloads/src",
+        "ai-agent-workloads/evaluations/policy-v1.json"
+      ],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P1.4",
+      "title": "Validate propagation and metadata-only telemetry",
+      "owner": "Codex",
+      "repo": "observability-config",
+      "depends_on": [
+        "P1.3"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [
+        "ai-agent-workloads/src/ai_lab/telemetry.py",
+        "ai-observability-config/telemetry-contract.md",
+        "ai-observability-config/local/collector.yaml"
+      ],
+      "artifacts": [
+        "ai-observability-config/telemetry-contract.md",
+        "ai-observability-config/local/collector.yaml"
+      ],
+      "acceptance": "Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.",
+      "status": "draft",
+      "blocked_by": [
+        "P1.3"
+      ],
+      "artifacts_present": [
+        "ai-observability-config/telemetry-contract.md",
+        "ai-observability-config/local/collector.yaml"
+      ],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P1.5",
+      "title": "Prove local backend runner and lifecycle",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P1.4"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [
+        "ai-observability-config/local",
+        "ai-agent-workloads/compose.yaml",
+        "ai-observability-lab/compose.yaml",
+        "ai-observability-lab/scripts/install_local_backends.py"
+      ],
+      "artifacts": [
+        "ai-observability-lab/compose.yaml",
+        "ai-observability-config/local/compose.yaml"
+      ],
+      "acceptance": "Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.",
+      "status": "draft",
+      "blocked_by": [
+        "P1.4"
+      ],
+      "artifacts_present": [
+        "ai-observability-lab/compose.yaml",
+        "ai-observability-config/local/compose.yaml"
+      ],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P1.6",
+      "title": "Record complete local trace and exported-data evidence",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P1.5"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [
+        "ai-agent-workloads/src",
+        "ai-agent-workloads/tests",
+        "ai-observability-config/local"
+      ],
+      "artifacts": [],
+      "acceptance": "Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated.",
+      "status": "planned",
+      "blocked_by": [
+        "P1.5"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P2.1",
+      "title": "Confirm recommended repository destinations for javedkumail",
+      "owner": "User",
+      "repo": "lab",
+      "depends_on": [
+        "P0.4"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "decision": "G1",
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Exact personal owner, repository names, private visibility and plan constraints confirmed without sharing secrets.",
+      "status": "done",
+      "blocked_by": [],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P2.2",
+      "title": "Review source and push to four user-created public repositories",
+      "owner": "User creates; Codex reviews/pushes",
+      "repo": "all four",
+      "depends_on": [
+        "P2.1"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Four exact private remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved.",
+      "status": "in_progress",
+      "blocked_by": [],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [
+        "ai-observability-lab/evidence/publication-review.md",
+        "ai-observability-lab/evidence/publication-receipts.json"
+      ],
+      "note": "Three repositories published and remote main verified; HLD records commits; lab coordination repository is the final initial push",
+      "ready": true
+    },
+    {
+      "id": "P2.3",
+      "title": "Complete reproducible CI, contract tests and builds",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P2.2",
+        "P1.6"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-agent-workloads/.github",
+        "ai-agent-workloads/pyproject.toml",
+        "ai-agent-workloads/uv.lock",
+        "ai-agent-workloads/requirements.lock.txt",
+        "ai-agent-workloads/Dockerfile",
+        "ai-agent-workloads/tests"
+      ],
+      "artifacts": [
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-agent-workloads/requirements-dev.lock.txt",
+        "ai-agent-workloads/.github/workflow-drafts/ci.yaml"
+      ],
+      "acceptance": "Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.",
+      "status": "draft",
+      "blocked_by": [
+        "P2.2",
+        "P1.6"
+      ],
+      "artifacts_present": [
+        "ai-agent-workloads/.github/workflow-drafts/ci.yaml"
+      ],
+      "artifacts_missing": [
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-agent-workloads/requirements-dev.lock.txt"
+      ],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P2.4",
+      "title": "Pin image digests and multi-repository release manifest",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P2.3"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.",
+      "status": "planned",
+      "blocked_by": [
+        "P2.3"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P3.1",
+      "title": "Confirm personal Azure targets, region and budget",
+      "owner": "User",
+      "repo": "infra",
+      "depends_on": [
+        "P2.4"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "decision": "G2",
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Supplied exact tenant/subscription and personal identity are matched; region/budget/currency and model requirement recorded.",
+      "status": "waiting_for_decision",
+      "blocked_by": [
+        "P2.4"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P3.2",
+      "title": "Produce costed Azure HLD and runner/network design",
+      "owner": "Codex",
+      "repo": "infra",
+      "depends_on": [
+        "P3.1"
+      ],
+      "gates": [
+        "G0",
+        "G2"
+      ],
+      "watch": [
+        "ai-observability-infra/README.md"
+      ],
+      "artifacts": [
+        "ai-observability-infra/README.md"
+      ],
+      "acceptance": "Component active/idle costs, retention, AKS/runner reachability and optional Managed footprint are documented using dated inputs.",
+      "status": "draft",
+      "blocked_by": [
+        "P3.1",
+        "G2"
+      ],
+      "artifacts_present": [
+        "ai-observability-infra/README.md"
+      ],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P3.3",
+      "title": "Prepare Terraform, state bootstrap and scoped OIDC",
+      "owner": "Codex",
+      "repo": "infra",
+      "depends_on": [
+        "P3.2"
+      ],
+      "gates": [
+        "G0",
+        "G1",
+        "G2"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "IaC validates with provider locks; private state ownership, scoped RBAC/federation, actual OIDC subject and resource tags are verified.",
+      "status": "planned",
+      "blocked_by": [
+        "P3.2",
+        "G2"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P3.4",
+      "title": "Review concrete IaC plan and authorize spending scope",
+      "owner": "User",
+      "repo": "infra",
+      "depends_on": [
+        "P3.3"
+      ],
+      "gates": [
+        "G0",
+        "G2"
+      ],
+      "decision": "G3",
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Concrete plan, cost assumptions, resource scope and lifecycle presented and authorized once for the agreed bounds.",
+      "status": "waiting_for_decision",
+      "blocked_by": [
+        "P3.3",
+        "G2"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P3.5",
+      "title": "Deploy pinned Azure baseline through GitHub Actions",
+      "owner": "Codex",
+      "repo": "infra/workloads/config",
+      "depends_on": [
+        "P3.4"
+      ],
+      "gates": [
+        "G0",
+        "G1",
+        "G2",
+        "G3"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Only authorized resources deploy; workflow, smoke, telemetry and cloud-mock release evidence saved.",
+      "status": "planned",
+      "blocked_by": [
+        "P3.4",
+        "G2",
+        "G3"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P3.6",
+      "title": "Verify cloud start/stop and scoped destroy/recreate",
+      "owner": "Codex",
+      "repo": "infra/lab",
+      "depends_on": [
+        "P3.5"
+      ],
+      "gates": [
+        "G0",
+        "G2",
+        "G3"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Owned lifecycle works for exact scope; remaining stopped-resource costs/state and evidence retention documented.",
+      "status": "planned",
+      "blocked_by": [
+        "P3.5",
+        "G2",
+        "G3"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P4.1",
+      "title": "Confirm Managed entitlement and supported configuration",
+      "owner": "User + vendor; Codex checks",
+      "repo": "infra/config",
+      "depends_on": [
+        "P3.2"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "decision": "G4",
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Licence/installer, cluster/agent compatibility, vendor sizing/OS/storage, connectivity, retention and cost envelope confirmed.",
+      "status": "waiting_for_decision",
+      "blocked_by": [
+        "P3.2"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P4.2",
+      "title": "Provision and configure supported Managed backend",
+      "owner": "Codex",
+      "repo": "infra/config",
+      "depends_on": [
+        "P4.1",
+        "P3.5"
+      ],
+      "gates": [
+        "G0",
+        "G2",
+        "G3",
+        "G4"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Licensed backend on supported dedicated hosts is installed/configured through documented reproducible steps.",
+      "status": "planned",
+      "blocked_by": [
+        "P4.1",
+        "P3.5",
+        "G2",
+        "G3",
+        "G4"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P4.3",
+      "title": "Validate native and selected custom instrumentation",
+      "owner": "Codex",
+      "repo": "observability-config",
+      "depends_on": [
+        "P4.2"
+      ],
+      "gates": [
+        "G0",
+        "G4"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Separate native/custom cohorts validate endpoints, auth, enrichment, retention and duplicate spans for each signal.",
+      "status": "planned",
+      "blocked_by": [
+        "P4.2",
+        "G4"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P4.4",
+      "title": "Build supported views and tested compatibility matrix",
+      "owner": "Codex",
+      "repo": "observability-config/lab",
+      "depends_on": [
+        "P4.3"
+      ],
+      "gates": [
+        "G0",
+        "G4"
+      ],
+      "watch": [
+        "ai-observability-config/profiles/compatibility.md"
+      ],
+      "artifacts": [
+        "ai-observability-config/profiles/compatibility.md"
+      ],
+      "acceptance": "Supported dashboards/alerts/read APIs and exact versions recorded; reference enterprise environment gaps and SaaS-only features explicitly labelled.",
+      "status": "draft",
+      "blocked_by": [
+        "P4.3",
+        "G4"
+      ],
+      "artifacts_present": [
+        "ai-observability-config/profiles/compatibility.md"
+      ],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P5.1",
+      "title": "Define synthetic status tools and incident fixtures",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P1.6",
+        "P2.4"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Allowlisted health/version/failure schemas and versioned synthetic incidents have expected outcomes.",
+      "status": "planned",
+      "blocked_by": [
+        "P1.6",
+        "P2.4"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P5.2",
+      "title": "Implement bounded service-status investigation agent",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P5.1"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Retries/steps/tools/time bounds and injected failure cases pass; token bounds are verified only when live provider is authorized.",
+      "status": "planned",
+      "blocked_by": [
+        "P5.1"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P5.3",
+      "title": "Implement profile-specific read-only monitoring adapter",
+      "owner": "Codex",
+      "repo": "workloads/config",
+      "depends_on": [
+        "P5.1"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Bounded local evidence reads pass; live Managed adapter additionally requires P4.4 evidence; unrestricted queries/writes are absent.",
+      "status": "planned",
+      "blocked_by": [
+        "P5.1"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P5.4",
+      "title": "Validate evidence-citing read-only SRE copilot",
+      "owner": "Codex",
+      "repo": "workloads/lab",
+      "depends_on": [
+        "P5.2",
+        "P5.3"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Timeline, causes, evidence IDs, uncertainty and human checks pass versioned incident tests; untrusted text cannot add write/shell tools.",
+      "status": "planned",
+      "blocked_by": [
+        "P5.2",
+        "P5.3"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P6.1",
+      "title": "Define comparison cohorts and acceptance measurements",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P3.5",
+        "P4.4",
+        "P5.4"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Matched load, expected graphs, baselines, versions and measurement scripts defined before experiments.",
+      "status": "planned",
+      "blocked_by": [
+        "P3.5",
+        "P4.4",
+        "P5.4"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P6.2",
+      "title": "Run coverage, overhead, outage, redaction and rollout experiments",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P6.1"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "100-request coverage, duplication/loss, p95 overhead, outage recovery and zero-prohibited-value results recorded with limitations.",
+      "status": "planned",
+      "blocked_by": [
+        "P6.1"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P6.3",
+      "title": "Run authorized live-model evidence and optional triage replays",
+      "owner": "Codex; user authorizes model",
+      "repo": "lab/workloads",
+      "depends_on": [
+        "P5.4",
+        "P6.1"
+      ],
+      "gates": [
+        "G0",
+        "G5"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Real provider timing/available usage, dated pricing and model bounds recorded; optional three-replay triage evidence labelled exploratory.",
+      "status": "planned",
+      "blocked_by": [
+        "P5.4",
+        "P6.1",
+        "G5"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P6.4",
+      "title": "Rebuild from releases and prepare demonstration/report",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P6.2",
+        "P6.3"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Pinned checkout reproduces demo; presentation/report state costs, compatibility, measured outcomes and outstanding limitations.",
+      "status": "planned",
+      "blocked_by": [
+        "P6.2",
+        "P6.3"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P6.5",
+      "title": "Complete scoped cleanup and evidence handover",
+      "owner": "Codex; user chooses retention",
+      "repo": "infra/lab",
+      "depends_on": [
+        "P6.4",
+        "P3.6"
+      ],
+      "gates": [
+        "G0",
+        "G3"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Reviewed dedicated-scope teardown verified, remaining resources inventoried and sanitized evidence/lifecycle instructions handed over.",
+      "status": "planned",
+      "blocked_by": [
+        "P6.4",
+        "P3.6",
+        "G3"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    }
+  ]
+}

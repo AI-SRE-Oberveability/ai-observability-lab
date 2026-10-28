@@ -1,0 +1,22 @@
+Tracker-only publication validation.
+
+Tracker refreshed: 1/1 task deliverables done; PAUSED — plan/HLD review pending (G0)
+Tracker refreshed: 0/1 task deliverables done; PAUSED — plan/HLD review pending (G0)
+test_changed_source_invalidates_pass (test_tracker.TrackerChecks.test_changed_source_invalidates_pass) ... ok
+test_cycle_and_unknown_dependency_are_rejected (test_tracker.TrackerChecks.test_cycle_and_unknown_dependency_are_rejected) ... ok
+test_dependencies_prevent_false_completion (test_tracker.TrackerChecks.test_dependencies_prevent_false_completion) ... ok
+test_evidence_links_stay_inside_published_repository (test_tracker.TrackerChecks.test_evidence_links_stay_inside_published_repository) ... ok
+test_failed_validation_is_retained (test_tracker.TrackerChecks.test_failed_validation_is_retained) ... ok
+test_file_presence_does_not_prove_completion (test_tracker.TrackerChecks.test_file_presence_does_not_prove_completion) ... ok
+test_missing_or_tampered_evidence_invalidates_pass (test_tracker.TrackerChecks.test_missing_or_tampered_evidence_invalidates_pass) ... ok
+test_path_traversal_is_rejected (test_tracker.TrackerChecks.test_path_traversal_is_rejected) ... ok
+test_pending_gate_prevents_completion (test_tracker.TrackerChecks.test_pending_gate_prevents_completion) ... ok
+test_refresh_renders_tracker_remaining_work_and_machine_status (test_tracker.TrackerChecks.test_refresh_renders_tracker_remaining_work_and_machine_status) ... ok
+test_snapshot_excludes_secret_and_runtime_files (test_tracker.TrackerChecks.test_snapshot_excludes_secret_and_runtime_files) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.442s
+
+OK
+
+Exit code: 0

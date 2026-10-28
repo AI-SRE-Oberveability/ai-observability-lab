@@ -1,0 +1,46 @@
+{
+  "model_mode": "deterministic-mock",
+  "profile": "local-http-with-in-memory-telemetry",
+  "workload_tests": {
+    "tests": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "workload_warnings": [
+    "Existing test-client deprecation"
+  ],
+  "tracker_tests": {
+    "tests": 11,
+    "failures": 0
+  },
+  "gitleaks_version": "8.30.1",
+  "staged_secret_scans": [
+    {
+      "repository": "ai-observability-infra",
+      "exit_code": 0,
+      "findings": 0
+    },
+    {
+      "repository": "ai-agent-workloads",
+      "exit_code": 0,
+      "findings": 0
+    },
+    {
+      "repository": "ai-observability-config",
+      "exit_code": 0,
+      "findings": 0
+    },
+    {
+      "repository": "ai-observability-lab",
+      "exit_code": 0,
+      "findings": 0
+    }
+  ],
+  "compose_config": "passed",
+  "collector_config": "passed",
+  "lint": "passed",
+  "format": "passed",
+  "backend_ingestion": "not_validated",
+  "cloud_deployment": "not_performed"
+}

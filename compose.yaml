@@ -1,0 +1,4 @@
+name: personal-ai-observability
+include:
+  - ../ai-observability-config/local/compose.yaml
+  - ../ai-agent-workloads/compose.yaml
