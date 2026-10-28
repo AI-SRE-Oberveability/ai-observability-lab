@@ -10,9 +10,9 @@
   "workflow_actionlint": "all five passed; ShellCheck not available on Windows",
   "observability_source_checks": "passed",
   "terraform_provider_init": "passed, signed HashiCorp provider 5.11.0",
-  "terraform_cross_platform_lock_and_checks": "pending",
-  "hosted_ci": "pending",
-  "docker_local": "engine unavailable; build and Collector validator will run on GitHub",
+  "terraform_cross_platform_lock_and_checks": "Windows/Linux archive SHA256 and both real package h1 hashes recorded; strict readonly Linux CI passes",
+  "hosted_ci": "all four PR CI runs passed; main activation awaits explicit merge approval",
+  "docker_local": "engine unavailable locally; workload container build and Collector validator passed on GitHub",
   "terraform_validation": "passed without backend/cloud authentication",
   "terraform_mocked_guardrails": {
     "passed": 2,

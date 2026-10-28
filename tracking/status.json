@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T00:53:33+04:00",
+  "updated_at": "2026-10-29T00:58:53+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 9,
@@ -65,10 +65,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-local-validation.json",
+        "ai-observability-lab/evidence/actions-pr-validation.json",
         "ai-observability-lab/evidence/actions-environment-protections.json"
       ],
-      "note": "HLD now records successful Terraform validation/mock tests and protected environment verification; source review excludes generated caches",
+      "note": "HLD and delivery plan reflect four passing PR pipelines; explicit merge approval and later Azure decisions remain distinct",
       "ready": false
     },
     {
@@ -103,9 +103,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-local-validation.json"
+        "ai-observability-lab/evidence/actions-pr-validation.json"
       ],
-      "note": "Tracker CI input watches updated and task model reviewed; 20 tracker tests remain passing",
+      "note": "38-task model and public-repository acceptance wording reviewed; 20 tracker tests passed in hosted CI",
       "ready": false
     },
     {
@@ -337,7 +337,7 @@
       "decision": "G1",
       "watch": [],
       "artifacts": [],
-      "acceptance": "Exact personal owner, repository names, private visibility and plan constraints confirmed without sharing secrets.",
+      "acceptance": "Exact organization owner, repository names, public visibility and plan constraints confirmed without sharing secrets.",
       "status": "done",
       "blocked_by": [],
       "artifacts_present": [],
@@ -360,7 +360,7 @@
       ],
       "watch": [],
       "artifacts": [],
-      "acceptance": "Four exact private remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved.",
+      "acceptance": "Four exact public organization remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved.",
       "status": "done",
       "blocked_by": [],
       "artifacts_present": [],
@@ -556,9 +556,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-local-validation.json"
+        "ai-observability-lab/evidence/actions-pr-validation.json"
       ],
-      "note": "Four CI workflows and locks implemented; source tests pass; actual hosted builds/config checks and main-branch runs await PR publication",
+      "note": "All four PR CI pipelines passed; main-branch activation awaits explicit merge approval required by automatic review",
       "ready": true
     },
     {
@@ -594,10 +594,11 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-local-validation.json",
+        "ai-observability-lab/evidence/actions-pr-validation.json",
+        "ai-observability-lab/evidence/actions-provider-lock-review.json",
         "ai-observability-lab/evidence/actions-environment-protections.json"
       ],
-      "note": "Terraform validate, two mocked scope tests and 11 safety tests passed; protected environment setup verified; awaiting hosted CI and disabled-dispatch verification",
+      "note": "Guarded Terraform code and protected environments verified; strict Linux lock, validation and safety tests pass; main disabled-dispatch check follows merge approval",
       "ready": false
     },
     {

@@ -1,6 +1,6 @@
-# High-level design â€” current, target and remaining work
+# High-level design — current, target and remaining work
 
-Version: 0.5 organization migration authorized. Updated: 29 October 2026, Asia/Dubai. Execution: **organization and four transfers verified; shared Project setup in progress**.
+Version: 0.7 Actions preparation. Updated: 29 October 2026, Asia/Dubai. Execution: **organization/shared Project verified; four CI PRs validated; main activation awaits merge approval; Azure execution disabled**.
 
 ## Purpose
 
@@ -21,7 +21,7 @@ flowchart LR
   C -.->|End-to-end validation pending| J[Jaeger]
 ```
 
-Solid arrows describe the local service behavior exercised in the earlier 18-test run. Dashed arrows remain unproven as a complete running backend path. Existing in-memory trace assertions do not establish Jaeger ingestion. Collector and Jaeger binaries are present; local lifecycle coordination still needs work. The draft CI has an unresolved dependency-lock input. No live model, Azure or Managed deployment is present.
+Solid arrows describe the local service behavior exercised in the earlier 18-test run. Dashed arrows remain unproven as a complete running backend path. Existing in-memory trace assertions do not establish Jaeger ingestion. Collector and Jaeger binaries are present; local lifecycle coordination still needs work. The dependency-lock input is now supplied and all four CI definitions passed PR checks. Main-branch activation awaits explicit merge approval. No live model, Azure or Managed deployment is present.
 
 ## Proposed personal Azure target
 
@@ -84,7 +84,7 @@ The adapter cannot execute arbitrary queries, shell commands or Azure/Kubernetes
 | 0.5 | Organization created; all four public repositories transferred and local remotes updated | IDs/history/ownership verified; organization documentation pushed to all four repositories |
 | 0.6 | Shared Project #1 links all four repositories and mirrors 36 task issues through event-driven synchronization | Live task/link/view checks and 20 tracker/sync tests passed; source/cloud validation boundaries unchanged |
 
-**What we are going to do next:** P1.1, review the existing local drafts, dependencies and acceptance gaps before completing the local vertical slice and backend validation. Organization creation, all four repository transfers and shared Project task mapping are verified.
+**What we are going to do next:** merge the four validated Actions PRs after explicit approval, verify main CI and the disabled-cloud preflight, then resume P1.1 local review/backend proof and collect personal Azure decisions when needed. Organization, transfers and shared tracking are verified.
 
 **What remains:** backend ingestion/lifecycle evidence; repository/CI completion; personal targets and budget; costed Azure IaC/deployment; Managed entitlement and compatibility; status agent; SRE adapter/copilot; live-provider and comparison experiments; demo, rebuild and teardown.
 
@@ -139,3 +139,22 @@ Both infra environments, azure-lab-plan and azure-lab-apply, are verified main-o
 ### Actions step 3 — Terraform validation and review publication
 
 Terraform foundation validation passed with AzureRM 5.11.0, and both mocked invalid-scope/expiry tests passed. Eleven Python safety tests cover disabled execution, branch/repository restrictions, target/context checks, reviewed-plan binding and destructive/scope-expanded plan rejection. Windows provider communication required a retry outside the restricted execution sandbox; no Azure login or cloud plan was run. Cross-platform package locking is still being collected; signed registry archive checksums already exist in the lock. Workload and observability PRs are open and hosted CI is running. Publication checks excluded generated Python cache files before the infra push. Next: complete all four PR checks and capture main-branch results; Azure execution stays disabled.
+
+### Actions step 4 — all four PR pipelines validated
+
+All four implementation PRs passed hosted CI. Workloads passed 18 tests and built its container; observability passed Compose and the real Collector validator; lab passed 20 tracker/sync tests; infra passed 11 safety tests, strict backend-disabled Linux init/validate and two mocked Terraform scope tests. The Linux lock mismatch was fixed by generating its real package hash from an official archive verified against signed registry metadata; strict readonly checks remain enabled. No cloud authentication or provisioning ran. See evidence/actions-pr-validation.json and evidence/actions-provider-lock-review.json.
+
+The automatic approval review rejected merging workload PR 9 because explicit merge authorization was not present. All PRs remain open for one concrete approval; main CI activation and a live disabled-dispatch check follow that approval. Both protected infra environments are verified main-only with owner review and no administrator bypass. AZURE_DEPLOYMENT_ENABLED remains false. No Azure target values, roles or identities were added. Source and global Git configuration checks preserve GitLab access.
+
+```mermaid
+flowchart LR
+  PR[Four repository PRs] --> CI[Read-only CI: tests/build/config/Terraform]
+  CI --> R[Explicit merge approval]
+  R --> M[Main branch workflows]
+  M --> D[Manual dispatch and deployment-enabled guard]
+  D -.->|G2/G3 and bootstrap still pending| E[Protected plan/apply environments]
+  E --> O[Separate OIDC identities]
+  O --> S[Dedicated protected Blob state]
+  S --> P[Private Terraform plan and review fingerprint]
+  P --> A[Matching saved-plan apply: one resource group]
+```

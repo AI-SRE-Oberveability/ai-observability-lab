@@ -237,7 +237,7 @@
       "decision": "G1",
       "watch": [],
       "artifacts": [],
-      "acceptance": "Exact personal owner, repository names, private visibility and plan constraints confirmed without sharing secrets."
+      "acceptance": "Exact organization owner, repository names, public visibility and plan constraints confirmed without sharing secrets."
     },
     {
       "id": "P2.2",
@@ -253,7 +253,7 @@
       ],
       "watch": [],
       "artifacts": [],
-      "acceptance": "Four exact private remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved."
+      "acceptance": "Four exact public organization remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved."
     },
     {
       "id": "P2.3",
