@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-29",
+  "workload_fresh_environment_tests": {
+    "passed": 18,
+    "warnings": 1,
+    "warning": "Existing Starlette/httpx test-client deprecation"
+  },
+  "tracker_tests_passed": 20,
+  "deployment_safety_tests_passed": 11,
+  "workflow_actionlint": "all five passed; ShellCheck not available on Windows",
+  "observability_source_checks": "passed",
+  "terraform_provider_init": "passed, signed HashiCorp provider 5.11.0",
+  "terraform_cross_platform_lock_and_checks": "pending",
+  "hosted_ci": "pending",
+  "docker_local": "engine unavailable; build and Collector validator will run on GitHub",
+  "terraform_validation": "passed without backend/cloud authentication",
+  "terraform_mocked_guardrails": {
+    "passed": 2,
+    "failed": 0
+  },
+  "terraform_windows_plugin_note": "Initial restricted-sandbox plugin communication failed; rerun with local plugin communication permission passed",
+  "publication_source_review": "Generated Python caches excluded before infra publication; no cache files pushed"
+}

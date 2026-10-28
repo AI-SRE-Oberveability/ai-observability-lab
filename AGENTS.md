@@ -1,6 +1,6 @@
 # Lab working agreement
 
-Read POC_PLAN.md, HLD.md, POC_TRACKER.md and docs/engineering-standards.md before work. The user approved the plan and source publication. Current owner is organization AI-SRE-Oberveability; personal administrator javedkumail is its verified active owner. All four public repositories were transferred with IDs/history preserved. Shared Project #1 is verified with 36 task issues, all four repository links, and board/table views.
+Read POC_PLAN.md, HLD.md, POC_TRACKER.md and docs/engineering-standards.md before work. The user approved the plan and source publication. Current owner is organization AI-SRE-Oberveability; personal administrator javedkumail is its verified active owner. All four public repositories were transferred with IDs/history preserved. Shared Project #1 is verified with 38 task issues, all four repository links, and board/table views.
 
 Update HLD and the tracker after each work step with actual evidence. Every progress update states current HLD, what changed, next action and remaining work. Distinguish draft files, local tests, backend ingestion, CI execution and cloud deployment.
 

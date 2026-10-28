@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-29T00:40:42+04:00",
+  "updated_at": "2026-10-29T00:53:33+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 9,
     "draft": 8,
-    "planned": 17,
-    "in_progress": 1,
+    "planned": 16,
+    "in_progress": 2,
     "waiting_for_decision": 3
   },
   "tasks": [
@@ -49,7 +49,8 @@
         "ai-observability-lab/POC_PLAN.md",
         "ai-observability-lab/HLD.md",
         "ai-observability-lab/docs/engineering-standards.md",
-        "ai-observability-lab/docs/repository-layout.md"
+        "ai-observability-lab/docs/repository-layout.md",
+        "ai-observability-lab/docs/actions-delivery-plan.md"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -64,9 +65,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-plan-review.json"
+        "ai-observability-lab/evidence/actions-local-validation.json",
+        "ai-observability-lab/evidence/actions-environment-protections.json"
       ],
-      "note": "Actions implementation plan documented before code; CI and guarded Terraform preparation are separate from cloud delivery",
+      "note": "HLD now records successful Terraform validation/mock tests and protected environment verification; source review excludes generated caches",
       "ready": false
     },
     {
@@ -101,10 +103,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-plan-review.json",
-        "ai-observability-lab/evidence/project-sync-validation.json"
+        "ai-observability-lab/evidence/actions-local-validation.json"
       ],
-      "note": "38-task dependency model validates; new CI and guarded-delivery tasks preserve existing target/spending gates; tracker code unchanged",
+      "note": "Tracker CI input watches updated and task model reviewed; 20 tracker tests remain passing",
       "ready": false
     },
     {
@@ -404,12 +405,11 @@
         "P1.6"
       ],
       "artifacts_present": [
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-agent-workloads/requirements-dev.lock.txt",
         "ai-agent-workloads/.github/workflow-drafts/ci.yaml"
       ],
-      "artifacts_missing": [
-        "ai-agent-workloads/.github/workflows/ci.yaml",
-        "ai-agent-workloads/requirements-dev.lock.txt"
-      ],
+      "artifacts_missing": [],
       "evidence": [],
       "note": "",
       "ready": false
@@ -530,7 +530,14 @@
         "ai-observability-infra/.github/workflows/ci.yaml",
         "ai-agent-workloads/.github/workflows/ci.yaml",
         "ai-observability-config/.github/workflows/ci.yaml",
-        "ai-observability-lab/.github/workflows/ci.yaml"
+        "ai-observability-lab/.github/workflows/ci.yaml",
+        "ai-agent-workloads/requirements-dev.lock.txt",
+        "ai-agent-workloads/requirements.lock.txt",
+        "ai-agent-workloads/Dockerfile",
+        "ai-observability-config/requirements-ci.txt",
+        "ai-observability-config/scripts",
+        "ai-observability-lab/requirements-ci.txt",
+        "ai-observability-infra/requirements-ci.txt"
       ],
       "artifacts": [
         "ai-observability-infra/.github/workflows/ci.yaml",
@@ -541,17 +548,17 @@
       "acceptance": "All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.",
       "status": "in_progress",
       "blocked_by": [],
-      "artifacts_present": [],
-      "artifacts_missing": [
+      "artifacts_present": [
         "ai-observability-infra/.github/workflows/ci.yaml",
         "ai-agent-workloads/.github/workflows/ci.yaml",
         "ai-observability-config/.github/workflows/ci.yaml",
         "ai-observability-lab/.github/workflows/ci.yaml"
       ],
+      "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/actions-plan-review.json"
+        "ai-observability-lab/evidence/actions-local-validation.json"
       ],
-      "note": "Step 1 complete: plan and HLD recorded; implementing four independent CI workflows before protected Terraform delivery",
+      "note": "Four CI workflows and locks implemented; source tests pass; actual hosted builds/config checks and main-branch runs await PR publication",
       "ready": true
     },
     {
@@ -577,17 +584,20 @@
         "ai-observability-infra/foundation/.terraform.lock.hcl"
       ],
       "acceptance": "Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.",
-      "status": "planned",
+      "status": "in_progress",
       "blocked_by": [
         "P2.8"
       ],
-      "artifacts_present": [],
-      "artifacts_missing": [
+      "artifacts_present": [
         "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
         "ai-observability-infra/foundation/.terraform.lock.hcl"
       ],
-      "evidence": [],
-      "note": "",
+      "artifacts_missing": [],
+      "evidence": [
+        "ai-observability-lab/evidence/actions-local-validation.json",
+        "ai-observability-lab/evidence/actions-environment-protections.json"
+      ],
+      "note": "Terraform validate, two mocked scope tests and 11 safety tests passed; protected environment setup verified; awaiting hosted CI and disabled-dispatch verification",
       "ready": false
     },
     {

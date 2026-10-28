@@ -31,41 +31,42 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "Actions implementation plan documented before code; CI and guarded Terraform preparation are separate from cloud delivery",
-      "at": "2026-10-29T00:40:41+04:00",
+      "note": "HLD now records successful Terraform validation/mock tests and protected environment verification; source review excludes generated caches",
+      "at": "2026-10-29T00:53:33+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-plan-review.json"
+        "ai-observability-lab/evidence/actions-local-validation.json",
+        "ai-observability-lab/evidence/actions-environment-protections.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "85d96c1809a921b8eea004787bcf9df2b9cac0f1f25c81e9194bb8a87f5e8f24",
-        "ai-observability-lab/HLD.md": "46e178d025702aedd719d127d12226249b7d5e761536fc53bf0618ff4b75b843",
+        "ai-observability-lab/HLD.md": "c601af28ef89bed8cb0ed65efe73566ae374def93db45bbd52d3a5fd2760c374",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
-        "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99"
+        "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
+        "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-plan-review.json": "f33d13f6d2e850b96ab5a9346bb327f0c052855735cb067a025080c32e20a420"
+        "ai-observability-lab/evidence/actions-local-validation.json": "0e4aa515bc821c1e5527846aac741f2979039d49cd04fb8f91b80b6fff0fa9c2",
+        "ai-observability-lab/evidence/actions-environment-protections.json": "5a1cb41ecea7b4410ecdded104838e998109ac941d55e1e9add3cba1793afdd7"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "38-task dependency model validates; new CI and guarded-delivery tasks preserve existing target/spending gates; tracker code unchanged",
-      "at": "2026-10-29T00:40:42+04:00",
+      "note": "Tracker CI input watches updated and task model reviewed; 20 tracker tests remain passing",
+      "at": "2026-10-29T00:53:33+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-plan-review.json",
-        "ai-observability-lab/evidence/project-sync-validation.json"
+        "ai-observability-lab/evidence/actions-local-validation.json"
       ],
       "source_hashes": {
         "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "d90172200e995ba3862e1a13aea099a8d581895d09b6071b6e4404afc6d5e34d",
+        "ai-observability-lab/tracking/plan.json": "d33a40df5cdd122b8b61d50ca261342cd98ff6ce8d58a4becdd74ce6c1efbdd8",
         "ai-observability-lab/TRACKER_GUIDE.md": "7daeba4e8ed99175b356d123228e6f0aa38cf3a2e2c72276836fbeede50c36ee",
-        "ai-observability-lab/AGENTS.md": "2b627b7118df5323b003f8e53fb69839d14196edd02c80cd94ff0dd480d73178",
+        "ai-observability-lab/AGENTS.md": "5badfa1b1a0c684b9d989a446b7c3962f06802a770c06bfdda6d437a9d55289e",
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-plan-review.json": "f33d13f6d2e850b96ab5a9346bb327f0c052855735cb067a025080c32e20a420",
-        "ai-observability-lab/evidence/project-sync-validation.json": "accdfee37131b2a7d35dc5e5fd9619dce8ef0eeea6f801c818994e1c722996ff"
+        "ai-observability-lab/evidence/actions-local-validation.json": "0e4aa515bc821c1e5527846aac741f2979039d49cd04fb8f91b80b6fff0fa9c2"
       }
     },
     "P2.2": {
@@ -122,14 +123,46 @@
     },
     "P2.8": {
       "status": "in_progress",
-      "note": "Step 1 complete: plan and HLD recorded; implementing four independent CI workflows before protected Terraform delivery",
-      "at": "2026-10-29T00:40:42+04:00",
+      "note": "Four CI workflows and locks implemented; source tests pass; actual hosted builds/config checks and main-branch runs await PR publication",
+      "at": "2026-10-29T00:49:38+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/actions-plan-review.json"
+        "ai-observability-lab/evidence/actions-local-validation.json"
       ],
-      "source_hashes": {},
+      "source_hashes": {
+        "ai-observability-infra/.github/workflows/ci.yaml": "97f6440a93c0663c8c3036ea424c58a3622f853d43b8007d31360f810231e9d5",
+        "ai-agent-workloads/.github/workflows/ci.yaml": "1de7517532a5301b37e33f74c6dbb6c605488f831c8b3c226f243a03079a913a",
+        "ai-observability-config/.github/workflows/ci.yaml": "a07e94e891ca80b6faea65cab6817c57e81326d70d9d10e38c05ca7f93c33eea",
+        "ai-observability-lab/.github/workflows/ci.yaml": "f0405a7f73e6ce7c13e65fc645cb9d41c16bb47800867a5d6dbecafe54df70d8"
+      },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/actions-plan-review.json": "f33d13f6d2e850b96ab5a9346bb327f0c052855735cb067a025080c32e20a420"
+        "ai-observability-lab/evidence/actions-local-validation.json": "8e56ca24bb8f6f2b20ea1333db519b05002206be11641c260926ff5862ea40cd"
+      }
+    },
+    "P2.9": {
+      "status": "in_progress",
+      "note": "Terraform validate, two mocked scope tests and 11 safety tests passed; protected environment setup verified; awaiting hosted CI and disabled-dispatch verification",
+      "at": "2026-10-29T00:52:45+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/actions-local-validation.json",
+        "ai-observability-lab/evidence/actions-environment-protections.json"
+      ],
+      "source_hashes": {
+        "ai-observability-infra/.github/workflows/ci.yaml": "97f6440a93c0663c8c3036ea424c58a3622f853d43b8007d31360f810231e9d5",
+        "ai-observability-infra/.github/workflows/terraform-deploy.yaml": "d0aa6cf04c4ec416e254b2558388bb42b3b2a32e219ab707d3901501f8855d0a",
+        "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/LICENSE.txt": "4e2bb185ebd706f76329206869ccb348b92b6236100cfb07775fe31530dab0d5",
+        "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/terraform-provider-azurerm_v5.11.0_x5.exe": "13af584640b372255c6fa3913505df5b4b7a1beb2081fd7d0e8c562533e1a950",
+        "ai-observability-infra/foundation/.terraform.lock.hcl": "cf44a2badceb3c6e719446fe81dba98af7afebd7175a5be65ef5b974a859995c",
+        "ai-observability-infra/foundation/main.tf": "9284f699d625d55da0e2b79360d4712c68f3c74c21c94ce1299f9a35fecb0f4d",
+        "ai-observability-infra/foundation/tests/guardrails.tftest.hcl": "c76ebb913a42bc9a4d9735b57324eaf8c96467ef3290cd24f088851575783382",
+        "ai-observability-infra/foundation/variables.tf": "33943bc7fc9dfe9690ee8ca2fc7a3eea089d2e983cb67b869bc3a71bdfd4ff2d",
+        "ai-observability-infra/foundation/versions.tf": "de5c650badbc8a46697c56c85d9f9f747d943179f3735e51ba3c89e721fa3738",
+        "ai-observability-infra/scripts/deployment_guard.py": "0d29e66646d1f27756976223c96d0b2f8948a7e1e321bec30e3e22baa39df8f3",
+        "ai-observability-infra/scripts/plan_review.py": "d37673417e012c7eaeb5c3456df3cc431028063420d3bff9ab71f99a36a95301",
+        "ai-observability-infra/tests/test_deployment.py": "7104098f5860d85c51afcf210ca08188e51cbd0b734cbb47a1daa415caac1647"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/actions-local-validation.json": "8e56ca24bb8f6f2b20ea1333db519b05002206be11641c260926ff5862ea40cd",
+        "ai-observability-lab/evidence/actions-environment-protections.json": "5a1cb41ecea7b4410ecdded104838e998109ac941d55e1e9add3cba1793afdd7"
       }
     }
   },
@@ -151,7 +184,7 @@
   "hld": {
     "current": "Organization and shared tracking verified; four CI workflows and protected Terraform delivery are now authorized and being prepared. Cloud execution remains disabled pending personal targets and budget.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P2.8: Step 1 complete: plan and HLD recorded; implementing four independent CI workflows before protected Terraform delivery"
+    "last_change": "P0.3: Tracker CI input watches updated and task model reviewed; 20 tracker tests remain passing"
   },
   "repository_verification": {
     "date": "2026-10-28",

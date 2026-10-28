@@ -9,3 +9,5 @@ Read [POC_PLAN.md](POC_PLAN.md), [HLD.md](HLD.md), [POC_TRACKER.md](POC_TRACKER.
 [Shared GitHub Project](https://github.com/orgs/AI-SRE-Oberveability/projects/1): 36 task issues across all four repositories, with Delivery board and All tasks views. The Project is private to authorized organization members; repository source remains public. After each recorded work step, run `python scripts/sync_github_project.py --apply` to mirror evidence status and managed issue content. See TRACKER_GUIDE.md for authentication and recovery.
 
 The local coordinator expects sibling clones under one parent directory. `compose.yaml` demonstrates that relative layout; the later release manifest will pin each repository to tested commits/releases. These are separate repositories, not submodules or a Git repository containing nested repositories.
+
+CI in .github/workflows/ci.yaml runs tracker/Project-sync tests and lint from an independent checkout. It uses synthetic fixtures and does not synchronize the Project or contact Azure. See [Actions delivery plan](docs/actions-delivery-plan.md) for the current CI/Terraform implementation scope.

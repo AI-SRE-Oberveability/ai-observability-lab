@@ -1054,7 +1054,7 @@
       "issue_node_id": "I_kwDOVa7zqM8AAAABatHYOw",
       "issue_url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/issues/10",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETkCM",
-      "evidence_status": "planned",
+      "evidence_status": "in_progress",
       "values": {
         "Task ID": {
           "text": "P2.9"
@@ -1063,7 +1063,7 @@
           "singleSelectOptionId": "2dfbe738"
         },
         "Evidence status": {
-          "text": "planned"
+          "text": "in_progress"
         },
         "Dependencies": {
           "text": "P2.8"
@@ -1072,14 +1072,14 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "47fc9ee4"
         }
       }
     }
   },
   "project_number": 1,
   "visibility": "private",
-  "verified_at": "2026-10-29T00:41:07+04:00",
+  "verified_at": "2026-10-29T00:53:42+04:00",
   "views": [
     {
       "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",

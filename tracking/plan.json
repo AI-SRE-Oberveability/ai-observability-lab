@@ -49,7 +49,8 @@
         "ai-observability-lab/POC_PLAN.md",
         "ai-observability-lab/HLD.md",
         "ai-observability-lab/docs/engineering-standards.md",
-        "ai-observability-lab/docs/repository-layout.md"
+        "ai-observability-lab/docs/repository-layout.md",
+        "ai-observability-lab/docs/actions-delivery-plan.md"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -362,7 +363,14 @@
         "ai-observability-infra/.github/workflows/ci.yaml",
         "ai-agent-workloads/.github/workflows/ci.yaml",
         "ai-observability-config/.github/workflows/ci.yaml",
-        "ai-observability-lab/.github/workflows/ci.yaml"
+        "ai-observability-lab/.github/workflows/ci.yaml",
+        "ai-agent-workloads/requirements-dev.lock.txt",
+        "ai-agent-workloads/requirements.lock.txt",
+        "ai-agent-workloads/Dockerfile",
+        "ai-observability-config/requirements-ci.txt",
+        "ai-observability-config/scripts",
+        "ai-observability-lab/requirements-ci.txt",
+        "ai-observability-infra/requirements-ci.txt"
       ],
       "artifacts": [
         "ai-observability-infra/.github/workflows/ci.yaml",
