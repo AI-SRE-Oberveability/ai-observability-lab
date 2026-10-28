@@ -347,6 +347,56 @@
       "acceptance": "One organization Project links the four repositories, contains the current task set with accurate statuses/dependencies, and has a documented after-step synchronization path."
     },
     {
+      "id": "P2.8",
+      "title": "Activate independent CI in all four repositories",
+      "owner": "Codex",
+      "repo": "lab/all four",
+      "depends_on": [
+        "P2.7"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-infra/.github/workflows/ci.yaml",
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-observability-config/.github/workflows/ci.yaml",
+        "ai-observability-lab/.github/workflows/ci.yaml"
+      ],
+      "artifacts": [
+        "ai-observability-infra/.github/workflows/ci.yaml",
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-observability-config/.github/workflows/ci.yaml",
+        "ai-observability-lab/.github/workflows/ci.yaml"
+      ],
+      "acceptance": "All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance."
+    },
+    {
+      "id": "P2.9",
+      "title": "Configure guarded Terraform plan and deployment workflows",
+      "owner": "Codex",
+      "repo": "infra",
+      "depends_on": [
+        "P2.8"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-infra/.github/workflows",
+        "ai-observability-infra/foundation",
+        "ai-observability-infra/scripts",
+        "ai-observability-infra/tests"
+      ],
+      "artifacts": [
+        "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
+        "ai-observability-infra/foundation/.terraform.lock.hcl"
+      ],
+      "acceptance": "Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3."
+    },
+    {
       "id": "P3.1",
       "title": "Confirm personal Azure targets, region and budget",
       "owner": "User",

@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-29T00:40:40+04:00",
+  "scope": "four-repository CI and guarded Terraform workflow preparation",
+  "user_authorization": "Go ahead and configure GitHub Actions for all four repos, starting with CI and Terraform deployment workflows. Create a plan first.",
+  "tasks": 38,
+  "task_model_valid": true,
+  "azure_gates": "G2/G3 remain pending",
+  "gitlab_credential_changes": false
+}

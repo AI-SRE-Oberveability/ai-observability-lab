@@ -1,10 +1,11 @@
 {
-  "updated_at": "2026-10-29T00:28:25+04:00",
+  "updated_at": "2026-10-29T00:40:42+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 9,
     "draft": 8,
-    "planned": 16,
+    "planned": 17,
+    "in_progress": 1,
     "waiting_for_decision": 3
   },
   "tasks": [
@@ -63,9 +64,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/shared-project-completion.json"
+        "ai-observability-lab/evidence/actions-plan-review.json"
       ],
-      "note": "Final HLD matches verified organization and shared Project; next P1.1; backend, CI and Azure remain unverified",
+      "note": "Actions implementation plan documented before code; CI and guarded Terraform preparation are separate from cloud delivery",
       "ready": false
     },
     {
@@ -100,9 +101,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
+        "ai-observability-lab/evidence/actions-plan-review.json",
         "ai-observability-lab/evidence/project-sync-validation.json"
       ],
-      "note": "20 tracker/sync tests passed plus lint/format; bounded atomic-save retries, metadata fields and concurrent issue states validated",
+      "note": "38-task dependency model validates; new CI and guarded-delivery tasks preserve existing target/spending gates; tracker code unchanged",
       "ready": false
     },
     {
@@ -510,6 +512,82 @@
         "ai-observability-lab/evidence/shared-project-completion.json"
       ],
       "note": "Shared Project verified: 36 unique tasks across four linked repositories, board/table views, 9 Done and 27 Todo; final sync and publication receipts retained",
+      "ready": false
+    },
+    {
+      "id": "P2.8",
+      "title": "Activate independent CI in all four repositories",
+      "owner": "Codex",
+      "repo": "lab/all four",
+      "depends_on": [
+        "P2.7"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-infra/.github/workflows/ci.yaml",
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-observability-config/.github/workflows/ci.yaml",
+        "ai-observability-lab/.github/workflows/ci.yaml"
+      ],
+      "artifacts": [
+        "ai-observability-infra/.github/workflows/ci.yaml",
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-observability-config/.github/workflows/ci.yaml",
+        "ai-observability-lab/.github/workflows/ci.yaml"
+      ],
+      "acceptance": "All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.",
+      "status": "in_progress",
+      "blocked_by": [],
+      "artifacts_present": [],
+      "artifacts_missing": [
+        "ai-observability-infra/.github/workflows/ci.yaml",
+        "ai-agent-workloads/.github/workflows/ci.yaml",
+        "ai-observability-config/.github/workflows/ci.yaml",
+        "ai-observability-lab/.github/workflows/ci.yaml"
+      ],
+      "evidence": [
+        "ai-observability-lab/evidence/actions-plan-review.json"
+      ],
+      "note": "Step 1 complete: plan and HLD recorded; implementing four independent CI workflows before protected Terraform delivery",
+      "ready": true
+    },
+    {
+      "id": "P2.9",
+      "title": "Configure guarded Terraform plan and deployment workflows",
+      "owner": "Codex",
+      "repo": "infra",
+      "depends_on": [
+        "P2.8"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-infra/.github/workflows",
+        "ai-observability-infra/foundation",
+        "ai-observability-infra/scripts",
+        "ai-observability-infra/tests"
+      ],
+      "artifacts": [
+        "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
+        "ai-observability-infra/foundation/.terraform.lock.hcl"
+      ],
+      "acceptance": "Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.",
+      "status": "planned",
+      "blocked_by": [
+        "P2.8"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [
+        "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
+        "ai-observability-infra/foundation/.terraform.lock.hcl"
+      ],
+      "evidence": [],
+      "note": "",
       "ready": false
     },
     {
