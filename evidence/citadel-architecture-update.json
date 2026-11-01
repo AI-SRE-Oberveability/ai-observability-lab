@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Dubai",
+  "status": "selected_design_not_implemented",
+  "user_selected": [
+    "Citadel/APIM governance in target",
+    "Terraform and AKS",
+    "Retain labelled baseline",
+    "Add draw.io with official Azure icons"
+  ],
+  "figjam_url": "https://www.figma.com/board/JxOlJjtrEmIFrhRU8ltID0",
+  "current_sections": [
+    "14:334",
+    "15:414",
+    "16:493"
+  ],
+  "figma_export_limit": "Starter MCP quota reached after board updates. Telemetry PNG precedes final boundary-caption addition; flow unchanged. Draw.io/SVG/PNG companion independently available.",
+  "tracker_tests_passed": 20,
+  "task_count": 41,
+  "accepted_count": 11,
+  "new_planned_tasks": [
+    "P3.7",
+    "P5.5",
+    "P6.6"
+  ],
+  "pending_gates": [
+    "G2",
+    "G3",
+    "G4",
+    "G5"
+  ],
+  "azure_deployment_enabled": false,
+  "azure_operations_performed": false,
+  "gitlab_credential_changes": false,
+  "checks": [
+    "Official icon hashes unchanged",
+    "Editable draw.io has 47 cells, 15 connected edges and 6 embedded official icons",
+    "Task DAG acyclic with all dependencies present",
+    "Current PNGs decoded; official-icon preview visually reviewed",
+    "No raw prompt/body logging designed; runtime validation remains pending"
+  ],
+  "source_sha256": {
+    "HLD.md": "19e77e672a4210e852fa99846cc5b44f283d5e2a9fc83b2b767576853e76e347",
+    "POC_PLAN.md": "6904585458fb90275451586bc9d2caaa1aebe8ecf66d0211904e1d4a8e2f0b5d",
+    "docs/architecture.md": "e0c4ab25a2da99ae730ac0bff6fea9de4f584f34ef7438fd5d60a6161cd924f5",
+    "docs/architecture/azure-governance.drawio": "404f4e5a4b183bab3f127ed416e6419d9754f5d8c7b88f927cb702ed6c255c47",
+    "docs/architecture/azure-governance.png": "a35c856999397fdb499c36a949ea040cfdd95c39c132d8edcd68cb331b7f7247",
+    "docs/architecture/azure-governance.svg": "ebaa0d6a56a8e6fe68235f486b9e7ba0586bef2a29eb40c515bd7b354aefdfb6",
+    "docs/architecture/citadel-governance-review.md": "4e7e1dbcb2dda8ec35b2375a5c764447cdf0a70183e084ee41b393c848f02bd5",
+    "docs/architecture/delivery.mmd": "026a920cd59adef6598e4958938eda6923192762ea9d6f431039b500cfd85b7e",
+    "docs/architecture/delivery.png": "0b2250b5d5b8891bfeb11ccdd578a5c6c01709f4f3b71f235ca57bfac7da4755",
+    "docs/architecture/drawio-README.md": "235525d1e39a3bdb51c1d88b392e5bdfcdd05b17288992f635108f4b6b40dacf",
+    "docs/architecture/governance-plan.md": "be5998ca6dfecede99e845332e92c0bc13d31efed2451dda7eb06731c0e91432",
+    "docs/architecture/README.md": "fb348c60ee57ef3fe5f6e314a6eb3e95b98c97bf7d5419df80d9ebead217aa37",
+    "docs/architecture/runtime.mmd": "f8c1300ad41f5cbf4e7539f4d70e7d7cc50fbf725ae6998697a7f2cf15106208",
+    "docs/architecture/runtime.png": "8a92547094e943b54a9d1abd25ca37ad490db887c3051b596df36b4d8425fe60",
+    "docs/architecture/telemetry.mmd": "1c17f6fcc0fd478a0e34d365286e26d9f2c5873733462bedcac6afec87a800a7",
+    "docs/architecture/telemetry.png": "f2894a83d44e9acf05dea4ee5abe712628bd589bfb9950ed43308e6a1f3c79aa",
+    "docs/architecture/baseline-2026-10-29/delivery.mmd": "e1bb0b6535eb9fe96e792041838c597fd5b424ce776a49b0c2ae971f5533abed",
+    "docs/architecture/baseline-2026-10-29/delivery.svg": "9ea536d9f5395a4ea50013b45b16c23cc83e65464d7cb8c28a8aabd4974b860d",
+    "docs/architecture/baseline-2026-10-29/README.md": "521b3f3f8f477e4f01c5bd66e8125811b07118c4232fecf140699404815ce25b",
+    "docs/architecture/baseline-2026-10-29/runtime.mmd": "5f28a548bb8a6ab05aaa01228eeeed1582d374efd400e5450b11e6418f316d4b",
+    "docs/architecture/baseline-2026-10-29/runtime.png": "f8a29f07eb074fd335786b91b70185939a1fc069c2f4e9b2967c3e7054bf948c",
+    "docs/architecture/baseline-2026-10-29/telemetry.mmd": "43b660ddcccfa526c306a082533b79d9638ed2d7d8de67727dc1be089cb53a19",
+    "docs/architecture/baseline-2026-10-29/telemetry.png": "96a2ad55cd2edeb0edeadc64a89b35a40dc96c4338ea913bba34e0e33471216f",
+    "docs/architecture/assets/azure/acr.svg": "c134b0a442f203a7eeeb6f99a1f02ed34e51373d7fca59f96c9f125874c9d7d4",
+    "docs/architecture/assets/azure/aks.svg": "81954a481503057498d543a51863b2eb4673284e109662cdc421051d11dba25c",
+    "docs/architecture/assets/azure/apim.svg": "cf794288575f2f7b080c50aa8319d42b02a2f2ae5351e4712c574353fc801f9a",
+    "docs/architecture/assets/azure/foundry-models.svg": "9c671f141cb0e19b62e004628183ed8711ad16ec3b2e56b14c3cd035d5fac711",
+    "docs/architecture/assets/azure/key-vault.svg": "712b426f54f0fc50d0816dc79df709daa7ac5f93ccaf4e9b3527f627f6e9ad97",
+    "docs/architecture/assets/azure/monitor.svg": "1396f59a7d8fd7505a423842b987c9b343a092263d1ab5c7b0d94d58d8b17448",
+    "docs/architecture/assets/azure/NOTICE.md": "d5a60f43ea4345d501beaa95f34c7fcfedb165fb534a0c4668640e875de4ae6f",
+    "docs/architecture/assets/azure/provenance.json": "353e29ecdb47d8ce7ffb7b1439937ba36f8aa5f7fe8f7126c71a3492abc42e16"
+  }
+}

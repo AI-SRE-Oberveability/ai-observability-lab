@@ -1,4 +1,4 @@
-# Personal Azure AI Agents and Observability POC — delivery plan
+# Personal Azure AI Agents and Observability POC â€” delivery plan
 
 Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial reviewed source published**.
 
@@ -27,13 +27,13 @@ Effort ranges below are planning estimates in focused working days, **not calend
 
 | Phase | Deliverable | Depends on | Indicative effort | Exit decision |
 | --- | --- | --- | --- | --- |
-| P0 — Agree the plan | Scope, HLD, tracker, decisions and current-state inventory | Current workspace | 0.5–1 day | User accepts scope and sequence |
-| P1 — Prove the local slice | Repeatable policy assistant, real HTTP tool, mock model and Collector/Jaeger evidence | P0 acceptance | 2–3 days | Local demo and data-capture checks pass |
-| P2 — Establish GitHub delivery | Four verified repositories, reproducible CI/builds and pinned release manifest | Repository setup can follow P0 alongside P1; CI/release completion needs P1 | 1–2 days | Clean checkout builds/tests; ownership clear |
-| P3 — Plan and deploy personal Azure | Costed IaC, bootstrap, OIDC and scoped AKS delivery | P2; exact personal targets, region and budget | 2–4 days | Authorized scope deploys and tears down reproducibly |
-| P4 — Validate Managed compatibility | Licensed/supported Managed backend and compatible agent/OTel configuration | P3; entitlement, approved sizing/version | 2–4 days plus vendor lead time | Signal-by-signal evidence and compatibility matrix |
-| P5 — Add investigation use cases | Bounded status agent and read-only evidence-citing SRE copilot | P1/P2 baseline; selected backend validated | 2–4 days | Fault bounds, evidence references and read-only policy pass |
-| P6 — Run experiments and hand over | Acceptance report, demo, rebuilt lab and verified lifecycle | P3–P5 | 2–3 days | Findings, limitations, cost basis and cleanup accepted |
+| P0 â€” Agree the plan | Scope, HLD, tracker, decisions and current-state inventory | Current workspace | 0.5â€“1 day | User accepts scope and sequence |
+| P1 â€” Prove the local slice | Repeatable policy assistant, real HTTP tool, mock model and Collector/Jaeger evidence | P0 acceptance | 2â€“3 days | Local demo and data-capture checks pass |
+| P2 â€” Establish GitHub delivery | Four verified repositories, reproducible CI/builds and pinned release manifest | Repository setup can follow P0 alongside P1; CI/release completion needs P1 | 1â€“2 days | Clean checkout builds/tests; ownership clear |
+| P3 â€” Plan and deploy personal Azure | Costed IaC, bootstrap, OIDC and scoped AKS delivery | P2; exact personal targets, region and budget | 2â€“4 days | Authorized scope deploys and tears down reproducibly |
+| P4 â€” Validate Managed compatibility | Licensed/supported Managed backend and compatible agent/OTel configuration | P3; entitlement, approved sizing/version | 2â€“4 days plus vendor lead time | Signal-by-signal evidence and compatibility matrix |
+| P5 â€” Add investigation use cases | Bounded status agent and read-only evidence-citing SRE copilot | P1/P2 baseline; selected backend validated | 2â€“4 days | Fault bounds, evidence references and read-only policy pass |
+| P6 â€” Run experiments and hand over | Acceptance report, demo, rebuilt lab and verified lifecycle | P3â€“P5 | 2â€“3 days | Findings, limitations, cost basis and cleanup accepted |
 
 P5 design and synthetic fixtures can be prepared locally before Managed access arrives **after plan acceptance**. A vendor delay must not cause SaaS to silently replace Managed. Optional SaaS comparison is a separately chosen side experiment after P1, with its own entitlement, expiry and result labels.
 
@@ -41,14 +41,14 @@ P5 design and synthetic fixtures can be prepared locally before Managed access a
 
 The task IDs below match the tracker. Each task has an owner, dependencies, artifacts and acceptance criteria in `tracking/plan.json`. Codex handles engineering work after authorization. The user supplies account decisions, budget and entitlement; secure credential entry stays in supported authentication/secret mechanisms.
 
-### P0 — Establish the agreed baseline
+### P0 â€” Establish the agreed baseline
 
 1. **P0.1 Inventory:** preserve existing work, list drafts, known validations and unverified claims.
 2. **P0.2 Plan and HLD:** record system boundaries, repository ownership, deployment profiles, decision gates and remaining work.
 3. **P0.3 Tracker:** implement event-driven updates after each work step, including evidence, blockers and changed-source detection.
 4. **P0.4 Review:** obtain explicit acceptance or requested changes. Until then, stop at planning and tracker maintenance.
 
-### P1 — Prove one local vertical slice
+### P1 â€” Prove one local vertical slice
 
 1. **P1.1 Review drafts:** inspect the existing contracts/services, select supported dependency versions and list corrections. Resolve the test-client deprecation and incomplete CI input when appropriate.
 2. **P1.2 Contract:** agree authentication, `/v1/ask`, typed outcomes, tool schema and bounded errors before further code changes.
@@ -59,7 +59,7 @@ The task IDs below match the tracker. Each task has an owner, dependencies, arti
 
 P1 exit: a fresh local setup reproduces a cited answer and a bounded failure; traces reach the backend; known capture-policy tests pass. No claim of real LLM usage, OneAgent enrichment or Managed parity is made from this stage.
 
-### P2 — Create the repository and CI foundation
+### P2 â€” Create the repository and CI foundation
 
 1. **P2.1 Targets:** record owner `javedkumail`, the four actual public destinations and account/plan constraints.
 2. **P2.2 Repositories:** the user has created four empty public repositories. Inspect their current contents, review source for publication, initialize each local source folder independently and push reviewed source/drafts, keeping their validation status explicit. Preserve GitLab credentials; keep the parent workspace and original handoff outside automatic publication. This source-storage step can run alongside P1; it does not require a finished POC.
@@ -68,18 +68,19 @@ P1 exit: a fresh local setup reproduces a cited answer and a bounded failure; tr
 
 P2 exit: a clean checkout/release manifest reproduces the local demo and CI evidence. GitHub Actions execution is evidenced separately from local execution.
 
-### P3 — Personal Azure design, cost and deployment
+### P3 â€” Personal Azure design, cost and deployment
 
 1. **P3.1 Targets:** confirm exact personal tenant/subscription, region, monthly budget/currency, model requirement and quota. Match the authenticated identity to those supplied values.
-2. **P3.2 Costed HLD:** choose AKS/networking, registry, secret delivery, retention and runner connectivity. Estimate active/idle cost by component, including optional Managed infrastructure separately.
+2. **P3.2 Costed HLD:** choose AKS/APIM/networking, registry, three identity boundaries, secret delivery, retention and runner connectivity. Estimate active/idle cost by component, including optional Managed infrastructure separately.
 3. **P3.3 IaC/bootstrap:** use the user-selected Terraform stack: modules, provider locks, formatting/validation/lint/security checks, protected remote state/bootstrap ownership, scoped OIDC/RBAC, tags and bounded resource groups. Verify the actual GitHub OIDC subject and runner reachability.
-4. **P3.4 Plan review:** present concrete Terraform changes, cost assumptions and lifecycle scope for authorization before spending.
-5. **P3.5 Deploy/validate:** provision only authorized scope through GitHub Actions; deploy pinned monitoring/application releases and save smoke/telemetry evidence.
-6. **P3.6 Lifecycle:** prove supported start/stop and scoped destroy/recreate behavior. Inventory charges that remain while compute is stopped.
+4. **P3.7 Governance IaC:** prepare the APIM module, backend/access inventory, identity/network/diagnostic configuration and versioned policies before combined plan review. Validate provider coverage and offline contracts; do not deploy.
+5. **P3.4 Plan review:** present concrete Terraform changes including gateway policies, cost assumptions and lifecycle scope for authorization before spending.
+6. **P3.5 Deploy/validate:** provision only authorized scope through GitHub Actions; deploy pinned monitoring/application releases and save smoke/telemetry evidence.
+7. **P3.6 Lifecycle:** prove supported start/stop and scoped destroy/recreate behavior. Inventory charges that remain while compute is stopped.
 
 P3 exit: cloud mocked evidence is reproducible from code and workflows. A live Azure model test is a separately recorded cohort with actual available token usage and a dated pricing basis. Missing usage remains unknown.
 
-### P4 — Managed compatibility
+### P4 â€” Managed compatibility
 
 1. **P4.1 Prerequisites:** confirm installation/licence entitlement, cluster version, OS/node/disk/IOPS sizing, compatible OneAgent/ActiveGate/Operator, DNS/TLS/networking, retention, backup/upgrade method and cost envelope.
 2. **P4.2 Backend:** after the gate is satisfied, provision dedicated supported hosts and automate supported installation/configuration. Installing an Operator on AKS does not install a Managed backend.
@@ -88,7 +89,7 @@ P3 exit: cloud mocked evidence is reproducible from code and workflows. A live A
 
 P4 exit: each supported claim has evidence from the actual licensed Managed profile. If entitlement is unavailable, this stage remains blocked while authorized local work can continue.
 
-### P5 — Bounded status agent and read-only SRE copilot
+### P5 â€” Bounded status agent and read-only SRE copilot
 
 1. **P5.1 Status contracts/fixtures:** health, deployment version and recent synthetic failure tools, with a small allowlist and versioned scenarios.
 2. **P5.2 Status agent:** enforce maximum steps/tool calls/retries/time and, when a live provider exists, actual token budgets. Exercise latency, timeout, 429/5xx, malformed response and broken dependency.
@@ -97,7 +98,7 @@ P4 exit: each supported claim has evidence from the actual licensed Managed prof
 
 P5 exit: the tool loop terminates under faults; SRE statements cite the retrieved evidence and expose missing evidence. Local fixtures do not count as live-backend validation.
 
-### P6 — Experiments, demonstration and teardown
+### P6 â€” Experiments, demonstration and teardown
 
 1. **P6.1 Experiment design:** define matched cohorts, load, expected graphs, versions, acceptance thresholds and measurement scripts before running comparisons.
 2. **P6.2 Observability evidence:** run 100-request coverage cohort, duplication/loss checks, broken propagation, Collector/backend outage, redaction and rollout/version attribution tests. Measure overhead separately.
@@ -142,6 +143,16 @@ Source review and the four initial pushes are complete. Immediate next step: loc
 
 The user authorized creation of `AI-SRE-Oberveability`, transfer of all four repositories and one shared GitHub Project. Added tasks P2.5 (organization), P2.6 (verified transfers/remotes) and P2.7 (shared Project/task mapping) bring the live tracker to 36 tasks. These coordination tasks are verified complete: GitHub Free organization with personal administration, four preserved repository histories/remotes, and Project #1 with 36 unique task issues and board/table views. GitLab credentials and global Git helpers remain unchanged. After each work step, record local evidence and synchronize the shared Project. Existing application and Azure spending gates remain in effect.
 
-## Authorized Actions setup — 29 October 2026
+## Authorized Actions setup â€” 29 October 2026
 
 The user explicitly requested CI across all four repositories and Terraform deployment workflows. Follow [the staged delivery plan](docs/actions-delivery-plan.md). P2.8/P2.9 track this preparation independently of full P2.3 release acceptance and P3 cloud delivery; the model now has 38 tasks. Azure targets/budget and concrete spending authorization remain pending.
+
+## Selected Citadel/APIM design extension â€” 1 November 2026
+
+The user selected Citadel/APIM in the architecture and step-by-step plan while explicitly keeping Azure disabled. Follow the [governance sequence, ownership and acceptance cases](docs/architecture/governance-plan.md). New planned tasks P3.7, P5.5 and P6.6 extend the tracker to 41 tasks; they do not close an implementation gate or authorize spending.
+
+Order: local backend proof -> confirmed targets and costed AKS/APIM design -> Terraform/bootstrap and gateway policy code -> G3 concrete scope review -> explicitly enabled guarded deployment and mock AKS release -> G5-approved governed live calls -> privacy/limit/correlation/fault evidence -> reviewed scoped cleanup. P5.5 retains deterministic mode and tests bounded gateway errors before live use. P6.6 verifies authorized/denied calls, separate token-rate/quota behavior, bypass denial, safe diagnostics, measurable correlation and lifecycle; licensed Managed remains an independent G4 profile.
+
+The model route has separate runner OIDC, pod-to-gateway identity and APIM-to-model identity. No direct model role remains on governed agents. Terraform owns all selected cloud/gateway resources and policies; Helm owns AKS applications/monitoring. Optional existing endpoints are references only after explicit verification. Optional Citadel analytics, hosted agents, A2A/MCP, extra safety services and multi-region components remain outside the minimum selected design.
+
+Diagram deliverables: [editable draw.io with official Azure icons](docs/architecture/azure-governance.drawio), [SVG/PNG previews](docs/architecture/drawio-README.md), current FigJam views and labelled historical baseline. The diagram does not satisfy runtime acceptance. Selected Azure icons retain Microsoft rights and are unchanged; no custom application is represented by a Microsoft product icon.

@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-01T14:44:47+04:00",
+  "updated_at": "2026-11-01T15:20:26+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 11,
     "draft": 8,
-    "planned": 16,
+    "planned": 19,
     "waiting_for_decision": 3
   },
   "tasks": [
@@ -66,10 +66,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json",
-        "ai-observability-lab/evidence/citadel-governance-review.json"
+        "ai-observability-lab/evidence/citadel-architecture-update.json",
+        "ai-observability-lab/evidence/citadel-source-review.json"
       ],
-      "note": "Citadel documentation fit review recorded; optional APIM governance is a proposal only, AKS baseline and Terraform ownership preserved",
+      "note": "AKS/APIM selected design, official-icon draw.io and retained/current FigJam views documented; public source review resolves icon-hash false positives; cloud runtime remains unimplemented",
       "ready": false
     },
     {
@@ -104,9 +104,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json"
+        "ai-observability-lab/evidence/citadel-architecture-update.json"
       ],
-      "note": "Architecture source watch paths added without changing tracker behavior; 20 tracker/sync tests passed and 38-task model remains valid",
+      "note": "41-task tracker and working agreements consistent; dependency DAG verified and 20 tracker/sync tests passed; no gate acceptance changed",
       "ready": false
     },
     {
@@ -643,7 +643,7 @@
       "artifacts": [
         "ai-observability-infra/README.md"
       ],
-      "acceptance": "Component active/idle costs, retention, AKS/runner reachability and optional Managed footprint are documented using dated inputs.",
+      "acceptance": "Dated active/idle costs, AKS/APIM SKU and network/runner reachability, identity boundaries, retention and optional Managed footprint documented; no cloud authorization inferred.",
       "status": "draft",
       "blocked_by": [
         "P3.1",
@@ -654,10 +654,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json",
-        "ai-observability-lab/evidence/citadel-governance-review.json"
+        "ai-observability-lab/evidence/citadel-architecture-update.json"
       ],
-      "note": "Citadel governance candidate assessed; no gateway selected or costed scope accepted. Local backend proof and G2 personal targets/budget precede cloud design.",
+      "note": "APIM governance selected in AKS target; three identity boundaries, Terraform/policy ownership and acceptance sequence defined. Personal targets, sizing/region and dated active/idle costs remain pending G2.",
       "ready": false
     },
     {
@@ -693,7 +692,8 @@
       "owner": "User",
       "repo": "infra",
       "depends_on": [
-        "P3.3"
+        "P3.3",
+        "P3.7"
       ],
       "gates": [
         "G0",
@@ -706,6 +706,7 @@
       "status": "waiting_for_decision",
       "blocked_by": [
         "P3.3",
+        "P3.7",
         "G2"
       ],
       "artifacts_present": [],
@@ -1099,7 +1100,8 @@
       "repo": "infra/lab",
       "depends_on": [
         "P6.4",
-        "P3.6"
+        "P3.6",
+        "P6.6"
       ],
       "gates": [
         "G0",
@@ -1112,7 +1114,95 @@
       "blocked_by": [
         "P6.4",
         "P3.6",
+        "P6.6",
         "G3"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P3.7",
+      "title": "Prepare Terraform APIM governance and versioned policy contracts",
+      "owner": "Codex",
+      "repo": "infra",
+      "depends_on": [
+        "P3.3"
+      ],
+      "gates": [
+        "G0",
+        "G1",
+        "G2"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Terraform/provider coverage, complete backend/access inventory, three identity boundaries, network/diagnostic ownership, offline policy checks and costed gateway plan reviewed before apply; one resource/state owner.",
+      "status": "planned",
+      "blocked_by": [
+        "P3.3",
+        "G2"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P5.5",
+      "title": "Implement governed model adapter and bounded gateway behavior",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P1.3",
+        "P3.7"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Deterministic mode preserved; gateway-scoped identity contract, model allowlist and typed auth/rate/quota/timeout errors pass synthetic checks; retries and streaming bounded; no direct-endpoint fallback. Actual cloud/live claims require P3.5 and G5.",
+      "status": "planned",
+      "blocked_by": [
+        "P1.3",
+        "P3.7"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [],
+      "evidence": [],
+      "note": "",
+      "ready": false
+    },
+    {
+      "id": "P6.6",
+      "title": "Validate APIM governance, safe telemetry and scoped lifecycle",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P3.5",
+        "P5.5",
+        "P3.6"
+      ],
+      "gates": [
+        "G0",
+        "G2",
+        "G3",
+        "G5"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Versioned gateway cohort defined before execution; live authorized/denied calls, token-rate/quota bounds, bypass denial, faults, available usage, privacy canaries, correlation/overhead, rebuild and scoped cleanup evidenced; no Managed parity claim.",
+      "status": "planned",
+      "blocked_by": [
+        "P3.5",
+        "P5.5",
+        "P3.6",
+        "G2",
+        "G3",
+        "G5"
       ],
       "artifacts_present": [],
       "artifacts_missing": [],

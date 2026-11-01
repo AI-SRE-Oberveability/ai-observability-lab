@@ -31,51 +31,71 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "Citadel documentation fit review recorded; optional APIM governance is a proposal only, AKS baseline and Terraform ownership preserved",
-      "at": "2026-11-01T14:44:43+04:00",
+      "note": "AKS/APIM selected design, official-icon draw.io and retained/current FigJam views documented; public source review resolves icon-hash false positives; cloud runtime remains unimplemented",
+      "at": "2026-11-01T15:20:24+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json",
-        "ai-observability-lab/evidence/citadel-governance-review.json"
+        "ai-observability-lab/evidence/citadel-architecture-update.json",
+        "ai-observability-lab/evidence/citadel-source-review.json"
       ],
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "aa305c7397afc82981a4ac804cf04727ebb0234830d61b946a52269f93138591",
-        "ai-observability-lab/HLD.md": "9776c707763afb043ae2c6d6c0d77a7bf47f2b1165205ce4e16568415d93f0dd",
+        "ai-observability-lab/POC_PLAN.md": "6904585458fb90275451586bc9d2caaa1aebe8ecf66d0211904e1d4a8e2f0b5d",
+        "ai-observability-lab/HLD.md": "19e77e672a4210e852fa99846cc5b44f283d5e2a9fc83b2b767576853e76e347",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
-        "ai-observability-lab/docs/architecture.md": "6b36e6e10ff13bddf131a92a32786d2eb4d8e32f858aebe619e2a3692907bef8",
-        "ai-observability-lab/docs/architecture/citadel-governance-review.md": "82c452249360b06d15cfbeefe3cb0af2c1fd7a366dca284c3c4e8b48aa0198d9",
-        "ai-observability-lab/docs/architecture/delivery.mmd": "e1bb0b6535eb9fe96e792041838c597fd5b424ce776a49b0c2ae971f5533abed",
-        "ai-observability-lab/docs/architecture/delivery.svg": "9ea536d9f5395a4ea50013b45b16c23cc83e65464d7cb8c28a8aabd4974b860d",
-        "ai-observability-lab/docs/architecture/README.md": "e5d1f35dd51dd411d8dc22e483e77fa3dc984c997dc3e74cfa107c1544718a26",
-        "ai-observability-lab/docs/architecture/runtime.mmd": "5f28a548bb8a6ab05aaa01228eeeed1582d374efd400e5450b11e6418f316d4b",
-        "ai-observability-lab/docs/architecture/runtime.png": "f8a29f07eb074fd335786b91b70185939a1fc069c2f4e9b2967c3e7054bf948c",
-        "ai-observability-lab/docs/architecture/telemetry.mmd": "43b660ddcccfa526c306a082533b79d9638ed2d7d8de67727dc1be089cb53a19",
-        "ai-observability-lab/docs/architecture/telemetry.png": "96a2ad55cd2edeb0edeadc64a89b35a40dc96c4338ea913bba34e0e33471216f"
+        "ai-observability-lab/docs/architecture.md": "e0c4ab25a2da99ae730ac0bff6fea9de4f584f34ef7438fd5d60a6161cd924f5",
+        "ai-observability-lab/docs/architecture/assets/azure/acr.svg": "c134b0a442f203a7eeeb6f99a1f02ed34e51373d7fca59f96c9f125874c9d7d4",
+        "ai-observability-lab/docs/architecture/assets/azure/aks.svg": "81954a481503057498d543a51863b2eb4673284e109662cdc421051d11dba25c",
+        "ai-observability-lab/docs/architecture/assets/azure/apim.svg": "cf794288575f2f7b080c50aa8319d42b02a2f2ae5351e4712c574353fc801f9a",
+        "ai-observability-lab/docs/architecture/assets/azure/foundry-models.svg": "9c671f141cb0e19b62e004628183ed8711ad16ec3b2e56b14c3cd035d5fac711",
+        "ai-observability-lab/docs/architecture/assets/azure/key-vault.svg": "712b426f54f0fc50d0816dc79df709daa7ac5f93ccaf4e9b3527f627f6e9ad97",
+        "ai-observability-lab/docs/architecture/assets/azure/monitor.svg": "1396f59a7d8fd7505a423842b987c9b343a092263d1ab5c7b0d94d58d8b17448",
+        "ai-observability-lab/docs/architecture/assets/azure/NOTICE.md": "d5a60f43ea4345d501beaa95f34c7fcfedb165fb534a0c4668640e875de4ae6f",
+        "ai-observability-lab/docs/architecture/assets/azure/provenance.json": "353e29ecdb47d8ce7ffb7b1439937ba36f8aa5f7fe8f7126c71a3492abc42e16",
+        "ai-observability-lab/docs/architecture/azure-governance.drawio": "404f4e5a4b183bab3f127ed416e6419d9754f5d8c7b88f927cb702ed6c255c47",
+        "ai-observability-lab/docs/architecture/azure-governance.png": "a35c856999397fdb499c36a949ea040cfdd95c39c132d8edcd68cb331b7f7247",
+        "ai-observability-lab/docs/architecture/azure-governance.svg": "ebaa0d6a56a8e6fe68235f486b9e7ba0586bef2a29eb40c515bd7b354aefdfb6",
+        "ai-observability-lab/docs/architecture/baseline-2026-10-29/delivery.mmd": "e1bb0b6535eb9fe96e792041838c597fd5b424ce776a49b0c2ae971f5533abed",
+        "ai-observability-lab/docs/architecture/baseline-2026-10-29/delivery.svg": "9ea536d9f5395a4ea50013b45b16c23cc83e65464d7cb8c28a8aabd4974b860d",
+        "ai-observability-lab/docs/architecture/baseline-2026-10-29/README.md": "521b3f3f8f477e4f01c5bd66e8125811b07118c4232fecf140699404815ce25b",
+        "ai-observability-lab/docs/architecture/baseline-2026-10-29/runtime.mmd": "5f28a548bb8a6ab05aaa01228eeeed1582d374efd400e5450b11e6418f316d4b",
+        "ai-observability-lab/docs/architecture/baseline-2026-10-29/runtime.png": "f8a29f07eb074fd335786b91b70185939a1fc069c2f4e9b2967c3e7054bf948c",
+        "ai-observability-lab/docs/architecture/baseline-2026-10-29/telemetry.mmd": "43b660ddcccfa526c306a082533b79d9638ed2d7d8de67727dc1be089cb53a19",
+        "ai-observability-lab/docs/architecture/baseline-2026-10-29/telemetry.png": "96a2ad55cd2edeb0edeadc64a89b35a40dc96c4338ea913bba34e0e33471216f",
+        "ai-observability-lab/docs/architecture/citadel-governance-review.md": "4e7e1dbcb2dda8ec35b2375a5c764447cdf0a70183e084ee41b393c848f02bd5",
+        "ai-observability-lab/docs/architecture/delivery.mmd": "026a920cd59adef6598e4958938eda6923192762ea9d6f431039b500cfd85b7e",
+        "ai-observability-lab/docs/architecture/delivery.png": "0b2250b5d5b8891bfeb11ccdd578a5c6c01709f4f3b71f235ca57bfac7da4755",
+        "ai-observability-lab/docs/architecture/drawio-README.md": "235525d1e39a3bdb51c1d88b392e5bdfcdd05b17288992f635108f4b6b40dacf",
+        "ai-observability-lab/docs/architecture/governance-plan.md": "be5998ca6dfecede99e845332e92c0bc13d31efed2451dda7eb06731c0e91432",
+        "ai-observability-lab/docs/architecture/README.md": "fb348c60ee57ef3fe5f6e314a6eb3e95b98c97bf7d5419df80d9ebead217aa37",
+        "ai-observability-lab/docs/architecture/runtime.mmd": "f8c1300ad41f5cbf4e7539f4d70e7d7cc50fbf725ae6998697a7f2cf15106208",
+        "ai-observability-lab/docs/architecture/runtime.png": "8a92547094e943b54a9d1abd25ca37ad490db887c3051b596df36b4d8425fe60",
+        "ai-observability-lab/docs/architecture/telemetry.mmd": "1c17f6fcc0fd478a0e34d365286e26d9f2c5873733462bedcac6afec87a800a7",
+        "ai-observability-lab/docs/architecture/telemetry.png": "f2894a83d44e9acf05dea4ee5abe712628bd589bfb9950ed43308e6a1f3c79aa"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250",
-        "ai-observability-lab/evidence/citadel-governance-review.json": "67f1cc91b3f3213bcc6a09c109da790a0c502f86b2862fed3356fcb254bdbcfb"
+        "ai-observability-lab/evidence/citadel-architecture-update.json": "5507267c3ca956a1260a9e843990f61418c34e9b5147cf187f880a28b90c24ad",
+        "ai-observability-lab/evidence/citadel-source-review.json": "82412b0b4b875504911d5f9a11ff4bf34f6918229d045f0cd0294b455c726246"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "Architecture source watch paths added without changing tracker behavior; 20 tracker/sync tests passed and 38-task model remains valid",
-      "at": "2026-10-29T01:43:02+04:00",
+      "note": "41-task tracker and working agreements consistent; dependency DAG verified and 20 tracker/sync tests passed; no gate acceptance changed",
+      "at": "2026-11-01T15:20:22+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json"
+        "ai-observability-lab/evidence/citadel-architecture-update.json"
       ],
       "source_hashes": {
         "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "3b149c77effe7aea40e59d1d38376f54b34ccfa61ed958fb6fd68461722b8e36",
+        "ai-observability-lab/tracking/plan.json": "86e07108bad371177d1b79577bb5edc601d6e8fb1101068c571d4e6f4bc4118c",
         "ai-observability-lab/TRACKER_GUIDE.md": "7daeba4e8ed99175b356d123228e6f0aa38cf3a2e2c72276836fbeede50c36ee",
-        "ai-observability-lab/AGENTS.md": "48783d87303784ce0e1251074a124adf1ac5f6c12281f90ec0056fbb315506ec",
+        "ai-observability-lab/AGENTS.md": "b488692f95371844c323d35694a6b6d2cbdd7db3e9cd4f54e2495bf5a2b7e3aa",
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250"
+        "ai-observability-lab/evidence/citadel-architecture-update.json": "5507267c3ca956a1260a9e843990f61418c34e9b5147cf187f880a28b90c24ad"
       }
     },
     "P2.2": {
@@ -185,18 +205,16 @@
     },
     "P3.2": {
       "status": "draft",
-      "note": "Citadel governance candidate assessed; no gateway selected or costed scope accepted. Local backend proof and G2 personal targets/budget precede cloud design.",
-      "at": "2026-11-01T14:44:46+04:00",
+      "note": "APIM governance selected in AKS target; three identity boundaries, Terraform/policy ownership and acceptance sequence defined. Personal targets, sizing/region and dated active/idle costs remain pending G2.",
+      "at": "2026-11-01T15:18:51+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json",
-        "ai-observability-lab/evidence/citadel-governance-review.json"
+        "ai-observability-lab/evidence/citadel-architecture-update.json"
       ],
       "source_hashes": {
         "ai-observability-infra/README.md": "0d1a12d0ef9b6e6be269b0b2184cb4d3bca7d0de294dbd7954752fab09c048c5"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250",
-        "ai-observability-lab/evidence/citadel-governance-review.json": "67f1cc91b3f3213bcc6a09c109da790a0c502f86b2862fed3356fcb254bdbcfb"
+        "ai-observability-lab/evidence/citadel-architecture-update.json": "5507267c3ca956a1260a9e843990f61418c34e9b5147cf187f880a28b90c24ad"
       }
     }
   },
@@ -216,9 +234,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "Four CI pipelines verified; AKS target documented; Citadel reviewed as an optional governance experiment. Azure execution disabled; local backend, platform, Managed and live-model proof remain open.",
+    "current": "Four CI pipelines verified; selected AKS/APIM governance target documented with official-icon draw.io and current FigJam views. Azure disabled; backend, costed platform, Managed and live-model proof remain open.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P3.2: Citadel governance candidate assessed; no gateway selected or costed scope accepted. Local backend proof and G2 personal targets/budget precede cloud design."
+    "last_change": "P0.2: AKS/APIM selected design, official-icon draw.io and retained/current FigJam views documented; public source review resolves icon-hash false positives; cloud runtime remains unimplemented"
   },
   "repository_verification": {
     "date": "2026-10-28",

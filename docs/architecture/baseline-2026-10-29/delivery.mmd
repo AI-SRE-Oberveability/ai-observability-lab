@@ -1,0 +1,49 @@
+flowchart LR
+  subgraph current ["Verified now"]
+    repos["Four GitHub repos"]
+    ci["Read-only CI checks"]
+    merge["Reviewed source merge"]
+    imageBuild["Container build"]
+  end
+  gate{"Azure targets and cost scope approved?"}
+  blocked["Stop before Azure login - verified"]
+  subgraph cloud ["Planned cloud delivery after G2/G3"]
+    bootstrap["Approved personal bootstrap"]
+    stateStore[("Protected Blob state")]
+    identity["Scoped GitHub OIDC identities"]
+    tfPlan["Private Terraform plan"]
+    planReview{"Review scope and fingerprint"}
+    holdPlan["Hold apply / review again"]
+    tfApply["Apply approved platform"]
+    platform["AKS / ACR / Key Vault"]
+    imagePush["Publish immutable image"]
+    deploy["Helm deploy by digest"]
+    verify["Smoke / trace / privacy checks"]
+  end
+  receipts["Update HLD / tracker"]
+  repos --> ci --> merge
+  merge --> imageBuild
+  merge --> gate
+  gate -->|"No - current"| blocked
+  gate -->|"Approved future scope"| bootstrap
+  bootstrap --> stateStore
+  bootstrap --> identity
+  identity -->|"Federated login"| tfPlan
+  tfPlan -->|"Locks state"| stateStore
+  tfPlan --> planReview
+  planReview -->|"Fingerprint matches"| tfApply
+  planReview -->|"Not approved"| holdPlan
+  holdPlan --> receipts
+  tfApply -->|"Uses scoped state"| stateStore
+  tfApply --> platform
+  platform -->|"Registry ready"| imagePush
+  imageBuild --> imagePush
+  platform -->|"Cluster ready"| deploy
+  imagePush -->|"Pinned digest"| deploy
+  deploy --> verify --> receipts
+  blocked --> receipts
+  style current fill:#CDF4D3,stroke:#66D575
+  style cloud fill:#C2E5FF,stroke:#3DADFF
+  style gate fill:#FFECBD,stroke:#FFC943
+  style blocked fill:#FFE0C2,stroke:#FF9E42
+  style planReview fill:#FFECBD,stroke:#FFC943

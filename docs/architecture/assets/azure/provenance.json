@@ -1,0 +1,33 @@
+{
+  "source": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+  "archive_url": "https://arch-center.azureedge.net/icons/Azure_Public_Service_Icons_V24.zip",
+  "download_date": "2026-11-01",
+  "archive_sha256": "921594ccd1bf3d9c0a1bd7b6d924e050551a59342f2b353bb74bdcf761c35141",
+  "usage": "Unchanged official SVG icons embedded in architecture documentation; not custom application branding.",
+  "icons": {
+    "aks": {
+      "archive_member": "Azure_Public_Service_Icons/Icons/compute/10023-icon-service-Kubernetes-Services.svg",
+      "sha256": "81954a481503057498d543a51863b2eb4673284e109662cdc421051d11dba25c"
+    },
+    "apim": {
+      "archive_member": "Azure_Public_Service_Icons/Icons/integration/10042-icon-service-API-Management-Services.svg",
+      "sha256": "cf794288575f2f7b080c50aa8319d42b02a2f2ae5351e4712c574353fc801f9a"
+    },
+    "foundry-models": {
+      "archive_member": "Azure_Public_Service_Icons/Icons/ai + machine learning/038470614-icon-service-Foundry-Models.svg",
+      "sha256": "9c671f141cb0e19b62e004628183ed8711ad16ec3b2e56b14c3cd035d5fac711"
+    },
+    "acr": {
+      "archive_member": "Azure_Public_Service_Icons/Icons/containers/10105-icon-service-Container-Registries.svg",
+      "sha256": "c134b0a442f203a7eeeb6f99a1f02ed34e51373d7fca59f96c9f125874c9d7d4"
+    },
+    "key-vault": {
+      "archive_member": "Azure_Public_Service_Icons/Icons/security/10245-icon-service-Key-Vaults.svg",
+      "sha256": "712b426f54f0fc50d0816dc79df709daa7ac5f93ccaf4e9b3527f627f6e9ad97"
+    },
+    "monitor": {
+      "archive_member": "Azure_Public_Service_Icons/Icons/monitor/00001-icon-service-Monitor.svg",
+      "sha256": "1396f59a7d8fd7505a423842b987c9b343a092263d1ab5c7b0d94d58d8b17448"
+    }
+  }
+}

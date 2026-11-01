@@ -2,6 +2,8 @@
 
 Reviewed: 1 November 2026, Asia/Dubai. Scope: documentation assessment; no deployment, notebook execution, Azure inventory or full source-code audit.
 
+> Historical assessment: the user subsequently selected APIM for the target design. See [the current governance plan](governance-plan.md). This earlier review does not describe the latest selection.
+
 ## Recommendation
 
 Use Citadel as a reference for an optional governed-model-access experiment after the local baseline is proved. This review does not select an APIM SKU, add committed cloud scope, accept an upstream implementation, or replace Terraform. The existing AKS proposal and three use cases remain the target under review in PR #21.

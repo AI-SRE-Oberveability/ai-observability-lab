@@ -1,38 +1,37 @@
 flowchart LR
-  subgraph client ["Controlled POC scenarios"]
-    scenarios["Synthetic requests / incidents"]
+  subgraph target ["CURRENT TARGET - telemetry and governance proof - not deployed"]
+    requests["Synthetic request / fault cohorts"]
+    subgraph aks ["AKS application and custom telemetry"]
+      agent["Instrumented agent"]
+      collector["Collector - metadata allowlist"]
+      sre["Read-only SRE copilot"]
+      adapter["Bounded evidence adapter"]
+    end
+    apim["APIM gateway"]
+    modelApi["Approved model endpoint"]
+    labBackend["Jaeger / planned Prometheus"]
+    azureMonitor["Azure Monitor - APIM diagnostics"]
+    subgraph native ["Separate licensed native cohort - G4"]
+      oneAgent["OneAgent"]
+      activeGate["Compatible ActiveGate"]
+      managed["Managed on supported hosts"]
+    end
+    requests -->|"Exercise cases"| agent
+    agent -->|"Governed model calls"| apim
+    apim -->|"Managed identity"| modelApi
+    agent -->|"Custom SDK signals"| collector
+    collector -->|"Traces / bounded metrics"| labBackend
+    apim -->|"Metadata, no bodies"| azureMonitor
+    agent -->|"Native cohort"| oneAgent
+    oneAgent -->|"Supported route"| activeGate
+    activeGate -->|"Native ingest"| managed
+    collector -.->|"Supported OTLP only"| activeGate
+    requests -->|"Request explanation"| sre
+    sre -->|"Read-only tools"| adapter
+    adapter -->|"Bounded reads"| labBackend
+    adapter -.->|"Approved query-only"| azureMonitor
+    adapter -.->|"Verified APIs only"| managed
+    adapter -->|"Audit metadata"| collector
   end
-  subgraph gateway ["Authenticated API access"]
-    ingress["Agent ingress"]
-  end
-  subgraph service ["Planned AKS workloads and observability components"]
-    workloads["Instrumented AI workload"]
-    sreCopilot["Read-only SRE copilot"]
-    evidenceApi["Bounded evidence adapter"]
-    collector["OTel Collector - allowlist"]
-    oneAgent["OneAgent native cohort"]
-    activeGate["Compatible ActiveGate"]
-  end
-  subgraph datastore ["Baseline profile - backend proof still required"]
-    jaeger["Jaeger traces"]
-    metrics["Prometheus metrics - planned"]
-  end
-  subgraph external ["Separate licensed backend on supported hosts"]
-    managed["Dynatrace Managed - G4"]
-  end
-  scenarios -->|"Runs synthetic cases"| ingress
-  ingress -->|"Calls workload"| workloads
-  ingress -->|"Requests explanation"| sreCopilot
-  workloads -->|"Custom SDK signals"| collector
-  workloads -->|"Native instrumentation cohort"| oneAgent
-  oneAgent -->|"Native telemetry route"| activeGate
-  collector -->|"Exports traces"| jaeger
-  collector -->|"Serves scraped metrics"| metrics
-  collector -->|"Supported OTLP only"| activeGate
-  activeGate -.->|"Managed: Validated ingest"| managed
-  sreCopilot -->|"Allowlisted evidence reads"| evidenceApi
-  sreCopilot -->|"Audit metadata"| collector
-  evidenceApi -->|"Reads bounded traces"| jaeger
-  evidenceApi -->|"Reads bounded metrics"| metrics
-  evidenceApi -.->|"Managed: Supported reads"| managed
-  evidenceApi -->|"Audit metadata"| collector
+  style aks fill:#C2E5FF,stroke:#3DADFF
+  style native fill:#E4CCFF,stroke:#A166FF
