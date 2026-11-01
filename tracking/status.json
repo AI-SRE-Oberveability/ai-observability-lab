@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T01:43:05+04:00",
+  "updated_at": "2026-11-01T14:44:47+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 11,
@@ -66,9 +66,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json"
+        "ai-observability-lab/evidence/architecture-design-review.json",
+        "ai-observability-lab/evidence/citadel-governance-review.json"
       ],
-      "note": "Three editable architecture views and phased AKS implementation guide reviewed; optional Azure AI reuse is explicitly unverified and cloud gates remain pending",
+      "note": "Citadel documentation fit review recorded; optional APIM governance is a proposal only, AKS baseline and Terraform ownership preserved",
       "ready": false
     },
     {
@@ -653,9 +654,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json"
+        "ai-observability-lab/evidence/architecture-design-review.json",
+        "ai-observability-lab/evidence/citadel-governance-review.json"
       ],
-      "note": "AKS runtime, telemetry and delivery architecture elaborated; costed node/network/runner design and personal target/resource verification still require G2",
+      "note": "Citadel governance candidate assessed; no gateway selected or costed scope accepted. Local backend proof and G2 personal targets/budget precede cloud design.",
       "ready": false
     },
     {

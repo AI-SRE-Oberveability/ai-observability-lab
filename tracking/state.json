@@ -31,18 +31,20 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "Three editable architecture views and phased AKS implementation guide reviewed; optional Azure AI reuse is explicitly unverified and cloud gates remain pending",
-      "at": "2026-10-29T01:43:00+04:00",
+      "note": "Citadel documentation fit review recorded; optional APIM governance is a proposal only, AKS baseline and Terraform ownership preserved",
+      "at": "2026-11-01T14:44:43+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json"
+        "ai-observability-lab/evidence/architecture-design-review.json",
+        "ai-observability-lab/evidence/citadel-governance-review.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "aa305c7397afc82981a4ac804cf04727ebb0234830d61b946a52269f93138591",
-        "ai-observability-lab/HLD.md": "fdf3e7f0c6106a84ccb6a581d84fac067843e134546b082a9ca7762bd8db256c",
+        "ai-observability-lab/HLD.md": "9776c707763afb043ae2c6d6c0d77a7bf47f2b1165205ce4e16568415d93f0dd",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
         "ai-observability-lab/docs/architecture.md": "6b36e6e10ff13bddf131a92a32786d2eb4d8e32f858aebe619e2a3692907bef8",
+        "ai-observability-lab/docs/architecture/citadel-governance-review.md": "82c452249360b06d15cfbeefe3cb0af2c1fd7a366dca284c3c4e8b48aa0198d9",
         "ai-observability-lab/docs/architecture/delivery.mmd": "e1bb0b6535eb9fe96e792041838c597fd5b424ce776a49b0c2ae971f5533abed",
         "ai-observability-lab/docs/architecture/delivery.svg": "9ea536d9f5395a4ea50013b45b16c23cc83e65464d7cb8c28a8aabd4974b860d",
         "ai-observability-lab/docs/architecture/README.md": "e5d1f35dd51dd411d8dc22e483e77fa3dc984c997dc3e74cfa107c1544718a26",
@@ -52,7 +54,8 @@
         "ai-observability-lab/docs/architecture/telemetry.png": "96a2ad55cd2edeb0edeadc64a89b35a40dc96c4338ea913bba34e0e33471216f"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250"
+        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250",
+        "ai-observability-lab/evidence/citadel-governance-review.json": "67f1cc91b3f3213bcc6a09c109da790a0c502f86b2862fed3356fcb254bdbcfb"
       }
     },
     "P0.3": {
@@ -182,16 +185,18 @@
     },
     "P3.2": {
       "status": "draft",
-      "note": "AKS runtime, telemetry and delivery architecture elaborated; costed node/network/runner design and personal target/resource verification still require G2",
-      "at": "2026-10-29T01:43:04+04:00",
+      "note": "Citadel governance candidate assessed; no gateway selected or costed scope accepted. Local backend proof and G2 personal targets/budget precede cloud design.",
+      "at": "2026-11-01T14:44:46+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/architecture-design-review.json"
+        "ai-observability-lab/evidence/architecture-design-review.json",
+        "ai-observability-lab/evidence/citadel-governance-review.json"
       ],
       "source_hashes": {
         "ai-observability-infra/README.md": "0d1a12d0ef9b6e6be269b0b2184cb4d3bca7d0de294dbd7954752fab09c048c5"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250"
+        "ai-observability-lab/evidence/architecture-design-review.json": "5ad69caceda8e71dcc25249cac91bfff33b9b556cd5bc9f83a4724682cdf2250",
+        "ai-observability-lab/evidence/citadel-governance-review.json": "67f1cc91b3f3213bcc6a09c109da790a0c502f86b2862fed3356fcb254bdbcfb"
       }
     }
   },
@@ -211,9 +216,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "Four CI pipelines verified; proposed AKS/Kubernetes architecture and implementation sequence documented with optional existing Azure AI reuse. Azure execution is disabled; local backend, full platform, Managed and live-model proof remain open.",
+    "current": "Four CI pipelines verified; AKS target documented; Citadel reviewed as an optional governance experiment. Azure execution disabled; local backend, platform, Managed and live-model proof remain open.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P3.2: AKS runtime, telemetry and delivery architecture elaborated; costed node/network/runner design and personal target/resource verification still require G2"
+    "last_change": "P3.2: Citadel governance candidate assessed; no gateway selected or costed scope accepted. Local backend proof and G2 personal targets/budget precede cloud design."
   },
   "repository_verification": {
     "date": "2026-10-28",

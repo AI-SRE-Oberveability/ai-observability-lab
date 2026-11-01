@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.9 AKS architecture elaboration. Updated: 29 October 2026, Asia/Dubai. Execution: **four CI pipelines verified; AKS/Azure AI architecture documented as a proposed target; Azure execution remains disabled**.
+Version: 0.10 optional governance reference review. Updated: 1 November 2026, Asia/Dubai. Execution: **four CI pipelines verified; AKS/Azure AI architecture documented as a proposed target; Azure execution remains disabled**.
 
 ## Purpose
 
@@ -160,3 +160,11 @@ The manually dispatched Terraform plan was intentionally tested with AZURE_DEPLO
 Three editable diagrams now cover the AKS application target, telemetry/read-only SRE profiles and the CI-to-Terraform-to-AKS implementation sequence. The implementation guide defines namespace/resource ownership, separate runner/pod identities, optional existing-resource checks, cost/access gates and stage exits. The user chose an optional Azure AI reuse path; no existing cloud project is assumed available. The current accepted count remains 11/38: diagram completion does not close P1 backend, P3 cost/deployment, Managed or live-model tasks.
 
 **Next implementation:** prove the local policy/telemetry slice, then confirm personal Azure targets and costs; build bootstrap/platform Terraform and image/release/Helm delivery before any approved AKS deployment. See docs/architecture/README.md for the full sequence and public design references. GitLab credentials and global Git configuration remain unchanged.
+
+## Citadel reference review — 1 November 2026
+
+Reviewed the user-provided [Citadel lab](https://microsoftlearning.github.io/mslearn-ai-governance/lab/) and its workshop/upstream documentation. The [fit review and proposed adoption sequence](docs/architecture/citadel-governance-review.md) records APIM as an optional governance experiment around approved live model calls. AKS remains the proposed custom-agent runtime, with separate OTel/backend and bounded read-only SRE paths. Terraform remains the sole Azure resource owner.
+
+No gateway component, SKU, cloud scope or upstream code was adopted. Existing resource reuse stays optional and unverified. Privacy, source-version, networking, identity, cost and teardown differences must be resolved before implementation. Current diagrams retain the agreed baseline; a gateway view follows only if that experiment is selected.
+
+**Next:** P1.1 local draft review, then real backend proof. **Remaining:** G2 personal targets/region/budget, G3 costed scope authorization, G4 Managed entitlement/compatibility, G5 live model/quota approval; platform Terraform, AKS delivery and experiments. The architecture proposal remains in PR #21; Azure execution remains disabled.
