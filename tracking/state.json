@@ -31,15 +31,15 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD reflects verified local backend proof and preserves unimplemented cloud boundaries; source/CI review remains pending publication",
-      "at": "2026-11-01T15:39:54+04:00",
+      "note": "Local proof published in three review PRs; HLD records all six accepted P1 steps and pending merged-main CI revalidation; Azure remains disabled",
+      "at": "2026-11-01T15:42:46+04:00",
       "evidence": [
         "ai-observability-lab/evidence/local-backend-proof.json",
-        "ai-observability-lab/evidence/pr21-merge.json"
+        "ai-observability-lab/evidence/local-proof-publication.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "6904585458fb90275451586bc9d2caaa1aebe8ecf66d0211904e1d4a8e2f0b5d",
-        "ai-observability-lab/HLD.md": "7a9211f6e1f1ecd55c1b62319459502b35f3b1cdfea42a576f52ad4ee8c2a5a3",
+        "ai-observability-lab/HLD.md": "7f25aa5ddd9a6865f4f8ff403f0565b4a4df40e74fa646b9f4142f0b0638f547",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -75,7 +75,7 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453",
-        "ai-observability-lab/evidence/pr21-merge.json": "2657287bc4853ec49a03e297aee17678bf285432b25ef66b5bb48f6301b8ae01"
+        "ai-observability-lab/evidence/local-proof-publication.json": "ec1b5911a270bbf41a333e603320a22741a11859ee752484300f8988701a7227"
       }
     },
     "P0.3": {
@@ -376,9 +376,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "Local deterministic policy/retrieval through Collector to Jaeger proved with privacy and lifecycle evidence. AKS/APIM remains undeployed; new source review/CI revalidation pending; Azure disabled.",
+    "current": "PR #21 merged; local deterministic Collector/Jaeger proof accepted and published in three open review PRs. New merged-main CI/release validation remains; Azure, AKS/APIM, Managed and live models undeployed.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P0.2: HLD reflects verified local backend proof and preserves unimplemented cloud boundaries; source/CI review remains pending publication"
+    "last_change": "P0.2: Local proof published in three review PRs; HLD records all six accepted P1 steps and pending merged-main CI revalidation; Azure remains disabled"
   },
   "repository_verification": {
     "date": "2026-10-28",

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T15:39:55+04:00",
+  "updated_at": "2026-11-01T15:42:47+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 15,
@@ -69,9 +69,9 @@
       "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/local-backend-proof.json",
-        "ai-observability-lab/evidence/pr21-merge.json"
+        "ai-observability-lab/evidence/local-proof-publication.json"
       ],
-      "note": "HLD reflects verified local backend proof and preserves unimplemented cloud boundaries; source/CI review remains pending publication",
+      "note": "Local proof published in three review PRs; HLD records all six accepted P1 steps and pending merged-main CI revalidation; Azure remains disabled",
       "ready": false
     },
     {

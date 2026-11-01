@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Dubai",
+  "merged_pr21": "dec89a84160bea68cd1f5d0a37aa54f4aaad95b3",
+  "follow_up_prs": [
+    {
+      "repo": "ai-agent-workloads",
+      "pr": 11,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/11",
+      "head": "6da5ffd2ade346d01ef881a4c5a4db17a840d7c1"
+    },
+    {
+      "repo": "ai-observability-config",
+      "pr": 5,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/5",
+      "head": "a010b88252997ba73bb46aa811b78660fe245d72"
+    },
+    {
+      "repo": "ai-observability-lab",
+      "pr": 23,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/23",
+      "head": "ca3ba090a8d9819f3d5a257b4cfe2258913b6a89"
+    }
+  ],
+  "source_review": [
+    {
+      "repo": "ai-agent-workloads",
+      "findings": 0,
+      "confirmed_secrets": 0,
+      "verified_source_hash_false_positives": 0,
+      "commit": "6da5ffd2ade346d01ef881a4c5a4db17a840d7c1"
+    },
+    {
+      "repo": "ai-observability-config",
+      "findings": 0,
+      "confirmed_secrets": 0,
+      "verified_source_hash_false_positives": 0,
+      "commit": "a010b88252997ba73bb46aa811b78660fe245d72"
+    },
+    {
+      "repo": "ai-observability-lab",
+      "findings": 8,
+      "confirmed_secrets": 0,
+      "verified_source_hash_false_positives": 8,
+      "commit": "ca3ba090a8d9819f3d5a257b4cfe2258913b6a89"
+    }
+  ],
+  "azure_deployment_enabled": false,
+  "global_git_configuration_unchanged": true,
+  "gitlab_credential_changes": false,
+  "all_owned_listeners_stopped": true,
+  "local_steps_accepted": [
+    "P1.1",
+    "P1.2",
+    "P1.3",
+    "P1.4",
+    "P1.5",
+    "P1.6"
+  ],
+  "accepted_count": 15,
+  "tasks": 41,
+  "revalidation_note": "P2.8 awaits merged-main validation of changed configuration checker; P2.9 depends on P2.8. New PR CI is distinct from main activation.",
+  "new_prs_merged": false
+}
