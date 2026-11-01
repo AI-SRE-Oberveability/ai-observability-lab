@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Dubai",
+  "authorization": "User explicitly requested workloads #11, observability #5 and lab #23 merges",
+  "merges": [
+    {
+      "repo": "ai-agent-workloads",
+      "folder": "ai-agent-workloads",
+      "pr": 11,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/11",
+      "reviewed_head": "6da5ffd2ade346d01ef881a4c5a4db17a840d7c1",
+      "pr_ci_run": 41302995460,
+      "merge_commit": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+      "merged_at": "2026-11-01T11:59:11Z"
+    },
+    {
+      "repo": "ai-observability-config",
+      "folder": "ai-observability-config",
+      "pr": 5,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/5",
+      "reviewed_head": "a010b88252997ba73bb46aa811b78660fe245d72",
+      "pr_ci_run": 41303002882,
+      "merge_commit": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+      "merged_at": "2026-11-01T11:59:18Z"
+    },
+    {
+      "repo": "ai-observability-lab",
+      "folder": "ai-observability-lab",
+      "pr": 23,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/23",
+      "reviewed_head": "e7d40973ae3b610c9c2bd26edba6e375fc0b0943",
+      "pr_ci_run": 41303148963,
+      "merge_commit": "fd49a067efe9ddc78539d6dcb6052458cc862d14",
+      "merged_at": "2026-11-01T11:59:25Z"
+    }
+  ],
+  "azure_deployment_enabled": false,
+  "gitlab_changes": false
+}

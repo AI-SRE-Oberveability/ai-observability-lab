@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Dubai",
+  "status": "source_candidate_only",
+  "validation": {
+    "candidate_valid": true,
+    "deployable": false,
+    "source_files_verified": 18,
+    "workload_image_missing": true
+  },
+  "tests_total": 28,
+  "tracker_sync_tests": 20,
+  "release_guard_tests": 8,
+  "deployable_check": {
+    "exit_code": 1,
+    "expected_rejection": true
+  },
+  "registry_images_published": false,
+  "release_tags_created": false,
+  "container_replay_performed": false,
+  "azure_deployment_enabled": false,
+  "gitlab_changes": false,
+  "source_sha256": {
+    "releases/local-v0.1.0-source-candidate.json": "172e9d8ecd1f074d9ea88b4a40fd9658b873d92551f139176c86d81e8ad7facc",
+    "releases/README.md": "623f12e0c6b15c05bd410cec3ba5e8e14f9a11c8741b815a943d736fc67f4c9c",
+    "scripts/validate_release.py": "06f89976e8f6a5bbe507d866fe28c2cc892cdc55d880b49e2ef6245e915ba235",
+    "tests/test_release.py": "8f1a5dcb5ec846fa9ccd94142c87eafad1c516b0df29a64fe66d5ade61be05ef",
+    "docs/release-pinning-plan.md": "9c30b1627fa60bb92ee412cedd57b01240cab32ec20ae5fea948d32f69f21761"
+  }
+}

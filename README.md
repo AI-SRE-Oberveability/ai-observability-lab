@@ -17,3 +17,5 @@ The four CI setup PRs are merged and all four initial main-branch runs passed. [
 [Architecture diagrams and implementation sequence](docs/architecture/README.md): proposed AKS runtime, telemetry/SRE boundaries and gated delivery, with optional existing Azure AI resource reuse. Current cloud deployment status is unchanged.
 
 [Official Azure icon architecture: editable draw.io](docs/architecture/azure-governance.drawio) | [Preview](docs/architecture/azure-governance.png) | [Citadel/APIM implementation plan](docs/architecture/governance-plan.md). Planned target only; Azure deployment remains disabled.
+
+[Release pinning candidate and readiness boundary](releases/README.md): four tested source commits and existing artifact pins are frozen; workload image publication/replay remain pending. Azure deployment is disabled.
