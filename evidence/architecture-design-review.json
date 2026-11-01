@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Dubai",
+  "figjam_url": "https://www.figma.com/board/JxOlJjtrEmIFrhRU8ltID0",
+  "views": [
+    "AKS runtime",
+    "Telemetry and read-only SRE",
+    "CI and gated Terraform/AKS delivery"
+  ],
+  "status": "proposed_target_not_deployed",
+  "reuse_choice": "User selected optional reuse path for now",
+  "checks": [
+    "Three diagrams generated and structurally inspected",
+    "Optional RAG and AI reuse labels explicit",
+    "Native OneAgent path independent from Collector",
+    "Runner OIDC and pod Workload ID distinguished",
+    "Current CI and foundation code separated from planned AKS platform",
+    "No live resources discovered/adopted or Azure execution enabled"
+  ],
+  "previews": [
+    {
+      "file": "runtime.png",
+      "format": "PNG",
+      "width": 2400,
+      "height": 1366
+    },
+    {
+      "file": "telemetry.png",
+      "format": "PNG",
+      "width": 2400,
+      "height": 1046
+    }
+  ],
+  "source_sha256": {
+    "docs/architecture/delivery.mmd": "e1bb0b6535eb9fe96e792041838c597fd5b424ce776a49b0c2ae971f5533abed",
+    "docs/architecture/delivery.svg": "9ea536d9f5395a4ea50013b45b16c23cc83e65464d7cb8c28a8aabd4974b860d",
+    "docs/architecture/README.md": "e5d1f35dd51dd411d8dc22e483e77fa3dc984c997dc3e74cfa107c1544718a26",
+    "docs/architecture/runtime.mmd": "5f28a548bb8a6ab05aaa01228eeeed1582d374efd400e5450b11e6418f316d4b",
+    "docs/architecture/runtime.png": "f8a29f07eb074fd335786b91b70185939a1fc069c2f4e9b2967c3e7054bf948c",
+    "docs/architecture/telemetry.mmd": "43b660ddcccfa526c306a082533b79d9638ed2d7d8de67727dc1be089cb53a19",
+    "docs/architecture/telemetry.png": "96a2ad55cd2edeb0edeadc64a89b35a40dc96c4338ea913bba34e0e33471216f"
+  },
+  "accepted_count_unchanged": "11/38",
+  "azure_execution_enabled": false,
+  "gitlab_credential_changes": false,
+  "tracker_tests_passed": 20
+}

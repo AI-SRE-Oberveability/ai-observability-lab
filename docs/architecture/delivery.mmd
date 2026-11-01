@@ -1,0 +1,30 @@
+flowchart LR
+  subgraph delivery ["CURRENT PLAN - Terraform and AKS with Citadel governance"]
+    source["Four repos and passing CI"]
+    local["Prove local backend / privacy"]
+    design["Cost AKS, APIM, identities and routes"]
+    gate{"G2 targets and G3 scope approved?"}
+    hold["CURRENT - Azure disabled; stop before login"]
+    bootstrap["Protected state and scoped GitHub OIDC"]
+    platform["Terraform AKS / ACR / APIM and policies"]
+    release["Images by digest and Helm release"]
+    mockProof["AKS mock and gateway contract checks"]
+    liveGate{"G5 live model / quota approved?"}
+    holdLive["Keep mock mode"]
+    live["Enable governed model adapter"]
+    proof["Allow / deny, rate / quota, privacy, trace proof"]
+    cleanup["Reviewed cleanup excludes reuse"]
+    records["HLD / tracker / Project evidence"]
+    source --> local --> design --> gate
+    gate -->|"No - current"| hold
+    gate -->|"Approved future scope"| bootstrap
+    bootstrap --> platform --> release --> mockProof --> liveGate
+    liveGate -->|"No"| holdLive
+    liveGate -->|"Approved"| live
+    live --> proof --> cleanup --> records
+    hold --> records
+    holdLive --> records
+  end
+  style hold fill:#FFE0C2,stroke:#FF9E42
+  style gate fill:#FFECBD,stroke:#FFC943
+  style liveGate fill:#FFECBD,stroke:#FFC943

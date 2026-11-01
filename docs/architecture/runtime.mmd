@@ -1,0 +1,47 @@
+flowchart LR
+  subgraph target ["CURRENT TARGET - AKS and Citadel APIM - not deployed"]
+    caller["Synthetic caller"]
+    subgraph aks ["AKS - custom agents, tools and Collector"]
+      ingress["Authenticated ingress"]
+      policyAgent["Policy assistant"]
+      statusAgent["Status agent"]
+      sreCopilot["Read-only SRE copilot"]
+      retrievalApi["Retrieval API"]
+      statusApi["Synthetic status API"]
+      evidenceApi["Bounded evidence adapter"]
+      collector["OTel Collector"]
+    end
+    subgraph governance ["Shared Azure governance - outside AKS"]
+      apim["APIM - auth, model allowlist and usage limits"]
+    end
+    subgraph models ["Approved model backend - choose new or verified reuse"]
+      newModel["Foundry / OpenAI model"]
+      existingModel["Existing personal AI endpoint - optional"]
+    end
+    corpus[("Synthetic corpus - optional Blob / Search")]
+    backend["Lab backend / licensed Managed profile"]
+    azureMonitor["Azure Monitor - gateway metadata"]
+    caller -->|"HTTPS"| ingress
+    ingress -->|"Policy request"| policyAgent
+    ingress -->|"Status request"| statusAgent
+    ingress -->|"Investigation"| sreCopilot
+    policyAgent -->|"Bounded retrieval"| retrievalApi
+    retrievalApi -->|"Approved reads"| corpus
+    statusAgent -->|"Bounded health"| statusApi
+    sreCopilot -->|"Read evidence"| evidenceApi
+    evidenceApi -->|"Query-only"| backend
+    policyAgent -->|"Workload ID JWT"| apim
+    statusAgent -->|"Workload ID JWT"| apim
+    sreCopilot -->|"Workload ID JWT"| apim
+    apim -->|"Managed identity"| newModel
+    apim -.->|"Verified reuse only"| existingModel
+    policyAgent -->|"Safe metadata"| collector
+    statusAgent -->|"Safe metadata"| collector
+    sreCopilot -->|"Safe metadata"| collector
+    retrievalApi -->|"Safe metadata"| collector
+    collector -->|"Approved ingest"| backend
+    apim -->|"Body logging off"| azureMonitor
+  end
+  style aks fill:#C2E5FF,stroke:#3DADFF
+  style governance fill:#E4CCFF,stroke:#A166FF
+  style models fill:#CDF4D3,stroke:#66D575

@@ -1,0 +1,26 @@
+{
+  "review_date": "2026-11-01",
+  "timezone": "Asia/Dubai",
+  "scope": "documentation_fit_review_not_source_audit_or_runtime_validation",
+  "sources": [
+    "https://microsoftlearning.github.io/mslearn-ai-governance/lab/",
+    "https://github.com/mohamedsaif/ai-hub-gateway-solution-accelerator/tree/workshop",
+    "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator"
+  ],
+  "recommendation": "optional_governed_model_access_experiment_after_local_baseline_and_cloud_gates",
+  "selected_for_implementation": false,
+  "cloud_operations_performed": false,
+  "azure_execution_enabled": false,
+  "gitlab_credentials_changed": false,
+  "baseline_delivery_count": "11/38",
+  "pending_gates": [
+    "G2",
+    "G3",
+    "G4",
+    "G5"
+  ],
+  "source_sha256": {
+    "HLD.md": "9776c707763afb043ae2c6d6c0d77a7bf47f2b1165205ce4e16568415d93f0dd",
+    "docs/architecture/citadel-governance-review.md": "82c452249360b06d15cfbeefe3cb0af2c1fd7a366dca284c3c4e8b48aa0198d9"
+  }
+}

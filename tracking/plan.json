@@ -50,7 +50,9 @@
         "ai-observability-lab/HLD.md",
         "ai-observability-lab/docs/engineering-standards.md",
         "ai-observability-lab/docs/repository-layout.md",
-        "ai-observability-lab/docs/actions-delivery-plan.md"
+        "ai-observability-lab/docs/actions-delivery-plan.md",
+        "ai-observability-lab/docs/architecture.md",
+        "ai-observability-lab/docs/architecture"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -438,7 +440,7 @@
       "artifacts": [
         "ai-observability-infra/README.md"
       ],
-      "acceptance": "Component active/idle costs, retention, AKS/runner reachability and optional Managed footprint are documented using dated inputs."
+      "acceptance": "Dated active/idle costs, AKS/APIM SKU and network/runner reachability, identity boundaries, retention and optional Managed footprint documented; no cloud authorization inferred."
     },
     {
       "id": "P3.3",
@@ -463,7 +465,8 @@
       "owner": "User",
       "repo": "infra",
       "depends_on": [
-        "P3.3"
+        "P3.3",
+        "P3.7"
       ],
       "gates": [
         "G0",
@@ -714,7 +717,8 @@
       "repo": "infra/lab",
       "depends_on": [
         "P6.4",
-        "P3.6"
+        "P3.6",
+        "P6.6"
       ],
       "gates": [
         "G0",
@@ -723,6 +727,59 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Reviewed dedicated-scope teardown verified, remaining resources inventoried and sanitized evidence/lifecycle instructions handed over."
+    },
+    {
+      "id": "P3.7",
+      "title": "Prepare Terraform APIM governance and versioned policy contracts",
+      "owner": "Codex",
+      "repo": "infra",
+      "depends_on": [
+        "P3.3"
+      ],
+      "gates": [
+        "G0",
+        "G1",
+        "G2"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Terraform/provider coverage, complete backend/access inventory, three identity boundaries, network/diagnostic ownership, offline policy checks and costed gateway plan reviewed before apply; one resource/state owner."
+    },
+    {
+      "id": "P5.5",
+      "title": "Implement governed model adapter and bounded gateway behavior",
+      "owner": "Codex",
+      "repo": "workloads",
+      "depends_on": [
+        "P1.3",
+        "P3.7"
+      ],
+      "gates": [
+        "G0"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Deterministic mode preserved; gateway-scoped identity contract, model allowlist and typed auth/rate/quota/timeout errors pass synthetic checks; retries and streaming bounded; no direct-endpoint fallback. Actual cloud/live claims require P3.5 and G5."
+    },
+    {
+      "id": "P6.6",
+      "title": "Validate APIM governance, safe telemetry and scoped lifecycle",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P3.5",
+        "P5.5",
+        "P3.6"
+      ],
+      "gates": [
+        "G0",
+        "G2",
+        "G3",
+        "G5"
+      ],
+      "watch": [],
+      "artifacts": [],
+      "acceptance": "Versioned gateway cohort defined before execution; live authorized/denied calls, token-rate/quota bounds, bypass denial, faults, available usage, privacy canaries, correlation/overhead, rebuild and scoped cleanup evidenced; no Managed parity claim."
     }
   ]
 }

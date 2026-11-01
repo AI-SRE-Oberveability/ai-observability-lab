@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-01",
+  "scope": "Public documentation and embedded official icon sources",
+  "scanner": "Gitleaks 8.30.1 default rules, redact 100",
+  "findings": 4,
+  "confirmed_secrets": 0,
+  "disposition": [
+    {
+      "file": "evidence/citadel-architecture-update.json",
+      "rule": "generic-api-key",
+      "classification": "known_source_sha256_not_a_credential",
+      "icon_file": "apim.svg"
+    },
+    {
+      "file": "evidence/citadel-architecture-update.json",
+      "rule": "generic-api-key",
+      "classification": "known_source_sha256_not_a_credential",
+      "icon_file": "key-vault.svg"
+    },
+    {
+      "file": "tracking/state.json",
+      "rule": "generic-api-key",
+      "classification": "known_source_sha256_not_a_credential",
+      "icon_file": "apim.svg"
+    },
+    {
+      "file": "tracking/state.json",
+      "rule": "generic-api-key",
+      "classification": "known_source_sha256_not_a_credential",
+      "icon_file": "key-vault.svg"
+    }
+  ],
+  "checks": [
+    "Each flagged value independently equals SHA256 of its unchanged official Azure icon file",
+    "No auth file, runtime archive, plan/state, personal email or signed asset URL included",
+    "No ignore rule or detector suppression added"
+  ]
+}

@@ -1,0 +1,37 @@
+flowchart LR
+  subgraph target ["CURRENT TARGET - telemetry and governance proof - not deployed"]
+    requests["Synthetic request / fault cohorts"]
+    subgraph aks ["AKS application and custom telemetry"]
+      agent["Instrumented agent"]
+      collector["Collector - metadata allowlist"]
+      sre["Read-only SRE copilot"]
+      adapter["Bounded evidence adapter"]
+    end
+    apim["APIM gateway"]
+    modelApi["Approved model endpoint"]
+    labBackend["Jaeger / planned Prometheus"]
+    azureMonitor["Azure Monitor - APIM diagnostics"]
+    subgraph native ["Separate licensed native cohort - G4"]
+      oneAgent["OneAgent"]
+      activeGate["Compatible ActiveGate"]
+      managed["Managed on supported hosts"]
+    end
+    requests -->|"Exercise cases"| agent
+    agent -->|"Governed model calls"| apim
+    apim -->|"Managed identity"| modelApi
+    agent -->|"Custom SDK signals"| collector
+    collector -->|"Traces / bounded metrics"| labBackend
+    apim -->|"Metadata, no bodies"| azureMonitor
+    agent -->|"Native cohort"| oneAgent
+    oneAgent -->|"Supported route"| activeGate
+    activeGate -->|"Native ingest"| managed
+    collector -.->|"Supported OTLP only"| activeGate
+    requests -->|"Request explanation"| sre
+    sre -->|"Read-only tools"| adapter
+    adapter -->|"Bounded reads"| labBackend
+    adapter -.->|"Approved query-only"| azureMonitor
+    adapter -.->|"Verified APIs only"| managed
+    adapter -->|"Audit metadata"| collector
+  end
+  style aks fill:#C2E5FF,stroke:#3DADFF
+  style native fill:#E4CCFF,stroke:#A166FF
