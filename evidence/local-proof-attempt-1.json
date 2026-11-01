@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-01T15:33:48.043906+04:00",
+  "profile": "Windows loopback, deterministic mock, ephemeral memory",
+  "versions": {
+    "collector": "0.164.0",
+    "jaeger": "2.22.0"
+  },
+  "query_api": "Jaeger 2.22 pinned internal HTTP API; not a production adapter",
+  "azure_operations": false,
+  "gitlab_changes": false,
+  "healthy": {
+    "trace_id": "16808961b5ff532b8706fa854628950b",
+    "span_count": 7,
+    "services": [
+      "policy-agent",
+      "policy-retrieval"
+    ],
+    "names": [
+      "POST /v1/ask",
+      "agent.invoke",
+      "model.plan",
+      "tool.retrieve",
+      "POST /v1/retrieve",
+      "retrieval.search",
+      "model.generate"
+    ],
+    "edges": [
+      [
+        "POST /v1/retrieve",
+        "retrieval.search"
+      ],
+      [
+        "tool.retrieve",
+        "POST /v1/retrieve"
+      ],
+      [
+        "agent.invoke",
+        "model.plan"
+      ],
+      [
+        "agent.invoke",
+        "tool.retrieve"
+      ],
+      [
+        "agent.invoke",
+        "model.generate"
+      ],
+      [
+        "POST /v1/ask",
+        "agent.invoke"
+      ]
+    ]
+  },
+  "fault": {
+    "trace_id": "3ef88718c536fbb674218451cfb99a22",
+    "span_count": 7,
+    "services": [
+      "policy-agent",
+      "policy-retrieval"
+    ],
+    "names": [
+      "POST /v1/ask",
+      "agent.invoke",
+      "model.plan",
+      "tool.retrieve",
+      "tool.retrieve",
+      "POST /v1/retrieve",
+      "POST /v1/retrieve"
+    ],
+    "edges": [
+      [
+        "tool.retrieve",
+        "POST /v1/retrieve"
+      ],
+      [
+        "tool.retrieve",
+        "POST /v1/retrieve"
+      ],
+      [
+        "agent.invoke",
+        "model.plan"
+      ],
+      [
+        "agent.invoke",
+        "tool.retrieve"
+      ],
+      [
+        "agent.invoke",
+        "tool.retrieve"
+      ],
+      [
+        "POST /v1/ask",
+        "agent.invoke"
+      ]
+    ],
+    "outcome": "tool_error",
+    "tool_calls": 2,
+    "elapsed_seconds": 0.078
+  },
+  "privacy": {
+    "canary_values_found": 0,
+    "resource_span_metric_allowlists": "passed",
+    "events_and_links": "absent",
+    "surfaces": [
+      "Collector trace JSONL",
+      "Collector metrics JSONL",
+      "Jaeger retrieved traces",
+      "Prometheus exposition",
+      "Collector internal metrics",
+      "controlled application operation log"
+    ],
+    "log_pipeline_exported": false
+  },
+  "owned_ports_released": true,
+  "status": "failed_lifecycle_assertion",
+  "failure": "Restart query returned expected 404 but runner did not yet classify it as absent",
+  "raw_capture_published": false
+}

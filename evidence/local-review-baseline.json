@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-01",
+  "environment": "Windows loopback, deterministic mock",
+  "tests": 18,
+  "warnings": 1,
+  "duration_seconds": 27.7,
+  "versions": {
+    "python": "3.12.9",
+    "fastapi": "0.162.0",
+    "starlette": "1.10.0",
+    "httpx": "0.28.1",
+    "uvicorn": "0.54.0",
+    "opentelemetry-sdk": "1.45.1",
+    "pytest": "9.2.0"
+  },
+  "profile": "real HTTP with in-memory exporters",
+  "backend_ingestion_proved": false,
+  "azure_enabled": false,
+  "workload_commit": "e6bf84997664ea493a91fc27f66afe26898f203b"
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-01",
+  "tests": 18,
+  "warnings": 0,
+  "duration_seconds": 23.77,
+  "lint": "passed",
+  "format": "passed",
+  "contracts": "both OpenAPI contracts validated; real HTTP response schemas, authentication, typed outcomes and bounds exercised",
+  "versions_unchanged": true,
+  "mock_token_usage": "input/output remain null",
+  "native_configs": "Jaeger 2.22.0 and Collector 0.164.0 validators exited zero",
+  "remaining": "complete rerun after restart-404 assertion correction; no Azure/Managed/live model proof"
+}

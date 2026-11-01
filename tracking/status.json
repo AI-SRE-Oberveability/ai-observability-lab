@@ -1,10 +1,12 @@
 {
-  "updated_at": "2026-11-01T15:20:26+04:00",
+  "updated_at": "2026-11-01T15:39:55+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
-    "done": 11,
-    "draft": 8,
-    "planned": 19,
+    "done": 15,
+    "draft": 3,
+    "planned": 18,
+    "needs_revalidation": 1,
+    "blocked": 1,
     "waiting_for_decision": 3
   },
   "tasks": [
@@ -66,10 +68,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/citadel-architecture-update.json",
-        "ai-observability-lab/evidence/citadel-source-review.json"
+        "ai-observability-lab/evidence/local-backend-proof.json",
+        "ai-observability-lab/evidence/pr21-merge.json"
       ],
-      "note": "AKS/APIM selected design, official-icon draw.io and retained/current FigJam views documented; public source review resolves icon-hash false positives; cloud runtime remains unimplemented",
+      "note": "HLD reflects verified local backend proof and preserves unimplemented cloud boundaries; source/CI review remains pending publication",
       "ready": false
     },
     {
@@ -104,9 +106,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/citadel-architecture-update.json"
+        "ai-observability-lab/evidence/local-workload-correction.json"
       ],
-      "note": "41-task tracker and working agreements consistent; dependency DAG verified and 20 tracker/sync tests passed; no gate acceptance changed",
+      "note": "Source watches now cover lock inputs, tests and new runner/runbook; 20 tracker/sync tests passed",
       "ready": false
     },
     {
@@ -144,23 +146,30 @@
       ],
       "watch": [
         "ai-agent-workloads/src",
-        "ai-agent-workloads/pyproject.toml"
+        "ai-agent-workloads/pyproject.toml",
+        "ai-agent-workloads/uv.lock",
+        "ai-agent-workloads/requirements.lock.txt",
+        "ai-agent-workloads/requirements-dev.lock.txt",
+        "ai-agent-workloads/tests"
       ],
       "artifacts": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/uv.lock"
       ],
       "acceptance": "Draft review records corrections, supported versions and treatment of the deprecation/incomplete CI input.",
-      "status": "draft",
+      "status": "done",
       "blocked_by": [],
       "artifacts_present": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/uv.lock"
       ],
       "artifacts_missing": [],
-      "evidence": [],
-      "note": "",
-      "ready": true
+      "evidence": [
+        "ai-observability-lab/evidence/local-workload-review.md",
+        "ai-observability-lab/evidence/local-workload-correction.json"
+      ],
+      "note": "Review correction validated: 18 tests, zero warnings; existing locks retained; runner/export gaps tracked",
+      "ready": false
     },
     {
       "id": "P1.2",
@@ -181,17 +190,17 @@
         "ai-agent-workloads/contracts/retrieval.openapi.yaml"
       ],
       "acceptance": "Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.",
-      "status": "draft",
-      "blocked_by": [
-        "P1.1"
-      ],
+      "status": "done",
+      "blocked_by": [],
       "artifacts_present": [
         "ai-agent-workloads/contracts/agent.openapi.yaml",
         "ai-agent-workloads/contracts/retrieval.openapi.yaml"
       ],
       "artifacts_missing": [],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/local-workload-correction.json"
+      ],
+      "note": "Both OpenAPI contracts and real HTTP authentication/input/outcome/limit cases passed",
       "ready": false
     },
     {
@@ -214,17 +223,17 @@
         "ai-agent-workloads/evaluations/policy-v1.json"
       ],
       "acceptance": "Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.",
-      "status": "draft",
-      "blocked_by": [
-        "P1.2"
-      ],
+      "status": "done",
+      "blocked_by": [],
       "artifacts_present": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/evaluations/policy-v1.json"
       ],
       "artifacts_missing": [],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/local-workload-correction.json"
+      ],
+      "note": "Real HTTP retrieval and versioned answer dataset passed; deterministic mock mode and null token usage retained",
       "ready": false
     },
     {
@@ -248,17 +257,17 @@
         "ai-observability-config/local/collector.yaml"
       ],
       "acceptance": "Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.",
-      "status": "draft",
-      "blocked_by": [
-        "P1.3"
-      ],
+      "status": "done",
+      "blocked_by": [],
       "artifacts_present": [
         "ai-observability-config/telemetry-contract.md",
         "ai-observability-config/local/collector.yaml"
       ],
       "artifacts_missing": [],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/local-backend-proof.json"
+      ],
+      "note": "Exported trace/metric allowlists, exact backend graph, service/version identity and canary/log surfaces checked on deterministic native profile",
       "ready": false
     },
     {
@@ -276,24 +285,33 @@
         "ai-observability-config/local",
         "ai-agent-workloads/compose.yaml",
         "ai-observability-lab/compose.yaml",
-        "ai-observability-lab/scripts/install_local_backends.py"
+        "ai-observability-lab/scripts/install_local_backends.py",
+        "ai-observability-lab/scripts/prove_local_backend.py",
+        "ai-observability-lab/docs/local-backend-runbook.md"
       ],
       "artifacts": [
         "ai-observability-lab/compose.yaml",
-        "ai-observability-config/local/compose.yaml"
+        "ai-observability-config/local/compose.yaml",
+        "ai-observability-config/local/native/collector.yaml",
+        "ai-observability-config/local/native/jaeger.yaml",
+        "ai-observability-lab/scripts/prove_local_backend.py"
       ],
       "acceptance": "Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.",
-      "status": "draft",
-      "blocked_by": [
-        "P1.4"
-      ],
+      "status": "done",
+      "blocked_by": [],
       "artifacts_present": [
         "ai-observability-lab/compose.yaml",
-        "ai-observability-config/local/compose.yaml"
+        "ai-observability-config/local/compose.yaml",
+        "ai-observability-config/local/native/collector.yaml",
+        "ai-observability-config/local/native/jaeger.yaml",
+        "ai-observability-lab/scripts/prove_local_backend.py"
       ],
       "artifacts_missing": [],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/local-backend-proof.json",
+        "ai-observability-lab/evidence/local-proof-attempt-1.json"
+      ],
+      "note": "Pinned loopback native runner passed readiness, owned-process stop, released-listener and ephemeral restart checks; first failed assertion retained",
       "ready": false
     },
     {
@@ -310,18 +328,20 @@
       "watch": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/tests",
-        "ai-observability-config/local"
+        "ai-observability-config/local",
+        "ai-observability-lab/scripts/prove_local_backend.py",
+        "ai-observability-lab/docs/local-backend-runbook.md"
       ],
       "artifacts": [],
       "acceptance": "Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated.",
-      "status": "planned",
-      "blocked_by": [
-        "P1.5"
-      ],
+      "status": "done",
+      "blocked_by": [],
       "artifacts_present": [],
       "artifacts_missing": [],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/local-backend-proof.json"
+      ],
+      "note": "Machine-readable backend proof records healthy/fault exact graphs, exported canaries, bounded two-attempt failure and explicit limitations",
       "ready": false
     },
     {
@@ -402,9 +422,7 @@
       ],
       "acceptance": "Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.",
       "status": "draft",
-      "blocked_by": [
-        "P1.6"
-      ],
+      "blocked_by": [],
       "artifacts_present": [
         "ai-agent-workloads/.github/workflows/ci.yaml",
         "ai-agent-workloads/requirements-dev.lock.txt",
@@ -413,7 +431,7 @@
       "artifacts_missing": [],
       "evidence": [],
       "note": "",
-      "ready": false
+      "ready": true
     },
     {
       "id": "P2.4",
@@ -547,7 +565,7 @@
         "ai-observability-lab/.github/workflows/ci.yaml"
       ],
       "acceptance": "All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.",
-      "status": "done",
+      "status": "needs_revalidation",
       "blocked_by": [],
       "artifacts_present": [
         "ai-observability-infra/.github/workflows/ci.yaml",
@@ -560,7 +578,7 @@
         "ai-observability-lab/evidence/actions-main-activation.json"
       ],
       "note": "Four merged main CI pipelines remain verified; completion receipt now hashes the exact Git-normalized immutable evidence",
-      "ready": false
+      "ready": true
     },
     {
       "id": "P2.9",
@@ -585,8 +603,10 @@
         "ai-observability-infra/foundation/.terraform.lock.hcl"
       ],
       "acceptance": "Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "blocked",
+      "blocked_by": [
+        "P2.8"
+      ],
       "artifacts_present": [
         "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
         "ai-observability-infra/foundation/.terraform.lock.hcl"
@@ -904,7 +924,6 @@
       "acceptance": "Allowlisted health/version/failure schemas and versioned synthetic incidents have expected outcomes.",
       "status": "planned",
       "blocked_by": [
-        "P1.6",
         "P2.4"
       ],
       "artifacts_present": [],
@@ -1167,7 +1186,6 @@
       "acceptance": "Deterministic mode preserved; gateway-scoped identity contract, model allowlist and typed auth/rate/quota/timeout errors pass synthetic checks; retries and streaming bounded; no direct-endpoint fallback. Actual cloud/live claims require P3.5 and G5.",
       "status": "planned",
       "blocked_by": [
-        "P1.3",
         "P3.7"
       ],
       "artifacts_present": [],

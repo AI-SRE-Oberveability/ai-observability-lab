@@ -130,7 +130,7 @@
       "issue_node_id": "I_kwDOVa724s8AAAABas0cMA",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/issues/1",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETSkY",
-      "evidence_status": "draft",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.1"
@@ -139,7 +139,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "draft"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P0.4"
@@ -148,7 +148,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -158,7 +158,7 @@
       "issue_node_id": "I_kwDOVa724s8AAAABas0hPA",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/issues/2",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETSpI",
-      "evidence_status": "draft",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.2"
@@ -167,7 +167,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "draft"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.1"
@@ -176,7 +176,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -186,7 +186,7 @@
       "issue_node_id": "I_kwDOVa724s8AAAABas0njg",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/issues/3",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETSvo",
-      "evidence_status": "draft",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.3"
@@ -195,7 +195,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "draft"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.2"
@@ -204,7 +204,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -214,7 +214,7 @@
       "issue_node_id": "I_kwDOVa74jc8AAAABas0tcg",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/issues/1",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETS1g",
-      "evidence_status": "draft",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.4"
@@ -223,7 +223,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "draft"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.3"
@@ -232,7 +232,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -242,7 +242,7 @@
       "issue_node_id": "I_kwDOVa78x88AAAABas0zRw",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/issues/5",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETS7I",
-      "evidence_status": "draft",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.5"
@@ -251,7 +251,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "draft"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.4"
@@ -260,7 +260,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -270,7 +270,7 @@
       "issue_node_id": "I_kwDOVa78x88AAAABas04rQ",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/issues/6",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETTA8",
-      "evidence_status": "planned",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.6"
@@ -279,7 +279,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "planned"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.5"
@@ -288,7 +288,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -1026,7 +1026,7 @@
       "issue_node_id": "I_kwDOVa78x88AAAABatHR2g",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/issues/17",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETj9c",
-      "evidence_status": "done",
+      "evidence_status": "needs_revalidation",
       "values": {
         "Task ID": {
           "text": "P2.8"
@@ -1035,7 +1035,7 @@
           "singleSelectOptionId": "2dfbe738"
         },
         "Evidence status": {
-          "text": "done"
+          "text": "needs_revalidation"
         },
         "Dependencies": {
           "text": "P2.7"
@@ -1044,7 +1044,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "98236657"
+          "singleSelectOptionId": "f75ad846"
         }
       }
     },
@@ -1054,7 +1054,7 @@
       "issue_node_id": "I_kwDOVa7zqM8AAAABatHYOw",
       "issue_url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/issues/10",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETkCM",
-      "evidence_status": "done",
+      "evidence_status": "blocked",
       "values": {
         "Task ID": {
           "text": "P2.9"
@@ -1063,7 +1063,7 @@
           "singleSelectOptionId": "2dfbe738"
         },
         "Evidence status": {
-          "text": "done"
+          "text": "blocked"
         },
         "Dependencies": {
           "text": "P2.8"
@@ -1072,7 +1072,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "98236657"
+          "singleSelectOptionId": "f75ad846"
         }
       }
     },
@@ -1163,7 +1163,7 @@
   },
   "project_number": 1,
   "visibility": "private",
-  "verified_at": "2026-11-01T15:20:55+04:00",
+  "verified_at": "2026-11-01T15:40:08+04:00",
   "views": [
     {
       "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",

@@ -112,7 +112,11 @@
       ],
       "watch": [
         "ai-agent-workloads/src",
-        "ai-agent-workloads/pyproject.toml"
+        "ai-agent-workloads/pyproject.toml",
+        "ai-agent-workloads/uv.lock",
+        "ai-agent-workloads/requirements.lock.txt",
+        "ai-agent-workloads/requirements-dev.lock.txt",
+        "ai-agent-workloads/tests"
       ],
       "artifacts": [
         "ai-agent-workloads/src",
@@ -198,11 +202,16 @@
         "ai-observability-config/local",
         "ai-agent-workloads/compose.yaml",
         "ai-observability-lab/compose.yaml",
-        "ai-observability-lab/scripts/install_local_backends.py"
+        "ai-observability-lab/scripts/install_local_backends.py",
+        "ai-observability-lab/scripts/prove_local_backend.py",
+        "ai-observability-lab/docs/local-backend-runbook.md"
       ],
       "artifacts": [
         "ai-observability-lab/compose.yaml",
-        "ai-observability-config/local/compose.yaml"
+        "ai-observability-config/local/compose.yaml",
+        "ai-observability-config/local/native/collector.yaml",
+        "ai-observability-config/local/native/jaeger.yaml",
+        "ai-observability-lab/scripts/prove_local_backend.py"
       ],
       "acceptance": "Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented."
     },
@@ -220,7 +229,9 @@
       "watch": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/tests",
-        "ai-observability-config/local"
+        "ai-observability-config/local",
+        "ai-observability-lab/scripts/prove_local_backend.py",
+        "ai-observability-lab/docs/local-backend-runbook.md"
       ],
       "artifacts": [],
       "acceptance": "Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated."
