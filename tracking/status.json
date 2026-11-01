@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T16:06:58+04:00",
+  "updated_at": "2026-11-01T16:10:15+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 18,
@@ -68,9 +68,9 @@
       "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/main-ci-revalidation.json",
-        "ai-observability-lab/evidence/release-pinning-validation.json"
+        "ai-observability-lab/evidence/release-candidate-publication.json"
       ],
-      "note": "HLD/plan record merged-main CI and source-pinned candidate while keeping missing image/replay and Azure gates explicit",
+      "note": "Three requested PRs merged and all main CI revalidated; candidate preparation published in PR #24 with readiness limits explicit",
       "ready": false
     },
     {
@@ -469,9 +469,9 @@
       "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/release-pinning-validation.json",
-        "ai-observability-lab/evidence/main-ci-revalidation.json"
+        "ai-observability-lab/evidence/release-candidate-publication.json"
       ],
-      "note": "Candidate pins four exact commits, three existing image refs, two native packages and 18 file hashes; source validation passed, deployable check correctly fails; workload publication/replay pending",
+      "note": "Candidate and pin validator published for review in PR #24; 18 Git source files verified, 28 tests passed, missing workload digest/replay still block release acceptance",
       "ready": true
     },
     {

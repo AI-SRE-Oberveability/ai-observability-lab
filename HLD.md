@@ -210,9 +210,9 @@ The first real backend attempt retrieved healthy/fault traces and passed canary 
 
 The corrected one-shot proof passed after the first restart-404 assertion failure; both attempts are retained. P1.4/P1.5/P1.6 can be assessed from exported/backend data and owned-process lifecycle, independently of cloud scope. Next: publish the workload/config/runner review PRs and verify hosted CI. The new configuration-checker source invalidates its earlier main-CI receipt until review/merge/revalidation; the tracker exposes that dependency rather than assuming new code ran on main. Azure deployment remains false, GitLab/global settings unchanged, and all local services are stopped.
 
-## Local proof published for review - 1 November 2026
+## Historical local proof publication - 1 November 2026 (now merged)
 
-Workloads PR #11, observability-config PR #5 and lab PR #23 contain the test correction, native profiles and reproducible runner/evidence respectively. See evidence/local-proof-publication.json. Source review found no confirmed secrets; reviewed matches are source-file SHA256 receipts. PR #21 is merged; these new PRs remain open.
+Workloads PR #11, observability-config PR #5 and lab PR #23 contain the test correction, native profiles and reproducible runner/evidence respectively. See evidence/local-proof-publication.json. Source review found no confirmed secrets; reviewed matches are source-file SHA256 receipts. At publication those follow-ups remained open; their later approved merges are recorded below.
 
 All six P1 steps have local acceptance evidence. The tracker is 15/41 because P2.8 needs revalidation of the changed configuration checker on main, and P2.9 depends on that receipt. Hosted branch checks are tracked on the PRs separately. Next: review/merge follow-up changes, verify main CI, then complete multi-repository release pinning. No cloud gate is accepted. Azure deployment remains false; global Git settings match the preservation baseline and GitLab credentials were not changed. All owned local listeners are stopped.
 
@@ -233,3 +233,9 @@ P2.8/P2.9 can be reaccepted from these results and the retained disabled-preflig
 releases/local-v0.1.0-source-candidate.json freezes the four tested commits, main CI IDs, existing Docker base/backend digest references, two native package checksums and 18 selected Git-object hashes. The offline validator checked source/receipt consistency and rejected deployable readiness as expected. All 28 local tests pass (20 tracker/sync and 8 release-candidate checks). See releases/README.md and evidence/release-pinning-validation.json.
 
 The candidate has no workload registry digest and cannot pass --require-deployable. Existing image digests have not been newly pulled/resolved in this step. The manifest lives in its containing commit while its lab execution pin stays on the tested merged runner baseline. Current CI permissions/workflows are unchanged. Next: review the candidate, then select/review a registry publication and immutable container-replay path. P2.4 stays in progress; Azure/cloud, Managed and live-model gates remain pending. GitLab credentials and global Git settings remain unchanged.
+
+## Release candidate published for review - 1 November 2026
+
+[Lab PR #24](https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/24) contains the candidate, validator/tests, exact-main CI receipts and merge receipts. See evidence/release-candidate-publication.json. The shared Project is at 18/41 accepted deliverables, with P2.4 in progress and no stale CI receipt. The candidate is not deployable: the workload image remains unpublished/unpinned, and the immutable container replay is pending.
+
+The three requested PRs are merged. This new preparation PR remains open for review. Azure deployment is still false; no registry publication, release tag, Azure authentication or resource operation took place. Global Git settings match the preservation baseline and GitLab credentials were not changed.
