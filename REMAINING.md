@@ -1,24 +1,17 @@
 # What remains
 
-Updated: 2026-11-01T15:20:26+04:00 (Asia/Dubai).
+Updated: 2026-11-01T15:42:47+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
 Next action: select a ready step from POC_TRACKER.md.
 
-## P1 — Prove the local vertical slice
-
-- **P1.1 Review existing draft code, dependencies and gaps** (draft). Acceptance: Draft review records corrections, supported versions and treatment of the deprecation/incomplete CI input.
-- **P1.2 Validate API and retrieval contracts** (draft). Acceptance: Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.
-- **P1.3 Complete synthetic policy workload and adapter** (draft). Acceptance: Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.
-- **P1.4 Validate propagation and metadata-only telemetry** (draft). Acceptance: Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.
-- **P1.5 Prove local backend runner and lifecycle** (draft). Acceptance: Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.
-- **P1.6 Record complete local trace and exported-data evidence** (planned). Acceptance: Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated.
-
 ## P2 — Establish personal GitHub delivery
 
 - **P2.3 Complete reproducible CI, contract tests and builds** (draft). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (planned). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
+- **P2.8 Activate independent CI in all four repositories** (needs_revalidation). Acceptance: All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.
+- **P2.9 Configure guarded Terraform plan and deployment workflows** (blocked). Acceptance: Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.
 
 ## P3 — Plan and deploy personal Azure
 

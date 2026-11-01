@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-01T15:35:11.645537+04:00",
+  "profile": "Windows loopback, deterministic mock, ephemeral memory",
+  "versions": {
+    "collector": "0.164.0",
+    "jaeger": "2.22.0"
+  },
+  "query_api": "Jaeger 2.22 pinned internal HTTP API; not a production adapter",
+  "azure_operations": false,
+  "gitlab_changes": false,
+  "healthy": {
+    "trace_id": "c4d2bb8d25e3934c4025db9187e9ec56",
+    "span_count": 7,
+    "services": [
+      "policy-agent",
+      "policy-retrieval"
+    ],
+    "names": [
+      "POST /v1/ask",
+      "agent.invoke",
+      "model.plan",
+      "tool.retrieve",
+      "POST /v1/retrieve",
+      "retrieval.search",
+      "model.generate"
+    ],
+    "edges": [
+      [
+        "agent.invoke",
+        "model.plan"
+      ],
+      [
+        "agent.invoke",
+        "tool.retrieve"
+      ],
+      [
+        "agent.invoke",
+        "model.generate"
+      ],
+      [
+        "POST /v1/ask",
+        "agent.invoke"
+      ],
+      [
+        "POST /v1/retrieve",
+        "retrieval.search"
+      ],
+      [
+        "tool.retrieve",
+        "POST /v1/retrieve"
+      ]
+    ]
+  },
+  "fault": {
+    "trace_id": "cd261f9fd8be3fec3616fcb2739ae0b1",
+    "span_count": 7,
+    "services": [
+      "policy-agent",
+      "policy-retrieval"
+    ],
+    "names": [
+      "POST /v1/ask",
+      "agent.invoke",
+      "model.plan",
+      "tool.retrieve",
+      "tool.retrieve",
+      "POST /v1/retrieve",
+      "POST /v1/retrieve"
+    ],
+    "edges": [
+      [
+        "agent.invoke",
+        "model.plan"
+      ],
+      [
+        "agent.invoke",
+        "tool.retrieve"
+      ],
+      [
+        "agent.invoke",
+        "tool.retrieve"
+      ],
+      [
+        "POST /v1/ask",
+        "agent.invoke"
+      ],
+      [
+        "tool.retrieve",
+        "POST /v1/retrieve"
+      ],
+      [
+        "tool.retrieve",
+        "POST /v1/retrieve"
+      ]
+    ],
+    "outcome": "tool_error",
+    "tool_calls": 2,
+    "elapsed_seconds": 0.063
+  },
+  "privacy": {
+    "canary_values_found": 0,
+    "resource_span_metric_allowlists": "passed",
+    "events_and_links": "absent",
+    "surfaces": [
+      "Collector trace JSONL",
+      "Collector metrics JSONL",
+      "Jaeger retrieved traces",
+      "Prometheus exposition",
+      "Collector internal metrics",
+      "controlled application operation log"
+    ],
+    "log_pipeline_exported": false
+  },
+  "restart_trace_http_status": 404,
+  "ephemeral_retention_after_restart": "old trace absent",
+  "owned_ports_released": true,
+  "status": "passed",
+  "workload_tests": {
+    "passed": 18,
+    "warnings": 0,
+    "duration_seconds": 23.77
+  },
+  "tracker_tests": 20,
+  "source_sha256": {
+    "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+    "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+    "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+    "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+    "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+    "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+    "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+    "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+    "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+    "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c",
+    "ai-agent-workloads/contracts/agent.openapi.yaml": "333c90b6fd807c385257fb2b484c6b5a289d3227ae063f3c18abaa75b416ab4a",
+    "ai-agent-workloads/contracts/retrieval.openapi.yaml": "73c266b6ff33bac6f3b05338ebe11759d013a2b1c9727aae70c6266bc911e532",
+    "ai-observability-config/local/native/collector.yaml": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654",
+    "ai-observability-config/local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea",
+    "ai-observability-lab/scripts/prove_local_backend.py": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f",
+    "ai-observability-lab/docs/local-backend-runbook.md": "11bfa11d35dd4b2a1345accbb8f016bf1d0ec3bfea9a3765d2d67b124bcdb5d1",
+    "ai-observability-config/telemetry-contract.md": "0ddc945a2437ea09ead6b233fd5b279f4d3a17f3da7d5ebe6e5ac4e6fb6ddbac"
+  },
+  "resource_identity_check": {
+    "services_and_version": [
+      [
+        "policy-agent",
+        "0.1.0-local-proof"
+      ],
+      [
+        "policy-retrieval",
+        "0.1.0-local-proof"
+      ]
+    ],
+    "environment": "local",
+    "status": "passed"
+  },
+  "raw_captures_published": false,
+  "limits": [
+    "One healthy and one dependency-503 cohort; not a 100-request P6 measurement",
+    "Native Windows process isolation only; Compose not exercised",
+    "Pinned internal Jaeger query API; stable production adapter still planned",
+    "No real model, Azure/APIM, Managed, durable delivery or production admission-control proof"
+  ]
+}

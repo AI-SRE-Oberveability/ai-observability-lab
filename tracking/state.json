@@ -31,15 +31,15 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "AKS/APIM selected design, official-icon draw.io and retained/current FigJam views documented; public source review resolves icon-hash false positives; cloud runtime remains unimplemented",
-      "at": "2026-11-01T15:20:24+04:00",
+      "note": "Local proof published in three review PRs; HLD records all six accepted P1 steps and pending merged-main CI revalidation; Azure remains disabled",
+      "at": "2026-11-01T15:42:46+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/citadel-architecture-update.json",
-        "ai-observability-lab/evidence/citadel-source-review.json"
+        "ai-observability-lab/evidence/local-backend-proof.json",
+        "ai-observability-lab/evidence/local-proof-publication.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "6904585458fb90275451586bc9d2caaa1aebe8ecf66d0211904e1d4a8e2f0b5d",
-        "ai-observability-lab/HLD.md": "19e77e672a4210e852fa99846cc5b44f283d5e2a9fc83b2b767576853e76e347",
+        "ai-observability-lab/HLD.md": "7f25aa5ddd9a6865f4f8ff403f0565b4a4df40e74fa646b9f4142f0b0638f547",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "4cb48979d675325633d2ad9509fb8f6120283bbcc1c0734f76f739ebb53d3d99",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -74,28 +74,28 @@
         "ai-observability-lab/docs/architecture/telemetry.png": "f2894a83d44e9acf05dea4ee5abe712628bd589bfb9950ed43308e6a1f3c79aa"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/citadel-architecture-update.json": "5507267c3ca956a1260a9e843990f61418c34e9b5147cf187f880a28b90c24ad",
-        "ai-observability-lab/evidence/citadel-source-review.json": "82412b0b4b875504911d5f9a11ff4bf34f6918229d045f0cd0294b455c726246"
+        "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453",
+        "ai-observability-lab/evidence/local-proof-publication.json": "ec1b5911a270bbf41a333e603320a22741a11859ee752484300f8988701a7227"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "41-task tracker and working agreements consistent; dependency DAG verified and 20 tracker/sync tests passed; no gate acceptance changed",
-      "at": "2026-11-01T15:20:22+04:00",
+      "note": "Source watches now cover lock inputs, tests and new runner/runbook; 20 tracker/sync tests passed",
+      "at": "2026-11-01T15:35:46+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/citadel-architecture-update.json"
+        "ai-observability-lab/evidence/local-workload-correction.json"
       ],
       "source_hashes": {
         "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "86e07108bad371177d1b79577bb5edc601d6e8fb1101068c571d4e6f4bc4118c",
+        "ai-observability-lab/tracking/plan.json": "176cd354edf416f5e25a23cee0e28568e0e2f8e8710b2e7a0c97024133ab3d5c",
         "ai-observability-lab/TRACKER_GUIDE.md": "7daeba4e8ed99175b356d123228e6f0aa38cf3a2e2c72276836fbeede50c36ee",
         "ai-observability-lab/AGENTS.md": "b488692f95371844c323d35694a6b6d2cbdd7db3e9cd4f54e2495bf5a2b7e3aa",
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/citadel-architecture-update.json": "5507267c3ca956a1260a9e843990f61418c34e9b5147cf187f880a28b90c24ad"
+        "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
       }
     },
     "P2.2": {
@@ -216,6 +216,148 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/citadel-architecture-update.json": "5507267c3ca956a1260a9e843990f61418c34e9b5147cf187f880a28b90c24ad"
       }
+    },
+    "P1.1": {
+      "status": "done",
+      "note": "Review correction validated: 18 tests, zero warnings; existing locks retained; runner/export gaps tracked",
+      "at": "2026-11-01T15:35:48+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/local-workload-review.md",
+        "ai-observability-lab/evidence/local-workload-correction.json"
+      ],
+      "source_hashes": {
+        "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+        "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+        "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+        "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+        "ai-agent-workloads/src/ai_lab/policies.json": "62071fad35b54a79b87345efcd6780576c6c50e7c11fa835f7c8793a943e7c77",
+        "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+        "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+        "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+        "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+        "ai-agent-workloads/pyproject.toml": "ca18cfe2681cfd79ed1db0adf185515cbed25c56f2f749768f739acd9d2b2aef",
+        "ai-agent-workloads/uv.lock": "59f4edafc72d4bfec0d17ba1799345204fe5cd99396481ea5d24ae605ea0fde3",
+        "ai-agent-workloads/requirements.lock.txt": "9047e7c693769c11b2a7ff06acd23fd8d1d41bd339756c66b3d27ad168ccb45b",
+        "ai-agent-workloads/requirements-dev.lock.txt": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506",
+        "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+        "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/local-workload-review.md": "b69d5c7a115232e5a6314001149f5b313660dacb3c4b7722f0af12beb7e83a34",
+        "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      }
+    },
+    "P1.2": {
+      "status": "done",
+      "note": "Both OpenAPI contracts and real HTTP authentication/input/outcome/limit cases passed",
+      "at": "2026-11-01T15:35:51+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/local-workload-correction.json"
+      ],
+      "source_hashes": {
+        "ai-agent-workloads/contracts/agent.openapi.yaml": "333c90b6fd807c385257fb2b484c6b5a289d3227ae063f3c18abaa75b416ab4a",
+        "ai-agent-workloads/contracts/retrieval.openapi.yaml": "73c266b6ff33bac6f3b05338ebe11759d013a2b1c9727aae70c6266bc911e532"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      }
+    },
+    "P1.3": {
+      "status": "done",
+      "note": "Real HTTP retrieval and versioned answer dataset passed; deterministic mock mode and null token usage retained",
+      "at": "2026-11-01T15:35:53+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/local-workload-correction.json"
+      ],
+      "source_hashes": {
+        "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+        "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+        "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+        "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+        "ai-agent-workloads/src/ai_lab/policies.json": "62071fad35b54a79b87345efcd6780576c6c50e7c11fa835f7c8793a943e7c77",
+        "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+        "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+        "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+        "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+        "ai-agent-workloads/evaluations/policy-v1.json": "88031fa8b98e332e603d3189c7c506290a7494da2fad27425bfe3fbff54d2af4"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      }
+    },
+    "P1.4": {
+      "status": "done",
+      "note": "Exported trace/metric allowlists, exact backend graph, service/version identity and canary/log surfaces checked on deterministic native profile",
+      "at": "2026-11-01T15:37:55+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/local-backend-proof.json"
+      ],
+      "source_hashes": {
+        "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+        "ai-observability-config/telemetry-contract.md": "0ddc945a2437ea09ead6b233fd5b279f4d3a17f3da7d5ebe6e5ac4e6fb6ddbac",
+        "ai-observability-config/local/collector.yaml": "951d38a2d91ef376e74af4246bb9741a3c6709e13b88a0791b2fd2a9e61249e6"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+      }
+    },
+    "P1.5": {
+      "status": "done",
+      "note": "Pinned loopback native runner passed readiness, owned-process stop, released-listener and ephemeral restart checks; first failed assertion retained",
+      "at": "2026-11-01T15:37:57+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/local-backend-proof.json",
+        "ai-observability-lab/evidence/local-proof-attempt-1.json"
+      ],
+      "source_hashes": {
+        "ai-observability-config/local/collector.yaml": "951d38a2d91ef376e74af4246bb9741a3c6709e13b88a0791b2fd2a9e61249e6",
+        "ai-observability-config/local/compose.yaml": "d6151f60b36cbee09eb9b39ca8c79d649382bc9f44b6c27eea64351a5b4d4261",
+        "ai-observability-config/local/native/collector.yaml": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654",
+        "ai-observability-config/local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea",
+        "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
+        "ai-observability-config/local/windows-binaries.lock.json": "81db459b0bf6210d4d08158deaf07115510163e837d0f86a094c22847f8f5c5c",
+        "ai-agent-workloads/compose.yaml": "47625955cdbbf743b1c37d8054c92319eca92f9ce14bb8caf4ab7c19cb752c5c",
+        "ai-observability-lab/compose.yaml": "a51fa4acf136642154e51b7059cd212997efca3d7ee0e2d2982440e88792ab93",
+        "ai-observability-lab/scripts/install_local_backends.py": "44f88e67b4a71e921362f368b2072df039af3e0c077ec6621366e7dff4cb55a6",
+        "ai-observability-lab/scripts/prove_local_backend.py": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f",
+        "ai-observability-lab/docs/local-backend-runbook.md": "11bfa11d35dd4b2a1345accbb8f016bf1d0ec3bfea9a3765d2d67b124bcdb5d1"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453",
+        "ai-observability-lab/evidence/local-proof-attempt-1.json": "7c33cd5cd0363e75db63a504cd27fe35459d42441a34f51bb94ce2bbbcf96b59"
+      }
+    },
+    "P1.6": {
+      "status": "done",
+      "note": "Machine-readable backend proof records healthy/fault exact graphs, exported canaries, bounded two-attempt failure and explicit limitations",
+      "at": "2026-11-01T15:37:59+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/local-backend-proof.json"
+      ],
+      "source_hashes": {
+        "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+        "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+        "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+        "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+        "ai-agent-workloads/src/ai_lab/policies.json": "62071fad35b54a79b87345efcd6780576c6c50e7c11fa835f7c8793a943e7c77",
+        "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+        "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+        "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+        "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+        "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+        "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c",
+        "ai-observability-config/local/collector.yaml": "951d38a2d91ef376e74af4246bb9741a3c6709e13b88a0791b2fd2a9e61249e6",
+        "ai-observability-config/local/compose.yaml": "d6151f60b36cbee09eb9b39ca8c79d649382bc9f44b6c27eea64351a5b4d4261",
+        "ai-observability-config/local/native/collector.yaml": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654",
+        "ai-observability-config/local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea",
+        "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
+        "ai-observability-config/local/windows-binaries.lock.json": "81db459b0bf6210d4d08158deaf07115510163e837d0f86a094c22847f8f5c5c",
+        "ai-observability-lab/scripts/prove_local_backend.py": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f",
+        "ai-observability-lab/docs/local-backend-runbook.md": "11bfa11d35dd4b2a1345accbb8f016bf1d0ec3bfea9a3765d2d67b124bcdb5d1"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+      }
     }
   },
   "known_gaps": [
@@ -234,9 +376,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "Four CI pipelines verified; selected AKS/APIM governance target documented with official-icon draw.io and current FigJam views. Azure disabled; backend, costed platform, Managed and live-model proof remain open.",
+    "current": "PR #21 merged; local deterministic Collector/Jaeger proof accepted and published in three open review PRs. New merged-main CI/release validation remains; Azure, AKS/APIM, Managed and live models undeployed.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P0.2: AKS/APIM selected design, official-icon draw.io and retained/current FigJam views documented; public source review resolves icon-hash false positives; cloud runtime remains unimplemented"
+    "last_change": "P0.2: Local proof published in three review PRs; HLD records all six accepted P1 steps and pending merged-main CI revalidation; Azure remains disabled"
   },
   "repository_verification": {
     "date": "2026-10-28",
