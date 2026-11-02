@@ -1,0 +1,305 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Asia/Dubai",
+  "scope": "Exact merged-main CI revalidation, no deployment",
+  "repositories": [
+    {
+      "repo": "AI-Observability-Infra",
+      "head": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+      "run_id": 41304322738,
+      "event": "workflow_dispatch",
+      "url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/41304322738",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 124841513502,
+          "name": "validate",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install hash-locked CI dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff check --select E4,E7,E9,F,I,UP scripts tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff format --check scripts tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Cloud deployment safety tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run terraform fmt -check -recursive",
+              "conclusion": "success"
+            },
+            {
+              "name": "Initialize without state or cloud authentication",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run terraform -chdir=foundation validate",
+              "conclusion": "success"
+            },
+            {
+              "name": "Reject invalid scope using a mocked provider",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "ai-agent-workloads",
+      "head": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+      "run_id": 41304303822,
+      "event": "push",
+      "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/41304303822",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 124841451289,
+          "name": "validate",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install hash-locked development dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff check src tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff format --check src tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "HTTP, contracts, telemetry and capture-policy tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build the synthetic workload image",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "ai-observability-config",
+      "head": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+      "run_id": 41304311171,
+      "event": "push",
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/41304311171",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 124841473103,
+          "name": "validate",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install hash-locked CI dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff check scripts",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff format --check scripts",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python scripts/check_config.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate Compose",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate pinned Collector configuration",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "repo": "ai-observability-lab",
+      "head": "fd49a067efe9ddc78539d6dcb6052458cc862d14",
+      "run_id": 41304319260,
+      "event": "push",
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/41304319260",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 124841499126,
+          "name": "validate",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install hash-locked CI dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff check --select E4,E7,E9,F,I,UP scripts tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run ruff format --check scripts tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Tracker and Project sync tests with synthetic local fixtures",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "azure_deployment_enabled": false,
+  "protected_environments": [
+    {
+      "name": "azure-lab-plan",
+      "required_reviewers": [
+        "javedkumail"
+      ],
+      "administrator_bypass": false,
+      "branches": [
+        "main"
+      ]
+    },
+    {
+      "name": "azure-lab-apply",
+      "required_reviewers": [
+        "javedkumail"
+      ],
+      "administrator_bypass": false,
+      "branches": [
+        "main"
+      ]
+    }
+  ],
+  "terraform_deployment_dispatched": false,
+  "azure_authentication_performed": false,
+  "gitlab_changes": false,
+  "checks": [
+    "Four exact main heads passed hosted CI",
+    "Workload hash-locked tests and Docker build passed",
+    "Config source/Compose/real Collector validation passed",
+    "Infra backend-disabled validation, safety and mocked scope tests passed",
+    "Main CI permissions/actions remain restricted and immutable",
+    "Earlier disabled-deployment proof retained separately; no new deployment attempt claimed"
+  ]
+}

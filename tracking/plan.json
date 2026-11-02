@@ -308,8 +308,17 @@
         "G0",
         "G1"
       ],
-      "watch": [],
-      "artifacts": [],
+      "watch": [
+        "ai-observability-lab/releases",
+        "ai-observability-lab/scripts/validate_release.py",
+        "ai-observability-lab/tests/test_release.py",
+        "ai-observability-lab/docs/release-pinning-plan.md"
+      ],
+      "artifacts": [
+        "ai-observability-lab/releases/local-v0.1.0-source-candidate.json",
+        "ai-observability-lab/scripts/validate_release.py",
+        "ai-observability-lab/docs/release-pinning-plan.md"
+      ],
       "acceptance": "Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented."
     },
     {

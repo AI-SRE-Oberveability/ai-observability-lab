@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "candidate_id": "local-v0.1.0-source-candidate",
+  "status": "source-pinned-candidate",
+  "deployable": false,
+  "model_mode": "deterministic-mock",
+  "azure_deployment_enabled": false,
+  "manifest_revision": "identified by the Git commit containing this file",
+  "repositories": {
+    "infra": {
+      "repository": "AI-SRE-Oberveability/AI-Observability-Infra",
+      "commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+      "main_ci": {
+        "run_id": 41304322738,
+        "url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/41304322738",
+        "event": "workflow_dispatch",
+        "conclusion": "success"
+      }
+    },
+    "workloads": {
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "commit": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+      "main_ci": {
+        "run_id": 41304303822,
+        "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/41304303822",
+        "event": "push",
+        "conclusion": "success"
+      }
+    },
+    "observability": {
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "commit": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+      "main_ci": {
+        "run_id": 41304311171,
+        "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/41304311171",
+        "event": "push",
+        "conclusion": "success"
+      }
+    },
+    "lab": {
+      "repository": "AI-SRE-Oberveability/ai-observability-lab",
+      "commit": "fd49a067efe9ddc78539d6dcb6052458cc862d14",
+      "main_ci": {
+        "run_id": 41304319260,
+        "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/41304319260",
+        "event": "push",
+        "conclusion": "success"
+      }
+    }
+  },
+  "images": {
+    "workload": {
+      "reference": null,
+      "state": "awaiting_registry_publication",
+      "target_platform": "linux/amd64"
+    },
+    "workload_base": {
+      "reference": "python:3.12-slim@sha256:aa943ce411423c7582288f18707ff66eddcbaeb510502d747a72aeb34f30d159",
+      "state": "pinned_in_tested_dockerfile"
+    },
+    "collector": {
+      "reference": "otel/opentelemetry-collector-contrib:0.164.0@sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b",
+      "state": "pinned_in_tested_configuration"
+    },
+    "jaeger": {
+      "reference": "cr.jaegertracing.io/jaegertracing/jaeger:2.22.0@sha256:836b967b5abcf1f7758066aa6b348619267a2f1459f72d472840570f9bd88a17",
+      "state": "pinned_in_tested_configuration"
+    }
+  },
+  "native_packages": {
+    "collector": {
+      "version": "0.164.0",
+      "url": "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.164.0/otelcol-contrib_0.164.0_windows_amd64.tar.gz",
+      "sha256": "1fb8163f9036126a1bdc59eab2d7aef4e6cda36f6c1e618f2359663cae8b0f4a"
+    },
+    "jaeger": {
+      "version": "2.22.0",
+      "url": "https://github.com/jaegertracing/jaeger/releases/download/v2.22.0/jaeger-2.22.0-windows-amd64.zip",
+      "sha256": "0fe3343c49e44e3c1e86846767286a3d7d16c8f89fff6e285e7e5a8bd34442c8"
+    }
+  },
+  "source_files": [
+    {
+      "role": "infra",
+      "path": ".github/workflows/ci.yaml",
+      "sha256": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e"
+    },
+    {
+      "role": "infra",
+      "path": "foundation/.terraform.lock.hcl",
+      "sha256": "0eb93cf29237e7e73aaec364317b91dda3023338cefdb329214360f11f05eff8"
+    },
+    {
+      "role": "workloads",
+      "path": "Dockerfile",
+      "sha256": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d"
+    },
+    {
+      "role": "workloads",
+      "path": "pyproject.toml",
+      "sha256": "f410dd8c146832e53de6cde373f1e929992aed30f1e97b678f5c9e54cf470ecf"
+    },
+    {
+      "role": "workloads",
+      "path": "uv.lock",
+      "sha256": "59f4edafc72d4bfec0d17ba1799345204fe5cd99396481ea5d24ae605ea0fde3"
+    },
+    {
+      "role": "workloads",
+      "path": "requirements.lock.txt",
+      "sha256": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e"
+    },
+    {
+      "role": "workloads",
+      "path": "requirements-dev.lock.txt",
+      "sha256": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506"
+    },
+    {
+      "role": "workloads",
+      "path": ".github/workflows/ci.yaml",
+      "sha256": "3cf80dc2bb3224bd381c7202622b3ea8b872c4065ae1ba7750a20853cf23694e"
+    },
+    {
+      "role": "observability",
+      "path": "local/compose.yaml",
+      "sha256": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce"
+    },
+    {
+      "role": "observability",
+      "path": "local/collector.yaml",
+      "sha256": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685"
+    },
+    {
+      "role": "observability",
+      "path": "local/native/collector.yaml",
+      "sha256": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654"
+    },
+    {
+      "role": "observability",
+      "path": "local/native/jaeger.yaml",
+      "sha256": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea"
+    },
+    {
+      "role": "observability",
+      "path": "local/windows-binaries.lock.json",
+      "sha256": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47"
+    },
+    {
+      "role": "observability",
+      "path": "telemetry-contract.md",
+      "sha256": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f"
+    },
+    {
+      "role": "lab",
+      "path": "compose.yaml",
+      "sha256": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68"
+    },
+    {
+      "role": "lab",
+      "path": "scripts/prove_local_backend.py",
+      "sha256": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f"
+    },
+    {
+      "role": "lab",
+      "path": "docs/local-backend-runbook.md",
+      "sha256": "11bfa11d35dd4b2a1345accbb8f016bf1d0ec3bfea9a3765d2d67b124bcdb5d1"
+    },
+    {
+      "role": "lab",
+      "path": "evidence/local-backend-proof.json",
+      "sha256": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+    }
+  ],
+  "evidence": {
+    "main_ci": "evidence/main-ci-revalidation.json",
+    "native_proof": "lab execution pin: evidence/local-backend-proof.json"
+  },
+  "pending": [
+    "Select registry and image visibility/retention",
+    "Publish and independently pull/verify the workload OCI digest and provenance",
+    "Resolve/verify selected image platforms and availability",
+    "Replay the container cohort from immutable pins",
+    "Accept P2.4 only after image/replay evidence; no release tag or cloud deployment in this step"
+  ]
+}

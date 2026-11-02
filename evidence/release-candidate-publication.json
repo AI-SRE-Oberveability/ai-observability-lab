@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-01",
+  "pr": 24,
+  "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/24",
+  "head": "43a6b26c249fd6f7bf54a23932d86d9dbc543e99",
+  "confirmed_secrets": 0,
+  "verified_source_hash_false_positives": 8,
+  "azure_deployment_enabled": false,
+  "global_git_configuration_unchanged": true,
+  "gitlab_changes": false,
+  "registry_publication_performed": false,
+  "release_tags_created": false,
+  "candidate_deployable": false,
+  "accepted_count": 18,
+  "tasks": 41,
+  "new_pr_merged": false
+}
