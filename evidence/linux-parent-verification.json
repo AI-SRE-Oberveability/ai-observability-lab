@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-08",
+  "scope": "Independent parent verification of final Linux rootless Compose implementation; no cloud or live inference",
+  "status": "passed",
+  "parent_run_id": "9adff0b94c5d413f8dead5073dda5912",
+  "runner_sha256": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf",
+  "environment": {"system": "Linux", "architecture": "x86_64", "runner_python": "3.12.16", "docker": "29.9.3", "compose": "5.7.0", "collector": "0.164.0", "jaeger": "2.22.0"},
+  "runtime": {
+    "healthy": {"outcome": "success", "spans": 7, "tool_calls": 1},
+    "dependency_503": {"outcome": "tool_error", "spans": 7, "tool_calls": 2, "elapsed_seconds": 0.0469, "bound_seconds": 2.5},
+    "external_w3c": {"outcome": "success", "spans": 7, "requested_trace_and_parent_preserved": true},
+    "exact_exported_cohort_spans": 21,
+    "parent_edges_service_resource_identity": "passed",
+    "both_service_calls_and_duration_metrics": "passed",
+    "privacy": {"prohibited_canaries_found": 0, "surfaces": ["Collector trace JSONL", "Collector metric JSONL", "Jaeger queries", "Prometheus exposition", "Collector internal metrics", "container stdout/stderr"], "scope_attribute_and_exemplar_checks": "passed", "final_file_exports_frozen_before_scan": true, "log_pipeline_exported": false},
+    "published_host_bindings": "127.0.0.1 only; retrieval/OTLP remain private",
+    "hardening_and_resource_limits": "verified from actual container inspection",
+    "ephemeral_restart": "old trace absent",
+    "cleanup": "owned containers/networks/volumes absent; ports released; down errors=0"
+  },
+  "checks": {
+    "lab_unit_tests_python312": {"passed": 51, "exit_code": 0},
+    "lab_unit_tests_without_site_packages": {"passed": 51, "exit_code": 0},
+    "workload_http_contract_telemetry_tests": {"passed": 18, "exit_code": 0},
+    "infrastructure_deployment_safety_tests": {"passed": 11, "exit_code": 0},
+    "terraform_mocked_tests": {"passed": 2, "exit_code": 0},
+    "lint_format_compose_source_checks": "passed",
+    "terraform_backend_disabled_readonly_init_validate_fmt": "passed; no cloud authentication or plan/apply",
+    "gitleaks": {"version": "8.30.1", "default_detector_exit_code": 1, "candidates": 8, "independently_corroborated_source_icon_digest_receipts": 8, "confirmed_secrets": 0, "suppressions_added": false}
+  },
+  "independent_code_review": {"verdict": "passed", "security_concerns": [], "logic_errors": [], "reviewed_runner_sha256": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf", "initial_rejection_and_fixes_retained": true, "later_documentation_delta_reviewed_by_parent": true},
+  "publication_at_verification": "not yet committed/pushed; this receipt establishes source bytes, not a hosted-CI or remote publication result",
+  "limitations": ["No published workload OCI digest or immutable-registry replay; P2.4 remains incomplete.", "Historical Windows/CRLF/case-sensitive-path evidence requires explicit revalidation, not automatic acceptance.", "Live Project sync deferred because existing evidence links target main while this work is feature-only; safe dry-run passed.", "No log-export pipeline, universal sensitive-data guarantee, P6 load/overhead, Managed or live-model acceptance.", "Azure deployment flag remains false; G2/G3/G4/G5 remain pending.", "Raw command/query/export/log/auth captures remain private and are not published."]
+}

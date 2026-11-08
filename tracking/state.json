@@ -285,77 +285,85 @@
       }
     },
     "P1.4": {
-      "status": "done",
-      "note": "Exported trace/metric allowlists, exact backend graph, service/version identity and canary/log surfaces checked on deterministic native profile",
-      "at": "2026-11-01T15:37:55+04:00",
+      "status": "in_progress",
+      "note": "Independent review final replay 93617e4df9244ea991aaa5f450130e43 passed: bound healthy/fault/W3C graphs, exact 21-span file reconciliation, both-service metrics, frozen privacy and independent marker; upstream historical dependencies not reaccepted.",
+      "at": "2026-11-08T05:27:03+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/local-backend-proof.json"
+        "ai-observability-lab/evidence/linux-compose-proof.json"
       ],
       "source_hashes": {
         "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
-        "ai-observability-config/telemetry-contract.md": "0ddc945a2437ea09ead6b233fd5b279f4d3a17f3da7d5ebe6e5ac4e6fb6ddbac",
-        "ai-observability-config/local/collector.yaml": "951d38a2d91ef376e74af4246bb9741a3c6709e13b88a0791b2fd2a9e61249e6"
+        "ai-observability-config/telemetry-contract.md": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f",
+        "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+        "ai-observability-lab/evidence/linux-compose-proof.json": "eb765077bbc222a493a7c998ff87b2ca3ef9839b7c8a15a8b8db72bce5387b58"
       }
     },
     "P1.5": {
-      "status": "done",
-      "note": "Pinned loopback native runner passed readiness, owned-process stop, released-listener and ephemeral restart checks; first failed assertion retained",
-      "at": "2026-11-01T15:37:57+04:00",
+      "status": "in_progress",
+      "note": "Final replay passed private retrieval readiness, owned process/session command controls, bounded cleanup with label verification and ephemeral restart; local images retained; SIGKILL limitation documented.",
+      "at": "2026-11-08T05:27:03+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/local-backend-proof.json",
-        "ai-observability-lab/evidence/local-proof-attempt-1.json"
+        "ai-observability-lab/evidence/linux-compose-proof.json"
       ],
       "source_hashes": {
-        "ai-observability-config/local/collector.yaml": "951d38a2d91ef376e74af4246bb9741a3c6709e13b88a0791b2fd2a9e61249e6",
-        "ai-observability-config/local/compose.yaml": "d6151f60b36cbee09eb9b39ca8c79d649382bc9f44b6c27eea64351a5b4d4261",
+        "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685",
+        "ai-observability-config/local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+        "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
         "ai-observability-config/local/native/collector.yaml": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654",
         "ai-observability-config/local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea",
-        "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
-        "ai-observability-config/local/windows-binaries.lock.json": "81db459b0bf6210d4d08158deaf07115510163e837d0f86a094c22847f8f5c5c",
-        "ai-agent-workloads/compose.yaml": "47625955cdbbf743b1c37d8054c92319eca92f9ce14bb8caf4ab7c19cb752c5c",
-        "ai-observability-lab/compose.yaml": "a51fa4acf136642154e51b7059cd212997efca3d7ee0e2d2982440e88792ab93",
+        "ai-observability-config/local/windows-binaries.lock.json": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47",
+        "ai-agent-workloads/compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
+        "ai-observability-lab/compose.yaml": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68",
         "ai-observability-lab/scripts/install_local_backends.py": "44f88e67b4a71e921362f368b2072df039af3e0c077ec6621366e7dff4cb55a6",
         "ai-observability-lab/scripts/prove_local_backend.py": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f",
-        "ai-observability-lab/docs/local-backend-runbook.md": "11bfa11d35dd4b2a1345accbb8f016bf1d0ec3bfea9a3765d2d67b124bcdb5d1"
+        "ai-observability-lab/docs/local-backend-runbook.md": "7b182686151c58e62cff1d69163d1e0c27e67f17837fdaafd5bdfaf0310233d2",
+        "ai-observability-lab/scripts/prove_linux_backend.py": "b8471632d82d38bedde164191c26329df772146f01acc12d92e82aed4f14f81f",
+        "ai-observability-lab/tests/test_linux_proof.py": "c082e0b1dd296fc3494c645ad393fc04d115b3fdf40e43b51d90801f8ccbb805",
+        "ai-observability-lab/tests/test_review_fixes.py": "817eb55d6f1a625ec59fa521e4bbb9ad61d7d192c21c28491dc16999e4c3b1f6"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453",
-        "ai-observability-lab/evidence/local-proof-attempt-1.json": "7c33cd5cd0363e75db63a504cd27fe35459d42441a34f51bb94ce2bbbcf96b59"
+        "ai-observability-lab/evidence/linux-compose-proof.json": "eb765077bbc222a493a7c998ff87b2ca3ef9839b7c8a15a8b8db72bce5387b58"
       }
     },
     "P1.6": {
-      "status": "done",
-      "note": "Machine-readable backend proof records healthy/fault exact graphs, exported canaries, bounded two-attempt failure and explicit limitations",
-      "at": "2026-11-01T15:37:59+04:00",
+      "status": "in_progress",
+      "note": "Published validated source a8419510d7c74b2211e255ee50639e50d2717da9; exact remote SHA verified and hosted branch CI42435140058 succeeded. Draft PR25 open, not merged. Infra unchanged feature branch and CI verified. Parent proof9adff0b94c5d413f8dead5073dda5912 passed; stale historical dependencies and main-only Project links remain explicit.",
+      "at": "2026-11-08T05:41:26+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/local-backend-proof.json"
+        "ai-observability-lab/evidence/linux-compose-proof.json",
+        "ai-observability-lab/evidence/linux-parent-verification.json",
+        "ai-observability-lab/evidence/linux-feature-publication.json"
       ],
       "source_hashes": {
         "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
         "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
         "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
         "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
-        "ai-agent-workloads/src/ai_lab/policies.json": "62071fad35b54a79b87345efcd6780576c6c50e7c11fa835f7c8793a943e7c77",
+        "ai-agent-workloads/src/ai_lab/policies.json": "7078cb59b5ed11a72bfe0642b59082606894752f9a8682f3dbf1826863039817",
         "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
         "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
         "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
         "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
         "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
         "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c",
-        "ai-observability-config/local/collector.yaml": "951d38a2d91ef376e74af4246bb9741a3c6709e13b88a0791b2fd2a9e61249e6",
-        "ai-observability-config/local/compose.yaml": "d6151f60b36cbee09eb9b39ca8c79d649382bc9f44b6c27eea64351a5b4d4261",
+        "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685",
+        "ai-observability-config/local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+        "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
         "ai-observability-config/local/native/collector.yaml": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654",
         "ai-observability-config/local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea",
-        "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
-        "ai-observability-config/local/windows-binaries.lock.json": "81db459b0bf6210d4d08158deaf07115510163e837d0f86a094c22847f8f5c5c",
+        "ai-observability-config/local/windows-binaries.lock.json": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47",
         "ai-observability-lab/scripts/prove_local_backend.py": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f",
-        "ai-observability-lab/docs/local-backend-runbook.md": "11bfa11d35dd4b2a1345accbb8f016bf1d0ec3bfea9a3765d2d67b124bcdb5d1"
+        "ai-observability-lab/docs/local-backend-runbook.md": "118f1018a0fa5eb4b9bfe679c56a5851b731dd35ab1139380d5d0ff032e98de5",
+        "ai-observability-lab/scripts/prove_linux_backend.py": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf",
+        "ai-observability-lab/tests/test_linux_proof.py": "c082e0b1dd296fc3494c645ad393fc04d115b3fdf40e43b51d90801f8ccbb805",
+        "ai-observability-lab/tests/test_review_fixes.py": "79f0d7b400f62abd2fe79366f280fb06e44eb485a87799f5f6371c81e9974ea8"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+        "ai-observability-lab/evidence/linux-compose-proof.json": "24bdf4870f168de6e6a8a71c2901f1da6816e827edfe2f9f64c4cfd26935614f",
+        "ai-observability-lab/evidence/linux-parent-verification.json": "0744e32a5721eb598ec1d7c74df7b0ef6b1f7b99d124b4d20a55237aad0c8e79",
+        "ai-observability-lab/evidence/linux-feature-publication.json": "75e2337b353f80baf288d4de8e59e199212658dd009dabc618d6c7505d27e384"
       }
     },
     "P2.3": {
@@ -383,7 +391,7 @@
     },
     "P2.4": {
       "status": "in_progress",
-      "note": "Candidate and pin validator published for review in PR #24; 18 Git source files verified, 28 tests passed, missing workload digest/replay still block release acceptance",
+      "note": "PR #24 merged; source candidate remains non-deployable without published workload digest and immutable-registry replay. Linux source-object check is blocked by historical lowercase infra directory mapping.",
       "at": "2026-11-01T16:10:14+04:00",
       "evidence": [
         "ai-observability-lab/evidence/release-pinning-validation.json",
@@ -403,12 +411,12 @@
     }
   },
   "known_gaps": [
-    "Plan approved; public-source review and initial pushes are authorized. Azure deployment and live-model spending remain separately gated.",
-    "Earlier local workload run: 18 passed, one deprecation warning; no saved JUnit artifact. Historical observation only.",
-    "Collector CLI configuration validation passed; complete export to Jaeger is unverified.",
-    "Docker engine was unreachable; the pinned native Windows backend alternative is not yet demonstrated end to end.",
-    "Inactive CI draft under .github/workflow-drafts references missing requirements-dev.lock.txt; no GitHub workflow has run.",
-    "Initial public source publication completed. Full local backend delivery, active CI, Azure targets/budget, Terraform implementation, Managed entitlement and live-model scope remain pending."
+    "Fresh Linux P1.4/P1.5/P1.6 local acceptance passed; historical upstream dependencies remain stale and are not reaccepted.",
+    "40 local lab tests and config/Compose checks pass; no new hosted CI or publication.",
+    "Historical Windows/CRLF/case-sensitive-path receipts require separate review; no duplicate clone or historical hash rewrite.",
+    "P2.4 remains in progress without published workload OCI digest or immutable-registry replay.",
+    "Project safe dry-run succeeds; live apply deferred for branch-only evidence because links hardcode main; previous sandbox auth failure historical.",
+    "G2/G3/G4/G5 pending; Azure disabled; no paid inference/cloud operations."
   ],
   "confirmed_choices": [
     "Organization AI-SRE-Oberveability owns all four public repositories; javedkumail is its verified active personal administrator; IDs and published history preserved.",
@@ -418,9 +426,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "Requested local-proof PRs merged; four exact main CI runs passed. Release source candidate is in open PR #24 and remains non-deployable pending workload digest/replay. Azure disabled; GitLab settings preserved.",
+    "current": "HLD 0.21: independently reviewed Linux proof and 51 lab tests passed; validated source published on feature branch with passing exact-source CI and draft PR25. Main and Azure unchanged; historical receipt revalidation and correct-ref Project sync remain pending.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P2.4: Candidate and pin validator published for review in PR #24; 18 Git source files verified, 28 tests passed, missing workload digest/replay still block release acceptance"
+    "last_change": "P1.6: Published validated source a8419510d7c74b2211e255ee50639e50d2717da9; exact remote SHA verified and hosted branch CI42435140058 succeeded. Draft PR25 open, not merged. Infra unchanged feature branch and CI verified. Parent proof9adff0b94c5d413f8dead5073dda5912 passed; stale historical dependencies and main-only Project links remain explicit."
   },
   "repository_verification": {
     "date": "2026-10-28",

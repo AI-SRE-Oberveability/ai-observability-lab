@@ -11,3 +11,6 @@
 7. Record sanitized machine-readable evidence and source versions, update HLD/tracker/Project after each coherent step, publish review PRs and collect CI conclusions. New PRs remain open until separately authorized to merge.
 
 Acceptance claims remain separate: a passing in-memory test is not backend ingestion; HTTP 200 is not a successful domain outcome; file presence is not a live control. Existing architecture, cloud/live-model/Managed gates and resource ownership remain intact.
+
+
+8 November Linux execution update: the authorized standard-library Compose runner is implemented and locally tested; real source/private Compose rendering passed. Engine API permission denial prevented pull/build/start and ingestion in this session. Failed attempts are retained; the next executor must run the Linux section of the runbook and record observed backend results. Historical native acceptance remains separate. Parent owns review/publication; no commit/push is authorized for this delegation.
