@@ -1,14 +1,38 @@
 # What remains
 
-Updated: 2026-11-01T16:10:15+04:00 (Asia/Dubai).
+Updated: 2026-11-08T05:37:45+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
 Next action: select a ready step from POC_TRACKER.md.
 
+## P0 — Agree the plan and HLD
+
+- **P0.1 Inventory existing drafts and validation evidence** (needs_revalidation). Acceptance: Current files, actual validations and gaps are documented without claiming deployment.
+- **P0.2 Prepare phased plan and current/target HLD** (needs_revalidation). Acceptance: Plan includes steps, owners, dependencies, estimates, gates and exits; HLD distinguishes drafts and target.
+- **P0.3 Validate event-driven tracker and update agreement** (needs_revalidation). Acceptance: Refresh produces status/remaining work; gates, failed and stale evidence are handled; tracker tests pass.
+- **P0.4 Review and accept plan/HLD or request amendments** (waiting_for_decision). Acceptance: Explicit user acceptance recorded; implementation remains paused while pending.
+
+## P1 — Prove the local vertical slice
+
+- **P1.1 Review existing draft code, dependencies and gaps** (needs_revalidation). Acceptance: Draft review records corrections, supported versions and treatment of the deprecation/incomplete CI input.
+- **P1.2 Validate API and retrieval contracts** (needs_revalidation). Acceptance: Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.
+- **P1.3 Complete synthetic policy workload and adapter** (needs_revalidation). Acceptance: Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.
+- **P1.4 Validate propagation and metadata-only telemetry** (in_progress). Acceptance: Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.
+- **P1.5 Prove local backend runner and lifecycle** (in_progress). Acceptance: Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.
+- **P1.6 Record complete local trace and exported-data evidence** (in_progress). Acceptance: Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated.
+
 ## P2 — Establish personal GitHub delivery
 
+- **P2.1 Confirm organization repository destinations and public visibility** (waiting_for_decision). Acceptance: Exact organization owner, repository names, public visibility and plan constraints confirmed without sharing secrets.
+- **P2.2 Review source and push to four user-created public repositories** (needs_revalidation). Acceptance: Four exact public organization remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved.
+- **P2.3 Complete reproducible CI, contract tests and builds** (needs_revalidation). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (in_progress). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
+- **P2.5 Create AI-SRE-Oberveability organization under personal ownership** (needs_revalidation). Acceptance: Requested exact organization exists on GitHub Free; javedkumail ownership verified; no GitLab credential changes.
+- **P2.6 Transfer four repositories and verify history, visibility and remotes** (needs_revalidation). Acceptance: Each repository ID and branch history is preserved under the requested organization; public visibility retained; local remotes and current source links updated.
+- **P2.7 Set up shared GitHub Project and map POC tasks** (needs_revalidation). Acceptance: One organization Project links the four repositories, contains the current task set with accurate statuses/dependencies, and has a documented after-step synchronization path.
+- **P2.8 Activate independent CI in all four repositories** (needs_revalidation). Acceptance: All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.
+- **P2.9 Configure guarded Terraform plan and deployment workflows** (needs_revalidation). Acceptance: Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.
 
 ## P3 — Plan and deploy personal Azure
 

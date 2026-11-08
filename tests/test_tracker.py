@@ -47,9 +47,7 @@ class TrackerChecks(unittest.TestCase):
         self.assertEqual(tracker.json.loads(target.read_text()), {"old": True})
 
     def setUp(self):
-        runtime = Path(__file__).resolve().parents[2] / ".runtime" / "tracker-tests"
-        runtime.mkdir(parents=True, exist_ok=True)
-        self.temporary = tempfile.TemporaryDirectory(dir=runtime)
+        self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
         self.base = Path(self.temporary.name)
         (self.base / "source.txt").write_text("version 1")

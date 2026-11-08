@@ -1175,5 +1175,11 @@
       "name": "All tasks",
       "layout": "TABLE_LAYOUT"
     }
-  ]
+  ],
+  "last_sync_attempt": {
+    "date": "2026-11-08",
+    "status": "dry_run_passed_apply_deferred_branch_evidence",
+    "confirmed_live_updates": false,
+    "reason": "Host auth functional per parent verification; prior sandbox denial historical. Hardcoded blob/main links have no branch-ref option; parent publishes reviewed evidence before apply."
+  }
 }

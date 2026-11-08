@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-01T16:10:15+04:00",
+  "updated_at": "2026-11-08T05:37:45+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
-    "done": 18,
-    "in_progress": 1,
-    "waiting_for_decision": 3,
+    "needs_revalidation": 13,
+    "waiting_for_decision": 5,
+    "in_progress": 4,
     "draft": 2,
     "planned": 17
   },
@@ -23,7 +23,7 @@
         "ai-observability-lab/evidence/initial-inventory.md"
       ],
       "acceptance": "Current files, actual validations and gaps are documented without claiming deployment.",
-      "status": "done",
+      "status": "needs_revalidation",
       "blocked_by": [],
       "artifacts_present": [
         "ai-observability-lab/evidence/initial-inventory.md"
@@ -34,7 +34,7 @@
         "ai-observability-lab/evidence/publication-planning-revalidation.md"
       ],
       "note": "Sanitized historical inventory revalidated for public publication; draft and deployed evidence remain distinct",
-      "ready": false
+      "ready": true
     },
     {
       "id": "P0.2",
@@ -59,8 +59,10 @@
         "ai-observability-lab/HLD.md"
       ],
       "acceptance": "Plan includes steps, owners, dependencies, estimates, gates and exits; HLD distinguishes drafts and target.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P0.1"
+      ],
       "artifacts_present": [
         "ai-observability-lab/POC_PLAN.md",
         "ai-observability-lab/HLD.md"
@@ -96,8 +98,10 @@
         "ai-observability-lab/AGENTS.md"
       ],
       "acceptance": "Refresh produces status/remaining work; gates, failed and stale evidence are handled; tracker tests pass.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P0.2"
+      ],
       "artifacts_present": [
         "ai-observability-lab/scripts/poc_tracker.py",
         "ai-observability-lab/TRACKER_GUIDE.md",
@@ -124,8 +128,11 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Explicit user acceptance recorded; implementation remains paused while pending.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "waiting_for_decision",
+      "blocked_by": [
+        "P0.2",
+        "P0.3"
+      ],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [],
@@ -156,8 +163,10 @@
         "ai-agent-workloads/uv.lock"
       ],
       "acceptance": "Draft review records corrections, supported versions and treatment of the deprecation/incomplete CI input.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P0.4"
+      ],
       "artifacts_present": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/uv.lock"
@@ -189,8 +198,10 @@
         "ai-agent-workloads/contracts/retrieval.openapi.yaml"
       ],
       "acceptance": "Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P1.1"
+      ],
       "artifacts_present": [
         "ai-agent-workloads/contracts/agent.openapi.yaml",
         "ai-agent-workloads/contracts/retrieval.openapi.yaml"
@@ -222,8 +233,10 @@
         "ai-agent-workloads/evaluations/policy-v1.json"
       ],
       "acceptance": "Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P1.2"
+      ],
       "artifacts_present": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/evaluations/policy-v1.json"
@@ -256,17 +269,19 @@
         "ai-observability-config/local/collector.yaml"
       ],
       "acceptance": "Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "in_progress",
+      "blocked_by": [
+        "P1.3"
+      ],
       "artifacts_present": [
         "ai-observability-config/telemetry-contract.md",
         "ai-observability-config/local/collector.yaml"
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/local-backend-proof.json"
+        "ai-observability-lab/evidence/linux-compose-proof.json"
       ],
-      "note": "Exported trace/metric allowlists, exact backend graph, service/version identity and canary/log surfaces checked on deterministic native profile",
+      "note": "Independent review final replay 93617e4df9244ea991aaa5f450130e43 passed: bound healthy/fault/W3C graphs, exact 21-span file reconciliation, both-service metrics, frozen privacy and independent marker; upstream historical dependencies not reaccepted.",
       "ready": false
     },
     {
@@ -286,7 +301,10 @@
         "ai-observability-lab/compose.yaml",
         "ai-observability-lab/scripts/install_local_backends.py",
         "ai-observability-lab/scripts/prove_local_backend.py",
-        "ai-observability-lab/docs/local-backend-runbook.md"
+        "ai-observability-lab/docs/local-backend-runbook.md",
+        "ai-observability-lab/scripts/prove_linux_backend.py",
+        "ai-observability-lab/tests/test_linux_proof.py",
+        "ai-observability-lab/tests/test_review_fixes.py"
       ],
       "artifacts": [
         "ai-observability-lab/compose.yaml",
@@ -296,8 +314,10 @@
         "ai-observability-lab/scripts/prove_local_backend.py"
       ],
       "acceptance": "Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "in_progress",
+      "blocked_by": [
+        "P1.4"
+      ],
       "artifacts_present": [
         "ai-observability-lab/compose.yaml",
         "ai-observability-config/local/compose.yaml",
@@ -307,10 +327,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/local-backend-proof.json",
-        "ai-observability-lab/evidence/local-proof-attempt-1.json"
+        "ai-observability-lab/evidence/linux-compose-proof.json"
       ],
-      "note": "Pinned loopback native runner passed readiness, owned-process stop, released-listener and ephemeral restart checks; first failed assertion retained",
+      "note": "Final replay passed private retrieval readiness, owned process/session command controls, bounded cleanup with label verification and ephemeral restart; local images retained; SIGKILL limitation documented.",
       "ready": false
     },
     {
@@ -329,18 +348,24 @@
         "ai-agent-workloads/tests",
         "ai-observability-config/local",
         "ai-observability-lab/scripts/prove_local_backend.py",
-        "ai-observability-lab/docs/local-backend-runbook.md"
+        "ai-observability-lab/docs/local-backend-runbook.md",
+        "ai-observability-lab/scripts/prove_linux_backend.py",
+        "ai-observability-lab/tests/test_linux_proof.py",
+        "ai-observability-lab/tests/test_review_fixes.py"
       ],
       "artifacts": [],
       "acceptance": "Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "in_progress",
+      "blocked_by": [
+        "P1.5"
+      ],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/local-backend-proof.json"
+        "ai-observability-lab/evidence/linux-compose-proof.json",
+        "ai-observability-lab/evidence/linux-parent-verification.json"
       ],
-      "note": "Machine-readable backend proof records healthy/fault exact graphs, exported canaries, bounded two-attempt failure and explicit limitations",
+      "note": "Parent independently reproduced final runner90a868 on run9adff0b94c5d413f8dead5073dda5912; all21 exported spans, both-service metrics, six frozen canary surfaces and cleanup passed. Independent code review passed;51 lab tests passed with/without site packages; workload18, safety11 and mockedTF2 passed. Historical dependencies remain stale; feature publication/CI next; Project apply deferred for main-only evidence links.",
       "ready": false
     },
     {
@@ -358,8 +383,10 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Exact organization owner, repository names, public visibility and plan constraints confirmed without sharing secrets.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "waiting_for_decision",
+      "blocked_by": [
+        "P0.4"
+      ],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [],
@@ -381,8 +408,10 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Four exact public organization remotes verified; reviewed source pushed and commits recorded; GitLab credentials/remotes preserved.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P2.1"
+      ],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [
@@ -420,8 +449,11 @@
         "ai-agent-workloads/.github/workflow-drafts/ci.yaml"
       ],
       "acceptance": "Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P2.2",
+        "P1.6"
+      ],
       "artifacts_present": [
         "ai-agent-workloads/.github/workflows/ci.yaml",
         "ai-agent-workloads/requirements-dev.lock.txt",
@@ -460,7 +492,9 @@
       ],
       "acceptance": "Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.",
       "status": "in_progress",
-      "blocked_by": [],
+      "blocked_by": [
+        "P2.3"
+      ],
       "artifacts_present": [
         "ai-observability-lab/releases/local-v0.1.0-source-candidate.json",
         "ai-observability-lab/scripts/validate_release.py",
@@ -471,8 +505,8 @@
         "ai-observability-lab/evidence/release-pinning-validation.json",
         "ai-observability-lab/evidence/release-candidate-publication.json"
       ],
-      "note": "Candidate and pin validator published for review in PR #24; 18 Git source files verified, 28 tests passed, missing workload digest/replay still block release acceptance",
-      "ready": true
+      "note": "PR #24 merged; source candidate remains non-deployable without published workload digest and immutable-registry replay. Linux source-object check is blocked by historical lowercase infra directory mapping.",
+      "ready": false
     },
     {
       "id": "P2.5",
@@ -489,8 +523,10 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Requested exact organization exists on GitHub Free; javedkumail ownership verified; no GitLab credential changes.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P2.2"
+      ],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [
@@ -514,8 +550,10 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Each repository ID and branch history is preserved under the requested organization; public visibility retained; local remotes and current source links updated.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P2.5"
+      ],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [
@@ -539,8 +577,10 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "One organization Project links the four repositories, contains the current task set with accurate statuses/dependencies, and has a documented after-step synchronization path.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P2.6"
+      ],
       "artifacts_present": [],
       "artifacts_missing": [],
       "evidence": [
@@ -572,7 +612,9 @@
         "ai-observability-config/requirements-ci.txt",
         "ai-observability-config/scripts",
         "ai-observability-lab/requirements-ci.txt",
-        "ai-observability-infra/requirements-ci.txt"
+        "ai-observability-infra/requirements-ci.txt",
+        "ai-observability-lab/scripts",
+        "ai-observability-lab/tests"
       ],
       "artifacts": [
         "ai-observability-infra/.github/workflows/ci.yaml",
@@ -581,15 +623,18 @@
         "ai-observability-lab/.github/workflows/ci.yaml"
       ],
       "acceptance": "All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P2.7"
+      ],
       "artifacts_present": [
-        "ai-observability-infra/.github/workflows/ci.yaml",
         "ai-agent-workloads/.github/workflows/ci.yaml",
         "ai-observability-config/.github/workflows/ci.yaml",
         "ai-observability-lab/.github/workflows/ci.yaml"
       ],
-      "artifacts_missing": [],
+      "artifacts_missing": [
+        "ai-observability-infra/.github/workflows/ci.yaml"
+      ],
       "evidence": [
         "ai-observability-lab/evidence/main-ci-revalidation.json"
       ],
@@ -619,13 +664,15 @@
         "ai-observability-infra/foundation/.terraform.lock.hcl"
       ],
       "acceptance": "Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.",
-      "status": "done",
-      "blocked_by": [],
-      "artifacts_present": [
+      "status": "needs_revalidation",
+      "blocked_by": [
+        "P2.8"
+      ],
+      "artifacts_present": [],
+      "artifacts_missing": [
         "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
         "ai-observability-infra/foundation/.terraform.lock.hcl"
       ],
-      "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/main-ci-revalidation.json",
         "ai-observability-lab/evidence/actions-disabled-deployment-verification.json"
@@ -682,10 +729,10 @@
         "P3.1",
         "G2"
       ],
-      "artifacts_present": [
+      "artifacts_present": [],
+      "artifacts_missing": [
         "ai-observability-infra/README.md"
       ],
-      "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/citadel-architecture-update.json"
       ],
@@ -937,6 +984,7 @@
       "acceptance": "Allowlisted health/version/failure schemas and versioned synthetic incidents have expected outcomes.",
       "status": "planned",
       "blocked_by": [
+        "P1.6",
         "P2.4"
       ],
       "artifacts_present": [],
@@ -1199,6 +1247,7 @@
       "acceptance": "Deterministic mode preserved; gateway-scoped identity contract, model allowlist and typed auth/rate/quota/timeout errors pass synthetic checks; retries and streaming bounded; no direct-endpoint fallback. Actual cloud/live claims require P3.5 and G5.",
       "status": "planned",
       "blocked_by": [
+        "P1.3",
         "P3.7"
       ],
       "artifacts_present": [],

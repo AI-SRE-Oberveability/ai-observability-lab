@@ -204,7 +204,10 @@
         "ai-observability-lab/compose.yaml",
         "ai-observability-lab/scripts/install_local_backends.py",
         "ai-observability-lab/scripts/prove_local_backend.py",
-        "ai-observability-lab/docs/local-backend-runbook.md"
+        "ai-observability-lab/docs/local-backend-runbook.md",
+        "ai-observability-lab/scripts/prove_linux_backend.py",
+        "ai-observability-lab/tests/test_linux_proof.py",
+        "ai-observability-lab/tests/test_review_fixes.py"
       ],
       "artifacts": [
         "ai-observability-lab/compose.yaml",
@@ -231,7 +234,10 @@
         "ai-agent-workloads/tests",
         "ai-observability-config/local",
         "ai-observability-lab/scripts/prove_local_backend.py",
-        "ai-observability-lab/docs/local-backend-runbook.md"
+        "ai-observability-lab/docs/local-backend-runbook.md",
+        "ai-observability-lab/scripts/prove_linux_backend.py",
+        "ai-observability-lab/tests/test_linux_proof.py",
+        "ai-observability-lab/tests/test_review_fixes.py"
       ],
       "artifacts": [],
       "acceptance": "Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated."
@@ -392,7 +398,9 @@
         "ai-observability-config/requirements-ci.txt",
         "ai-observability-config/scripts",
         "ai-observability-lab/requirements-ci.txt",
-        "ai-observability-infra/requirements-ci.txt"
+        "ai-observability-infra/requirements-ci.txt",
+        "ai-observability-lab/scripts",
+        "ai-observability-lab/tests"
       ],
       "artifacts": [
         "ai-observability-infra/.github/workflows/ci.yaml",
