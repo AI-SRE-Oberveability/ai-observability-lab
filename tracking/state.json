@@ -329,11 +329,12 @@
     },
     "P1.6": {
       "status": "in_progress",
-      "note": "Parent independently reproduced final runner90a868 on run9adff0b94c5d413f8dead5073dda5912; all21 exported spans, both-service metrics, six frozen canary surfaces and cleanup passed. Independent code review passed;51 lab tests passed with/without site packages; workload18, safety11 and mockedTF2 passed. Historical dependencies remain stale; feature publication/CI next; Project apply deferred for main-only evidence links.",
-      "at": "2026-11-08T05:37:45+04:00",
+      "note": "Published validated source a8419510d7c74b2211e255ee50639e50d2717da9; exact remote SHA verified and hosted branch CI42435140058 succeeded. Draft PR25 open, not merged. Infra unchanged feature branch and CI verified. Parent proof9adff0b94c5d413f8dead5073dda5912 passed; stale historical dependencies and main-only Project links remain explicit.",
+      "at": "2026-11-08T05:41:26+04:00",
       "evidence": [
         "ai-observability-lab/evidence/linux-compose-proof.json",
-        "ai-observability-lab/evidence/linux-parent-verification.json"
+        "ai-observability-lab/evidence/linux-parent-verification.json",
+        "ai-observability-lab/evidence/linux-feature-publication.json"
       ],
       "source_hashes": {
         "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
@@ -361,7 +362,8 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/linux-compose-proof.json": "24bdf4870f168de6e6a8a71c2901f1da6816e827edfe2f9f64c4cfd26935614f",
-        "ai-observability-lab/evidence/linux-parent-verification.json": "0744e32a5721eb598ec1d7c74df7b0ef6b1f7b99d124b4d20a55237aad0c8e79"
+        "ai-observability-lab/evidence/linux-parent-verification.json": "0744e32a5721eb598ec1d7c74df7b0ef6b1f7b99d124b4d20a55237aad0c8e79",
+        "ai-observability-lab/evidence/linux-feature-publication.json": "75e2337b353f80baf288d4de8e59e199212658dd009dabc618d6c7505d27e384"
       }
     },
     "P2.3": {
@@ -424,9 +426,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "HLD 0.20: final independent code review and rootless Linux replay passed; 51 lab tests. Feature publication/new CI pending; historical dependencies remain stale; Azure disabled.",
+    "current": "HLD 0.21: independently reviewed Linux proof and 51 lab tests passed; validated source published on feature branch with passing exact-source CI and draft PR25. Main and Azure unchanged; historical receipt revalidation and correct-ref Project sync remain pending.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P1.6: Parent independently reproduced final runner90a868 on run9adff0b94c5d413f8dead5073dda5912; all21 exported spans, both-service metrics, six frozen canary surfaces and cleanup passed. Independent code review passed;51 lab tests passed with/without site packages; workload18, safety11 and mockedTF2 passed. Historical dependencies remain stale; feature publication/CI next; Project apply deferred for main-only evidence links."
+    "last_change": "P1.6: Published validated source a8419510d7c74b2211e255ee50639e50d2717da9; exact remote SHA verified and hosted branch CI42435140058 succeeded. Draft PR25 open, not merged. Infra unchanged feature branch and CI verified. Parent proof9adff0b94c5d413f8dead5073dda5912 passed; stale historical dependencies and main-only Project links remain explicit."
   },
   "repository_verification": {
     "date": "2026-10-28",

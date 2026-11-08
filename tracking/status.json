@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T05:37:45+04:00",
+  "updated_at": "2026-11-08T05:41:26+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "needs_revalidation": 13,
@@ -363,9 +363,10 @@
       "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/linux-compose-proof.json",
-        "ai-observability-lab/evidence/linux-parent-verification.json"
+        "ai-observability-lab/evidence/linux-parent-verification.json",
+        "ai-observability-lab/evidence/linux-feature-publication.json"
       ],
-      "note": "Parent independently reproduced final runner90a868 on run9adff0b94c5d413f8dead5073dda5912; all21 exported spans, both-service metrics, six frozen canary surfaces and cleanup passed. Independent code review passed;51 lab tests passed with/without site packages; workload18, safety11 and mockedTF2 passed. Historical dependencies remain stale; feature publication/CI next; Project apply deferred for main-only evidence links.",
+      "note": "Published validated source a8419510d7c74b2211e255ee50639e50d2717da9; exact remote SHA verified and hosted branch CI42435140058 succeeded. Draft PR25 open, not merged. Infra unchanged feature branch and CI verified. Parent proof9adff0b94c5d413f8dead5073dda5912 passed; stale historical dependencies and main-only Project links remain explicit.",
       "ready": false
     },
     {

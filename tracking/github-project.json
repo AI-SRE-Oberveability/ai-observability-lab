@@ -1180,6 +1180,6 @@
     "date": "2026-11-08",
     "status": "dry_run_passed_apply_deferred_branch_evidence",
     "confirmed_live_updates": false,
-    "reason": "Host auth functional per parent verification; prior sandbox denial historical. Hardcoded blob/main links have no branch-ref option; parent publishes reviewed evidence before apply."
+    "reason": "Feature source is published and host auth works. Helper hardcodes blob/main links and has no branch-ref option; live sync stays deferred until correct-ref links or a separately authorized merge. No broken main evidence links or false issue closures applied."
   }
 }
