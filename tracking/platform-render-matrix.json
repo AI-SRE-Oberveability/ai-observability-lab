@@ -36,6 +36,11 @@
       "repository": "AI-SRE-Oberveability/ai-agent-workloads",
       "commit": "0789088f4b8db54839aa31de15193fdfcc3d8811",
       "pr_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/12"
+    },
+    "workloads_publication": {
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "commit": "0d6699490a710ca0edf0abaaa488355734d34bf0",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/13"
     }
   },
   "config_input_paths": [
@@ -58,5 +63,16 @@
   "workload_chart_revision": "0789088f4b8db54839aa31de15193fdfcc3d8811",
   "gitops_merged_main": "5359b7357b7faf19a90fd56be333340ef302a98f",
   "jaeger_application_validation_evidence": "evidence/jaeger-application-validation.json",
-  "application_image_release_proved": false
+  "application_image_release_proved": false,
+  "workload_image": {
+    "image": "ghcr.io/ai-sre-oberveability/ai-agent-workloads@sha256:de08b02351ece93a256c36ba483731b67157046b1b6b966359d0498d6f22dc88",
+    "source_commit": "79c39e881d1da5b13f99299e4cac72c51367b58c",
+    "workflow_commit": "0d6699490a710ca0edf0abaaa488355734d34bf0",
+    "runtime_platform": "linux/amd64",
+    "visibility": "private",
+    "standalone_container_replay_passed": true,
+    "full_release_or_aks_deployable": false,
+    "evidence": "evidence/workload-image-publication.json"
+  },
+  "image_secret_validation_evidence": "evidence/image-secret-validation.json"
 }

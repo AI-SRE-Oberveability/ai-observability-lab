@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-15T23:12:12+04:00",
+  "updated_at": "2026-11-15T23:42:14+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
-    "done": 16,
-    "needs_revalidation": 4,
+    "done": 13,
+    "needs_revalidation": 5,
+    "blocked": 3,
     "in_progress": 2,
-    "blocked": 1,
     "waiting_for_decision": 3,
     "draft": 2,
     "planned": 20
@@ -78,9 +78,11 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/p213-jaeger-application-merge.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
-      "note": "HLD 0.35 records exact approved merges/main CI, private GHCR choice and ordered image/Secret-delivery plan before implementation; Azure/AKS disabled and real-proof boundaries retained.",
+      "note": "HLD 0.36/current choices aligned: chart sources are merged, the private approved-main image was published/replayed, and publication/Secret workflow source remains in review. Live Azure/AKS and full release gates retained.",
       "ready": false
     },
     {
@@ -205,7 +207,7 @@
         "ai-agent-workloads/contracts/retrieval.openapi.yaml"
       ],
       "acceptance": "Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.",
-      "status": "done",
+      "status": "needs_revalidation",
       "blocked_by": [],
       "artifacts_present": [
         "ai-agent-workloads/contracts/agent.openapi.yaml",
@@ -216,7 +218,7 @@
         "ai-observability-lab/evidence/local-workload-correction.json"
       ],
       "note": "Both OpenAPI contracts and real HTTP authentication/input/outcome/limit cases passed",
-      "ready": false
+      "ready": true
     },
     {
       "id": "P1.3",
@@ -238,8 +240,10 @@
         "ai-agent-workloads/evaluations/policy-v1.json"
       ],
       "acceptance": "Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "blocked",
+      "blocked_by": [
+        "P1.2"
+      ],
       "artifacts_present": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/evaluations/policy-v1.json"
@@ -272,8 +276,10 @@
         "ai-observability-config/local/collector.yaml"
       ],
       "acceptance": "Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "blocked",
+      "blocked_by": [
+        "P1.3"
+      ],
       "artifacts_present": [
         "ai-observability-config/telemetry-contract.md",
         "ai-observability-config/local/collector.yaml"
@@ -313,7 +319,9 @@
       ],
       "acceptance": "Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.",
       "status": "needs_revalidation",
-      "blocked_by": [],
+      "blocked_by": [
+        "P1.4"
+      ],
       "artifacts_present": [
         "ai-observability-lab/compose.yaml",
         "ai-observability-config/local/compose.yaml",
@@ -327,7 +335,7 @@
         "ai-observability-lab/evidence/local-proof-attempt-1.json"
       ],
       "note": "Pinned loopback native runner passed readiness, owned-process stop, released-listener and ephemeral restart checks; first failed assertion retained",
-      "ready": true
+      "ready": false
     },
     {
       "id": "P1.6",
@@ -492,10 +500,11 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/release-pinning-validation.json",
-        "ai-observability-lab/evidence/release-candidate-publication.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
-      "note": "Candidate and pin validator published for review in PR #24; 18 Git source files verified, 28 tests passed, missing workload digest/replay still block release acceptance",
+      "note": "Private GHCR image published from approved main, pulled by observed digest with source labels/platform verified, and synthetic container auth/key-rotation replay passed. This is partial image evidence: P2.16 and seven-repo/backend/privacy release replay, manifest/pin acceptance and signed/scanned policy remain pending.",
       "ready": false
     },
     {
@@ -1226,6 +1235,7 @@
       "acceptance": "Deterministic mode preserved; gateway-scoped identity contract, model allowlist and typed auth/rate/quota/timeout errors pass synthetic checks; retries and streaming bounded; no direct-endpoint fallback. Actual cloud/live claims require P3.5 and G5.",
       "status": "planned",
       "blocked_by": [
+        "P1.3",
         "P3.7"
       ],
       "artifacts_present": [],
@@ -1458,9 +1468,11 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
-        "ai-observability-lab/evidence/p213-jaeger-application-merge.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
-      "note": "Charts #8/workloads #12/lab #39 merged with exact-main CI passing. Private GHCR publication and Secret-delivery contract/replay planned; exact-SHA GitHub-only manual gate is separate from disabled Azure/AKS. No image/live Secret success yet.",
+      "note": "Private GHCR image publication/pull and synthetic container auth/citation/coordinated rotation passed in run43753212328. Exact-SHA gate closed; 17 guard/Secret tests and green source CI; first port-probe failure retained/corrected. HLD/current choices aligned. Live Azure/AKS delivery, full release, attribution/GitOps/Argo/handover remain pending.",
       "ready": true
     },
     {

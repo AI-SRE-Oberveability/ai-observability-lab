@@ -2,21 +2,21 @@
   "organization": "AI-SRE-Oberveability",
   "project_url": "https://github.com/orgs/AI-SRE-Oberveability/projects/1",
   "project_id": "PVT_kwDOFNUgOM4BpL99",
-  "verified_at": "2026-11-15T22:57:46+04:00",
-  "evidence_ref": "93ba626caf13bef77e014fa907ac0cf7d05fe82a",
+  "verified_at": "2026-11-15T23:16:35+04:00",
+  "evidence_ref": "8c7defa6526b9b273f2ded0d08e4b1b79986d8bb",
   "tasks": 48,
   "status_counts": {
-    "done": 16,
-    "needs_revalidation": 4,
+    "done": 13,
+    "needs_revalidation": 5,
+    "blocked": 3,
     "in_progress": 2,
     "waiting_for_decision": 3,
     "draft": 2,
-    "planned": 20,
-    "blocked": 1
+    "planned": 20
   },
   "board_counts": {
-    "Done": 16,
-    "Todo": 30,
+    "Done": 13,
+    "Todo": 33,
     "In Progress": 2
   },
   "repositories": [

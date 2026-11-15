@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "private_image_published_digest_pulled_synthetic_secret_replay_passed",
+  "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+  "repository_id": 1437529826,
+  "source_commit": "79c39e881d1da5b13f99299e4cac72c51367b58c",
+  "workflow_commit": "0d6699490a710ca0edf0abaaa488355734d34bf0",
+  "run_id": 43753212328,
+  "run_attempt": 1,
+  "image": "ghcr.io/ai-sre-oberveability/ai-agent-workloads@sha256:de08b02351ece93a256c36ba483731b67157046b1b6b966359d0498d6f22dc88",
+  "discovery_tag": "ghcr.io/ai-sre-oberveability/ai-agent-workloads:run-43753212328-1-sha-79c39e881d1d",
+  "package_visibility": "private",
+  "package_repository_id": 1437529826,
+  "runtime_platform": "linux/amd64",
+  "source_oci_labels_verified": true,
+  "signed_attestation_proved": false,
+  "vulnerability_acceptance_proved": false,
+  "replay": {
+    "mode": "pulled_digest_private_docker_network",
+    "health_and_auth": true,
+    "synthetic_citation": true,
+    "faults_disabled": true,
+    "coordinated_rotation": true,
+    "old_key_rejected": true,
+    "keys_absent_from_captured_logs": true,
+    "kubernetes_secret_delivery_proved": false,
+    "telemetry_backend_ingestion_proved": false
+  },
+  "secret_values_or_hashes_in_receipt": false,
+  "azure_deployment_enabled": false,
+  "kubernetes_operations": false
+}
