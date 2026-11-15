@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.34 Jaeger/application chart source validated. Updated: 15 November 2026, Asia/Dubai. Execution: **Collector/GitOps merges and main CI passed; Jaeger/application charts implemented in review; P2.13 continues; Azure disabled**.
+Version: 0.35 charts merged; private image/Secret-delivery plan. Updated: 15 November 2026, Asia/Dubai. Execution: **charts #8/workloads #12/lab #39 merged; exact-main CI passed; GHCR private selected; image/Secret slice planned; Azure disabled**.
 
 ## Purpose
 
@@ -8,7 +8,13 @@ Provide three synthetic use cases: a policy assistant, a service-status agent an
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; config and Collector/manual GitOps foundations are merged, Jaeger/application chart source is in review, and pipelines remains empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## Jaeger/application chart source implemented — 15 November 2026
+## Charts merged; private image/Secret-delivery plan — 15 November 2026
+
+Charts #8, workloads #12 and lab #39 are merged at approved heads and exact resulting main CI passes; see evidence/p213-jaeger-application-merge.json. The user selected private GHCR. [The ordered plan](docs/image-secret-delivery-plan.md) adds an exact-SHA-gated manual publication job for the already-approved main workload source, real digest pull/auth/rotation replay using private ephemeral synthetic keys, and a disabled no-values Key Vault/CSI delivery contract. GitHub package publication is now authorized; Azure/live AKS delivery stays disabled. A reviewed branch workflow may run only at an explicitly allowlisted SHA; new code PRs stay unmerged and the temporary GitHub-only gate closes after the run.
+
+Next: implement/test the guarded workflow and Secret contract, publish reviewed source, run the approved private publication/replay and record actual results. Remaining: real Azure/AKS/Secret delivery, target/budget gates, signed/scanned provenance and retention decisions, attribution/GitOps promotion, Argo/config/bootstrap/combined and P2.14–P2.16 checks. No image digest or live Secret success is invented. GitLab/global Git is preserved; AKS Python agents/APIM outside AKS and Terraform ownership remain selected.
+
+## Earlier Jaeger/application chart source implemented — 15 November 2026
 
 [The prior step plan](docs/jaeger-application-plan.md) is implemented as a bounded source slice. [Charts #8](https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/8) adds pinned ephemeral Jaeger: default zero/dev four/qa four objects, one memory-backed instance capped at 1000 traces, memory/batch/resource bounds, tokenless restricted settings, internal OTLP and loopback-only query listeners. Eleven negative cases pass. Generated config validates in the pinned native and digest-container distributions; socket/config checks are not backend/readiness, image-startup or pressure acceptance.
 
