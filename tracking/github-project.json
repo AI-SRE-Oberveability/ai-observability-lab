@@ -158,7 +158,7 @@
       "issue_node_id": "I_kwDOVa724s8AAAABas0hPA",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/issues/2",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETSpI",
-      "evidence_status": "needs_revalidation",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.2"
@@ -167,7 +167,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "needs_revalidation"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.1"
@@ -176,7 +176,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -186,7 +186,7 @@
       "issue_node_id": "I_kwDOVa724s8AAAABas0njg",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/issues/3",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETSvo",
-      "evidence_status": "blocked",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.3"
@@ -195,7 +195,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "blocked"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.2"
@@ -204,7 +204,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -214,7 +214,7 @@
       "issue_node_id": "I_kwDOVa74jc8AAAABas0tcg",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/issues/1",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhETS1g",
-      "evidence_status": "blocked",
+      "evidence_status": "done",
       "values": {
         "Task ID": {
           "text": "P1.4"
@@ -223,7 +223,7 @@
           "singleSelectOptionId": "de80e961"
         },
         "Evidence status": {
-          "text": "blocked"
+          "text": "done"
         },
         "Dependencies": {
           "text": "P1.3"
@@ -232,7 +232,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "98236657"
         }
       }
     },
@@ -1359,7 +1359,7 @@
   },
   "project_number": 1,
   "visibility": "private",
-  "verified_at": "2026-11-15T23:46:56+04:00",
+  "verified_at": "2026-11-15T23:53:41+04:00",
   "views": [
     {
       "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",
@@ -1372,5 +1372,5 @@
       "layout": "TABLE_LAYOUT"
     }
   ],
-  "evidence_ref": "c32518293eddf875180381da95b7f4237bd53ad1"
+  "evidence_ref": "5d6fcb72845b3932207d8700a2c4e757c9d7be3a"
 }
