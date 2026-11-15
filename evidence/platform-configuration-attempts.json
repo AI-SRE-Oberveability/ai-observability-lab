@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "retained_attempts": [
+    {
+      "stage": "schema_resolution",
+      "finding": "Standalone dataset did not contain a CustomResourceDefinition root schema",
+      "resolution": "Pinned official Kubernetes apiextensions OpenAPI components instead; no missing schema was skipped"
+    },
+    {
+      "stage": "tool_resolution",
+      "finding": "Kustomize Windows release uses ZIP, not the initially assumed tar.gz",
+      "resolution": "Resolved exact official checksum-manifest filename; verified archive/executable bytes"
+    },
+    {
+      "stage": "local_test_fixtures",
+      "finding": "Windows sandbox temporary directory child operations denied",
+      "resolution": "Windows fixtures use verified private workspace runtime; POSIX fixtures use native temp storage; all 19 tests pass"
+    },
+    {
+      "stage": "schema_dialect",
+      "finding": "Generic schema# identifier caused implicit latest-draft warning",
+      "resolution": "Explicit reviewed Draft 4 keyword validation; unknown dialects fail"
+    },
+    {
+      "stage": "chart_ci",
+      "source_commit": "11092f7d85346464f97fa8fe6d5983338c956447",
+      "run_id": 43741571382,
+      "conclusion": "failure",
+      "failed_step": "existing ruff check scripts",
+      "finding": "PLW1510 required explicit subprocess check argument",
+      "resolution": "Added check=False to existing manual error-handling call; validation was not weakened; corrected exact-head CI passes",
+      "corrected_commit": "37ae1036de941be3b160aff5bbe90ddb81db7d10"
+    }
+  ]
+}

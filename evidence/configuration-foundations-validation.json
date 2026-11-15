@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T21:52:46+04:00",
+  "status": "first_configuration_slice_validated_source_in_review",
+  "configuration": {
+    "schema_version": 1,
+    "status": "passed_offline_configuration_checks",
+    "kustomize_version": "5.8.3",
+    "vendor_artifacts_verified": 12,
+    "render_hashes": {
+      "dev": "8cbcb78b0dfc8d272de3bb9637a7683cac6d2b3b4ba0ff96c01db75404108ff6",
+      "qa": "c229f100b2b29a8d174ae8054a8a64aa6705c023a5a804b9da1f2b2a2c0bd804",
+      "platform": "dbc09e5dc62c690674c5d36aa95f7fca24f1ed0de76a0f0d03b356f0216e3435"
+    },
+    "objects": 32,
+    "by_kind": {
+      "Namespace": 4,
+      "ResourceQuota": 2,
+      "Role": 2,
+      "LimitRange": 2,
+      "NetworkPolicy": 19,
+      "CustomResourceDefinition": 3
+    },
+    "identities": [
+      [
+        "",
+        "LimitRange",
+        "ai-lab-dev",
+        "container-defaults"
+      ],
+      [
+        "",
+        "LimitRange",
+        "ai-lab-qa",
+        "container-defaults"
+      ],
+      [
+        "",
+        "Namespace",
+        "",
+        "ai-lab-dev"
+      ],
+      [
+        "",
+        "Namespace",
+        "",
+        "ai-lab-qa"
+      ],
+      [
+        "",
+        "Namespace",
+        "",
+        "ai-observability"
+      ],
+      [
+        "",
+        "Namespace",
+        "",
+        "argocd"
+      ],
+      [
+        "",
+        "ResourceQuota",
+        "ai-lab-dev",
+        "workload-bounds"
+      ],
+      [
+        "",
+        "ResourceQuota",
+        "ai-lab-qa",
+        "workload-bounds"
+      ],
+      [
+        "apiextensions.k8s.io",
+        "CustomResourceDefinition",
+        "",
+        "applications.argoproj.io"
+      ],
+      [
+        "apiextensions.k8s.io",
+        "CustomResourceDefinition",
+        "",
+        "applicationsets.argoproj.io"
+      ],
+      [
+        "apiextensions.k8s.io",
+        "CustomResourceDefinition",
+        "",
+        "appprojects.argoproj.io"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-dev",
+        "agent-ingress"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-dev",
+        "agent-to-retrieval"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-dev",
+        "client-to-agent"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-dev",
+        "default-deny"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-dev",
+        "dns"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-dev",
+        "metadata-telemetry"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-dev",
+        "retrieval-ingress"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-qa",
+        "agent-ingress"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-qa",
+        "agent-to-retrieval"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-qa",
+        "client-to-agent"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-qa",
+        "default-deny"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-qa",
+        "dns"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-qa",
+        "metadata-telemetry"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-lab-qa",
+        "retrieval-ingress"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-observability",
+        "collector-ingress"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-observability",
+        "collector-to-jaeger"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-observability",
+        "default-deny"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-observability",
+        "dns"
+      ],
+      [
+        "networking.k8s.io",
+        "NetworkPolicy",
+        "ai-observability",
+        "jaeger-ingress"
+      ],
+      [
+        "rbac.authorization.k8s.io",
+        "Role",
+        "ai-lab-dev",
+        "ai-lab-evidence-reader"
+      ],
+      [
+        "rbac.authorization.k8s.io",
+        "Role",
+        "ai-lab-qa",
+        "ai-lab-evidence-reader"
+      ]
+    ],
+    "deployable": false,
+    "azure_deployment_enabled": false,
+    "cluster_operations": false,
+    "limitations": [
+      "Schema/source-policy checks do not execute API-server admission/CEL or prove live NetworkPolicy/pod-security enforcement.",
+      "Argo controller connectivity, workload/chart labels, identity delivery and APIM egress remain later integration work; no deployment is approved."
+    ]
+  },
+  "local_unit_tests": {
+    "observed_exec_session": 64105,
+    "tests": 20,
+    "skips": 0,
+    "exit_code": 0,
+    "profile": "Windows Python 3.12 private hash-locked environment"
+  },
+  "ruff_and_actionlint": "passed",
+  "rendered_crd_upstream_equality_enforced": true,
+  "source_publications": {
+    "config": {
+      "role": "config",
+      "repository": "AI-SRE-Oberveability/ai-platform-config",
+      "repository_id": 1458904336,
+      "pr": 1,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-platform-config/pull/1",
+      "head": "65f8fca983f91d4fec94e89139449c048c51330a",
+      "tree": "4a6609ff22c44c003b3ccfbafb775185c49722e2",
+      "source_review": {
+        "role": "config",
+        "tree": "4a6609ff22c44c003b3ccfbafb775185c49722e2",
+        "confirmed_secrets": 0,
+        "files_reviewed": 42,
+        "downloaded_tool_or_dependency_archives_published": false
+      },
+      "azure_deployment_enabled": false,
+      "merged": false,
+      "initial_validation_head": "4d5a2bc9998d7dac2691bf905f1ab3aa35aa7397"
+    },
+    "charts": {
+      "role": "charts",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "repository_id": 1437530253,
+      "pr": 6,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/6",
+      "head": "37ae1036de941be3b160aff5bbe90ddb81db7d10",
+      "tree": "a98231f0eaa5fd03cc53fd3f8a4b92924bde6da1",
+      "source_review": {
+        "role": "charts",
+        "tree": "a98231f0eaa5fd03cc53fd3f8a4b92924bde6da1",
+        "confirmed_secrets": 0,
+        "files_reviewed": 23,
+        "downloaded_tool_or_dependency_archives_published": false
+      },
+      "azure_deployment_enabled": false,
+      "merged": false,
+      "prior_head_with_failed_ci": "11092f7d85346464f97fa8fe6d5983338c956447"
+    }
+  },
+  "exact_source_ci": {
+    "config": [
+      {
+        "id": 43742972297,
+        "head": "65f8fca983f91d4fec94e89139449c048c51330a",
+        "event": "pull_request",
+        "conclusion": "success",
+        "url": "https://github.com/AI-SRE-Oberveability/ai-platform-config/actions/runs/43742972297",
+        "jobs": [
+          {
+            "name": "validate (windows-2025)",
+            "conclusion": "success"
+          },
+          {
+            "name": "validate (ubuntu-24.04)",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 43742966517,
+        "head": "65f8fca983f91d4fec94e89139449c048c51330a",
+        "event": "push",
+        "conclusion": "success",
+        "url": "https://github.com/AI-SRE-Oberveability/ai-platform-config/actions/runs/43742966517",
+        "jobs": [
+          {
+            "name": "validate (windows-2025)",
+            "conclusion": "success"
+          },
+          {
+            "name": "validate (ubuntu-24.04)",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ],
+    "charts": [
+      {
+        "id": 43741986009,
+        "head": "37ae1036de941be3b160aff5bbe90ddb81db7d10",
+        "event": "pull_request",
+        "conclusion": "success",
+        "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/43741986009",
+        "jobs": [
+          {
+            "name": "validate",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "id": 43741980909,
+        "head": "37ae1036de941be3b160aff5bbe90ddb81db7d10",
+        "event": "push",
+        "conclusion": "success",
+        "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/43741980909",
+        "jobs": [
+          {
+            "name": "validate",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "source_review_confirmed_secrets": 0,
+  "preservation_evidence": "evidence/platform-configuration-preservation.json",
+  "P2.13_overall_complete": false,
+  "azure_operations": false,
+  "cluster_apply_sync_or_controller_install": false,
+  "registry_publication": false,
+  "remaining": [
+    "Review/merge component PRs under applicable authorization",
+    "Platform/application chart profiles and image/hardening/connectivity checks",
+    "GitOps immutable environment selections and bootstrap/combined ownership checks",
+    "P2.14 seven-repo CI",
+    "P2.15 identity-preserving cutover",
+    "P2.16 fresh canonical runtime/source baseline"
+  ]
+}

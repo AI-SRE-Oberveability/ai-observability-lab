@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T21:50:24+04:00",
+  "seven_repo_ids_names_origins_preserved": true,
+  "six_non_lab_worktrees_clean": true,
+  "two_unseeded_repos_still_empty": true,
+  "config_infra_gitops_pipelines_azure_flags_false": true,
+  "global_git_file_hashes_unchanged": true,
+  "four_original_remote_config_hashes_unchanged": true,
+  "gitlab_credential_store_mutations": false,
+  "credential_values_exported": false,
+  "global_helm_version_unchanged": "v3.19.0+g3d8990f",
+  "seven_existing_telemetry_profile_hashes_preserved": true,
+  "pr25_preserved_unmerged": true,
+  "azure_account_resource_or_cluster_operations": false,
+  "registry_publication": false,
+  "limitations": [
+    "Credential-store contents were not enumerated/exported; existing GitHub auth was used without GitLab sign-out/helper changes.",
+    "New source is in review branches; no config/controller deployment or P2.13 overall acceptance is claimed."
+  ]
+}

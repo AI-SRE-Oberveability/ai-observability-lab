@@ -1,0 +1,17 @@
+{
+  "repository": "AI-SRE-Oberveability/ai-platform-config",
+  "repository_id": 1458904336,
+  "initial_main_commit": "8da8c8fb3acfaed1d10263c05e959a57aa3a2767",
+  "initial_tree": "c090874121e8d13ecddf13b4970e43637b4f3eb9",
+  "initial_files": [
+    "README.md",
+    "AGENTS.md",
+    ".gitignore",
+    ".gitattributes"
+  ],
+  "source_scan_confirmed_secrets": 0,
+  "new_branch": "feature/configuration-foundations",
+  "azure_deployment_enabled": false,
+  "global_git_changes": false,
+  "repository_local_public_noreply_identity": true
+}

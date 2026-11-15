@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "phase": "P2.13",
-  "status": "plan_prepared_for_review_implementation_pending",
+  "status": "approved_inputs_and_first_config_validated_source_review_pending",
   "document": "docs/platform-ownership-plan.md",
   "baseline_merge": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8",
-  "execution_policy": "planning_only_no_new_manifests_dependencies_or_cluster_operations",
+  "execution_policy": "offline_source_implementation_no_cloud_cluster_or_registry_publication",
   "proposed_first_slice": [
     "namespace-RBAC-policy foundation",
     "Collector/ephemeral Jaeger platform charts",
@@ -206,19 +206,19 @@
     {
       "order": 2,
       "title": "Review ownership and scope",
-      "status": "prepared_for_review",
+      "status": "approved",
       "required_exit": "Published plan/matrix; no implementation acceptance"
     },
     {
       "order": 3,
       "title": "Select and lock compatible inputs",
-      "status": "planned",
+      "status": "locked_validated_source_published_review_pending",
       "required_exit": "Actual supported tool/Argo/chart/CRD versions, archive checksums, licenses and dependency locks"
     },
     {
       "order": 4,
       "title": "Establish config source",
-      "status": "planned",
+      "status": "first_config_validated_20_tests_linux_windows_ci_review_pending",
       "required_exit": "Independent reviewed namespace/RBAC/policy/CRD source and offline builds/schema checks"
     },
     {
@@ -343,5 +343,7 @@
   "implementation_acceptance_receipt_created": false,
   "github_renames_or_project_link_cutover": false,
   "azure_deployment_enabled": false,
-  "gitlab_credential_changes": false
+  "gitlab_credential_changes": false,
+  "approval": "User explicitly approved plan, merge PR36 and start dependency locking/configuration manifests",
+  "selected_input_matrix": "tracking/platform-render-matrix.json"
 }

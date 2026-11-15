@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-15T20:27:28+04:00",
+  "updated_at": "2026-11-15T21:57:18+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
-    "done": 18,
-    "needs_revalidation": 2,
-    "blocked": 1,
+    "done": 16,
+    "needs_revalidation": 3,
+    "blocked": 2,
     "in_progress": 2,
     "waiting_for_decision": 3,
     "draft": 2,
@@ -78,12 +78,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/pr35-merge.json",
-        "ai-observability-lab/evidence/platform-ownership-start.json",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json"
       ],
-      "note": "HLD 0.27 and P2.13 plan/blueprint distinguish proposed source ownership, eight ordered steps, pin/lock/handover/rollback requirements and pending implementation; AKS agents/APIM/Azure gates preserved.",
+      "note": "HLD 0.30 and the current delivery-plan paragraph describe the approved PR36 merge, locked inputs and first validated configuration slice in review; remaining chart/GitOps/handover and cloud gates are explicit.",
       "ready": false
     },
     {
@@ -608,7 +605,7 @@
         "ai-observability-lab/.github/workflows/ci.yaml"
       ],
       "acceptance": "All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.",
-      "status": "done",
+      "status": "needs_revalidation",
       "blocked_by": [],
       "artifacts_present": [
         "ai-observability-infra/.github/workflows/ci.yaml",
@@ -621,7 +618,7 @@
         "ai-observability-lab/evidence/main-ci-revalidation.json"
       ],
       "note": "Four exact current main heads passed fresh hosted CI; changed config checker revalidated on main",
-      "ready": false
+      "ready": true
     },
     {
       "id": "P2.9",
@@ -646,8 +643,10 @@
         "ai-observability-infra/foundation/.terraform.lock.hcl"
       ],
       "acceptance": "Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "blocked",
+      "blocked_by": [
+        "P2.8"
+      ],
       "artifacts_present": [
         "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
         "ai-observability-infra/foundation/.terraform.lock.hcl"
@@ -1459,13 +1458,9 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
-        "ai-observability-lab/evidence/pr35-merge.json",
-        "ai-observability-lab/evidence/platform-ownership-start.json",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json",
-        "ai-observability-lab/evidence/platform-ownership-preservation.json"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json"
       ],
-      "note": "Ownership planning package prepared before manifest work: seven source roles, eight ordered substeps, lock/pin publication sequence, bootstrap freeze/adoption/rollback and combined negative checks. Reference/profile bytes and all repo identities preserved; three new repos remain empty. Existing tests/lint pass, Azure flags are false and GitLab/global Git settings are unchanged. Implementation and real renders remain pending.",
+      "note": "First dependency/configuration slice is implemented and source-CI validated: 32 configuration objects and 20 tests. Current plan/HLD and source/attempt/preservation receipts are aligned; component PR review and remaining chart/GitOps/handover work remain.",
       "ready": true
     },
     {

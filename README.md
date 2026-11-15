@@ -1,6 +1,6 @@
 # Lab coordination, planning and evidence
 
-[P2.13 ownership and step-by-step plan](docs/platform-ownership-plan.md): PR #35 compatibility is merged; configuration/charts/GitOps planning is prepared before source implementation. Three new repos remain empty and original GitHub names/history stay unchanged until P2.15. [Workspace commands](docs/workspace-compatibility.md) and [overall migration plan](docs/repository-migration-plan.md). Azure deployment remains disabled.
+[P2.13 implemented input/configuration slice](docs/platform-configuration-progress.md): PR #36 is merged; locked dependencies, the first 32-object configuration source and CI are published in review PRs. [Approved ownership plan](docs/platform-ownership-plan.md). Overall P2.13 remains in progress, original GitHub names/history are preserved and Azure remains disabled.
 
 Verified public repository: `AI-SRE-Oberveability/ai-observability-lab`; reviewed source published; see evidence/publication-receipts.json.
 
