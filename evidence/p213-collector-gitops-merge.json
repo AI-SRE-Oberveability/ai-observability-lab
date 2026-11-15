@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T18:37:50.023511+00:00",
+  "merges": [
+    {
+      "role": "charts",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "pr": 7,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/7",
+      "approved_head": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+      "merge_commit": "05dd8864b180e553fe734bd763d97db6ce94e795",
+      "merged_at": "2026-11-15T18:37:08Z",
+      "head_ci": [
+        {
+          "id": 43745579665,
+          "event": "pull_request",
+          "conclusion": "success"
+        },
+        {
+          "id": 43745574324,
+          "event": "push",
+          "conclusion": "success"
+        }
+      ],
+      "main_ci": [
+        {
+          "id": 43747775597,
+          "head": "05dd8864b180e553fe734bd763d97db6ce94e795",
+          "event": "push",
+          "branch": "main",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/43747775597",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "gitops",
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "pr": 1,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/pull/1",
+      "approved_head": "227f636739ca5b77ee727190b62fbd12da2ce082",
+      "merge_commit": "5359b7357b7faf19a90fd56be333340ef302a98f",
+      "merged_at": "2026-11-15T18:37:15Z",
+      "head_ci": [
+        {
+          "id": 43746232084,
+          "event": "pull_request",
+          "conclusion": "success"
+        },
+        {
+          "id": 43746230727,
+          "event": "push",
+          "conclusion": "success"
+        }
+      ],
+      "main_ci": [
+        {
+          "id": 43747785428,
+          "head": "5359b7357b7faf19a90fd56be333340ef302a98f",
+          "event": "push",
+          "branch": "main",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/actions/runs/43747785428",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "lab",
+      "repository": "AI-SRE-Oberveability/ai-observability-lab",
+      "pr": 38,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/38",
+      "approved_head": "a600167557895565a752e27c3f351745ed0a2d63",
+      "merge_commit": "b7c697238c87e684c5bca8950b75d3668b31fece",
+      "merged_at": "2026-11-15T18:37:25Z",
+      "head_ci": [
+        {
+          "id": 43747307232,
+          "event": "pull_request",
+          "conclusion": "success"
+        },
+        {
+          "id": 43747302914,
+          "event": "push",
+          "conclusion": "success"
+        }
+      ],
+      "main_ci": [
+        {
+          "id": 43747799724,
+          "head": "b7c697238c87e684c5bca8950b75d3668b31fece",
+          "event": "push",
+          "branch": "main",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/43747799724",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_ci_status": "passed",
+  "azure_deployment_enabled": false,
+  "credential_changes": false,
+  "github_write_path": "existing personal API auth; connector organization write permission previously unavailable"
+}

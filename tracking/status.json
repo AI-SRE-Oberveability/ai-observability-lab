@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T22:26:31+04:00",
+  "updated_at": "2026-11-15T22:40:01+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 16,
@@ -78,10 +78,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/collector-gitops-validation.json",
-        "ai-observability-lab/evidence/p213-foundations-merge.json"
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
-      "note": "HLD 0.32/current plan and published-main/review matrix aligned; Windows UTF-8 documentation encoding corrected from preserved merged source. Collector/manual GitOps scope, evidence and remaining gates recorded.",
+      "note": "HLD 0.33/ordered Jaeger-application plan records approved merges/main CI and safe chart contracts before implementation, including pending image/Secret/runtime and telemetry-attribution gaps.",
       "ready": false
     },
     {
@@ -1459,10 +1458,9 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
-        "ai-observability-lab/evidence/collector-gitops-validation.json",
-        "ai-observability-lab/evidence/p213-foundations-merge.json"
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
-      "note": "Collector/manual GitOps first slice validated: charts #7 and GitOps #1 exact-source CI pass; nine chart negative cases, 16 GitOps tests and five public blob checks. Foundations main CI is separate and passing. Remaining chart/Argo/config GitOps/bootstrap combined work and review/merge still pending; Azure false.",
+      "note": "Charts #7/GitOps #1/lab #38 merged and each exact-main CI passed. Planned the next bounded Jaeger/application chart slice; published app image/Secret delivery, GitOps promotion, runtime and combined handover checks remain; Azure false.",
       "ready": true
     },
     {

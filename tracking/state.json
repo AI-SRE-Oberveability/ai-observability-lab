@@ -48,16 +48,15 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.32/current plan and published-main/review matrix aligned; Windows UTF-8 documentation encoding corrected from preserved merged source. Collector/manual GitOps scope, evidence and remaining gates recorded.",
-      "at": "2026-11-15T22:25:55+04:00",
+      "note": "HLD 0.33/ordered Jaeger-application plan records approved merges/main CI and safe chart contracts before implementation, including pending image/Secret/runtime and telemetry-attribution gaps.",
+      "at": "2026-11-15T22:39:40+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/collector-gitops-validation.json",
-        "ai-observability-lab/evidence/p213-foundations-merge.json"
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "2a4f9493d96e55097caa93af3f2ea20455bae021150aa79d4a7e2b16740da6ef",
-        "ai-observability-lab/HLD.md": "7e14d279ac09140bfc3b2d32cc1af2ab0d0c8b347323b757465a2c119f835a62",
+        "ai-observability-lab/POC_PLAN.md": "3d00143f88a8193ffb866af9b1d6ea03bbe51d12e1c75ff439956ed08473cceb",
+        "ai-observability-lab/HLD.md": "69551ffb71e9d7f808b75d99ab8917c7e42965b4658c15d7fddc4fbd5ea98c94",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -101,8 +100,7 @@
         "ai-observability-lab/tracking/platform-ownership-plan.json": "fcaa183ad38c0660d8a32ec28edb20174769ae926aaf9f7039a01cc27aa235a7"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/collector-gitops-validation.json": "788913544b31842f9a899043f794301adebdce3e07d55f0e4bf224b80b013c35",
-        "ai-observability-lab/evidence/p213-foundations-merge.json": "93e337795da01d87afcca4a3005efec47add04ea6e9164850c4271fea8c7ecb9"
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json": "e6d200b1278c022b7cb6d94f15571e7ce53e857027c95c25dea3d7bea3daa952"
       }
     },
     "P0.3": {
@@ -717,11 +715,10 @@
     },
     "P2.13": {
       "status": "in_progress",
-      "note": "Collector/manual GitOps first slice validated: charts #7 and GitOps #1 exact-source CI pass; nine chart negative cases, 16 GitOps tests and five public blob checks. Foundations main CI is separate and passing. Remaining chart/Argo/config GitOps/bootstrap combined work and review/merge still pending; Azure false.",
-      "at": "2026-11-15T22:26:12+04:00",
+      "note": "Charts #7/GitOps #1/lab #38 merged and each exact-main CI passed. Planned the next bounded Jaeger/application chart slice; published app image/Secret delivery, GitOps promotion, runtime and combined handover checks remain; Azure false.",
+      "at": "2026-11-15T22:39:52+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/collector-gitops-validation.json",
-        "ai-observability-lab/evidence/p213-foundations-merge.json"
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -827,13 +824,12 @@
         "ai-observability-lab/tracking/platform-render-matrix.json": "8c4398bc18042eea34d42459b6bb92930a45b0db6a86e7838be315299f04ac01"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/collector-gitops-validation.json": "788913544b31842f9a899043f794301adebdce3e07d55f0e4bf224b80b013c35",
-        "ai-observability-lab/evidence/p213-foundations-merge.json": "93e337795da01d87afcca4a3005efec47add04ea6e9164850c4271fea8c7ecb9"
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json": "e6d200b1278c022b7cb6d94f15571e7ce53e857027c95c25dea3d7bea3daa952"
       }
     }
   },
   "known_gaps": [
-    "Collector chart/manual GitOps first slice passes source CI in charts #7/GitOps #1. Review/merge, Jaeger/application charts, complete Argo/config GitOps and bootstrap/combined checks remain before P2.13 acceptance; no live rollout is proved.",
+    "Collector/manual GitOps merged and main CI passed. Jaeger/application charts planned; no published workload image yet, application render fixtures are test-only and hardcoded local telemetry attribution remains unproved for dev/qa. Remaining Argo/GitOps/handover checks and Azure gates retained.",
     "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
@@ -850,9 +846,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "HLD 0.32: foundations merged/main CI passed; first Collector/manual GitOps source slice validated in review. Remaining charts/Argo/config GitOps/bootstrap combined checks and Azure gates retained; GitLab/global Git unchanged.",
+    "current": "HLD 0.33: Collector/GitOps merged/main CI passed; Jaeger/application chart plan prepared before implementation. Image/Secret/runtime, Argo/GitOps/handover and cloud gates retained; GitLab/global Git unchanged.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.13: Collector/manual GitOps first slice validated: charts #7 and GitOps #1 exact-source CI pass; nine chart negative cases, 16 GitOps tests and five public blob checks. Foundations main CI is separate and passing. Remaining chart/Argo/config GitOps/bootstrap combined work and review/merge still pending; Azure false."
+    "last_change": "P2.13: Charts #7/GitOps #1/lab #38 merged and each exact-main CI passed. Planned the next bounded Jaeger/application chart slice; published app image/Secret delivery, GitOps promotion, runtime and combined handover checks remain; Azure false."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -931,7 +927,7 @@
     "merge_commit": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8"
   },
   "platform_ownership_plan": {
-    "status": "collector_manual_gitops_first_slice_validated_source_review_pending",
+    "status": "collector_gitops_merged_jaeger_application_planned",
     "document": "docs/platform-ownership-plan.md",
     "blueprint": "tracking/platform-ownership-plan.json",
     "substeps": 8,
