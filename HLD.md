@@ -1,12 +1,28 @@
 # High-level design — current, target and remaining work
 
-Version: 0.19 selected seven-repository plan. Updated: 15 November 2026, Asia/Dubai. Execution: **seven-repository structure selected; canonical names and migration plan finalized; current four repositories retained; Azure execution remains disabled**.
+Version: 0.22 preserved migration baseline and PR review. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #26 merged; four repository rollback bundles restored and verified; PR #25 reviewed with two required corrections; four live repositories retained; Azure execution remains disabled**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and the selected seven-repository target under `AI-SRE-Oberveability` separates resource ownership. Four repositories currently exist; three in-place renames and three new repositories are planned, with original IDs/history retained. The organization is owned by the personal account `javedkumail`. All four transferred repositories retain their IDs, published commits and public visibility. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
+
+## Preserved baseline and completed PR #25 review - 15 November 2026
+
+P2.11 now has an immutable post-PR26 baseline: four original repository IDs and exact main/branch/tag refs, settings/protections and issue identities, a private 48-item Project snapshot, locked source objects, and four local Git rollback bundles. Each bundle passed verification, independent mirror restore and full fsck; the lab PR refs were restored too. See evidence/migration-baseline.json and evidence/migration-baseline-validation.json. Lab main CI 43722081314 passed at merged commit 36944db6ab12fdec949317cef4666cab1814337b; unchanged sibling CI receipts remain historical exact-source results.
+
+[The review and integration sequence](docs/migration-baseline-review.md) inspected PR #25 at dde301710f21fe7d8a99f1a9e20000291f836555. All 51 stdlib tests passed in Ubuntu WSL. Two corrections were reproduced: POSIX runtime-path containment depends on obsolete clone names, and a mocked Linux-specific test fails through the common Windows entry point. Six HLD/generated-tracker/audit-state conflicts require deliberate reconciliation with the accepted 48-task plan. PR #25 remains draft, unchanged and unmerged; its historical runtime proof has not been replayed or adopted as new migration acceptance. See evidence/pr25-review.json.
+
+The baseline/review work package is complete; next is P2.12's isolated workspace and shared old/new path/runtime resolver, including those corrections before integrating the Linux runner. Preserve both audit histories and profile-specific receipts, regenerate derived views, and retain the old workspace. No repository creation/rename/cutover has occurred. Runtime remains Python AI agents on AKS through APIM outside AKS, with safe telemetry and read-only SRE. Azure is false and G2/G3/G4/G5 remain pending; GitLab credentials/helpers/remotes and global Git settings remain intact.
+
+## Earlier migration-start snapshot: approved plan merged - 15 November 2026
+
+The user approved the finalized plan and explicitly authorized merging PR #26 and starting the seven-repository migration with baseline preservation and PR #25 review. PR #26 merged at 36944db6ab12fdec949317cef4666cab1814337b after exact-head CI passed; see evidence/pr26-merge.json. This starts P2.11. The earlier planning-only statements below and in the approved plan describe that package's publication snapshot.
+
+Next: preserve exact repository IDs/heads/refs/settings, create verified local Git rollback bundles, capture Project mappings, and review the Linux Compose runner/tests/evidence at PR #25's exact head. Review the overlapping tracking/HLD changes against the merged 48-task plan before choosing its integration path. PR #25 has not been authorized for merge by this instruction and remains a review input.
+
+The seven canonical names and ownership remain selected. Runtime remains Python agents on AKS -> APIM outside AKS -> approved endpoints. No repository rename, folder move, resource creation, Azure authentication or paid/live inference is part of this baseline step. Azure deployment is false; GitLab credentials and global Git configuration are preserved. Cloud/Managed/live-model gates remain pending.
 
 ## Selected repository structure and next work - 15 November 2026
 

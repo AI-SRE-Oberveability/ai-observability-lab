@@ -36,14 +36,15 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "Selected seven-repo ownership and canonical names finalized in plan/ADR/file map; preserve Python AI agents and APIM, run migration before new POC execution, keep Azure disabled",
-      "at": "2026-11-15T17:49:30+04:00",
+      "note": "Approved PR #26 merged; immutable four-repo rollback baseline verified and PR #25 reviewed with two reproduced corrections; publication review clarified GitHub authentication versus excluded credential-store contents",
+      "at": "2026-11-15T18:25:47+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/seven-repository-plan.json"
+        "ai-observability-lab/evidence/pr26-merge.json",
+        "ai-observability-lab/evidence/migration-baseline-validation.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "3eb9bff35f987efbff315fda0b23a3610825a4a41a798cd5221a9b0f2e86f6da",
-        "ai-observability-lab/HLD.md": "c27332f0cae8c2e187a7fbcd4776df0ab6f0b674cbffc78b1303cf8e4fd2febe",
+        "ai-observability-lab/HLD.md": "0ec9553b2046c8b2eee04ccc86176f6f9796902578915f6504278c692b7e7e98",
         "ai-observability-lab/docs/engineering-standards.md": "444ae1ca7a704f00dfcab19afd58cd4489413c02318b6473ec4eefd8c0ff3b5c",
         "ai-observability-lab/docs/repository-layout.md": "a37d7f64843ec717f709cf9bc4c3c3c8e863c3f42602ed8bd1ca7fd36f2da401",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -80,31 +81,33 @@
         "ai-observability-lab/docs/repository-migration-plan.md": "e1bfcf829c17d41728fc352c2aefb73c2ee5017647c5785b652cacba5a56060a",
         "ai-observability-lab/docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
-        "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47"
+        "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
+        "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/seven-repository-plan.json": "48c902a791a7453975e25b3ce1372d3a1e49f6bb02dab59071169b3f88f56a13"
+        "ai-observability-lab/evidence/pr26-merge.json": "e17e0fef6e6c083ab403c21634d03bcfbcf61078137fbf9169d6ce63962eff64",
+        "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "48-task migration graph and seven-role/173-file mapping validated; 28 existing tracker/sync/release tests pass; live operational repo mappings remain four until cutover",
-      "at": "2026-11-15T17:49:33+04:00",
+      "note": "48-task graph and 28 passing lab tests retained; baseline/report hashes recaptured after publication wording clarification, with no runtime or workflow change",
+      "at": "2026-11-15T18:25:50+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/seven-repository-tracking-validation.json"
+        "ai-observability-lab/evidence/migration-tracking-validation.json"
       ],
       "source_hashes": {
         "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_release.py": "8f1a5dcb5ec846fa9ccd94142c87eafad1c516b0df29a64fe66d5ade61be05ef",
         "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "267cee3aeb29a0467a91cae3656eb3db3370c7706f064d318a8473b7b0e4b2f8",
+        "ai-observability-lab/tracking/plan.json": "ca36b037f08cd7315f04fe52520eb94391e26a364a5d38381761756752ddffab",
         "ai-observability-lab/TRACKER_GUIDE.md": "03668a4a4cd5bd17a59a7048877a26dfd8a8c9e935e40ea7b2381869572a2424",
         "ai-observability-lab/AGENTS.md": "468cd7ee8ec0f0de59dce2df91379c976748e7cc9e643cc1a87fc8f58847763a",
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/seven-repository-tracking-validation.json": "d14c074e565aa92ef6f9f36f5d1c31ca87b43e88e92443f2de48eb6ecec96575"
+        "ai-observability-lab/evidence/migration-tracking-validation.json": "0fa2ca3cc70ce7ad8eb9ae12dd38f367c67fecd9c70a4a2f0b320e799ae5b8db"
       }
     },
     "P2.2": {
@@ -425,11 +428,29 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/seven-repository-plan.json": "48c902a791a7453975e25b3ce1372d3a1e49f6bb02dab59071169b3f88f56a13"
       }
+    },
+    "P2.11": {
+      "status": "done",
+      "note": "Four verified mirror-restorable rollback bundles and exact PR #25 review complete; two corrections and six integration conflicts recorded, with credentials excluded from baseline artifacts and PR #25 unmerged",
+      "at": "2026-11-15T18:25:53+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/migration-baseline-validation.json",
+        "ai-observability-lab/evidence/pr25-review.json"
+      ],
+      "source_hashes": {
+        "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
+        "ai-observability-lab/evidence/migration-baseline.json": "7d99b281b018744976f329c4c633e8deefb1f8ab61b41a2ba1e3f8f8a674c69a",
+        "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18",
+        "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+      }
     }
   },
   "known_gaps": [
-    "Seven-repository names and migration plan are finalized; creation, renames, source moves and path resolver work have not started.",
-    "Four repos and their accepted historical evidence remain current. Draft PR #25 Linux Compose proof must be reviewed/reconciled; its description is not new acceptance in this branch.",
+    "Seven-repo migration started: PR #26 merged; baseline and PR #25 review complete. Repository creation, path compatibility, renames and cutover remain pending.",
+    "PR #25 has 51 passing Linux stdlib tests and two reproduced integration findings; correct runtime containment and platform-specific fixtures, reconcile six state/HLD conflicts, and preserve profile-specific evidence before integration.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
     "Managed entitlement/compatibility and paid/live model scope remain separate G4/G5 prerequisites.",
@@ -444,9 +465,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "Seven-repo target selected and names/plan finalized; four repos remain live. Next preserve/reconcile baseline, then path compatibility and staged cutover. Azure Owner access user-reported; deployment disabled; GitLab intact.",
+    "current": "PR #26 merged; four rollback bundles restored and verified; PR #25 has 51 passing Linux tests and two integration findings. Next P2.12 path compatibility. Four live repos; AKS/APIM unchanged; Azure disabled; GitLab intact.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.10: Finalized seven canonical names, preserved-history mapping, staged migration acceptance/rollback and post-setup Azure readiness checkpoint; no repo creation, rename or migration performed"
+    "last_change": "P2.11: Four verified mirror-restorable rollback bundles and exact PR #25 review complete; two corrections and six integration conflicts recorded, with credentials excluded from baseline artifacts and PR #25 unmerged"
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -487,9 +508,10 @@
     "at": "2026-11-15",
     "user_instruction": "Use the proposed seven-repo structure. Finalize repo names and step-by-step migration plan first; keep AI agents/APIM, Azure disabled and GitLab credentials intact.",
     "names_source": "tracking/repository-targets.json",
-    "migration_started": false,
+    "migration_started": true,
     "current_live_repository_count": 4,
-    "target_repository_count": 7
+    "target_repository_count": 7,
+    "execution_authorization": "User approved plan, merging PR #26 and starting baseline preservation / PR #25 review on 15 November 2026; no Azure deployment authorization"
   },
   "azure_readiness": {
     "owner_subscription_reported_by_user": true,
@@ -498,5 +520,15 @@
     "budget_provided": false,
     "azure_deployment_enabled": false,
     "next_checkpoint": "After P2.16 repository setup: exact tenant/subscription, region and budget/currency, then costed Terraform scope"
+  },
+  "migration_baseline": {
+    "id": "20261115T141227Z",
+    "status": "preserved_and_independently_restored",
+    "repositories": 4,
+    "pr25_review": "two_corrections_before_integration",
+    "pr25_merged": false,
+    "evidence": "evidence/migration-baseline.json",
+    "next": "P2.12",
+    "azure_deployment_enabled": false
   }
 }

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "validated_at": "2026-11-15T18:20:52+04:00",
+  "baseline_id": "20261115T141227Z",
+  "bundle_count": 4,
+  "bundle_checksums_match": true,
+  "mirror_restores_and_full_fsck": 4,
+  "restored_main_and_in_flight_refs_verified": true,
+  "verification_attempts": [
+    {
+      "baseline_id": "20261115T141029Z",
+      "status": "custom_ref_restore_check_failed",
+      "reason": "bare clone did not fetch custom refs; bundles valid and retained"
+    },
+    {
+      "baseline_id": "20261115T141227Z",
+      "status": "passed",
+      "method": "fresh mirror restores include custom refs"
+    }
+  ],
+  "main_ci_after_pr26": {
+    "id": 43722081314,
+    "head": "36944db6ab12fdec949317cef4666cab1814337b",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "azure_deployment_enabled": false,
+  "project_private": true,
+  "project_tasks_at_capture": 48,
+  "live_repository_count": 4,
+  "baseline_sha256": "7d99b281b018744976f329c4c633e8deefb1f8ab61b41a2ba1e3f8f8a674c69a",
+  "pr25_review_sha256": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d",
+  "global_git_config_unchanged": true,
+  "gitlab_credential_changes": false,
+  "new_poc_acceptance": false
+}

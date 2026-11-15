@@ -1,0 +1,1151 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-15T18:13:02+04:00",
+  "baseline_id": "20261115T141227Z",
+  "scope": "Post-PR26 four-repository Git/settings/Project rollback baseline before rename or source integration",
+  "repositories": [
+    {
+      "role": "infra",
+      "repository": "AI-SRE-Oberveability/AI-Observability-Infra",
+      "repository_id": 1437529000,
+      "current_folder": "ai-observability-infra",
+      "main_commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+      "visibility": "public",
+      "default_branch": "main",
+      "merge_settings": {
+        "allow_merge_commit": true,
+        "allow_squash_merge": true,
+        "allow_rebase_merge": true,
+        "delete_branch_on_merge": false
+      },
+      "branches": [
+        {
+          "name": "ci-terraform-foundation",
+          "commit": "bba35ccaa23d3c10e944bc81d5acc53a4f58d8fe",
+          "protected": false
+        },
+        {
+          "name": "feature/ai-sre-platform-lab",
+          "commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+          "protected": false
+        },
+        {
+          "name": "main",
+          "commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+          "protected": false
+        }
+      ],
+      "tags": [],
+      "open_prs": [],
+      "issue_id_ledger": [
+        {
+          "number": 12,
+          "id": 6146281076,
+          "node_id": "I_kwDOVa7zqM8AAAABbljOdA",
+          "is_pull_request": false
+        },
+        {
+          "number": 11,
+          "id": 6087300324,
+          "node_id": "PR_kwDOVa7zqM8AAAABLXQBJA",
+          "is_pull_request": true
+        },
+        {
+          "number": 10,
+          "id": 6087104571,
+          "node_id": "I_kwDOVa7zqM8AAAABatHYOw",
+          "is_pull_request": false
+        },
+        {
+          "number": 9,
+          "id": 6086840705,
+          "node_id": "I_kwDOVa7zqM8AAAABas3RgQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 8,
+          "id": 6086826014,
+          "node_id": "I_kwDOVa7zqM8AAAABas2YHg",
+          "is_pull_request": false
+        },
+        {
+          "number": 7,
+          "id": 6086824470,
+          "node_id": "I_kwDOVa7zqM8AAAABas2SFg",
+          "is_pull_request": false
+        },
+        {
+          "number": 6,
+          "id": 6086822932,
+          "node_id": "I_kwDOVa7zqM8AAAABas2MFA",
+          "is_pull_request": false
+        },
+        {
+          "number": 5,
+          "id": 6086821552,
+          "node_id": "I_kwDOVa7zqM8AAAABas2GsA",
+          "is_pull_request": false
+        },
+        {
+          "number": 4,
+          "id": 6086819966,
+          "node_id": "I_kwDOVa7zqM8AAAABas2Afg",
+          "is_pull_request": false
+        },
+        {
+          "number": 3,
+          "id": 6086818701,
+          "node_id": "I_kwDOVa7zqM8AAAABas17jQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 2,
+          "id": 6086817309,
+          "node_id": "I_kwDOVa7zqM8AAAABas12HQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 1,
+          "id": 6086816094,
+          "node_id": "I_kwDOVa7zqM8AAAABas1xXg",
+          "is_pull_request": false
+        }
+      ],
+      "workflow_permissions": {
+        "default_workflow_permissions": "read",
+        "can_approve_pull_request_reviews": false
+      },
+      "actions_permissions": {
+        "enabled": true,
+        "allowed_actions": "all",
+        "sha_pinning_required": false
+      },
+      "rulesets": [],
+      "branch_protection": {
+        "read_status": 404,
+        "meaning": "not configured or not visible; no protection inferred"
+      },
+      "environment_names": [
+        "azure-lab-apply",
+        "azure-lab-plan"
+      ],
+      "baseline_ref": "refs/migration-baselines/20261115T141227Z/main",
+      "in_flight_refs": {},
+      "private_bundle": ".runtime/migration-start/baselines/20261115T141227Z/infra.bundle",
+      "bundle_sha256": "b4a7e2c4207bf15c0e4e6b85b18cdedc3254a5da7c90723b7237d03d7568b948",
+      "bundle_verify": "passed",
+      "independent_bare_restore_and_fsck": "passed",
+      "locked_source_objects": [
+        {
+          "path": "foundation/.terraform.lock.hcl",
+          "sha256": "0eb93cf29237e7e73aaec364317b91dda3023338cefdb329214360f11f05eff8",
+          "blob": "2db9cf36635efc003ee7a2c51817cacdfa6bc56c"
+        }
+      ],
+      "local_remote_config_sha256": "ee88b9ff30b43833eafb0299e598f50c2cf4977062ee7c043e67af66c0c88b35",
+      "worktree_at_capture": "",
+      "main_ci": [
+        {
+          "id": 41304322738,
+          "head_sha": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+          "head_branch": "main",
+          "event": "workflow_dispatch",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/41304322738"
+        },
+        {
+          "id": 40768534559,
+          "head_sha": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+          "head_branch": "main",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra/actions/runs/40768534559"
+        }
+      ]
+    },
+    {
+      "role": "workloads",
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "repository_id": 1437529826,
+      "current_folder": "ai-agent-workloads",
+      "main_commit": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+      "visibility": "public",
+      "default_branch": "main",
+      "merge_settings": {
+        "allow_merge_commit": true,
+        "allow_squash_merge": true,
+        "allow_rebase_merge": true,
+        "delete_branch_on_merge": false
+      },
+      "branches": [
+        {
+          "name": "ci-terraform-foundation",
+          "commit": "5ebb78bbfef932e2906db7502038a6820d0df78b",
+          "protected": false
+        },
+        {
+          "name": "main",
+          "commit": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+          "protected": false
+        },
+        {
+          "name": "work/local-workload-review",
+          "commit": "6da5ffd2ade346d01ef881a4c5a4db17a840d7c1",
+          "protected": false
+        }
+      ],
+      "tags": [],
+      "open_prs": [],
+      "issue_id_ledger": [
+        {
+          "number": 11,
+          "id": 6146459884,
+          "node_id": "PR_kwDOVa724s8AAAABMGZ8NA",
+          "is_pull_request": true
+        },
+        {
+          "number": 10,
+          "id": 6146281716,
+          "node_id": "I_kwDOVa724s8AAAABbljQ9A",
+          "is_pull_request": false
+        },
+        {
+          "number": 9,
+          "id": 6087262000,
+          "node_id": "PR_kwDOVa724s8AAAABLXOAng",
+          "is_pull_request": true
+        },
+        {
+          "number": 8,
+          "id": 6086833942,
+          "node_id": "I_kwDOVa724s8AAAABas23Fg",
+          "is_pull_request": false
+        },
+        {
+          "number": 7,
+          "id": 6086832862,
+          "node_id": "I_kwDOVa724s8AAAABas2y3g",
+          "is_pull_request": false
+        },
+        {
+          "number": 6,
+          "id": 6086831438,
+          "node_id": "I_kwDOVa724s8AAAABas2tTg",
+          "is_pull_request": false
+        },
+        {
+          "number": 5,
+          "id": 6086830154,
+          "node_id": "I_kwDOVa724s8AAAABas2oSg",
+          "is_pull_request": false
+        },
+        {
+          "number": 4,
+          "id": 6086807028,
+          "node_id": "I_kwDOVa724s8AAAABas1N9A",
+          "is_pull_request": false
+        },
+        {
+          "number": 3,
+          "id": 6086797198,
+          "node_id": "I_kwDOVa724s8AAAABas0njg",
+          "is_pull_request": false
+        },
+        {
+          "number": 2,
+          "id": 6086795580,
+          "node_id": "I_kwDOVa724s8AAAABas0hPA",
+          "is_pull_request": false
+        },
+        {
+          "number": 1,
+          "id": 6086794288,
+          "node_id": "I_kwDOVa724s8AAAABas0cMA",
+          "is_pull_request": false
+        }
+      ],
+      "workflow_permissions": {
+        "default_workflow_permissions": "read",
+        "can_approve_pull_request_reviews": false
+      },
+      "actions_permissions": {
+        "enabled": true,
+        "allowed_actions": "all",
+        "sha_pinning_required": false
+      },
+      "rulesets": [],
+      "branch_protection": {
+        "read_status": 404,
+        "meaning": "not configured or not visible; no protection inferred"
+      },
+      "environment_names": [],
+      "baseline_ref": "refs/migration-baselines/20261115T141227Z/main",
+      "in_flight_refs": {},
+      "private_bundle": ".runtime/migration-start/baselines/20261115T141227Z/workloads.bundle",
+      "bundle_sha256": "198bd3084eab9a9828ef5f620b474151e9caf7bbe71a23fb707f0b4fa2779c34",
+      "bundle_verify": "passed",
+      "independent_bare_restore_and_fsck": "passed",
+      "locked_source_objects": [
+        {
+          "path": "uv.lock",
+          "sha256": "59f4edafc72d4bfec0d17ba1799345204fe5cd99396481ea5d24ae605ea0fde3",
+          "blob": "633bbcc09e56285851ec56979752ef6bbd0bd675"
+        },
+        {
+          "path": "requirements.lock.txt",
+          "sha256": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "blob": "2242315277f340f5f31e94e97ff1403f1d710859"
+        },
+        {
+          "path": "requirements-dev.lock.txt",
+          "sha256": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506",
+          "blob": "d3d192f00c7f0e7d24c1d8a0497254c9f7c3aabc"
+        },
+        {
+          "path": "Dockerfile",
+          "sha256": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+          "blob": "5b10f875cb022f9513dddfeb36d584f4a33c4b83"
+        }
+      ],
+      "local_remote_config_sha256": "7e58b3eeb61062cb3c1c1851281fab25f2bb5874e688c0a621c6040a4c4b75e7",
+      "worktree_at_capture": "",
+      "main_ci": [
+        {
+          "id": 41304303822,
+          "head_sha": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+          "head_branch": "main",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/41304303822"
+        }
+      ]
+    },
+    {
+      "role": "charts",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "repository_id": 1437530253,
+      "current_folder": "ai-observability-config",
+      "main_commit": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+      "visibility": "public",
+      "default_branch": "main",
+      "merge_settings": {
+        "allow_merge_commit": true,
+        "allow_squash_merge": true,
+        "allow_rebase_merge": true,
+        "delete_branch_on_merge": false
+      },
+      "branches": [
+        {
+          "name": "ci-terraform-foundation",
+          "commit": "5c9309f0b6d08cbb034d1d5a1ef116b74b98d889",
+          "protected": false
+        },
+        {
+          "name": "main",
+          "commit": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+          "protected": false
+        },
+        {
+          "name": "work/local-backend-proof",
+          "commit": "a010b88252997ba73bb46aa811b78660fe245d72",
+          "protected": false
+        }
+      ],
+      "tags": [],
+      "open_prs": [],
+      "issue_id_ledger": [
+        {
+          "number": 5,
+          "id": 6146460744,
+          "node_id": "PR_kwDOVa74jc8AAAABMGZ-4Q",
+          "is_pull_request": true
+        },
+        {
+          "number": 4,
+          "id": 6087265246,
+          "node_id": "PR_kwDOVa74jc8AAAABLXOLSg",
+          "is_pull_request": true
+        },
+        {
+          "number": 3,
+          "id": 6086828815,
+          "node_id": "I_kwDOVa74jc8AAAABas2jDw",
+          "is_pull_request": false
+        },
+        {
+          "number": 2,
+          "id": 6086827289,
+          "node_id": "I_kwDOVa74jc8AAAABas2dGQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 1,
+          "id": 6086798706,
+          "node_id": "I_kwDOVa74jc8AAAABas0tcg",
+          "is_pull_request": false
+        }
+      ],
+      "workflow_permissions": {
+        "default_workflow_permissions": "read",
+        "can_approve_pull_request_reviews": false
+      },
+      "actions_permissions": {
+        "enabled": true,
+        "allowed_actions": "all",
+        "sha_pinning_required": false
+      },
+      "rulesets": [],
+      "branch_protection": {
+        "read_status": 404,
+        "meaning": "not configured or not visible; no protection inferred"
+      },
+      "environment_names": [],
+      "baseline_ref": "refs/migration-baselines/20261115T141227Z/main",
+      "in_flight_refs": {},
+      "private_bundle": ".runtime/migration-start/baselines/20261115T141227Z/charts.bundle",
+      "bundle_sha256": "a1d1718ad4e14fdbc609717bc3a65529cce6f532682444c8f4e5e20444e97cab",
+      "bundle_verify": "passed",
+      "independent_bare_restore_and_fsck": "passed",
+      "locked_source_objects": [
+        {
+          "path": "local/windows-binaries.lock.json",
+          "sha256": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47",
+          "blob": "ab42b00f3c2b78558c032c2135c55cd185ac0f4f"
+        }
+      ],
+      "local_remote_config_sha256": "2f66025b2fc576e57ee34dc817793fd585145a39bb7dfec0feaf0697ab4505e8",
+      "worktree_at_capture": "",
+      "main_ci": [
+        {
+          "id": 41304311171,
+          "head_sha": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+          "head_branch": "main",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/41304311171"
+        }
+      ]
+    },
+    {
+      "role": "lab",
+      "repository": "AI-SRE-Oberveability/ai-observability-lab",
+      "repository_id": 1437531335,
+      "current_folder": "ai-observability-lab",
+      "main_commit": "36944db6ab12fdec949317cef4666cab1814337b",
+      "visibility": "public",
+      "default_branch": "main",
+      "merge_settings": {
+        "allow_merge_commit": true,
+        "allow_squash_merge": true,
+        "allow_rebase_merge": true,
+        "delete_branch_on_merge": false
+      },
+      "branches": [
+        {
+          "name": "ci-terraform-foundation",
+          "commit": "5d19e9b383f07006c9c3ab7e9346ecff0296f5e3",
+          "protected": false
+        },
+        {
+          "name": "docs/aks-ai-architecture",
+          "commit": "f59c9a48a73191c2efaec6f4976b6382b2e8407d",
+          "protected": false
+        },
+        {
+          "name": "docs/ci-activation-receipts",
+          "commit": "74ae0c72634cfe420540523361863974a99157e4",
+          "protected": false
+        },
+        {
+          "name": "docs/platform-structure-review",
+          "commit": "d9b1684a58306fb0c8c6edc015ccdf61dccd5b81",
+          "protected": false
+        },
+        {
+          "name": "docs/tracker-normalized-receipts",
+          "commit": "36308795cde9eab5ffd7d84440e2b7a0866a7de3",
+          "protected": false
+        },
+        {
+          "name": "feature/ai-sre-platform-lab",
+          "commit": "dde301710f21fe7d8a99f1a9e20000291f836555",
+          "protected": false
+        },
+        {
+          "name": "main",
+          "commit": "36944db6ab12fdec949317cef4666cab1814337b",
+          "protected": false
+        },
+        {
+          "name": "work/local-backend-proof",
+          "commit": "e7d40973ae3b610c9c2bd26edba6e375fc0b0943",
+          "protected": false
+        },
+        {
+          "name": "work/release-pinning",
+          "commit": "995b6811534074a1e8e4815efdb536cb5a12fd15",
+          "protected": false
+        }
+      ],
+      "tags": [],
+      "open_prs": [
+        {
+          "number": 25,
+          "head": "dde301710f21fe7d8a99f1a9e20000291f836555",
+          "base": "7723a733b67e1992e3eb7a37e148e85be9321406",
+          "draft": true,
+          "title": "test: prove Linux rootless Compose telemetry"
+        }
+      ],
+      "issue_id_ledger": [
+        {
+          "number": 33,
+          "id": 6404793594,
+          "node_id": "I_kwDOVa78x88AAAABfcFk-g",
+          "is_pull_request": false
+        },
+        {
+          "number": 32,
+          "id": 6404792831,
+          "node_id": "I_kwDOVa78x88AAAABfcFh_w",
+          "is_pull_request": false
+        },
+        {
+          "number": 31,
+          "id": 6404791850,
+          "node_id": "I_kwDOVa78x88AAAABfcFeKg",
+          "is_pull_request": false
+        },
+        {
+          "number": 30,
+          "id": 6404790556,
+          "node_id": "I_kwDOVa78x88AAAABfcFZHA",
+          "is_pull_request": false
+        },
+        {
+          "number": 29,
+          "id": 6404789722,
+          "node_id": "I_kwDOVa78x88AAAABfcFV2g",
+          "is_pull_request": false
+        },
+        {
+          "number": 28,
+          "id": 6404788843,
+          "node_id": "I_kwDOVa78x88AAAABfcFSaw",
+          "is_pull_request": false
+        },
+        {
+          "number": 27,
+          "id": 6404787654,
+          "node_id": "I_kwDOVa78x88AAAABfcFNxg",
+          "is_pull_request": false
+        },
+        {
+          "number": 26,
+          "id": 6404575077,
+          "node_id": "PR_kwDOVa78x88AAAABPUl4aQ",
+          "is_pull_request": true
+        },
+        {
+          "number": 25,
+          "id": 6266378206,
+          "node_id": "PR_kwDOVa78x88AAAABNmZQNw",
+          "is_pull_request": true
+        },
+        {
+          "number": 24,
+          "id": 6146689943,
+          "node_id": "PR_kwDOVa78x88AAAABMGlO5g",
+          "is_pull_request": true
+        },
+        {
+          "number": 23,
+          "id": 6146461542,
+          "node_id": "PR_kwDOVa78x88AAAABMGaBXA",
+          "is_pull_request": true
+        },
+        {
+          "number": 22,
+          "id": 6146282369,
+          "node_id": "I_kwDOVa78x88AAAABbljTgQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 21,
+          "id": 6088044490,
+          "node_id": "PR_kwDOVa78x88AAAABLX2nLQ",
+          "is_pull_request": true
+        },
+        {
+          "number": 20,
+          "id": 6087579991,
+          "node_id": "PR_kwDOVa78x88AAAABLXeh4w",
+          "is_pull_request": true
+        },
+        {
+          "number": 19,
+          "id": 6087496573,
+          "node_id": "PR_kwDOVa78x88AAAABLXaMrw",
+          "is_pull_request": true
+        },
+        {
+          "number": 18,
+          "id": 6087305145,
+          "node_id": "PR_kwDOVa78x88AAAABLXQRKQ",
+          "is_pull_request": true
+        },
+        {
+          "number": 17,
+          "id": 6087102938,
+          "node_id": "I_kwDOVa78x88AAAABatHR2g",
+          "is_pull_request": false
+        },
+        {
+          "number": 16,
+          "id": 6086839483,
+          "node_id": "I_kwDOVa78x88AAAABas3Muw",
+          "is_pull_request": false
+        },
+        {
+          "number": 15,
+          "id": 6086838021,
+          "node_id": "I_kwDOVa78x88AAAABas3HBQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 14,
+          "id": 6086836584,
+          "node_id": "I_kwDOVa78x88AAAABas3BaA",
+          "is_pull_request": false
+        },
+        {
+          "number": 13,
+          "id": 6086835356,
+          "node_id": "I_kwDOVa78x88AAAABas28nA",
+          "is_pull_request": false
+        },
+        {
+          "number": 12,
+          "id": 6086814628,
+          "node_id": "I_kwDOVa78x88AAAABas1rpA",
+          "is_pull_request": false
+        },
+        {
+          "number": 11,
+          "id": 6086813015,
+          "node_id": "I_kwDOVa78x88AAAABas1lVw",
+          "is_pull_request": false
+        },
+        {
+          "number": 10,
+          "id": 6086809933,
+          "node_id": "I_kwDOVa78x88AAAABas1ZTQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 9,
+          "id": 6086808447,
+          "node_id": "I_kwDOVa78x88AAAABas1Tfw",
+          "is_pull_request": false
+        },
+        {
+          "number": 8,
+          "id": 6086805151,
+          "node_id": "I_kwDOVa78x88AAAABas1Gnw",
+          "is_pull_request": false
+        },
+        {
+          "number": 7,
+          "id": 6086803407,
+          "node_id": "I_kwDOVa78x88AAAABas0_zw",
+          "is_pull_request": false
+        },
+        {
+          "number": 6,
+          "id": 6086801581,
+          "node_id": "I_kwDOVa78x88AAAABas04rQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 5,
+          "id": 6086800199,
+          "node_id": "I_kwDOVa78x88AAAABas0zRw",
+          "is_pull_request": false
+        },
+        {
+          "number": 4,
+          "id": 6086792516,
+          "node_id": "I_kwDOVa78x88AAAABas0VRA",
+          "is_pull_request": false
+        },
+        {
+          "number": 3,
+          "id": 6086790913,
+          "node_id": "I_kwDOVa78x88AAAABas0PAQ",
+          "is_pull_request": false
+        },
+        {
+          "number": 2,
+          "id": 6086789216,
+          "node_id": "I_kwDOVa78x88AAAABas0IYA",
+          "is_pull_request": false
+        },
+        {
+          "number": 1,
+          "id": 6086787510,
+          "node_id": "I_kwDOVa78x88AAAABas0Btg",
+          "is_pull_request": false
+        }
+      ],
+      "workflow_permissions": {
+        "default_workflow_permissions": "read",
+        "can_approve_pull_request_reviews": false
+      },
+      "actions_permissions": {
+        "enabled": true,
+        "allowed_actions": "all",
+        "sha_pinning_required": false
+      },
+      "rulesets": [],
+      "branch_protection": {
+        "read_status": 404,
+        "meaning": "not configured or not visible; no protection inferred"
+      },
+      "environment_names": [],
+      "baseline_ref": "refs/migration-baselines/20261115T141227Z/main",
+      "in_flight_refs": {
+        "pr25": {
+          "ref": "refs/migration-baselines/20261115T141227Z/pr25",
+          "commit": "dde301710f21fe7d8a99f1a9e20000291f836555"
+        },
+        "pr26-reviewed": {
+          "ref": "refs/migration-baselines/20261115T141227Z/pr26-reviewed",
+          "commit": "d9b1684a58306fb0c8c6edc015ccdf61dccd5b81"
+        }
+      },
+      "private_bundle": ".runtime/migration-start/baselines/20261115T141227Z/lab.bundle",
+      "bundle_sha256": "82b7c2240a97eb7477e3404528089d069172ed714a9130c3914ed0e7d518846f",
+      "bundle_verify": "passed",
+      "independent_bare_restore_and_fsck": "passed",
+      "locked_source_objects": [
+        {
+          "path": "releases/local-v0.1.0-source-candidate.json",
+          "sha256": "172e9d8ecd1f074d9ea88b4a40fd9658b873d92551f139176c86d81e8ad7facc",
+          "blob": "baedd94ff5c1c0bf32aa476b2a6356e9b5bbb6e8"
+        },
+        {
+          "path": "tracking/repository-targets.json",
+          "sha256": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
+          "blob": "4a84f0a92b46ef9038e348a42b7fe5b6621321ff"
+        },
+        {
+          "path": "tracking/plan.json",
+          "sha256": "267cee3aeb29a0467a91cae3656eb3db3370c7706f064d318a8473b7b0e4b2f8",
+          "blob": "2b53b44864a0ecb552865d17e3f6a1173b67193b"
+        }
+      ],
+      "local_remote_config_sha256": "1f346aef43863d75b1270f76d13ba73ef2a1348299382ef79d673f5737c555a5",
+      "worktree_at_capture": "M HLD.md\n M POC_TRACKER.md\n M REMAINING.md\n M evidence/shared-project-verification.json\n M tracking/events.jsonl\n M tracking/github-project.json\n M tracking/state.json\n M tracking/status.json\n?? evidence/pr26-merge.json",
+      "main_ci": [
+        {
+          "id": 43722081314,
+          "head_sha": "36944db6ab12fdec949317cef4666cab1814337b",
+          "head_branch": "main",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/43722081314"
+        }
+      ]
+    }
+  ],
+  "project": {
+    "id": "PVT_kwDOFNUgOM4BpL99",
+    "url": "https://github.com/orgs/AI-SRE-Oberveability/projects/1",
+    "visibility": "private",
+    "task_count": 48,
+    "linked_repositories": [
+      "AI-SRE-Oberveability/AI-Observability-Infra",
+      "AI-SRE-Oberveability/ai-agent-workloads",
+      "AI-SRE-Oberveability/ai-observability-config",
+      "AI-SRE-Oberveability/ai-observability-lab"
+    ],
+    "mapping_sha256": "2d726a40824f965a197e7eb7b45f5769a29ec43eb8615be4dd2551f8ea792b8d",
+    "item_id_ledger": [
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETSJk",
+        "issue_id": "I_kwDOVa78x88AAAABas0Btg",
+        "issue_number": 1
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETSQc",
+        "issue_id": "I_kwDOVa78x88AAAABas0IYA",
+        "issue_number": 2
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETSW8",
+        "issue_id": "I_kwDOVa78x88AAAABas0PAQ",
+        "issue_number": 3
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETSeU",
+        "issue_id": "I_kwDOVa78x88AAAABas0VRA",
+        "issue_number": 4
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETSkY",
+        "issue_id": "I_kwDOVa724s8AAAABas0cMA",
+        "issue_number": 1
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETSpI",
+        "issue_id": "I_kwDOVa724s8AAAABas0hPA",
+        "issue_number": 2
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETSvo",
+        "issue_id": "I_kwDOVa724s8AAAABas0njg",
+        "issue_number": 3
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETS1g",
+        "issue_id": "I_kwDOVa74jc8AAAABas0tcg",
+        "issue_number": 1
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETS7I",
+        "issue_id": "I_kwDOVa78x88AAAABas0zRw",
+        "issue_number": 5
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETTA8",
+        "issue_id": "I_kwDOVa78x88AAAABas04rQ",
+        "issue_number": 6
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETTIU",
+        "issue_id": "I_kwDOVa78x88AAAABas0_zw",
+        "issue_number": 7
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETTQs",
+        "issue_id": "I_kwDOVa78x88AAAABas1Gnw",
+        "issue_number": 8
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETTbM",
+        "issue_id": "I_kwDOVa724s8AAAABas1N9A",
+        "issue_number": 4
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETTiQ",
+        "issue_id": "I_kwDOVa78x88AAAABas1Tfw",
+        "issue_number": 9
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETTqw",
+        "issue_id": "I_kwDOVa78x88AAAABas1ZTQ",
+        "issue_number": 10
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETT5k",
+        "issue_id": "I_kwDOVa78x88AAAABas1lVw",
+        "issue_number": 11
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUB4",
+        "issue_id": "I_kwDOVa78x88AAAABas1rpA",
+        "issue_number": 12
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUJY",
+        "issue_id": "I_kwDOVa7zqM8AAAABas1xXg",
+        "issue_number": 1
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUPo",
+        "issue_id": "I_kwDOVa7zqM8AAAABas12HQ",
+        "issue_number": 2
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUWc",
+        "issue_id": "I_kwDOVa7zqM8AAAABas17jQ",
+        "issue_number": 3
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUdI",
+        "issue_id": "I_kwDOVa7zqM8AAAABas2Afg",
+        "issue_number": 4
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUkc",
+        "issue_id": "I_kwDOVa7zqM8AAAABas2GsA",
+        "issue_number": 5
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUqQ",
+        "issue_id": "I_kwDOVa7zqM8AAAABas2MFA",
+        "issue_number": 6
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETUxE",
+        "issue_id": "I_kwDOVa7zqM8AAAABas2SFg",
+        "issue_number": 7
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETU20",
+        "issue_id": "I_kwDOVa7zqM8AAAABas2YHg",
+        "issue_number": 8
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETU80",
+        "issue_id": "I_kwDOVa74jc8AAAABas2dGQ",
+        "issue_number": 2
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVCU",
+        "issue_id": "I_kwDOVa74jc8AAAABas2jDw",
+        "issue_number": 3
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVHQ",
+        "issue_id": "I_kwDOVa724s8AAAABas2oSg",
+        "issue_number": 5
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVLc",
+        "issue_id": "I_kwDOVa724s8AAAABas2tTg",
+        "issue_number": 6
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVP0",
+        "issue_id": "I_kwDOVa724s8AAAABas2y3g",
+        "issue_number": 7
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVT0",
+        "issue_id": "I_kwDOVa724s8AAAABas23Fg",
+        "issue_number": 8
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVYg",
+        "issue_id": "I_kwDOVa78x88AAAABas28nA",
+        "issue_number": 13
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVdk",
+        "issue_id": "I_kwDOVa78x88AAAABas3BaA",
+        "issue_number": 14
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVic",
+        "issue_id": "I_kwDOVa78x88AAAABas3HBQ",
+        "issue_number": 15
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVoQ",
+        "issue_id": "I_kwDOVa78x88AAAABas3Muw",
+        "issue_number": 16
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETVtY",
+        "issue_id": "I_kwDOVa7zqM8AAAABas3RgQ",
+        "issue_number": 9
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETj9c",
+        "issue_id": "I_kwDOVa78x88AAAABatHR2g",
+        "issue_number": 17
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhETkCM",
+        "issue_id": "I_kwDOVa7zqM8AAAABatHYOw",
+        "issue_number": 10
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhFJOus",
+        "issue_id": "I_kwDOVa7zqM8AAAABbljOdA",
+        "issue_number": 12
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhFJOws",
+        "issue_id": "I_kwDOVa724s8AAAABbljQ9A",
+        "issue_number": 10
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhFJOzE",
+        "issue_id": "I_kwDOVa78x88AAAABbljTgQ",
+        "issue_number": 22
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhI5bmc",
+        "issue_id": "I_kwDOVa78x88AAAABfcFNxg",
+        "issue_number": 27
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhI5bqw",
+        "issue_id": "I_kwDOVa78x88AAAABfcFSaw",
+        "issue_number": 28
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhI5buQ",
+        "issue_id": "I_kwDOVa78x88AAAABfcFV2g",
+        "issue_number": 29
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhI5bwY",
+        "issue_id": "I_kwDOVa78x88AAAABfcFZHA",
+        "issue_number": 30
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhI5b1c",
+        "issue_id": "I_kwDOVa78x88AAAABfcFeKg",
+        "issue_number": 31
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhI5b40",
+        "issue_id": "I_kwDOVa78x88AAAABfcFh_w",
+        "issue_number": 32
+      },
+      {
+        "item_id": "PVTI_lADOFNUgOM4BpL99zhI5b7w",
+        "issue_id": "I_kwDOVa78x88AAAABfcFk-g",
+        "issue_number": 33
+      }
+    ]
+  },
+  "azure_deployment_enabled": false,
+  "azure_environments": [
+    {
+      "name": "azure-lab-apply",
+      "can_admins_bypass": false,
+      "protection_rules": [
+        {
+          "id": 70470181,
+          "node_id": "GA_kwDOVa7zqM4EM0ol",
+          "type": "required_reviewers",
+          "prevent_self_review": false,
+          "reviewers": [
+            {
+              "type": "User",
+              "reviewer": {
+                "login": "javedkumail",
+                "id": 107232454,
+                "node_id": "U_kgDOBmQ8xg",
+                "avatar_url": "https://avatars.githubusercontent.com/u/107232454?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/javedkumail",
+                "html_url": "https://github.com/javedkumail",
+                "followers_url": "https://api.github.com/users/javedkumail/followers",
+                "following_url": "https://api.github.com/users/javedkumail/following{/other_user}",
+                "gists_url": "https://api.github.com/users/javedkumail/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/javedkumail/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/javedkumail/subscriptions",
+                "organizations_url": "https://api.github.com/users/javedkumail/orgs",
+                "repos_url": "https://api.github.com/users/javedkumail/repos",
+                "events_url": "https://api.github.com/users/javedkumail/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/javedkumail/received_events",
+                "type": "User",
+                "user_view_type": "public",
+                "site_admin": false
+              }
+            }
+          ]
+        },
+        {
+          "id": 70470182,
+          "node_id": "GA_kwDOVa7zqM4EM0om",
+          "type": "branch_policy"
+        }
+      ],
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "branch_policies": {
+        "total_count": 1,
+        "branch_policies": [
+          {
+            "id": 64713573,
+            "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2NDcxMzU3Mw==",
+            "name": "main",
+            "type": "branch"
+          }
+        ]
+      }
+    },
+    {
+      "name": "azure-lab-plan",
+      "can_admins_bypass": false,
+      "protection_rules": [
+        {
+          "id": 70470177,
+          "node_id": "GA_kwDOVa7zqM4EM0oh",
+          "type": "required_reviewers",
+          "prevent_self_review": false,
+          "reviewers": [
+            {
+              "type": "User",
+              "reviewer": {
+                "login": "javedkumail",
+                "id": 107232454,
+                "node_id": "U_kgDOBmQ8xg",
+                "avatar_url": "https://avatars.githubusercontent.com/u/107232454?v=4",
+                "gravatar_id": "",
+                "url": "https://api.github.com/users/javedkumail",
+                "html_url": "https://github.com/javedkumail",
+                "followers_url": "https://api.github.com/users/javedkumail/followers",
+                "following_url": "https://api.github.com/users/javedkumail/following{/other_user}",
+                "gists_url": "https://api.github.com/users/javedkumail/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/javedkumail/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/javedkumail/subscriptions",
+                "organizations_url": "https://api.github.com/users/javedkumail/orgs",
+                "repos_url": "https://api.github.com/users/javedkumail/repos",
+                "events_url": "https://api.github.com/users/javedkumail/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/javedkumail/received_events",
+                "type": "User",
+                "user_view_type": "public",
+                "site_admin": false
+              }
+            }
+          ]
+        },
+        {
+          "id": 70470178,
+          "node_id": "GA_kwDOVa7zqM4EM0oi",
+          "type": "branch_policy"
+        }
+      ],
+      "deployment_branch_policy": {
+        "protected_branches": false,
+        "custom_branch_policies": true
+      },
+      "branch_policies": {
+        "total_count": 1,
+        "branch_policies": [
+          {
+            "id": 64713568,
+            "node_id": "MDE2OkdhdGVCcmFuY2hQb2xpY3k2NDcxMzU2OA==",
+            "name": "main",
+            "type": "branch"
+          }
+        ]
+      }
+    }
+  ],
+  "credential_or_secret_values_exported": false,
+  "azure_operations": false,
+  "repo_names_or_origins_changed": false,
+  "gitlab_credentials_changed": false,
+  "global_git_settings_changed": false,
+  "limitations": [
+    "Git bundles preserve committed objects and refs, not uncommitted work or server settings/secrets.",
+    "No credential-store contents or secret values were included in the baseline; existing GitHub authentication was used for API access.",
+    "Lab worktree contains expected uncommitted merge/tracking receipts; bundle baseline is the clean merged main source before those receipts.",
+    "Existing hosted CI results are identified by exact source; only lab has a new main commit from this step."
+  ]
+}

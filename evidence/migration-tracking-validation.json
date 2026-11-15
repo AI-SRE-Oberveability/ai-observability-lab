@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "validation_date": "2026-11-15",
+  "timezone": "Asia/Dubai",
+  "tests": 28,
+  "passed": 28,
+  "failed": 0,
+  "command": "python -m unittest discover -s ai-observability-lab/tests -v",
+  "actual_task_graph_valid": true,
+  "task_count": 48,
+  "P2_11_watches_actual_baseline_and_review_artifacts": true,
+  "local_document_links_valid": true,
+  "source_hashes": {
+    "tracking/plan.json": "ca36b037f08cd7315f04fe52520eb94391e26a364a5d38381761756752ddffab",
+    "docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
+    "evidence/migration-baseline.json": "7d99b281b018744976f329c4c633e8deefb1f8ab61b41a2ba1e3f8f8a674c69a",
+    "evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d",
+    "evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18"
+  },
+  "runtime_or_workflow_code_changed": false,
+  "azure_deployment_enabled": false
+}
