@@ -19,14 +19,18 @@
     "config": {
       "repository": "AI-SRE-Oberveability/ai-platform-config",
       "repository_id": 1458904336,
-      "commit": "65f8fca983f91d4fec94e89139449c048c51330a",
+      "commit": "7c3f4b0c9d5b899370f1c80d790ca1af8ffddd83",
       "pr_url": "https://github.com/AI-SRE-Oberveability/ai-platform-config/pull/1"
     },
     "charts": {
       "repository": "AI-SRE-Oberveability/ai-observability-config",
-      "repository_id": 1437530253,
-      "commit": "37ae1036de941be3b160aff5bbe90ddb81db7d10",
-      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/6"
+      "commit": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/7"
+    },
+    "gitops": {
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "commit": "227f636739ca5b77ee727190b62fbd12da2ce082",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/pull/1"
     }
   },
   "config_input_paths": [
@@ -40,9 +44,11 @@
     "locks/dependencies.json",
     "locks/toolchain.json"
   ],
-  "future_gitops_catalog_revision": null,
   "future_workload_chart_revision": null,
   "image_digest_deployability": false,
   "azure_deployment_enabled": false,
-  "configuration_validation_evidence": "evidence/configuration-foundations-validation.json"
+  "configuration_validation_evidence": "evidence/configuration-foundations-validation.json",
+  "gitops_catalog_revision": "227f636739ca5b77ee727190b62fbd12da2ce082",
+  "collector_gitops_validation_evidence": "evidence/collector-gitops-validation.json",
+  "configuration_main_validation_evidence": "evidence/p213-foundations-merge.json"
 }

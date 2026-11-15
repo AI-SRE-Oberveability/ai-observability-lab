@@ -1,14 +1,22 @@
 # High-level design — current, target and remaining work
 
-Version: 0.30 configuration foundations validated. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #36 merged; locked inputs and first configuration slice validated in review PRs; P2.13 continues; Azure disabled**.
+Version: 0.32 Collector/manual GitOps slice validated. Updated: 15 November 2026, Asia/Dubai. Execution: **foundations merged/main CI passed; Collector and pinned manual GitOps implemented in review PRs; P2.13 continues; Azure disabled**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
-Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; the config addition now has a reviewed documentation baseline; GitOps and pipelines remain empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
+Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; config foundations are merged, GitOps now has a reviewed documentation baseline plus source in review, and pipelines remains empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## First configuration slice validated — 15 November 2026
+## Collector/manual GitOps source implemented — 15 November 2026
+
+[The step plan](docs/collector-gitops-plan.md) is implemented for this bounded slice. [Charts #7](https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/7) adds the digest-pinned Collector chart: zero default objects; dev/qa alternative renders each contain four namespaced objects, with tokenless identity, restricted security settings, bounded resources, process probes and preserved metadata processors. Nine negative cases pass. Generated config validates with the pinned native binary and the exact digest container in CI; this is not image startup/backend or Kubernetes admission proof.
+
+[GitOps #1](https://github.com/AI-SRE-Oberveability/ai-platform-gitops/pull/1) adds two narrow AppProjects/manual Applications with exact published chart/value commits and synthetic unregistered cluster names. Five public input blobs are checksum-verified; sixteen safety tests pass. The partial ownership ledger is PREPARED only, with no active writer or adoption receipt. Original Argo schema/licence provenance is retained. GitOps now has a documentation main baseline and implementation review branch; pipelines alone remains empty. See evidence/collector-gitops-validation.json and the matrix for exact source/CI bindings.
+
+Next: review the concrete charts/GitOps/lab PRs, then implement ephemeral Jaeger and the Python application chart, complete Argo hardening/connectivity, config/platform GitOps and bootstrap/combined ownership checks. P2.13 remains in progress, followed by P2.14–P2.16 and exact-target/costed Terraform gates. Earlier main CI is preserved separately from new review CI; changed watched charts source still requires authorized merge/main revalidation. Azure stays disabled; GitLab credentials/global Git and original remotes, seven IDs and retained profile hashes are verified unchanged. AKS Python agents/APIM outside AKS and Terraform ownership remain selected.
+
+## Earlier first configuration slice validated — 15 November 2026
 
 [Current implementation and remaining work](docs/platform-configuration-progress.md). Config #1 now binds rendered CRDs to the exact locked upstream objects, preventing an authored assembly from substituting a schema while leaving unused originals intact. All 20 configuration tests pass locally and clean Windows/Linux CI passes at the matrix's exact config commit. Three builds produce 32 unique configuration-owned objects: four Namespaces, two quotas, two LimitRanges, two unbound read-only Roles, nineteen NetworkPolicies and three original CRDs. No application ServiceAccount, RoleBinding, Deployment or controller is created. See evidence/configuration-foundations-validation.json.
 
