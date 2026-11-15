@@ -212,13 +212,13 @@
     {
       "order": 3,
       "title": "Select and lock compatible inputs",
-      "status": "in_progress",
+      "status": "locked_validated_source_published_review_pending",
       "required_exit": "Actual supported tool/Argo/chart/CRD versions, archive checksums, licenses and dependency locks"
     },
     {
       "order": 4,
       "title": "Establish config source",
-      "status": "planned",
+      "status": "first_config_source_rendered_ci_passed_review_pending",
       "required_exit": "Independent reviewed namespace/RBAC/policy/CRD source and offline builds/schema checks"
     },
     {
@@ -344,5 +344,6 @@
   "github_renames_or_project_link_cutover": false,
   "azure_deployment_enabled": false,
   "gitlab_credential_changes": false,
-  "approval": "User explicitly approved plan, merge PR36 and start dependency locking/configuration manifests"
+  "approval": "User explicitly approved plan, merge PR36 and start dependency locking/configuration manifests",
+  "selected_input_matrix": "tracking/platform-render-matrix.json"
 }

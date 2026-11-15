@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-11-15T21:02:26+04:00 (Asia/Dubai).
+Updated: 2026-11-15T21:40:12+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -15,6 +15,8 @@ Next action: select a ready step from POC_TRACKER.md.
 
 - **P2.3 Complete reproducible CI, contract tests and builds** (blocked). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (in_progress). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
+- **P2.8 Activate independent CI in all four repositories** (needs_revalidation). Acceptance: All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.
+- **P2.9 Configure guarded Terraform plan and deployment workflows** (blocked). Acceptance: Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.
 - **P2.13 Establish reviewed platform configuration, charts and GitOps ownership** (in_progress). Acceptance: Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution.
 - **P2.14 Validate independent CI and immutable shared templates for seven repositories** (planned). Acceptance: Observe passing exact-head CI for all seven repos; test dependency-aware change detection, clean builds, guarded Terraform and disabled deployment. PRs have no Azure identity; shared workflows/actions are pinned. Update watched implementation/CI inputs before accepting execution.
 - **P2.15 Perform verified repository rename, workspace and Project cutover** (planned). Acceptance: Verify all four original IDs/histories, three new repos, canonical GitHub-only origins, current path/watch/Project mappings, seven linked repos and preserved issue IDs/private Project. Keep Azure false and GitLab/global Git unchanged. Update watched implementation/CI inputs before accepting execution.

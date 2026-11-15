@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.28 dependency locking and configuration started. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #36 merged; approved P2.13 input/configuration implementation started; Azure disabled**.
+Version: 0.29 platform inputs locked. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #36 merged; dependency inputs locked and first configuration source published in review PRs; Azure disabled**.
 
 ## Purpose
 
@@ -8,7 +8,15 @@ Provide three synthetic use cases: a policy assistant, a service-status agent an
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; the config addition now has a reviewed documentation baseline; GitOps and pipelines remain empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## Approved P2.13 implementation started — 15 November 2026
+## Platform inputs locked and source published — 15 November 2026
+
+Argo CD 3.6.1 / chart 10.18.0, Helm 4.3.1 and Kustomize 5.8.3 are locked to verified upstream source/archive/executable bytes. Helm 4.3.1 is an intentional private match to the selected upstream renderer; the global Helm 3.19.0 installation is unchanged. Kubernetes 1.35.0 is an offline API/schema baseline only, not an approved or independently verified AKS version. Original Argo CRDs, selected strict schemas, official apiextensions OpenAPI components and licences are preserved under a 12-artifact raw-byte lock. Python validators are hash-locked. See evidence/platform-input-locking.json and tracking/platform-render-matrix.json.
+
+Config source is published in [config PR #1](https://github.com/AI-SRE-Oberveability/ai-platform-config/pull/1); dependency scaffold/checks are in [charts PR #6](https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/6). Exact source commits are bound in the matrix. Config CI passes on Windows/Linux; corrected chart CI passes, retaining its initial lint failure in evidence/platform-configuration-attempts.json. The scaffold renders zero objects by default; explicit offline smoke renders 56 with no config-owned Namespace/CRD. No controller profile is deployable.
+
+Next: finish configuration/source-preservation acceptance and publish its final receipts. Remaining: platform/application chart profiles and controller image/hardening/connectivity, GitOps environment pins and bootstrap handover/combined checks, seven-repo CI, identity-preserving cutover and fresh canonical runtime proof. Existing exact-main workflow receipts become stale when watched chart CI changes; PR CI does not replace post-merge main evidence. Azure remains false; AI agents/APIM/Terraform boundaries and GitLab/global Git settings are preserved.
+
+## Earlier approved implementation-start snapshot — 15 November 2026
 
 The user approved the ownership plan and explicitly authorized merging PR #36 and starting dependency locking/configuration manifests. Verified head eae5bfe9a12927ad6cd3d3e4204346d0358cbc21 merged as d947613b318e693584d7e637131d079df89f51ef; exact-head and new exact-main CI passed. See evidence/pr36-merge.json and evidence/platform-configuration-start.json.
 

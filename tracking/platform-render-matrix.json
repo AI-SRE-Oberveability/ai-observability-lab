@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "review_branch_offline_input_baseline_not_deployable",
+  "kubernetes_api_schema_baseline": "1.35.0",
+  "actual_aks_target_or_version_approved": false,
+  "argo_cd": {
+    "version": "3.6.1",
+    "commit": "94037c4d4e1af4bd0651d37a179fbd9e347e668c"
+  },
+  "argo_chart": {
+    "version": "10.18.0",
+    "commit": "9348ef01b9d92d181ee7775abf5bc9c5870a93c7"
+  },
+  "renderers": {
+    "helm": "4.3.1",
+    "kustomize": "5.8.3"
+  },
+  "sources": {
+    "config": {
+      "repository": "AI-SRE-Oberveability/ai-platform-config",
+      "repository_id": 1458904336,
+      "commit": "4d5a2bc9998d7dac2691bf905f1ab3aa35aa7397",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-platform-config/pull/1"
+    },
+    "charts": {
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "repository_id": 1437530253,
+      "commit": "37ae1036de941be3b160aff5bbe90ddb81db7d10",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/6"
+    }
+  },
+  "config_input_paths": [
+    "vendor/manifest-lock.json",
+    "locks/toolchain.json",
+    "requirements-ci.txt"
+  ],
+  "chart_input_paths": [
+    "charts/argocd/Chart.yaml",
+    "charts/argocd/Chart.lock",
+    "locks/dependencies.json",
+    "locks/toolchain.json"
+  ],
+  "future_gitops_catalog_revision": null,
+  "future_workload_chart_revision": null,
+  "image_digest_deployability": false,
+  "azure_deployment_enabled": false
+}

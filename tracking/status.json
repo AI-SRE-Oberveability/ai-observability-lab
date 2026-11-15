@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-15T21:02:26+04:00",
+  "updated_at": "2026-11-15T21:40:12+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
-    "done": 18,
-    "needs_revalidation": 2,
-    "blocked": 1,
+    "done": 16,
+    "needs_revalidation": 3,
+    "blocked": 2,
     "in_progress": 2,
     "waiting_for_decision": 3,
     "draft": 2,
@@ -79,10 +79,10 @@
       "artifacts_missing": [],
       "evidence": [
         "ai-observability-lab/evidence/pr36-merge.json",
-        "ai-observability-lab/evidence/platform-configuration-start.json",
-        "ai-observability-lab/evidence/config-repository-bootstrap.json"
+        "ai-observability-lab/evidence/platform-input-locking.json",
+        "ai-observability-lab/evidence/platform-configuration-attempts.json"
       ],
-      "note": "HLD 0.28 reflects approved PR36 merge and config documentation bootstrap; dependency/config implementation is offline and cloud gates remain pending.",
+      "note": "HLD 0.29 records exact input matrix/source PRs, explicit offline-only version selection, disabled scaffold and remaining acceptance; stale main-CI boundaries retained.",
       "ready": false
     },
     {
@@ -607,7 +607,7 @@
         "ai-observability-lab/.github/workflows/ci.yaml"
       ],
       "acceptance": "All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.",
-      "status": "done",
+      "status": "needs_revalidation",
       "blocked_by": [],
       "artifacts_present": [
         "ai-observability-infra/.github/workflows/ci.yaml",
@@ -620,7 +620,7 @@
         "ai-observability-lab/evidence/main-ci-revalidation.json"
       ],
       "note": "Four exact current main heads passed fresh hosted CI; changed config checker revalidated on main",
-      "ready": false
+      "ready": true
     },
     {
       "id": "P2.9",
@@ -645,8 +645,10 @@
         "ai-observability-infra/foundation/.terraform.lock.hcl"
       ],
       "acceptance": "Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.",
-      "status": "done",
-      "blocked_by": [],
+      "status": "blocked",
+      "blocked_by": [
+        "P2.8"
+      ],
       "artifacts_present": [
         "ai-observability-infra/.github/workflows/terraform-deploy.yaml",
         "ai-observability-infra/foundation/.terraform.lock.hcl"
@@ -1459,10 +1461,10 @@
       ],
       "evidence": [
         "ai-observability-lab/evidence/pr36-merge.json",
-        "ai-observability-lab/evidence/platform-configuration-start.json",
-        "ai-observability-lab/evidence/config-repository-bootstrap.json"
+        "ai-observability-lab/evidence/platform-input-locking.json",
+        "ai-observability-lab/evidence/platform-configuration-attempts.json"
       ],
-      "note": "PR36 plan approved/merged with passing main CI. Config repository documentation baseline published and feature branch prepared using repository-local noreply identity. Selected upstream inputs are being verified; no manifest apply, cloud access or GitLab/global Git change.",
+      "note": "Locked and published real chart/CRD/schema/Python/tool inputs with verified hashes and cross-repo version coherence. Config #1 and corrected charts #6 pass exact-source CI; default scaffold emits zero objects, explicit smoke 56 without Namespace/CRD. First 32-object config source is in review; overall charts/GitOps/handover acceptance remains pending.",
       "ready": true
     },
     {
