@@ -2,7 +2,7 @@
 
 Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial reviewed source published**.
 
-Current execution update, 15 November 2026: P2.12 prepares the parallel seven-folder workspace and creates three empty public repositories. Four original GitHub names/history and the private 48-task Project links remain until P2.15. See HLD.md and docs/workspace-compatibility.md for current checks and remaining migration steps. Earlier starting-position/publication statements below are historical. Azure deployment remains disabled; finish repository setup before Azure target/budget planning and new POC execution.
+Current execution update, 15 November 2026: PR #35 is merged with passing exact-main CI. P2.13 starts with the configuration/charts/GitOps ownership plan in docs/platform-ownership-plan.md before source implementation. Seven canonical clones are preserved; three additions remain empty. GitHub renames/Project cutover wait for P2.15. Earlier starting-position/publication statements below are historical. Azure remains disabled; finish repository setup before target/budget planning and new POC execution.
 
 The immediate deliverable is this plan, a maintained high-level design (HLD), and an automated progress tracker. The user has accepted the plan and authorized public-source review and pushes to all four repositories; cloud spending retains its separate gates. Previously created local files are retained as drafts and assessed against the plan; they do not imply acceptance or deployment.
 

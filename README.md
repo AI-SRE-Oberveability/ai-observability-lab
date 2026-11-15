@@ -1,6 +1,6 @@
 # Lab coordination, planning and evidence
 
-[Selected seven-repository names and migration plan](docs/repository-migration-plan.md): migration is in P2.12. Three new empty repositories and the parallel seven-folder workspace are prepared; the original four GitHub names/histories remain unchanged. [Workspace commands, compatibility and remaining steps](docs/workspace-compatibility.md). Azure Owner access is user-reported and deployment remains disabled.
+[P2.13 ownership and step-by-step plan](docs/platform-ownership-plan.md): PR #35 compatibility is merged; configuration/charts/GitOps planning is prepared before source implementation. Three new repos remain empty and original GitHub names/history stay unchanged until P2.15. [Workspace commands](docs/workspace-compatibility.md) and [overall migration plan](docs/repository-migration-plan.md). Azure deployment remains disabled.
 
 Verified public repository: `AI-SRE-Oberveability/ai-observability-lab`; reviewed source published; see evidence/publication-receipts.json.
 

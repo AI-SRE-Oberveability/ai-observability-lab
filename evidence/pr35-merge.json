@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "repository": "AI-SRE-Oberveability/ai-observability-lab",
+  "pr": 35,
+  "approved_head": "26635b044344da0f39440889577d92cc0335f77b",
+  "merge_commit": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8",
+  "merged_at": "2026-11-15T16:07:28Z",
+  "verified_at": "2026-11-15T20:07:30+04:00",
+  "ci_runs": [
+    {
+      "id": 43733146750,
+      "event": "pull_request",
+      "head": "26635b044344da0f39440889577d92cc0335f77b",
+      "conclusion": "success"
+    },
+    {
+      "id": 43733141423,
+      "event": "push",
+      "head": "26635b044344da0f39440889577d92cc0335f77b",
+      "conclusion": "success"
+    }
+  ],
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false,
+  "git_global_settings_unchanged": true,
+  "four_original_remote_configs_unchanged": true,
+  "authorization": "User explicitly requested merge PR35 and start P2.13, planning ownership first"
+}

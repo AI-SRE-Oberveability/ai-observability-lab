@@ -1250,7 +1250,7 @@
       "issue_node_id": "I_kwDOVa78x88AAAABfcFZHA",
       "issue_url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/issues/30",
       "project_item_id": "PVTI_lADOFNUgOM4BpL99zhI5bwY",
-      "evidence_status": "planned",
+      "evidence_status": "in_progress",
       "values": {
         "Task ID": {
           "text": "P2.13"
@@ -1259,7 +1259,7 @@
           "singleSelectOptionId": "2dfbe738"
         },
         "Evidence status": {
-          "text": "planned"
+          "text": "in_progress"
         },
         "Dependencies": {
           "text": "P2.12"
@@ -1268,7 +1268,7 @@
           "text": "Codex"
         },
         "Status": {
-          "singleSelectOptionId": "f75ad846"
+          "singleSelectOptionId": "47fc9ee4"
         }
       }
     },
@@ -1359,7 +1359,7 @@
   },
   "project_number": 1,
   "visibility": "private",
-  "verified_at": "2026-11-15T20:00:53+04:00",
+  "verified_at": "2026-11-15T20:29:42+04:00",
   "views": [
     {
       "id": "PVTV_lADOFNUgOM4BpL99zgMSlL0",
@@ -1372,5 +1372,5 @@
       "layout": "TABLE_LAYOUT"
     }
   ],
-  "evidence_ref": "8259353bdde46b01adda965f7533d94d84646b51"
+  "evidence_ref": "1476c734a8abba3752a6f4d8fcd997b7d620ff5d"
 }

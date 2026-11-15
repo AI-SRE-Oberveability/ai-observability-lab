@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T20:26:37+04:00",
+  "seven_repo_ids_names_visibility_origins_preserved": true,
+  "six_non_lab_worktrees_clean": true,
+  "three_new_repositories_empty_and_azure_flags_false": true,
+  "infra_azure_flag_false": true,
+  "global_git_config_file_hashes_unchanged": true,
+  "original_four_remote_config_hashes_unchanged": true,
+  "pr25_unchanged_and_unmerged": true,
+  "gitlab_credential_store_mutations": false,
+  "credential_values_exported": false,
+  "azure_account_or_resource_operations": false,
+  "cluster_or_registry_operations": false,
+  "scope": "P2.13 ownership planning only; no platform source adoption"
+}

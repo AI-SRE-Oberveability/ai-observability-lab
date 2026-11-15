@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T20:29:47+04:00",
+  "pr": 36,
+  "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/36",
+  "published_plan_commit": "1476c734a8abba3752a6f4d8fcd997b7d620ff5d",
+  "reviewed_plan_tree": "7da78ec14fa623991064b71db8759ad5797ac5ea",
+  "status": "published_plan_review_pending_implementation_not_started",
+  "ci_scope": "Lab planning branch existing CI only; not seven-repo implementation CI",
+  "ci_runs": [
+    {
+      "id": 43735640023,
+      "head": "1476c734a8abba3752a6f4d8fcd997b7d620ff5d",
+      "event": "pull_request",
+      "conclusion": "success",
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/43735640023"
+    },
+    {
+      "id": 43735635698,
+      "head": "1476c734a8abba3752a6f4d8fcd997b7d620ff5d",
+      "event": "push",
+      "conclusion": "success",
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/43735635698"
+    }
+  ],
+  "confirmed_secrets": 0,
+  "verified_source_hash_findings": 10,
+  "P2.13_status": "in_progress",
+  "new_manifests_or_render_acceptance": false,
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false,
+  "limitations": [
+    "Final Project/publication receipts are a later metadata commit.",
+    "This publishes the plan, not configuration/chart/GitOps implementation or live handover evidence."
+  ]
+}

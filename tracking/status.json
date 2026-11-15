@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-15T19:58:15+04:00",
+  "updated_at": "2026-11-15T20:27:28+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 18,
     "needs_revalidation": 2,
     "blocked": 1,
-    "in_progress": 1,
+    "in_progress": 2,
     "waiting_for_decision": 3,
     "draft": 2,
-    "planned": 21
+    "planned": 20
   },
   "tasks": [
     {
@@ -61,7 +61,9 @@
         "ai-observability-lab/tracking/repository-targets.json",
         "ai-observability-lab/tracking/migration-file-map.json",
         "ai-observability-lab/docs/migration-baseline-review.md",
-        "ai-observability-lab/docs/workspace-compatibility.md"
+        "ai-observability-lab/docs/workspace-compatibility.md",
+        "ai-observability-lab/docs/platform-ownership-plan.md",
+        "ai-observability-lab/tracking/platform-ownership-plan.json"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -76,14 +78,12 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/workspace-setup.json",
-        "ai-observability-lab/evidence/migration-path-compatibility.json",
-        "ai-observability-lab/evidence/canonical-workspace-checkout.json",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
-        "ai-observability-lab/evidence/workspace-preservation-verification.json",
-        "ai-observability-lab/evidence/workspace-compatibility-publication.json"
+        "ai-observability-lab/evidence/pr35-merge.json",
+        "ai-observability-lab/evidence/platform-ownership-start.json",
+        "ai-observability-lab/evidence/platform-ownership-inventory.json",
+        "ai-observability-lab/evidence/platform-ownership-plan-review.json"
       ],
-      "note": "Final HLD 0.25 and tracker choices/gaps accurately state completed local P2.12 acceptance, clean canonical equivalence, passing exact-source CI and remaining PR35 review/P2.13–P2.16 work.",
+      "note": "HLD 0.27 and P2.13 plan/blueprint distinguish proposed source ownership, eight ordered steps, pin/lock/handover/rollback requirements and pending implementation; AKS agents/APIM/Azure gates preserved.",
       "ready": false
     },
     {
@@ -121,11 +121,12 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/migration-path-compatibility.json",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
-        "ai-observability-lab/evidence/workspace-preservation-verification.json"
+        "ai-observability-lab/evidence/pr35-merge.json",
+        "ai-observability-lab/evidence/platform-ownership-start.json",
+        "ai-observability-lab/evidence/platform-ownership-inventory.json",
+        "ai-observability-lab/evidence/platform-ownership-plan-review.json"
       ],
-      "note": "Final 68-test compatibility suite validates raw-proof-preserving LF envelopes, generated provider-cache exclusion, semantic/evidence tamper rejection and safe path/Project behavior.",
+      "note": "Updated 48-task model validates with actual/future P2.13 watch paths; 68-test Windows suite passes with three expected skips and Ruff checks pass. No tracker/runtime/workflow code changed.",
       "ready": false
     },
     {
@@ -1431,20 +1432,40 @@
         "ai-observability-lab/docs/repository-migration-plan.md",
         "ai-observability-lab/docs/adr-0002-seven-repositories.md",
         "ai-observability-lab/tracking/repository-targets.json",
-        "ai-observability-lab/tracking/migration-file-map.json"
+        "ai-observability-lab/tracking/migration-file-map.json",
+        "ai-observability-lab/docs/platform-ownership-plan.md",
+        "ai-observability-lab/tracking/platform-ownership-plan.json",
+        "ai-platform-config",
+        "ai-observability-config",
+        "ai-platform-gitops",
+        "ai-agent-workloads/charts",
+        "ai-observability-infra/bootstrap",
+        "ai-observability-lab/scripts/validate_platform_ownership.py",
+        "ai-observability-lab/tracking/platform-render-matrix.json"
       ],
       "artifacts": [
-        "ai-observability-lab/evidence/migration-platform-validation.json"
+        "ai-observability-lab/evidence/migration-platform-validation.json",
+        "ai-observability-lab/docs/platform-ownership-plan.md",
+        "ai-observability-lab/tracking/platform-ownership-plan.json"
       ],
       "acceptance": "Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution.",
-      "status": "planned",
+      "status": "in_progress",
       "blocked_by": [],
-      "artifacts_present": [],
+      "artifacts_present": [
+        "ai-observability-lab/docs/platform-ownership-plan.md",
+        "ai-observability-lab/tracking/platform-ownership-plan.json"
+      ],
       "artifacts_missing": [
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/pr35-merge.json",
+        "ai-observability-lab/evidence/platform-ownership-start.json",
+        "ai-observability-lab/evidence/platform-ownership-inventory.json",
+        "ai-observability-lab/evidence/platform-ownership-plan-review.json",
+        "ai-observability-lab/evidence/platform-ownership-preservation.json"
+      ],
+      "note": "Ownership planning package prepared before manifest work: seven source roles, eight ordered substeps, lock/pin publication sequence, bootstrap freeze/adoption/rollback and combined negative checks. Reference/profile bytes and all repo identities preserved; three new repos remain empty. Existing tests/lint pass, Azure flags are false and GitLab/global Git settings are unchanged. Implementation and real renders remain pending.",
       "ready": true
     },
     {
