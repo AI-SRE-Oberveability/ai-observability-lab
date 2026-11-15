@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "phase": "P2.13",
-  "status": "approved_dependency_locking_and_configuration_started",
+  "status": "approved_inputs_and_first_config_validated_source_review_pending",
   "document": "docs/platform-ownership-plan.md",
   "baseline_merge": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8",
   "execution_policy": "offline_source_implementation_no_cloud_cluster_or_registry_publication",
@@ -218,7 +218,7 @@
     {
       "order": 4,
       "title": "Establish config source",
-      "status": "first_config_source_rendered_ci_passed_review_pending",
+      "status": "first_config_validated_20_tests_linux_windows_ci_review_pending",
       "required_exit": "Independent reviewed namespace/RBAC/policy/CRD source and offline builds/schema checks"
     },
     {

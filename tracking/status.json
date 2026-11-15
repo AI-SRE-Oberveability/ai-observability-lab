@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T21:40:12+04:00",
+  "updated_at": "2026-11-15T21:57:18+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 16,
@@ -78,11 +78,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/pr36-merge.json",
-        "ai-observability-lab/evidence/platform-input-locking.json",
-        "ai-observability-lab/evidence/platform-configuration-attempts.json"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json"
       ],
-      "note": "HLD 0.29 records exact input matrix/source PRs, explicit offline-only version selection, disabled scaffold and remaining acceptance; stale main-CI boundaries retained.",
+      "note": "HLD 0.30 and the current delivery-plan paragraph describe the approved PR36 merge, locked inputs and first validated configuration slice in review; remaining chart/GitOps/handover and cloud gates are explicit.",
       "ready": false
     },
     {
@@ -1460,11 +1458,9 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
-        "ai-observability-lab/evidence/pr36-merge.json",
-        "ai-observability-lab/evidence/platform-input-locking.json",
-        "ai-observability-lab/evidence/platform-configuration-attempts.json"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json"
       ],
-      "note": "Locked and published real chart/CRD/schema/Python/tool inputs with verified hashes and cross-repo version coherence. Config #1 and corrected charts #6 pass exact-source CI; default scaffold emits zero objects, explicit smoke 56 without Namespace/CRD. First 32-object config source is in review; overall charts/GitOps/handover acceptance remains pending.",
+      "note": "First dependency/configuration slice is implemented and source-CI validated: 32 configuration objects and 20 tests. Current plan/HLD and source/attempt/preservation receipts are aligned; component PR review and remaining chart/GitOps/handover work remain.",
       "ready": true
     },
     {

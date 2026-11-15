@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.29 platform inputs locked. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #36 merged; dependency inputs locked and first configuration source published in review PRs; Azure disabled**.
+Version: 0.30 configuration foundations validated. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #36 merged; locked inputs and first configuration slice validated in review PRs; P2.13 continues; Azure disabled**.
 
 ## Purpose
 
@@ -8,7 +8,15 @@ Provide three synthetic use cases: a policy assistant, a service-status agent an
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; the config addition now has a reviewed documentation baseline; GitOps and pipelines remain empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## Platform inputs locked and source published — 15 November 2026
+## First configuration slice validated — 15 November 2026
+
+[Current implementation and remaining work](docs/platform-configuration-progress.md). Config #1 now binds rendered CRDs to the exact locked upstream objects, preventing an authored assembly from substituting a schema while leaving unused originals intact. All 20 configuration tests pass locally and clean Windows/Linux CI passes at the matrix's exact config commit. Three builds produce 32 unique configuration-owned objects: four Namespaces, two quotas, two LimitRanges, two unbound read-only Roles, nineteen NetworkPolicies and three original CRDs. No application ServiceAccount, RoleBinding, Deployment or controller is created. See evidence/configuration-foundations-validation.json.
+
+Dependency/renderer checks and corrected charts #6 CI pass. The disabled scaffold's enabled smoke is input/ownership evidence only; controller image digests, hardening, target connectivity and adoption remain unproved. All seven repo IDs/origins and local Git preservation hashes, existing telemetry profiles, two unseeded repositories and disabled Azure flags were reverified; see evidence/platform-configuration-preservation.json. Global Helm remains 3.19.0; selected 4.3.1 is private. No Azure/cluster apply or registry publication occurred.
+
+Next: review the three concrete PRs, then finish platform/application chart profiles, GitOps immutable environment selections and bootstrap/combined checks. P2.13 remains in progress; source checks do not prove live admission/CEL, NetworkPolicy/PSA or backend behavior. Existing exact-main CI receipts are correctly stale/blocked after watched workflow changes until authorized merge/revalidation; branch CI does not replace them. P2.14 seven-repo CI, P2.15 cutover, P2.16 fresh canonical proof and exact-target/costed Terraform gates remain. AKS Python agents/APIM outside AKS, separate identities, safe telemetry and read-only SRE remain selected. Azure is false and GitLab credentials/global Git settings remain intact.
+
+## Earlier input-locking publication snapshot — 15 November 2026
 
 Argo CD 3.6.1 / chart 10.18.0, Helm 4.3.1 and Kustomize 5.8.3 are locked to verified upstream source/archive/executable bytes. Helm 4.3.1 is an intentional private match to the selected upstream renderer; the global Helm 3.19.0 installation is unchanged. Kubernetes 1.35.0 is an offline API/schema baseline only, not an approved or independently verified AKS version. Original Argo CRDs, selected strict schemas, official apiextensions OpenAPI components and licences are preserved under a 12-artifact raw-byte lock. Python validators are hash-locked. See evidence/platform-input-locking.json and tracking/platform-render-matrix.json.
 

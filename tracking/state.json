@@ -48,17 +48,15 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.29 records exact input matrix/source PRs, explicit offline-only version selection, disabled scaffold and remaining acceptance; stale main-CI boundaries retained.",
-      "at": "2026-11-15T21:40:02+04:00",
+      "note": "HLD 0.30 and the current delivery-plan paragraph describe the approved PR36 merge, locked inputs and first validated configuration slice in review; remaining chart/GitOps/handover and cloud gates are explicit.",
+      "at": "2026-11-15T21:56:56+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/pr36-merge.json",
-        "ai-observability-lab/evidence/platform-input-locking.json",
-        "ai-observability-lab/evidence/platform-configuration-attempts.json"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "74dd7132e2d73cb979ebb597408232edef2d2b40b0cd289dbee7fb40f3d4a4e6",
-        "ai-observability-lab/HLD.md": "7646e44a6a37917c87a1ba474f20d07b58a13e2d0357b73e09bf090daa611458",
+        "ai-observability-lab/POC_PLAN.md": "f46544db8c26deadaf1910c4a66c7addf25a393385b8f46a9fdc2812dc1ce10a",
+        "ai-observability-lab/HLD.md": "740128a7c0cade3ae25129560af1d7657f645eeadd566a36adf798be36dde865",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -98,13 +96,11 @@
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
         "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
         "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f",
-        "ai-observability-lab/docs/platform-ownership-plan.md": "b42ca8b8d6b56b0e077171cb67c2a3a7fbe44aea49053d2488f31579daaaf5cc",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "04b3885f3510fb9a38adb29167c7542b602910c961da6efc1d043c42cebe4d31"
+        "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "1ad52e122d7c35eba60ce9c43bdf84c79e82aed94e6b1a9e48b6782d7e5a8705"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/pr36-merge.json": "1b3c89c61c6928094b504a93626236b231205fd20f5e71aad55dcef22d0fd71c",
-        "ai-observability-lab/evidence/platform-input-locking.json": "7ef1eebce2c72aad6549213267bd8835e28f6ae3b9ebf9707e8cbd432c4b953e",
-        "ai-observability-lab/evidence/platform-configuration-attempts.json": "485f1c3200591c6beb3ca48c60d976ef223c138a14497e987d7136a66f149e34"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json": "0303856eddff7948e03f626b6359eba3d1859c232cc95e670c095c27e318f0b5"
       }
     },
     "P0.3": {
@@ -719,12 +715,10 @@
     },
     "P2.13": {
       "status": "in_progress",
-      "note": "Locked and published real chart/CRD/schema/Python/tool inputs with verified hashes and cross-repo version coherence. Config #1 and corrected charts #6 pass exact-source CI; default scaffold emits zero objects, explicit smoke 56 without Namespace/CRD. First 32-object config source is in review; overall charts/GitOps/handover acceptance remains pending.",
-      "at": "2026-11-15T21:40:07+04:00",
+      "note": "First dependency/configuration slice is implemented and source-CI validated: 32 configuration objects and 20 tests. Current plan/HLD and source/attempt/preservation receipts are aligned; component PR review and remaining chart/GitOps/handover work remain.",
+      "at": "2026-11-15T21:57:09+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/pr36-merge.json",
-        "ai-observability-lab/evidence/platform-input-locking.json",
-        "ai-observability-lab/evidence/platform-configuration-attempts.json"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -732,13 +726,13 @@
         "ai-observability-lab/docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
-        "ai-observability-lab/docs/platform-ownership-plan.md": "b42ca8b8d6b56b0e077171cb67c2a3a7fbe44aea49053d2488f31579daaaf5cc",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "04b3885f3510fb9a38adb29167c7542b602910c961da6efc1d043c42cebe4d31",
+        "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "1ad52e122d7c35eba60ce9c43bdf84c79e82aed94e6b1a9e48b6782d7e5a8705",
         "ai-platform-config/.gitattributes": "f563c611822ae875f6c1e9ceb825cc8fc501a9d9d025137092188c5ff52e6d8d",
         "ai-platform-config/.github/workflows/ci.yaml": "8c932403c1cec92a76f3a79b85dd9edbd974a16a42a3102dc1194111dd164487",
         "ai-platform-config/.gitignore": "6d9c835289816cf23c68fa563941d280ed9395c6f16b6e445c60ff4f96405114",
         "ai-platform-config/AGENTS.md": "461a7e243aa7cbb32493badc3a8440db86b9c7a74ca5e9c5095215202f2670e3",
-        "ai-platform-config/docs/configuration-contract.md": "c6a02e1ed3b989e9ac91dd03074ff8f680d0f3c739721a3111ee04951375a8a1",
+        "ai-platform-config/docs/configuration-contract.md": "5632ba31202b964076d2330d7ce1c265573808cf14e6250406f3d14d0820357f",
         "ai-platform-config/environments/dev/kustomization.yaml": "d8ad6839b5532fdec8d6e04b0453d6b7778136f02f6f4a404a46280f1b542818",
         "ai-platform-config/environments/platform/kustomization.yaml": "f0ca967c325ef20fdf81cd95587e2e9133630a3725ab97fc10271f34896e84bb",
         "ai-platform-config/environments/qa/kustomization.yaml": "d4cfcaa06744be1edb34bc3ec72daf0040cba6ac2e4b282bb9ac1c24c5f1c7ed",
@@ -758,9 +752,9 @@
         "ai-platform-config/requirements-ci.in": "006a4d68f7dd26a1884e79ab8408eaf637a3e0e23ec608095958029ca9d7aa21",
         "ai-platform-config/requirements-ci.txt": "ee053c5b61b973e05845029eb6f2177f28cd3896c2cc9f0e65701d75c10f4d61",
         "ai-platform-config/scripts/tools.py": "f4ad89cffb9d7d9be192054f9bdad3b5f92ecf2f69bc40652043a2bdbe60fbfa",
-        "ai-platform-config/scripts/validate_config.py": "69f2bdafc93bf74deea12b795a776dd2d4d44958be0dc48e49419adaccb77c1a",
+        "ai-platform-config/scripts/validate_config.py": "168efa4842440324147c576ef3d4fdd65627338475fc7b39ddb7e8af2148a2c8",
         "ai-platform-config/tests/fixtures.py": "d69d35b7da3305e672ddb541c37964a1ae0e94a683cbecd3ff5908a253dcf951",
-        "ai-platform-config/tests/test_config.py": "e63721902c2426bec233744be5a0bd99b98ac3f55fbe56c2f016db46382f38bf",
+        "ai-platform-config/tests/test_config.py": "250ddfe9bdd512f81114f629d6cc380baf8aca97d5835fa2a9c4b54f8697cf05",
         "ai-platform-config/vendor/argocd/v3.6.1/application-crd.yaml": "9fd0da3e7097ad6d1af614fabd5c960bc7ddb00d768c3ef485a2fda6e9460df8",
         "ai-platform-config/vendor/argocd/v3.6.1/applicationset-crd.yaml": "980128848a8d2152b946aec6a11cdd1174b38b04587f4fba94537c040fd84202",
         "ai-platform-config/vendor/argocd/v3.6.1/appproject-crd.yaml": "084150a2feccd188a1dee09cd8a3a259dfacecdfb7e10037df78900f60816482",
@@ -799,17 +793,15 @@
         "ai-observability-config/scripts/check_config.py": "de6ec28b500f3acfa4253c371305d0cf49c3ab9c6929bd20d6903408ee14d9fa",
         "ai-observability-config/scripts/check_dependencies.py": "c7e36e623db14b21fa2048ebecacee59118296c038a1fe9ea21b33cf5c94cc8a",
         "ai-observability-config/telemetry-contract.md": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f",
-        "ai-observability-lab/tracking/platform-render-matrix.json": "ef5298d7c14f9c55ee09cebd0d1bcb46c9915e4b4f957bff481d834186bcd91f"
+        "ai-observability-lab/tracking/platform-render-matrix.json": "3f1dbc54c823ea92a0fb0dcf6502177ec1545aed6827449e4ed7749c3269a174"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/pr36-merge.json": "1b3c89c61c6928094b504a93626236b231205fd20f5e71aad55dcef22d0fd71c",
-        "ai-observability-lab/evidence/platform-input-locking.json": "7ef1eebce2c72aad6549213267bd8835e28f6ae3b9ebf9707e8cbd432c4b953e",
-        "ai-observability-lab/evidence/platform-configuration-attempts.json": "485f1c3200591c6beb3ca48c60d976ef223c138a14497e987d7136a66f149e34"
+        "ai-observability-lab/evidence/configuration-foundations-validation.json": "0303856eddff7948e03f626b6359eba3d1859c232cc95e670c095c27e318f0b5"
       }
     }
   },
   "known_gaps": [
-    "PR36 approved/merged. Input locks and first configuration source are published/CI-passing in config #1 and charts #6; review/merge, remaining platform/application charts, GitOps/handover and combined checks remain before P2.13 acceptance.",
+    "PR36 merged. Locked dependencies and first 32-object config slice are implemented with 20 tests and passing exact-source CI in config #1/charts #6; review/merge and remaining platform/application chart, GitOps and handover/combined checks precede P2.13 acceptance.",
     "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
@@ -826,9 +818,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "P2.13 offline inputs locked and first config source published with passing CI; private matching renderers, no global tool change. Terraform/AKS agents/APIM retained; deployment disabled and GitLab credentials preserved.",
+    "current": "P2.13 locked inputs and first 32-object configuration slice implemented/CI-passing in review branches; 20 tests, safe ownership and preserved baseline. Remaining chart/GitOps/handover work continues; Azure disabled and GitLab/global Git settings intact.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.13: Locked and published real chart/CRD/schema/Python/tool inputs with verified hashes and cross-repo version coherence. Config #1 and corrected charts #6 pass exact-source CI; default scaffold emits zero objects, explicit smoke 56 without Namespace/CRD. First 32-object config source is in review; overall charts/GitOps/handover acceptance remains pending."
+    "last_change": "P2.13: First dependency/configuration slice is implemented and source-CI validated: 32 configuration objects and 20 tests. Current plan/HLD and source/attempt/preservation receipts are aligned; component PR review and remaining chart/GitOps/handover work remain."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -907,12 +899,12 @@
     "merge_commit": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8"
   },
   "platform_ownership_plan": {
-    "status": "approved_implementation_started",
+    "status": "approved_first_input_config_slice_validated_review_pending",
     "document": "docs/platform-ownership-plan.md",
     "blueprint": "tracking/platform-ownership-plan.json",
     "substeps": 8,
     "implementation_started": true,
-    "new_platform_renders_observed": false,
+    "new_platform_renders_observed": true,
     "azure_deployment_enabled": false
   }
 }

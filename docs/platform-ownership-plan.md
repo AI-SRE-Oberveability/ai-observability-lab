@@ -2,6 +2,8 @@
 
 Prepared: 15 November 2026, Asia/Dubai. Status: **planning package for review; P2.13 remains in progress**. PR #35 is merged at `28fb2bfc8285f037843100f4a2f4bc2d533b04f8`, and exact-main CI passed. This package inventories the source and defines implementation order before adding platform manifests. It does not seed the empty repositories, fetch dependencies, install a controller or deploy anything.
 
+**Execution update:** the user approved this plan and PR #36 is merged. The first input/configuration slice is now implemented and validated in review PRs; [current progress](platform-configuration-progress.md) supersedes the planning-only status above. Remaining steps and Azure gates are retained.
+
 The machine-readable companion is [platform-ownership-plan.json](../tracking/platform-ownership-plan.json). Its paths and resource families describe planned work; they are not an enforced inventory or completed render result. Current repository IDs/aliases remain in `tracking/workspace-layout.json`. Keep all 48 task/issue identities, four existing GitHub names and the private Project's four links through P2.15.
 
 ## Starting point and retained boundaries

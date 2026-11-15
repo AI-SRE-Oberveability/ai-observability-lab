@@ -19,7 +19,7 @@
     "config": {
       "repository": "AI-SRE-Oberveability/ai-platform-config",
       "repository_id": 1458904336,
-      "commit": "4d5a2bc9998d7dac2691bf905f1ab3aa35aa7397",
+      "commit": "65f8fca983f91d4fec94e89139449c048c51330a",
       "pr_url": "https://github.com/AI-SRE-Oberveability/ai-platform-config/pull/1"
     },
     "charts": {
@@ -43,5 +43,6 @@
   "future_gitops_catalog_revision": null,
   "future_workload_chart_revision": null,
   "image_digest_deployability": false,
-  "azure_deployment_enabled": false
+  "azure_deployment_enabled": false,
+  "configuration_validation_evidence": "evidence/configuration-foundations-validation.json"
 }
