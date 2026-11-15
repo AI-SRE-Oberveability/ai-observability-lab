@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-11-15T17:37:13+04:00",
+  "organization": "AI-SRE-Oberveability",
+  "existing_repositories": [
+    {
+      "name": "AI-Observability-Infra",
+      "id": 1437529000,
+      "visibility": "public",
+      "default_branch": "main"
+    },
+    {
+      "name": "ai-agent-workloads",
+      "id": 1437529826,
+      "visibility": "public",
+      "default_branch": "main"
+    },
+    {
+      "name": "ai-observability-config",
+      "id": 1437530253,
+      "visibility": "public",
+      "default_branch": "main"
+    },
+    {
+      "name": "ai-observability-lab",
+      "id": 1437531335,
+      "visibility": "public",
+      "default_branch": "main"
+    }
+  ],
+  "target_names": [
+    "ai-platform-infra",
+    "ai-platform-config",
+    "ai-platform-charts",
+    "ai-platform-gitops",
+    "ai-platform-pipelines",
+    "ai-agent-workloads",
+    "ai-platform-lab"
+  ],
+  "target_name_collisions": [],
+  "availability_note": "No case-insensitive collision in authenticated organization inventory at this check; names are not reserved",
+  "azure_deployment_enabled": false,
+  "azure_calls": false,
+  "repository_writes": false
+}

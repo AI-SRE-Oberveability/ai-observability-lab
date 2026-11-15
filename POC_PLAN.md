@@ -4,7 +4,7 @@ Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial r
 
 The immediate deliverable is this plan, a maintained high-level design (HLD), and an automated progress tracker. The user has accepted the plan and authorized public-source review and pushes to all four repositories; cloud spending retains its separate gates. Previously created local files are retained as drafts and assessed against the plan; they do not imply acceptance or deployment.
 
-Confirmed choices: Terraform for Azure IaC; four repositories under organization `AI-SRE-Oberveability`, owned by the personal GitHub account `javedkumail`; GitLab credentials preserved; tracker updates after each work step; continuous HLD/current/next/remaining updates. The user created all four repositories as public; their existence and empty contents were verified on 28 October 2026. Source review passed and initial pushes to all four repositories were verified; receipts are in evidence/publication-receipts.json. [Engineering standards](docs/engineering-standards.md) are part of every work package's definition of done.
+Confirmed choices: Terraform for Azure IaC; a selected seven-repository target with four currently published repositories under organization `AI-SRE-Oberveability`, owned by the personal GitHub account `javedkumail`; GitLab credentials preserved; tracker updates after each work step; continuous HLD/current/next/remaining updates. The user created all four repositories as public; their existence and empty contents were verified on 28 October 2026. Source review passed and initial pushes to all four repositories were verified; receipts are in evidence/publication-receipts.json. [Engineering standards](docs/engineering-standards.md) are part of every work package's definition of done.
 
 ## 1. Outcome and boundaries
 
@@ -29,7 +29,7 @@ Effort ranges below are planning estimates in focused working days, **not calend
 | --- | --- | --- | --- | --- |
 | P0 — Agree the plan | Scope, HLD, tracker, decisions and current-state inventory | Current workspace | 0.5–1 day | User accepts scope and sequence |
 | P1 — Prove the local slice | Repeatable policy assistant, real HTTP tool, mock model and Collector/Jaeger evidence | P0 acceptance | 2–3 days | Local demo and data-capture checks pass |
-| P2 — Establish GitHub delivery | Four verified repositories, reproducible CI/builds and pinned release manifest | Repository setup can follow P0 alongside P1; CI/release completion needs P1 | 1–2 days | Clean checkout builds/tests; ownership clear |
+| P2 — Establish GitHub delivery | Seven owned repositories, reproducible CI/builds and pinned release manifest | Repository setup can follow P0 alongside P1; CI/release completion needs P1 | 1–2 days | Clean checkout builds/tests; ownership clear |
 | P3 — Plan and deploy personal Azure | Costed IaC, bootstrap, OIDC and scoped AKS delivery | P2; exact personal targets, region and budget | 2–4 days | Authorized scope deploys and tears down reproducibly |
 | P4 — Validate Managed compatibility | Licensed/supported Managed backend and compatible agent/OTel configuration | P3; entitlement, approved sizing/version | 2–4 days plus vendor lead time | Signal-by-signal evidence and compatibility matrix |
 | P5 — Add investigation use cases | Bounded status agent and read-only evidence-citing SRE copilot | P1/P2 baseline; selected backend validated | 2–4 days | Fault bounds, evidence references and read-only policy pass |
@@ -160,3 +160,17 @@ Diagram deliverables: [editable draw.io with official Azure icons](docs/architec
 ## Release pinning started - 1 November 2026
 
 The local-proof PRs are merged and fresh CI passed on all four exact main commits. P2.3/P2.8/P2.9 are revalidated. P2.4 now has a [source-pinned candidate](releases/README.md), an offline validator and negative readiness tests. See docs/release-pinning-plan.md. Workload image publication/digest, target-platform verification and immutable container replay remain pending; P2.4 stays in progress. No registry publication, release tag or Azure operation occurs in this preparation.
+
+## Repository structure review - 15 November 2026
+
+The user supplied the AI-PLATFORM-LAB folder for assessment. The [structure review and proposed migration](docs/platform-structure-review.md) preserve the current four repository histories and local acceptance evidence while proposing separate platform, GitOps and reusable-pipeline ownership. The proposal has not been selected; this review does not amend the accepted repository count or authorize new repositories, renames, source imports or deployment. Existing task IDs, shared Project mappings and G2/G3/G4/G5 decisions remain unchanged.
+
+Next order: select exact core/optional repository layout -> file-by-file mapping and ADR -> preserve baseline and rollback refs -> isolated path-map and boundary migrations -> offline safety/render checks and affected runtime proof -> reviewed PRs and exact-main CI -> a new release candidate. The prior immutable manifest remains historical. P2.4 still needs a published/verified workload digest and container replay; Azure deployment stays disabled throughout restructuring.
+
+## Selected seven-repository names and migration - 15 November 2026
+
+The user selected the seven-repository structure and requested finalized names/sequence first. [The migration plan](docs/repository-migration-plan.md) and [ADR 0002](docs/adr-0002-seven-repositories.md) supersede the earlier unselected review. Canonical repo and clone names are ai-platform-infra, ai-platform-config, ai-platform-charts, ai-platform-gitops, ai-platform-pipelines, ai-agent-workloads and ai-platform-lab. Three existing repos are renamed in place, the workload repo is retained, and three repositories are new; no optional Node/UI repo is included now. Four live repository histories and the private shared Project remain intact. Execution has not begun.
+
+New P2.10-P2.16 tasks make the model 48 tasks: finalize names/plan -> preserve/reconcile baseline and PRs #25/#26 -> parallel workspace and old/new path compatibility -> reviewed platform/chart/GitOps ownership -> seven independent CI paths and immutable templates -> verified rename/Project cutover -> canonical checkout/local proof/exact-main CI. Do not migrate files, create cloud identities or enable deployment as a side effect of finalizing the plan. Keep original events/manifests unchanged; recapture affected evidence on its actual platform and Git-normalized bytes.
+
+P2.4 release acceptance follows migration exit. P3.1 personal target/budget confirmation also follows migration exit, allowing a deliberate registry decision before an Azure-dependent release path. New POC features/cloud execution follow repo setup; regression checks accompany migration. The user reports an Azure Owner subscription; access/targets/region/budget are not yet independently verified. G2/G3/G4/G5 stay pending, and Azure remains disabled until the separate applicable prerequisites and concrete scope are satisfied.

@@ -52,7 +52,12 @@
         "ai-observability-lab/docs/repository-layout.md",
         "ai-observability-lab/docs/actions-delivery-plan.md",
         "ai-observability-lab/docs/architecture.md",
-        "ai-observability-lab/docs/architecture"
+        "ai-observability-lab/docs/architecture",
+        "ai-observability-lab/docs/platform-structure-review.md",
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -302,7 +307,8 @@
       "owner": "Codex",
       "repo": "lab",
       "depends_on": [
-        "P2.3"
+        "P2.3",
+        "P2.16"
       ],
       "gates": [
         "G0",
@@ -432,7 +438,7 @@
       "owner": "User",
       "repo": "infra",
       "depends_on": [
-        "P2.4"
+        "P2.16"
       ],
       "gates": [
         "G0"
@@ -800,6 +806,172 @@
       "watch": [],
       "artifacts": [],
       "acceptance": "Versioned gateway cohort defined before execution; live authorized/denied calls, token-rate/quota bounds, bypass denial, faults, available usage, privacy canaries, correlation/overhead, rebuild and scoped cleanup evidenced; no Managed parity claim."
+    },
+    {
+      "id": "P2.10",
+      "title": "Finalize seven-repository names, ownership and migration plan",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P0.2",
+        "P2.7"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/seven-repository-plan.json",
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "acceptance": "Finalize seven unique canonical repo/folder names, four history-preserving identities, complete tracked-file mapping, staged acceptance/rollback, unchanged AI/APIM boundaries and Azure readiness conditions. Update watched implementation/CI inputs before accepting execution."
+    },
+    {
+      "id": "P2.11",
+      "title": "Preserve current repository baseline and reconcile in-flight PRs",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P2.10"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/migration-baseline.json"
+      ],
+      "acceptance": "Verify exact remote/main/in-flight refs including PRs 25/26, original repository/issue IDs, clean worktrees, locks and proof boundaries; retain rollback refs and Git configuration preservation receipts. Update watched implementation/CI inputs before accepting execution."
+    },
+    {
+      "id": "P2.12",
+      "title": "Prepare isolated seven-repository workspace and compatible path mapping",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P2.11"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/migration-path-compatibility.json"
+      ],
+      "acceptance": "Verify three new repo IDs and reviewed empty/default setup; prepare isolated canonical clones and test old/new layout resolution across tracking, Project sync, runners, Compose, release validation and workspace files. No global Git changes. Update watched implementation/CI inputs before accepting execution."
+    },
+    {
+      "id": "P2.13",
+      "title": "Establish reviewed platform configuration, charts and GitOps ownership",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P2.12"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/migration-platform-validation.json"
+      ],
+      "acceptance": "Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution."
+    },
+    {
+      "id": "P2.14",
+      "title": "Validate independent CI and immutable shared templates for seven repositories",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P2.13"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/migration-seven-repo-ci.json"
+      ],
+      "acceptance": "Observe passing exact-head CI for all seven repos; test dependency-aware change detection, clean builds, guarded Terraform and disabled deployment. PRs have no Azure identity; shared workflows/actions are pinned. Update watched implementation/CI inputs before accepting execution."
+    },
+    {
+      "id": "P2.15",
+      "title": "Perform verified repository rename, workspace and Project cutover",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P2.14"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/migration-cutover.json"
+      ],
+      "acceptance": "Verify all four original IDs/histories, three new repos, canonical GitHub-only origins, current path/watch/Project mappings, seven linked repos and preserved issue IDs/private Project. Keep Azure false and GitLab/global Git unchanged. Update watched implementation/CI inputs before accepting execution."
+    },
+    {
+      "id": "P2.16",
+      "title": "Revalidate canonical workspace and seven-repository source baseline",
+      "owner": "Codex",
+      "repo": "lab",
+      "depends_on": [
+        "P2.15"
+      ],
+      "gates": [
+        "G0",
+        "G1"
+      ],
+      "watch": [
+        "ai-observability-lab/docs/repository-migration-plan.md",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
+        "ai-observability-lab/tracking/repository-targets.json",
+        "ai-observability-lab/tracking/migration-file-map.json"
+      ],
+      "artifacts": [
+        "ai-observability-lab/evidence/migration-acceptance.json"
+      ],
+      "acceptance": "After authorized merges, verify seven exact-main CI runs, affected local backend/privacy/graph/cleanup proof, accurate platform-specific source receipts and runbook/rollback. Prepare a new seven-repo source candidate; do not claim a deployable image/replay without P2.4 evidence. Update watched implementation/CI inputs before accepting execution."
     }
   ]
 }

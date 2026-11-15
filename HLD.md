@@ -1,12 +1,42 @@
 # High-level design — current, target and remaining work
 
-Version: 0.17 source-pinned release candidate. Updated: 1 November 2026, Asia/Dubai. Execution: **local proof and four main CI runs verified; source-pinned release candidate prepared; Azure execution remains disabled**.
+Version: 0.19 selected seven-repository plan. Updated: 15 November 2026, Asia/Dubai. Execution: **seven-repository structure selected; canonical names and migration plan finalized; current four repositories retained; Azure execution remains disabled**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
-Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and four repositories under `AI-SRE-Oberveability` separate resource ownership. The organization is owned by the personal account `javedkumail`. All four transferred repositories retain their IDs, published commits and public visibility. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
+Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and the selected seven-repository target under `AI-SRE-Oberveability` separates resource ownership. Four repositories currently exist; three in-place renames and three new repositories are planned, with original IDs/history retained. The organization is owned by the personal account `javedkumail`. All four transferred repositories retain their IDs, published commits and public visibility. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
+
+## Selected repository structure and next work - 15 November 2026
+
+The user selected the seven-repository structure and requested finalized names and a step-by-step plan before migration. The current plan is [repository-migration-plan.md](docs/repository-migration-plan.md), with [ADR 0002](docs/adr-0002-seven-repositories.md), a seven-role blueprint and a complete planning snapshot of 173 tracked source paths. Earlier review text below records the proposal before this selection and is superseded for current status.
+
+| Canonical repo/folder | Ownership | Planned operation |
+| --- | --- | --- |
+| ai-platform-infra | Terraform Azure and APIM | Rename existing infra, preserve ID/history |
+| ai-platform-config | Cluster/namespace configuration source | Create new |
+| ai-platform-charts | Platform charts and local/native telemetry profiles | Rename existing observability config, preserve ID/history |
+| ai-platform-gitops | Argo environment desired state and immutable promotion | Create new |
+| ai-platform-pipelines | Reviewed reusable CI and guarded delivery templates | Create new |
+| ai-agent-workloads | Python AI agents/tools/contracts/evaluations/application charts | Retain existing name/history |
+| ai-platform-lab | HLD, tracker/Project, evidence, release/workspace coordination | Rename existing lab last, preserve ID/history |
+
+The runtime remains AKS agents -> APIM outside AKS -> approved model endpoints, with separate runner, pod and gateway identities, metadata-only telemetry and read-only SRE. Config/charts/workloads own authored definitions; GitOps selects their tested revisions and Argo reconciles them after explicit bootstrap handover. No object has two writers. Mesh and actual Argo deployment still require their selected-profile acceptance. Optional Node/UI repositories are deferred outside this seven-repo scope.
+
+Next: preserve/reconcile remote heads and drafts #25/#26, prepare old/new path compatibility in a parallel workspace, review platform/GitOps source, establish seven-repo offline CI, perform identity-preserving cutover, then prove the canonical checkout and seven main CI results. Track this as P2.10-P2.16, with original task IDs/receipts preserved. Planning is complete; these execution steps have not begun. P2.4 image/digest/replay acceptance waits for migration exit.
+
+The user reports obtaining an Azure Owner subscription. This is recorded without asserting verified account access: no Azure command, login or inventory was run. After repository setup, confirm exact personal tenant/subscription, region and budget/currency and produce a costed Terraform/APIM scope before deployment. G2/G3/G4/G5 remain pending. P3.1 depends on migration exit so that target/registry decisions can precede any Azure-dependent image publication. Azure deployment is false; GitLab credentials and global Git settings remain intact.
+
+## Earlier repository structure review - 15 November 2026
+
+Historical review before the selection above: the user supplied an AI-PLATFORM-LAB scaffold for review. [The assessment, proposed mapping and migration sequence](docs/platform-structure-review.md) distinguish its seven intended repositories from our current four Git histories. Its separation of Terraform, cluster configuration, charts, Argo desired state and reusable CI is useful; the Python AI workloads and evidence-backed lab tracker must remain explicit owners. A seven-core-repository layout plus two optional synthetic application repositories is proposed, not selected. No clone alias, remote, repository, source layout or runtime design has changed.
+
+Static review recorded 16 successful Helm renders, four Kustomize builds, 17 JavaScript syntax checks, five PowerShell parses, ten JSON and 116 non-template YAML parses, Terraform formatting on an identical copied source tree, and zero Gitleaks findings. Three chart dependencies and the referenced Gateway API CRD bundle are missing. The scaffold's automatic apply, PR-trusted privileged identity and admin Kubernetes access must not replace our guarded delivery. See evidence/platform-structure-review.json; none of these checks proves deployment or runtime acceptance.
+
+PR #24 is now confirmed merged into lab main 7723a733b67e1992e3eb7a37e148e85be9321406 on 2 November 2026. Its candidate remains source-pinned and non-deployable; no existing release pin or historical evidence has been rewritten. Next: the user's structure selection, then exact old-to-new paths and isolated migration PRs. AKS, Terraform and APIM remain the target runtime boundaries; Istio/Argo additions remain proposals. Azure deployment is false, G2/G3/G4/G5 remain pending, and GitLab authentication/global Git configuration are preserved.
+
+[Draft documentation PR #26](https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/26) publishes the assessment and now the finalized names/plan following the user's seven-repo selection; no migration executes in this planning PR. Existing draft Compose-proof PR #25 was observed and left untouched; reconcile it before moving runners or changing release acceptance. See evidence/platform-structure-publication.json. The prior review snapshot was 18/41 accepted tasks; the selected migration plan adds seven explicit tasks, with finalization tracked separately from execution.
 
 ## Verified local deterministic slice
 
@@ -238,4 +268,4 @@ The candidate has no workload registry digest and cannot pass --require-deployab
 
 [Lab PR #24](https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/24) contains the candidate, validator/tests, exact-main CI receipts and merge receipts. See evidence/release-candidate-publication.json. The shared Project is at 18/41 accepted deliverables, with P2.4 in progress and no stale CI receipt. The candidate is not deployable: the workload image remains unpublished/unpinned, and the immutable container replay is pending.
 
-The three requested PRs are merged. This new preparation PR remains open for review. Azure deployment is still false; no registry publication, release tag, Azure authentication or resource operation took place. Global Git settings match the preservation baseline and GitLab credentials were not changed.
+The three requested PRs are merged. At this 1 November publication snapshot the preparation PR remained open; it was subsequently merged on 2 November, as recorded in the current structure-review section above. Azure deployment is still false; no registry publication, release tag, Azure authentication or resource operation took place. Global Git settings match the preservation baseline and GitLab credentials were not changed.

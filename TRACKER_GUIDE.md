@@ -2,7 +2,7 @@
 
 The user selected updates **after each work step**. There is no scheduled job, external service, account connection or deployment permission in this tracker. It uses Python's standard library.
 
-`tracking/plan.json` defines 36 tasks, owners, dependencies, gates, source/artifact paths and acceptance criteria. `tracking/state.json` stores current outcomes and user decisions. `tracking/events.jsonl` retains the update history. Refresh generates `POC_TRACKER.md`, `REMAINING.md` and `tracking/status.json`.
+`tracking/plan.json` defines 48 tasks (including the seven-repository migration extension), owners, dependencies, gates, source/artifact paths and acceptance criteria. `tracking/state.json` stores current outcomes and user decisions. `tracking/events.jsonl` retains the update history. Refresh generates `POC_TRACKER.md`, `REMAINING.md` and `tracking/status.json`.
 
 From the `personal-ai-observability` parent workspace:
 
@@ -59,3 +59,7 @@ The default is a local dry-run. `--apply` is the explicit network mutation step 
 Use GitHub CLI signed in as the approved personal administrator with `project` scope. The user explicitly approved that additional scope. On a fresh machine, use the supported secure `gh auth login --scopes project` flow and decline Git helper reconfiguration if offered. Existing GitLab credentials/global helpers must remain unchanged. The script captures the token privately from CLI authentication; it never stores tokens in repository files or logs. It supports a normal CLI installation or the ignored portable runtime used for this setup.
 
 New task IDs are created idempotently using stable managed markers; existing unrelated issues are preserved. A run stops on owner, identity, duplicate-task or API verification errors instead of claiming a successful sync. Project and issue pagination is intentionally bounded for this small lab; extend it before exceeding the documented 100-item/page limits.
+
+## Seven-repository migration
+
+P2.10-P2.16 track the selected names/plan through verified cutover and clean-checkout proof. The target blueprint is planning data; live sync still uses the four existing repositories until P2.15 verifies the new IDs/names. Preserve original task/issue IDs and immutable event/evidence history. Update actual source watch paths before accepting execution tasks. Azure Owner subscription access is user-reported; G2/G3/G4/G5 remain separate.

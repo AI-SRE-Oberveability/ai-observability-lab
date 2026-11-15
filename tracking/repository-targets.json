@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "status": "names_finalized_execution_pending",
+  "decision_date": "2026-11-15",
+  "organization": "AI-SRE-Oberveability",
+  "workspace_name": "AI-PLATFORM-LAB",
+  "workspace_is_git_repository": false,
+  "source_workspace_retained": "personal-ai-observability",
+  "migration_started": false,
+  "azure_deployment_enabled": false,
+  "project_visibility": "private",
+  "canonical_branch": "main",
+  "optional_node_and_ui_repositories": "deferred_outside_seven_repo_scope",
+  "repositories": [
+    {
+      "role": "infra",
+      "name": "ai-platform-infra",
+      "folder": "ai-platform-infra",
+      "operation": "rename",
+      "visibility": "public",
+      "owner_of": "Terraform Azure and APIM",
+      "target_remote": "https://github.com/AI-SRE-Oberveability/ai-platform-infra.git",
+      "current_repository": "AI-Observability-Infra",
+      "current_folder": "ai-observability-infra",
+      "preserved_repository_id": 1437529000
+    },
+    {
+      "role": "config",
+      "name": "ai-platform-config",
+      "folder": "ai-platform-config",
+      "operation": "create",
+      "visibility": "public",
+      "owner_of": "Cluster and namespace manifest source",
+      "target_remote": "https://github.com/AI-SRE-Oberveability/ai-platform-config.git",
+      "current_repository": null,
+      "current_folder": null,
+      "preserved_repository_id": null
+    },
+    {
+      "role": "charts",
+      "name": "ai-platform-charts",
+      "folder": "ai-platform-charts",
+      "operation": "rename",
+      "visibility": "public",
+      "owner_of": "Platform charts, local telemetry and compatibility profiles",
+      "target_remote": "https://github.com/AI-SRE-Oberveability/ai-platform-charts.git",
+      "current_repository": "ai-observability-config",
+      "current_folder": "ai-observability-config",
+      "preserved_repository_id": 1437530253
+    },
+    {
+      "role": "gitops",
+      "name": "ai-platform-gitops",
+      "folder": "ai-platform-gitops",
+      "operation": "create",
+      "visibility": "public",
+      "owner_of": "Argo desired state and environment artifact promotion",
+      "target_remote": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops.git",
+      "current_repository": null,
+      "current_folder": null,
+      "preserved_repository_id": null
+    },
+    {
+      "role": "pipelines",
+      "name": "ai-platform-pipelines",
+      "folder": "ai-platform-pipelines",
+      "operation": "create",
+      "visibility": "public",
+      "owner_of": "Reviewed reusable CI and guarded delivery templates",
+      "target_remote": "https://github.com/AI-SRE-Oberveability/ai-platform-pipelines.git",
+      "current_repository": null,
+      "current_folder": null,
+      "preserved_repository_id": null
+    },
+    {
+      "role": "workloads",
+      "name": "ai-agent-workloads",
+      "folder": "ai-agent-workloads",
+      "operation": "keep",
+      "visibility": "public",
+      "owner_of": "Python AI workloads, APIs, fixtures and application charts",
+      "target_remote": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads.git",
+      "current_repository": "ai-agent-workloads",
+      "current_folder": "ai-agent-workloads",
+      "preserved_repository_id": 1437529826
+    },
+    {
+      "role": "lab",
+      "name": "ai-platform-lab",
+      "folder": "ai-platform-lab",
+      "operation": "rename",
+      "visibility": "public",
+      "owner_of": "HLD, tracker, evidence, releases and orchestration",
+      "target_remote": "https://github.com/AI-SRE-Oberveability/ai-platform-lab.git",
+      "current_repository": "ai-observability-lab",
+      "current_folder": "ai-observability-lab",
+      "preserved_repository_id": 1437531335
+    }
+  ]
+}
