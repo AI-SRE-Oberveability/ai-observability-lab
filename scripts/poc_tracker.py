@@ -55,6 +55,10 @@ def snapshot(base, names, policy="raw-v1"):
         for path in paths:
             if not path.is_file() or set(path.relative_to(base).parts) & EXCLUDE:
                 continue
+            if policy == "utf8-lf-v1" and ".terraform" in path.relative_to(base).parts:
+                # Provider caches are generated runtime inputs, never authored source.
+                # Raw historical receipts keep their original comparison semantics.
+                continue
             if path.name.startswith(".env") or path.suffix in {
                 ".key",
                 ".pem",
@@ -113,11 +117,15 @@ def checkout_compatibility(base, task, record):
         or snapshot(base, record.get("evidence", [])) != record.get("evidence_hashes")
     ):
         return None
+    sources = snapshot(base, task["watch"], "utf8-lf-v1")
     return {
         "policy": "utf8-lf-v1",
         "original_receipt_sha256": receipt_digest(record),
-        "source_hashes": snapshot(base, task["watch"], "utf8-lf-v1"),
+        "source_hashes": sources,
         "evidence_hashes": snapshot(base, record["evidence"], "utf8-lf-v1"),
+        "excluded_generated_source_paths": sorted(
+            set(record["source_hashes"]) - set(sources)
+        ),
     }
 
 
@@ -426,6 +434,9 @@ def main():
                 "original_receipt_sha256": portable["original_receipt_sha256"],
                 "source_files": len(portable["source_hashes"]),
                 "evidence_files": len(portable["evidence_hashes"]),
+                "excluded_generated_source_paths": portable[
+                    "excluded_generated_source_paths"
+                ],
             }
         write_json(
             LAB / "evidence/tracker-checkout-compatibility.json",

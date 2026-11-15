@@ -26,6 +26,8 @@ The native installer/proof and rootless Linux proof resolve sibling source throu
 
 Logical watch/evidence keys retain their historical aliases while resolving the actual folder. New tracker records use `utf8-lf-v1`: known authored UTF-8 text hashes use LF as required by `.gitattributes`; binary bytes stay unchanged. Historical records without a policy keep their original raw hashes. The explicit `port-receipts --note <reason>` operation adds a fingerprint-bound checkout-compatibility envelope only when every current legacy source/evidence byte still matches the original raw receipt. It preserves original hashes, status, dates and notes, records a portability receipt/event, and leaves changed runner proofs stale. It does not execute workloads or turn normalization into runtime evidence. Semantic source/evidence changes still invalidate acceptance.
 
+Portable source snapshots exclude generated `.terraform` provider caches. One historical infra receipt included two local cache files; the envelope records their explicit exclusion after verifying the original raw receipt, while retaining both original hashes. Provider versions remain represented by the committed lock file and actual CI results. Downloaded caches are not required source in a clean clone. The two initial checkout failures are retained separately; canonical acceptance requires no status differences between the real layouts.
+
 Publish current HLD, tracker and cited evidence before live Project synchronization:
 
 ```text

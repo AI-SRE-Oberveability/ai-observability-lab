@@ -124,14 +124,25 @@ class TrackerChecks(unittest.TestCase):
     def test_explicit_portability_preserves_original_and_rejects_changed_content(self):
         source = self.base / "source.txt"
         source.write_bytes(b"version 1\r\n")
+        self.task["watch"] = ["."]
+        cache = self.base / ".terraform/providers/provider.bin"
+        cache.parent.mkdir(parents=True)
+        cache.write_bytes(b"generated provider cache")
         self.completed()
         record = self.state["steps"]["P1.1"]
+        record["source_hashes"] = tracker.snapshot(self.base, self.task["watch"])
         original = copy.deepcopy(record)
         portable = tracker.checkout_compatibility(self.base, self.task, record)
         self.assertIsNotNone(portable)
+        self.assertIn(
+            ".terraform/providers/provider.bin",
+            portable["excluded_generated_source_paths"],
+        )
+        self.assertIn(".terraform/providers/provider.bin", original["source_hashes"])
         record["checkout_compatibility"] = portable
         self.assertEqual({key: record[key] for key in original}, original)
         source.write_bytes(b"version 1\n")
+        cache.unlink()
         self.assertEqual(self.status(), "done")
         source.write_bytes(b"version 2\n")
         self.assertEqual(self.status(), "needs_revalidation")

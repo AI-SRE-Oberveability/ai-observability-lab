@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "validated_at": "2026-11-15T19:46:49+04:00",
+  "validated_at": "2026-11-15T19:53:37+04:00",
   "status": "passed",
   "source_stage": "Exact working-source overlay; canonical clone will be checked out clean at the published commit before final acceptance",
   "checks": [
@@ -119,7 +119,7 @@
   ],
   "source_hashes": {
     "scripts/install_local_backends.py": "8e389e89d7b28fcf2d70fc04720ed93d79307a572a8395b4ad7015ac2dc92495",
-    "scripts/poc_tracker.py": "c4a551dea902809358f2827467afad842023114d6c0aac92cfb13612b9c4c30b",
+    "scripts/poc_tracker.py": "14242d430deb2fe3f7f4aad36741a0566b958bc128a5471c9a2e8d9c7902efbb",
     "scripts/prove_linux_backend.py": "f1d3c403677097abf7ad9c5b34f1d23533c5ee982ca19c4acc754c0f0388eb53",
     "scripts/prove_local_backend.py": "aa57b85d70d68fa763f6a34e0c42f46695ce08cb9f31531231a9128f9102bfb9",
     "scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
@@ -130,7 +130,7 @@
     "tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
     "tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
     "tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
-    "tests/test_tracker.py": "779bac846eb99c1f06bed27038b4ba8e0c7aa059225d76560ab2ceeefe706716",
+    "tests/test_tracker.py": "32585578cca1effc64c81f4a2aa52c3741cde3304095ca74b481d0d0215950db",
     "tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
     "tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca",
     "AI-PLATFORM-LAB.code-workspace": "a38a68e3cff6c291f198e81e267d409d028f7a22ffe7e8f74b8eba7ce30e6c6e"

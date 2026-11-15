@@ -42,22 +42,23 @@
         "evidence_hashes": {
           "ai-observability-lab/evidence/initial-inventory.md": "d1508d4b1d6afc55d214ba5fe626f29720482dcfc99ec4004e21a16839bb2754",
           "ai-observability-lab/evidence/publication-planning-revalidation.md": "bf6123999cbf697ea3b980259962ded72aea2b395d212a1071a7d7d531d47118"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.25 distinguishes 68-test compatibility checks, explicit verified historical LF portability, preserved stale runner evidence and pending clean published checkout/cutover. AKS/APIM/Terraform and disabled cloud gates unchanged.",
-      "at": "2026-11-15T19:48:16+04:00",
+      "note": "HLD 0.25 records both clean-checkout findings and the explicit source-only provider-cache exclusion; original receipts retained, runtime proofs still stale, remaining migration/disabled Azure gates unchanged.",
+      "at": "2026-11-15T19:54:04+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/workspace-setup.json",
         "ai-observability-lab/evidence/migration-path-compatibility.json",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json"
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "3aa245472ee6f5f80aec55b2472fc8e51998ba635f92b0beb713e967a108dbce",
-        "ai-observability-lab/HLD.md": "2087426673822923abec43ef9d9295831fe2a703773f14ad2caa1dd7c467ab78",
+        "ai-observability-lab/HLD.md": "92354c6861e481c547dad2e547ddd833c47ec11eda3d526ae0b086a794973d65",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -96,33 +97,34 @@
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
         "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
-        "ai-observability-lab/docs/workspace-compatibility.md": "003a19734330d549bdaf22108b016a132ab88aed20aadbf512c62cd2d8a5945b"
+        "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4",
-        "ai-observability-lab/evidence/migration-path-compatibility.json": "85d312cf714e8d8ac0bac1a05c63d735c5ad0d2cb216713ec98ece275d00d38f",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "a54858be7ea640f500c5f2eddc6a3f32aa134e7d1e54377488a5ac9803c4222d"
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "0d11066b74147b05028fad15072fe794a99d389ac36bf6663f7b70935aaad560",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "dfc94d0a10e80c2eeeb2c940d5a29e0bca8d7324dc622c43f5af6eddc90c8180",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "68 tests pass in both layouts on Windows (3 skips) and Linux (0 skips). Explicit legacy receipt portability requires original raw byte matches and fingerprint binding; original hashes/history retained and semantic/evidence changes still fail.",
-      "at": "2026-11-15T19:48:21+04:00",
+      "note": "Final 68-test compatibility suite validates raw-proof-preserving LF envelopes, generated provider-cache exclusion, semantic/evidence tamper rejection and safe path/Project behavior.",
+      "at": "2026-11-15T19:54:08+04:00",
       "evidence": [
         "ai-observability-lab/evidence/migration-path-compatibility.json",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json"
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/scripts/poc_tracker.py": "c4a551dea902809358f2827467afad842023114d6c0aac92cfb13612b9c4c30b",
+        "ai-observability-lab/scripts/poc_tracker.py": "14242d430deb2fe3f7f4aad36741a0566b958bc128a5471c9a2e8d9c7902efbb",
         "ai-observability-lab/tests/lab_fixtures.py": "8ac9227ee9ca9362c242bd8109cad705438df28a9ab11d35b7bc5fe0ac1a152a",
         "ai-observability-lab/tests/test_linux_proof.py": "9e9ab5d4f7808a9951b01c11568f3f39d997a7aa44b30a0bda1d800aea282a2c",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
         "ai-observability-lab/tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
-        "ai-observability-lab/tests/test_tracker.py": "779bac846eb99c1f06bed27038b4ba8e0c7aa059225d76560ab2ceeefe706716",
+        "ai-observability-lab/tests/test_tracker.py": "32585578cca1effc64c81f4a2aa52c3741cde3304095ca74b481d0d0215950db",
         "ai-observability-lab/tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
-        "ai-observability-lab/tracking/plan.json": "9b422976ee9129ae5dabfa27bb83c465e72a3ee822aeccf717de4d884ffa1087",
+        "ai-observability-lab/tracking/plan.json": "631c757dfa1ae34bc1dbe96557016d08fadca9e188d188116e35d317f151334f",
         "ai-observability-lab/TRACKER_GUIDE.md": "653c32f56715f955717cae55c75d34aef9a2b42444e321056699214aac554ddb",
         "ai-observability-lab/AGENTS.md": "add0ca8bfb7fff426c10930d147bea63ca004400c2d4c4d400914340260c1452",
         "ai-observability-lab/scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
@@ -130,8 +132,9 @@
         "ai-observability-lab/tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/migration-path-compatibility.json": "85d312cf714e8d8ac0bac1a05c63d735c5ad0d2cb216713ec98ece275d00d38f",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "a54858be7ea640f500c5f2eddc6a3f32aa134e7d1e54377488a5ac9803c4222d"
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "0d11066b74147b05028fad15072fe794a99d389ac36bf6663f7b70935aaad560",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "dfc94d0a10e80c2eeeb2c940d5a29e0bca8d7324dc622c43f5af6eddc90c8180",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432"
       }
     },
     "P2.2": {
@@ -157,7 +160,8 @@
           "ai-observability-lab/evidence/publication-review.md": "d21a42c966cb9c41b8d716ee038a9b34c09cde18b6fb4d2961e71e8a9635ab8d",
           "ai-observability-lab/evidence/publication-receipts.json": "cb7d2226705ce08f82d578ab71d19078a983720c70fb624b4e92e250d861384c",
           "ai-observability-lab/evidence/publication-completion.md": "41ba7d3837d605b367420cc7b4ff7326c7790a8d701ace25b8ca0ecbc1fe6e0c"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.5": {
@@ -177,7 +181,8 @@
         "source_hashes": {},
         "evidence_hashes": {
           "ai-observability-lab/evidence/organization-created.json": "b04ea6d14f865b76b488acf42ae9bd980db213b55a99fddeeb4814a37219538a"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.6": {
@@ -197,7 +202,8 @@
         "source_hashes": {},
         "evidence_hashes": {
           "ai-observability-lab/evidence/repository-transfer-receipts.json": "aa7d7dbe461f17163f5215c6467b2d5890c421d36340e096253ca2961a458ae1"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.7": {
@@ -217,7 +223,8 @@
         "source_hashes": {},
         "evidence_hashes": {
           "ai-observability-lab/evidence/shared-project-completion.json": "750a14c06109efd561cdd02b75f2d254e715a82ccd6bb31999a8924bd1a0aef7"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.8": {
@@ -261,7 +268,8 @@
         },
         "evidence_hashes": {
           "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.9": {
@@ -296,8 +304,6 @@
         "source_hashes": {
           "ai-observability-infra/.github/workflows/ci.yaml": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e",
           "ai-observability-infra/.github/workflows/terraform-deploy.yaml": "27fd0dba8867b3ff42fbdac32c52cff93fc4cebf3d6948f4b2db5594a97d9fbf",
-          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/LICENSE.txt": "4e2bb185ebd706f76329206869ccb348b92b6236100cfb07775fe31530dab0d5",
-          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/terraform-provider-azurerm_v5.11.0_x5.exe": "13af584640b372255c6fa3913505df5b4b7a1beb2081fd7d0e8c562533e1a950",
           "ai-observability-infra/foundation/.terraform.lock.hcl": "0eb93cf29237e7e73aaec364317b91dda3023338cefdb329214360f11f05eff8",
           "ai-observability-infra/foundation/main.tf": "9284f699d625d55da0e2b79360d4712c68f3c74c21c94ce1299f9a35fecb0f4d",
           "ai-observability-infra/foundation/tests/guardrails.tftest.hcl": "c76ebb913a42bc9a4d9735b57324eaf8c96467ef3290cd24f088851575783382",
@@ -310,7 +316,11 @@
         "evidence_hashes": {
           "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
           "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02"
-        }
+        },
+        "excluded_generated_source_paths": [
+          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/LICENSE.txt",
+          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/terraform-provider-azurerm_v5.11.0_x5.exe"
+        ]
       }
     },
     "P3.2": {
@@ -379,7 +389,8 @@
         "evidence_hashes": {
           "ai-observability-lab/evidence/local-workload-review.md": "b69d5c7a115232e5a6314001149f5b313660dacb3c4b7722f0af12beb7e83a34",
           "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.2": {
@@ -405,7 +416,8 @@
         },
         "evidence_hashes": {
           "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.3": {
@@ -447,7 +459,8 @@
         },
         "evidence_hashes": {
           "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.4": {
@@ -475,7 +488,8 @@
         },
         "evidence_hashes": {
           "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.5": {
@@ -574,7 +588,8 @@
         "evidence_hashes": {
           "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
           "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.4": {
@@ -645,7 +660,8 @@
         "evidence_hashes": {
           "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18",
           "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
-        }
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.12": {
@@ -713,7 +729,7 @@
   "hld": {
     "current": "Seven canonical folders prepared alongside preserved legacy workspace; four existing GitHub names retained and three new repos empty. Terraform/AKS agents/APIM outside AKS unchanged; Azure false, GitLab credentials preserved.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.12: Final 68-test/Compose/release-source validation passes both layouts/OS profiles; GitHub/public-source and credential-preservation checks pass. Publishing explicit historical checkout correction before final clean canonical acceptance."
+    "last_change": "P0.3: Final 68-test compatibility suite validates raw-proof-preserving LF envelopes, generated provider-cache exclusion, semantic/evidence tamper rejection and safe path/Project behavior."
   },
   "repository_verification": {
     "date": "2026-10-28",
