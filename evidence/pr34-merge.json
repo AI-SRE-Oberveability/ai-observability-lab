@@ -1,0 +1,13 @@
+{
+  "pr": 34,
+  "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/34",
+  "reviewed_head": "44dfd8e70d0d564a188352dcb7c83d3fde1d8a1e",
+  "verified_ci_runs": [
+    43724539118,
+    43724525604
+  ],
+  "merge_commit": "9fc2224161e4e080f24dfbc97c37c5fb7eb78904",
+  "merged_at": "2026-11-15T14:42:58Z",
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false
+}

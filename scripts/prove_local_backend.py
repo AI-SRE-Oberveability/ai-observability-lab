@@ -21,10 +21,12 @@ from urllib.request import ProxyHandler, build_opener
 
 import uvicorn
 import yaml
+from workspace import current
 
-BASE = Path(__file__).resolve().parents[2]
-LAB = BASE / "ai-observability-lab"
-CONFIG = BASE / "ai-observability-config/local/native"
+WORKSPACE = current()
+BASE = WORKSPACE.root
+LAB = Path(__file__).resolve().parents[1]
+CONFIG = WORKSPACE.repo("charts", required=False) / "local/native"
 PORTS = (14317, 14318, 16685, 16686, 18888, 18889, 18080, 18081)
 HTTP = build_opener(ProxyHandler({}))
 
@@ -84,7 +86,7 @@ def binary(name):
         (CONFIG.parent / "windows-binaries.lock.json").read_text(encoding="utf-8")
     )
     item = lock[name]
-    folder = BASE / ".runtime/backends" / name
+    folder = WORKSPACE.runtime(BASE / ".runtime/backends" / name)
     archive = folder / item["url"].rsplit("/", 1)[1]
     exe = folder / ("jaeger.exe" if name == "jaeger" else "otelcol-contrib.exe")
     require(archive.is_file() and exe.is_file(), "Run install_local_backends.py first")
@@ -312,13 +314,15 @@ def main():
     require(
         listeners_closed(), "An expected port has a listener; no process was stopped"
     )
-    sys.path.insert(0, str(BASE / "ai-agent-workloads/src"))
+    for role in ("lab", "charts", "workloads"):
+        WORKSPACE.verify_clone(role)
+    sys.path.insert(0, str(WORKSPACE.repo("workloads") / "src"))
     import httpx
     from ai_lab.agent import create_app as agent_app
     from ai_lab.retrieval import create_app as retrieval_app
     from ai_lab.settings import Settings
 
-    run_dir = BASE / ".runtime/local-proof" / uuid.uuid4().hex
+    run_dir = WORKSPACE.runtime(BASE / ".runtime/local-proof" / uuid.uuid4().hex)
     run_dir.mkdir(parents=True)
     collector, collector_version = binary("collector")
     jaeger, jaeger_version = binary("jaeger")
@@ -421,7 +425,7 @@ def main():
             "elapsed_seconds": round(elapsed, 4),
         }
         policies = json.loads(
-            (BASE / "ai-agent-workloads/src/ai_lab/policies.json").read_text()
+            (WORKSPACE.repo("workloads") / "src/ai_lab/policies.json").read_text()
         )
         report["privacy"] = capture_checks(
             run_dir,

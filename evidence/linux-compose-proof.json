@@ -1,0 +1,992 @@
+{
+  "date": "2026-11-08",
+  "status": "passed",
+  "profile": "Linux x86-64 rootless Compose",
+  "model_mode": "deterministic-mock",
+  "final_run_id": "83a8ef9c5e674ec3b347564e9287e3a3",
+  "sources": {
+    "ai-observability-lab": {
+      "head": "7723a733b67e1992e3eb7a37e148e85be9321406",
+      "files": {
+        "compose.yaml": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68",
+        "scripts/prove_linux_backend.py": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf"
+      },
+      "acceptance": "working tree bytes; no new CI or publication implied"
+    },
+    "ai-agent-workloads": {
+      "head": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+      "files": {
+        "Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+        "compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
+        "requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+        "src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+        "src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+        "src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b"
+      },
+      "acceptance": "working tree bytes; no new CI or publication implied"
+    },
+    "ai-observability-config": {
+      "head": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+      "files": {
+        "local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+        "local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685",
+        "local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea"
+      },
+      "acceptance": "working tree bytes; no new CI or publication implied"
+    }
+  },
+  "acceptance_watched_source_hashes": {
+    "P1.4": {
+      "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+      "ai-observability-config/telemetry-contract.md": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f",
+      "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685"
+    },
+    "P1.5": {
+      "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685",
+      "ai-observability-config/local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+      "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
+      "ai-observability-config/local/native/collector.yaml": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654",
+      "ai-observability-config/local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea",
+      "ai-observability-config/local/windows-binaries.lock.json": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47",
+      "ai-agent-workloads/compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
+      "ai-observability-lab/compose.yaml": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68",
+      "ai-observability-lab/scripts/install_local_backends.py": "44f88e67b4a71e921362f368b2072df039af3e0c077ec6621366e7dff4cb55a6",
+      "ai-observability-lab/scripts/prove_local_backend.py": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f",
+      "ai-observability-lab/docs/local-backend-runbook.md": "118f1018a0fa5eb4b9bfe679c56a5851b731dd35ab1139380d5d0ff032e98de5",
+      "ai-observability-lab/scripts/prove_linux_backend.py": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf",
+      "ai-observability-lab/tests/test_linux_proof.py": "c082e0b1dd296fc3494c645ad393fc04d115b3fdf40e43b51d90801f8ccbb805",
+      "ai-observability-lab/tests/test_review_fixes.py": "79f0d7b400f62abd2fe79366f280fb06e44eb485a87799f5f6371c81e9974ea8"
+    },
+    "P1.6": {
+      "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+      "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+      "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+      "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+      "ai-agent-workloads/src/ai_lab/policies.json": "7078cb59b5ed11a72bfe0642b59082606894752f9a8682f3dbf1826863039817",
+      "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+      "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+      "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+      "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+      "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+      "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c",
+      "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685",
+      "ai-observability-config/local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+      "ai-observability-config/local/native/README.md": "4cdd3eab4a287b6cc7cbbe6a34a0544bf44bbb96fbab053a1d35ba4c49bd4c37",
+      "ai-observability-config/local/native/collector.yaml": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654",
+      "ai-observability-config/local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea",
+      "ai-observability-config/local/windows-binaries.lock.json": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47",
+      "ai-observability-lab/scripts/prove_local_backend.py": "47a3e6c5d688a6776dc877b4f0c46c83808693cc9bcc967c1e3b16a8c0af288f",
+      "ai-observability-lab/docs/local-backend-runbook.md": "118f1018a0fa5eb4b9bfe679c56a5851b731dd35ab1139380d5d0ff032e98de5",
+      "ai-observability-lab/scripts/prove_linux_backend.py": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf",
+      "ai-observability-lab/tests/test_linux_proof.py": "c082e0b1dd296fc3494c645ad393fc04d115b3fdf40e43b51d90801f8ccbb805",
+      "ai-observability-lab/tests/test_review_fixes.py": "79f0d7b400f62abd2fe79366f280fb06e44eb485a87799f5f6371c81e9974ea8"
+    }
+  },
+  "local_acceptance": {
+    "P1.4": "passed on fresh Linux exported/queried data",
+    "P1.5": "passed on fresh runtime and owned lifecycle",
+    "P1.6": "passed on fresh full proof receipts",
+    "tracker_dependency_boundary": "Historical P1.3 and upstream receipts remain stale; no unrelated tasks reaccepted. P1 tasks retained in_progress pending dependency review."
+  },
+  "runtime_results": {
+    "host": {
+      "system": "Linux",
+      "architecture": "x86_64",
+      "python": "3.14.9"
+    },
+    "docker": {
+      "server": "29.9.3",
+      "platform": "x86_64",
+      "compose": "5.7.0"
+    },
+    "containers": [
+      {
+        "service": "agent",
+        "image_id": "sha256:21b25aba441aa9b6bc37b990f78b1b8a921b1d661901661e23718b0e01b1ca3b",
+        "platform": "linux/amd64",
+        "memory_bytes": 268435456,
+        "nano_cpus": 1000000000,
+        "user": "10001:10001"
+      },
+      {
+        "service": "collector",
+        "image_id": "sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b",
+        "platform": "linux/amd64",
+        "memory_bytes": 201326592,
+        "nano_cpus": 1000000000,
+        "user": "0:0"
+      },
+      {
+        "service": "jaeger",
+        "image_id": "sha256:836b967b5abcf1f7758066aa6b348619267a2f1459f72d472840570f9bd88a17",
+        "platform": "linux/amd64",
+        "memory_bytes": 268435456,
+        "nano_cpus": 1000000000,
+        "user": "0:0"
+      },
+      {
+        "service": "retrieval",
+        "image_id": "sha256:21b25aba441aa9b6bc37b990f78b1b8a921b1d661901661e23718b0e01b1ca3b",
+        "platform": "linux/amd64",
+        "memory_bytes": 268435456,
+        "nano_cpus": 1000000000,
+        "user": "10001:10001"
+      }
+    ],
+    "healthy": {
+      "span_count": 7,
+      "names": [
+        "model.plan",
+        "tool.retrieve",
+        "model.generate",
+        "agent.invoke",
+        "POST /v1/ask",
+        "retrieval.search",
+        "POST /v1/retrieve"
+      ],
+      "exact_parents_services_identity_status": "passed",
+      "external_w3c": false,
+      "outcome": "success",
+      "tool_calls": 1,
+      "seconds": 0.0108
+    },
+    "fault": {
+      "span_count": 7,
+      "names": [
+        "model.plan",
+        "tool.retrieve",
+        "POST /v1/retrieve",
+        "POST /v1/retrieve",
+        "tool.retrieve",
+        "agent.invoke",
+        "POST /v1/ask"
+      ],
+      "exact_parents_services_identity_status": "passed",
+      "external_w3c": false,
+      "outcome": "tool_error",
+      "tool_calls": 2,
+      "seconds": 0.034
+    },
+    "w3c": {
+      "span_count": 7,
+      "names": [
+        "retrieval.search",
+        "POST /v1/retrieve",
+        "model.plan",
+        "tool.retrieve",
+        "model.generate",
+        "agent.invoke",
+        "POST /v1/ask"
+      ],
+      "exact_parents_services_identity_status": "passed",
+      "external_w3c": true,
+      "outcome": "success",
+      "tool_calls": 1,
+      "seconds": 0.009
+    },
+    "privacy": {
+      "surfaces": [
+        "Collector internal",
+        "Jaeger queries",
+        "Prometheus",
+        "container logs",
+        "metrics",
+        "traces"
+      ],
+      "canary_values_found": 0,
+      "exact_cohort_export_spans": 21,
+      "both_service_operation_metrics": [
+        [
+          "policy-agent",
+          "lab.operation.calls"
+        ],
+        [
+          "policy-agent",
+          "lab.operation.duration"
+        ],
+        [
+          "policy-retrieval",
+          "lab.operation.calls"
+        ],
+        [
+          "policy-retrieval",
+          "lab.operation.duration"
+        ]
+      ],
+      "allowlists": "passed",
+      "log_pipeline_exported": false,
+      "controlled_operation_log": "not configured; container stdout/stderr inspected"
+    },
+    "ephemeral_restart": "old trace absent",
+    "cleanup": "owned containers/networks/volumes absent; ports released; down errors=0"
+  },
+  "attempts": [
+    {
+      "run_id": "796b761a33534f8d91a8f60e458ee881",
+      "status": "failed",
+      "failure": "Controlled retrieval 503",
+      "cleanup": "owned containers/networks/volumes absent; ports released",
+      "cohorts_passed": [
+        "healthy"
+      ]
+    },
+    {
+      "run_id": "b06d8ab3983e473ab6ab00a309341dce",
+      "status": "failed",
+      "failure": "Controlled retrieval 503",
+      "cleanup": "owned containers/networks/volumes absent; ports released",
+      "cohorts_passed": [
+        "healthy"
+      ]
+    },
+    {
+      "run_id": "3fb5629601434e8d8fb20814635411d7",
+      "status": "failed",
+      "failure": "Unexpected metric exemplars",
+      "cleanup": "owned containers/networks/volumes absent; ports released",
+      "cohorts_passed": [
+        "healthy",
+        "fault",
+        "w3c"
+      ]
+    },
+    {
+      "run_id": "f3c56e268d204d3ebbc31ecf840b825b",
+      "status": "passed",
+      "failure": null,
+      "cleanup": "owned containers/networks/volumes absent; ports released",
+      "cohorts_passed": [
+        "healthy",
+        "fault",
+        "w3c"
+      ]
+    },
+    {
+      "run_id": "d3f35910e0074a6db6423c6eac0daf95",
+      "status": "passed",
+      "failure": null,
+      "cleanup": "owned containers/networks/volumes absent; ports released",
+      "cohorts_passed": [
+        "healthy",
+        "fault",
+        "w3c"
+      ]
+    },
+    {
+      "run_id": "8922096527344649b438daf94f2a1332",
+      "status": "passed",
+      "failure": null,
+      "cleanup": "owned containers/networks/volumes absent; ports released; down errors=0",
+      "cohorts_passed": [
+        "healthy",
+        "fault",
+        "w3c"
+      ]
+    },
+    {
+      "run_id": "cab03ed4064d4b21b9966a61811f4f76",
+      "status": "failed",
+      "failure": "Command failed; private receipt command-008",
+      "cleanup": "Owned cleanup incomplete after bounded retries: ",
+      "cohorts_passed": []
+    },
+    {
+      "run_id": "93617e4df9244ea991aaa5f450130e43",
+      "status": "passed",
+      "failure": null,
+      "cleanup": "owned containers/networks/volumes absent; ports released; down errors=0",
+      "cohorts_passed": [
+        "healthy",
+        "fault",
+        "w3c"
+      ]
+    },
+    {
+      "run_id": "83a8ef9c5e674ec3b347564e9287e3a3",
+      "status": "passed",
+      "failure": null,
+      "cleanup": "owned containers/networks/volumes absent; ports released; down errors=0",
+      "cohorts_passed": [
+        "healthy",
+        "fault",
+        "w3c"
+      ]
+    }
+  ],
+  "regressions": [
+    {
+      "name": "Jaeger 2.22 translated exact integer 503",
+      "red_exit": 1,
+      "green_exit": 0,
+      "linux_tests": 11
+    },
+    {
+      "name": "numeric metric exemplars without labels/payload",
+      "red_exit": 1,
+      "green_exit": 0,
+      "linux_tests": 12
+    }
+  ],
+  "local_validation": [
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "python": "3.14.9",
+      "exit": 0,
+      "tests": 51
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "python": "3.12.16",
+      "exit": 0,
+      "tests": 51
+    },
+    {
+      "command": "ruff check --select E4,E7,E9,F,I,UP scripts tests",
+      "exit": 0
+    },
+    {
+      "command": "ruff format --check scripts tests",
+      "exit": 0
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    }
+  ],
+  "unit_tests": {
+    "passed": 51,
+    "linux_checks": 23,
+    "review_checks": 11,
+    "stdlib_only": true,
+    "python_versions": [
+      "3.12.16",
+      "3.14.9"
+    ]
+  },
+  "security": {
+    "gitleaks_exit": 1,
+    "findings": 8,
+    "confirmed_secrets": 0,
+    "classification": "All eight independently corroborated against source/icon SHA256 bytes, historical contracts use CRLF; no suppression. Private classification retained."
+  },
+  "project_sync": {
+    "mode": "dry-run",
+    "exit": 0,
+    "live_updates": false,
+    "reason": "Existing host auth works; script hardcodes main evidence URLs. Deferred live sync to parent after publication; no sync code changes."
+  },
+  "limitations": [
+    "Local working-tree proof only; no new hosted CI, commits, pushes or published workload OCI digest.",
+    "P2.4 remains in_progress: no immutable-registry replay.",
+    "Historical Windows/CRLF/case-sensitive-path receipts remain stale; unrelated acceptance not restored.",
+    "Release source-object check still has historical lowercase infra path limitation; deployment readiness lacks workload digest.",
+    "Container stdout/stderr inspected; no log pipeline or controlled application operation-log handler.",
+    "Small synthetic cohort; no universal PII guarantee, production/Managed/P6 acceptance.",
+    "SIGKILL/host failure cannot execute final cleanup; only recorded owned resources may be recovered. Direct child is reaped; orphan descendant reaping belongs to Linux init."
+  ],
+  "gates": {
+    "G2": "pending",
+    "G3": "pending",
+    "G4": "pending",
+    "G5": "pending",
+    "azure_deployment_enabled": false
+  },
+  "raw_receipts": "Private runtime only; raw query/export/log/auth captures excluded from source.",
+  "historical_initial_evidence": {
+    "schema_version": 1,
+    "date": "2026-11-08",
+    "status": "blocked_before_container_start",
+    "scope": "Ubuntu Linux x86-64 rootless Compose; deterministic synthetic data only",
+    "sources": {
+      "ai-observability-lab": {
+        "head": "7723a733b67e1992e3eb7a37e148e85be9321406",
+        "files": {
+          "compose.yaml": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68",
+          "scripts/prove_linux_backend.py": "6c67571ecf328b6ac33d14a1a0d90426b1e1665d991b3c8a73ff616548bab627"
+        },
+        "acceptance": "working tree bytes; no new CI or publication implied"
+      },
+      "ai-agent-workloads": {
+        "head": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+        "files": {
+          "Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+          "compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
+          "requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+          "src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+          "src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b"
+        },
+        "acceptance": "working tree bytes; no new CI or publication implied"
+      },
+      "ai-observability-config": {
+        "head": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+        "files": {
+          "local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+          "local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685",
+          "local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea"
+        },
+        "acceptance": "working tree bytes; no new CI or publication implied"
+      }
+    },
+    "lab_working_tree_sha256": {
+      "scripts/prove_linux_backend.py": "6c67571ecf328b6ac33d14a1a0d90426b1e1665d991b3c8a73ff616548bab627",
+      "tests/test_linux_proof.py": "8a0e92d0776120f13b8e770f04b8c08b2197629b6ec9314a30b0280d7203b0fd",
+      "tests/test_tracker.py": "104c1aa26f31285d1b307ed98d14c6a6f0ba53c48bb33562458cd5d34ee0edbe",
+      "compose.yaml": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68"
+    },
+    "host": {
+      "system": "Linux",
+      "architecture": "x86_64",
+      "python": "3.12.16"
+    },
+    "compose_cli": "5.7.0",
+    "docker_client": "Docker version 29.9.3, build 5457199",
+    "daemon_access": "permission denied at existing rootless Unix socket; no privilege or credential changes attempted",
+    "attempts": [
+      {
+        "attempt": 1,
+        "status": "failed",
+        "stage": "runtime privacy preflight",
+        "reason": "existing runtime root mode 0775 refused; restricted to 0700 before retry"
+      },
+      {
+        "attempt": 2,
+        "status": "failed",
+        "stage": "Docker info",
+        "reason": "rootless socket API permission denied; no owned resources created"
+      },
+      {
+        "attempt": 3,
+        "status": "failed",
+        "stage": "source provenance",
+        "reason": "missing hashlib import after prior unused-import cleanup; corrected; failed log retained"
+      },
+      {
+        "attempt": 4,
+        "status": "failed",
+        "stage": "Docker info",
+        "reason": "rootless socket API permission denied; no owned resources created"
+      },
+      {
+        "attempt": 5,
+        "status": "failed",
+        "stage": "Docker info after assembly refactor",
+        "reason": "rootless socket API permission denied; no owned resources created"
+      }
+    ],
+    "local_validation": [
+      {
+        "name": "lab-lint",
+        "command": [
+          "python3.12",
+          "-m",
+          "ruff",
+          "check",
+          "--select",
+          "E4,E7,E9,F,I,UP",
+          "scripts",
+          "tests"
+        ],
+        "exit": 0,
+        "seconds": 0.022
+      },
+      {
+        "name": "lab-format",
+        "command": [
+          "python3.12",
+          "-m",
+          "ruff",
+          "format",
+          "--check",
+          "scripts",
+          "tests"
+        ],
+        "exit": 0,
+        "seconds": 0.02
+      },
+      {
+        "name": "lab-unittest",
+        "command": [
+          "python3.12",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ],
+        "exit": 0,
+        "seconds": 0.09
+      },
+      {
+        "name": "release-sources",
+        "command": [
+          "python3.12",
+          "scripts/validate_release.py",
+          "--verify-sources"
+        ],
+        "exit": 1,
+        "seconds": 0.037
+      },
+      {
+        "name": "release-deployable",
+        "command": [
+          "python3.12",
+          "scripts/validate_release.py",
+          "--require-deployable"
+        ],
+        "exit": 1,
+        "seconds": 0.029
+      },
+      {
+        "name": "config-source",
+        "command": [
+          "python3.12",
+          "scripts/check_config.py"
+        ],
+        "exit": 0,
+        "seconds": 0.034
+      },
+      {
+        "name": "compose-render",
+        "command": [
+          "docker",
+          "--context",
+          "rootless",
+          "compose",
+          "-f",
+          "compose.yaml",
+          "config",
+          "--format",
+          "json"
+        ],
+        "exit": 0,
+        "seconds": 0.053
+      },
+      {
+        "name": "compose-render-services",
+        "services": [
+          "agent",
+          "collector",
+          "jaeger",
+          "retrieval"
+        ],
+        "exit": 0,
+        "command": []
+      },
+      {
+        "name": "gitleaks",
+        "command": [
+          "gitleaks",
+          "dir",
+          "--no-banner",
+          "--redact",
+          "--report-format",
+          "json",
+          "--report-path",
+          "<private-report>",
+          "<lab>"
+        ],
+        "exit": 1,
+        "seconds": 0.348
+      },
+      {
+        "name": "diff-whitespace",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit": 0,
+        "seconds": 0.006
+      }
+    ],
+    "unit_tests": {
+      "passed": 38,
+      "linux_checks": 10,
+      "third_party_test_dependencies_added": false
+    },
+    "tdd": [
+      {
+        "cohort": "graph/privacy/container safety",
+        "red_exit": 1,
+        "green_exit": 0,
+        "tests": 6
+      },
+      {
+        "cohort": "project isolation and validator cleanup",
+        "red_exit": 1,
+        "first_green_exit": 1,
+        "corrected_fixture_green_exit": 0,
+        "tests": 8
+      },
+      {
+        "cohort": "exact 503 and bounded status",
+        "red_exit": 1,
+        "green_exit": 0,
+        "tests": 9
+      },
+      {
+        "cohort": "standalone lab CI without sibling checkout",
+        "red_exit": 1,
+        "green_exit": 0,
+        "tests": 10
+      },
+      {
+        "cohort": "tracker fixture portability",
+        "red": "14 existing tests failed in restricted legacy temporary path",
+        "green": "38/38 passed using standard-library private temporary directory"
+      }
+    ],
+    "compose_assembly": {
+      "source_render_exit": 0,
+      "private_proof_render_exit": 0,
+      "collector_processors_preserved": true,
+      "jaeger_memory_max_traces": 1000,
+      "daemon_required_for_render": false
+    },
+    "runtime_results": {
+      "healthy": "not observed; engine API blocked before pull/build/start",
+      "fault": "not observed; engine API blocked before pull/build/start",
+      "external_w3c": "not observed; engine API blocked before pull/build/start",
+      "collector_trace_export": "not observed; engine API blocked before pull/build/start",
+      "collector_metric_export": "not observed; engine API blocked before pull/build/start",
+      "jaeger_query": "not observed; engine API blocked before pull/build/start",
+      "prometheus": "not observed; engine API blocked before pull/build/start",
+      "privacy_canaries": "not observed; engine API blocked before pull/build/start",
+      "restart_retention": "not observed; engine API blocked before pull/build/start",
+      "container_cleanup": "not observed; engine API blocked before pull/build/start"
+    },
+    "resources_created": false,
+    "project_sync": {
+      "exit": 1,
+      "result": "existing script could not obtain authenticated GitHub CLI token; no live updates confirmed; parent must sync after publication"
+    },
+    "security": {
+      "gitleaks_exit": 1,
+      "findings": 8,
+      "classification": "reviewed pre-existing SHA256 source/evidence hashes; no suppression; no confirmed credential finding"
+    },
+    "limitations": [
+      "No new GitHub CI execution, commit, push, image pull/build, container ingestion or cloud operation.",
+      "Historical source watches differ on Linux including checkout line endings, lowercase infrastructure path and Windows provider-cache artifacts; acceptance not restored.",
+      "Release source-object validation fails on lowercase infra path; missing published workload digest intentionally blocks deployability.",
+      "Locally built image tag when replay succeeds will not establish immutable-registry replay or complete P2.4.",
+      "No log pipeline or controlled application operation-log handler in container profile; only container stdout/stderr planned for inspection.",
+      "Small controlled synthetic cohort does not prove universal PII prevention, production readiness, P6 coverage or Managed compatibility."
+    ],
+    "gates": {
+      "G2": "pending",
+      "G3": "pending",
+      "G4": "pending",
+      "G5": "pending",
+      "azure_deployment_enabled": false
+    },
+    "raw_receipts": "private Linux runtime only; parent summary contains exact paths; raw output excluded from public evidence",
+    "standalone_lab_validation": {
+      "exit": 0,
+      "tests": 38,
+      "command": "python3.12 -S -m unittest discover -s tests -v",
+      "environment": "copied lab scripts/tests/releases plus required historical CI receipt; no sibling repositories or site packages",
+      "first_attempt": "failed because copied fixture omitted required CI receipt; failed logs retained; corrected fixture passed"
+    }
+  },
+  "standalone_validation": {
+    "exit": 0,
+    "command": "python -S -m unittest discover -s tests -v",
+    "tests": 40,
+    "siblings": false
+  },
+  "historical_pre_review_linux": {
+    "final_run_id": "d3f35910e0074a6db6423c6eac0daf95",
+    "sources": {
+      "ai-observability-lab": {
+        "head": "7723a733b67e1992e3eb7a37e148e85be9321406",
+        "files": {
+          "compose.yaml": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68",
+          "scripts/prove_linux_backend.py": "d5a645426615193472dff5b38c4d978d81a2d035d45e08219dcc4677fd30a66e"
+        },
+        "acceptance": "working tree bytes; no new CI or publication implied"
+      },
+      "ai-agent-workloads": {
+        "head": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+        "files": {
+          "Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+          "compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
+          "requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+          "src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+          "src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b"
+        },
+        "acceptance": "working tree bytes; no new CI or publication implied"
+      },
+      "ai-observability-config": {
+        "head": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+        "files": {
+          "local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+          "local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685",
+          "local/native/jaeger.yaml": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea"
+        },
+        "acceptance": "working tree bytes; no new CI or publication implied"
+      }
+    },
+    "runtime_results": {
+      "host": {
+        "system": "Linux",
+        "architecture": "x86_64",
+        "python": "3.12.16"
+      },
+      "docker": {
+        "server": "29.9.3",
+        "platform": "x86_64",
+        "compose": "5.7.0"
+      },
+      "containers": [
+        {
+          "service": "agent",
+          "image_id": "sha256:f485c37b71419cbcd4b29bde0f543deb1090b683336ddd193bec1ef1a200c700",
+          "platform": "linux/amd64",
+          "memory_bytes": 268435456,
+          "nano_cpus": 1000000000,
+          "user": "10001:10001"
+        },
+        {
+          "service": "collector",
+          "image_id": "sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b",
+          "platform": "linux/amd64",
+          "memory_bytes": 201326592,
+          "nano_cpus": 1000000000,
+          "user": "0:0"
+        },
+        {
+          "service": "jaeger",
+          "image_id": "sha256:836b967b5abcf1f7758066aa6b348619267a2f1459f72d472840570f9bd88a17",
+          "platform": "linux/amd64",
+          "memory_bytes": 268435456,
+          "nano_cpus": 1000000000,
+          "user": "0:0"
+        },
+        {
+          "service": "retrieval",
+          "image_id": "sha256:f485c37b71419cbcd4b29bde0f543deb1090b683336ddd193bec1ef1a200c700",
+          "platform": "linux/amd64",
+          "memory_bytes": 268435456,
+          "nano_cpus": 1000000000,
+          "user": "10001:10001"
+        }
+      ],
+      "healthy": {
+        "span_count": 7,
+        "names": [
+          "retrieval.search",
+          "POST /v1/retrieve",
+          "model.plan",
+          "tool.retrieve",
+          "model.generate",
+          "agent.invoke",
+          "POST /v1/ask"
+        ],
+        "exact_parents_services_identity_status": "passed",
+        "external_w3c": false,
+        "outcome": "success",
+        "tool_calls": 1,
+        "seconds": 0.0205
+      },
+      "fault": {
+        "span_count": 7,
+        "names": [
+          "POST /v1/retrieve",
+          "POST /v1/retrieve",
+          "model.plan",
+          "tool.retrieve",
+          "tool.retrieve",
+          "agent.invoke",
+          "POST /v1/ask"
+        ],
+        "exact_parents_services_identity_status": "passed",
+        "external_w3c": false,
+        "outcome": "tool_error",
+        "tool_calls": 2,
+        "seconds": 0.0363
+      },
+      "w3c": {
+        "span_count": 7,
+        "names": [
+          "model.plan",
+          "tool.retrieve",
+          "model.generate",
+          "agent.invoke",
+          "POST /v1/ask",
+          "retrieval.search",
+          "POST /v1/retrieve"
+        ],
+        "exact_parents_services_identity_status": "passed",
+        "external_w3c": true,
+        "outcome": "success",
+        "tool_calls": 1,
+        "seconds": 0.0153
+      },
+      "privacy": {
+        "surfaces": [
+          "Collector internal",
+          "Jaeger queries",
+          "Prometheus",
+          "container logs",
+          "metrics",
+          "traces"
+        ],
+        "canary_values_found": 0,
+        "allowlists": "passed",
+        "log_pipeline_exported": false,
+        "controlled_operation_log": "not configured; container stdout/stderr inspected"
+      },
+      "ephemeral_restart": "old trace absent",
+      "cleanup": "owned containers/networks/volumes absent; ports released"
+    },
+    "unit_tests": {
+      "passed": 40,
+      "linux_checks": 12,
+      "stdlib_only": true
+    },
+    "local_validation": [
+      {
+        "name": "lab-lint",
+        "command": [
+          "<private-runtime>/venv/bin/python",
+          "-m",
+          "ruff",
+          "check",
+          "--select",
+          "E4,E7,E9,F,I,UP",
+          "scripts",
+          "tests"
+        ],
+        "exit": 0,
+        "seconds": 0.021
+      },
+      {
+        "name": "lab-format",
+        "command": [
+          "<private-runtime>/venv/bin/python",
+          "-m",
+          "ruff",
+          "format",
+          "--check",
+          "scripts",
+          "tests"
+        ],
+        "exit": 0,
+        "seconds": 0.025
+      },
+      {
+        "name": "lab-tests",
+        "command": [
+          "<private-runtime>/venv/bin/python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-v"
+        ],
+        "exit": 0,
+        "seconds": 0.088
+      },
+      {
+        "name": "config-source",
+        "command": [
+          "<private-runtime>/venv/bin/python",
+          "scripts/check_config.py"
+        ],
+        "exit": 0,
+        "seconds": 0.029
+      },
+      {
+        "name": "config-compose",
+        "command": [
+          "docker",
+          "--context",
+          "rootless",
+          "compose",
+          "-f",
+          "local/compose.yaml",
+          "config",
+          "--quiet"
+        ],
+        "exit": 0,
+        "seconds": 0.051
+      },
+      {
+        "name": "lab-compose",
+        "command": [
+          "docker",
+          "--context",
+          "rootless",
+          "compose",
+          "config",
+          "--quiet"
+        ],
+        "exit": 0,
+        "seconds": 0.058
+      },
+      {
+        "name": "security",
+        "command": [
+          "<private-runtime>/tools/gitleaks",
+          "dir",
+          "--no-banner",
+          "--redact",
+          "--report-format",
+          "json",
+          "--report-path",
+          "<private-runtime>/security-continuation.json",
+          "<lab>"
+        ],
+        "exit": 1,
+        "seconds": 0.364
+      },
+      {
+        "name": "whitespace",
+        "command": [
+          "git",
+          "diff",
+          "--check"
+        ],
+        "exit": 0,
+        "seconds": 0.006
+      }
+    ]
+  },
+  "review_fixes": {
+    "initial_verdict": "applies to initial frozen snapshot; existing HTTP normalization and strict numeric exemplar fixes preserved",
+    "red": {
+      "tests": 7,
+      "failures": 12,
+      "errors": 3,
+      "receipt": "private review-fixes/red.log"
+    },
+    "green": {
+      "tests": 7,
+      "receipt": "private review-fixes/green.log"
+    },
+    "additional_red_green": [
+      "orchestration-red.log / orchestration-green.log (2 missing helpers then 9 passing checks)",
+      "status-extra-red.log / status-extra-green.log (one HTTP bypass failure then 10 passing checks)",
+      "empty-envelope-red.log / empty-envelope-green.log (empty envelope alongside valid metrics: 1 failure then 11 review checks pass)"
+    ],
+    "scope": "Seven requested findings; no sibling source or application/config/image changes",
+    "freeze": "stop producers; fetch Prometheus/internal metrics; bounded complete export poll; stop Collector; final logs and file scan",
+    "cleanup": "label-scoped verification after failed down; bounded retries; persistent failure overrides passed report",
+    "timeout": "owned session/process group TERM/KILL with diagnostics; direct child reaped",
+    "cancellation": "SIGTERM/Ctrl-C reach final owned cleanup; SIGKILL/host failure cannot be caught",
+    "run_source_sha256": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf"
+  },
+  "parent_infrastructure_boundary": {
+    "commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+    "publication": "parent receipt; unchanged source feature branch",
+    "local_validation": "parent receipt: read-only/backend-disabled checks passed",
+    "branch_ci_run": "42433363253",
+    "branch_ci_status": "passed per parent-provided evidence; not a new lab/main CI run",
+    "deployment_workflow": false
+  }
+}

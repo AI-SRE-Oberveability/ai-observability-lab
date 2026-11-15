@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T19:55:06+04:00",
+  "status": "passed",
+  "source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
+  "canonical_lab_clean_at_verification": true,
+  "tested_source_hashes_match_clean_git_checkout": true,
+  "all_seven_checkout_worktrees_clean": true,
+  "all_seven_origins_verified": true,
+  "tracked_statuses_legacy": {
+    "done": 17,
+    "needs_revalidation": 2,
+    "blocked": 1,
+    "in_progress": 2,
+    "waiting_for_decision": 3,
+    "draft": 2,
+    "planned": 21
+  },
+  "tracked_statuses_canonical": {
+    "done": 17,
+    "needs_revalidation": 2,
+    "blocked": 1,
+    "in_progress": 2,
+    "waiting_for_decision": 3,
+    "draft": 2,
+    "planned": 21
+  },
+  "status_differences": [],
+  "local_overlay_preserved_in_private_stash": true,
+  "azure_deployment_enabled": false,
+  "limitations": [
+    "Clean checkout verifies the exact tested source bytes; it does not repeat backend traffic or accept historical stale proof."
+  ]
+}

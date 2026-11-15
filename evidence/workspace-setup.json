@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-15T18:49:05+04:00",
+  "workspace_name": "AI-PLATFORM-LAB",
+  "workspace_parent_git_repository": false,
+  "repositories": [
+    {
+      "role": "infra",
+      "folder": "ai-platform-infra",
+      "repository": "AI-SRE-Oberveability/AI-Observability-Infra",
+      "repository_id": 1437529000,
+      "origin": "https://github.com/AI-SRE-Oberveability/AI-Observability-Infra.git",
+      "head_at_setup": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+      "empty": false
+    },
+    {
+      "role": "config",
+      "folder": "ai-platform-config",
+      "repository": "AI-SRE-Oberveability/ai-platform-config",
+      "repository_id": 1458904336,
+      "origin": "https://github.com/AI-SRE-Oberveability/ai-platform-config.git",
+      "head_at_setup": null,
+      "empty": true
+    },
+    {
+      "role": "charts",
+      "folder": "ai-platform-charts",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "repository_id": 1437530253,
+      "origin": "https://github.com/AI-SRE-Oberveability/ai-observability-config.git",
+      "head_at_setup": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+      "empty": false
+    },
+    {
+      "role": "gitops",
+      "folder": "ai-platform-gitops",
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "repository_id": 1458904423,
+      "origin": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops.git",
+      "head_at_setup": null,
+      "empty": true
+    },
+    {
+      "role": "pipelines",
+      "folder": "ai-platform-pipelines",
+      "repository": "AI-SRE-Oberveability/ai-platform-pipelines",
+      "repository_id": 1458904499,
+      "origin": "https://github.com/AI-SRE-Oberveability/ai-platform-pipelines.git",
+      "head_at_setup": null,
+      "empty": true
+    },
+    {
+      "role": "workloads",
+      "folder": "ai-agent-workloads",
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "repository_id": 1437529826,
+      "origin": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads.git",
+      "head_at_setup": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+      "empty": false
+    },
+    {
+      "role": "lab",
+      "folder": "ai-platform-lab",
+      "repository": "AI-SRE-Oberveability/ai-observability-lab",
+      "repository_id": 1437531335,
+      "origin": "https://github.com/AI-SRE-Oberveability/ai-observability-lab.git",
+      "head_at_setup": "9fc2224161e4e080f24dfbc97c37c5fb7eb78904",
+      "empty": false
+    }
+  ],
+  "new_public_repositories": {
+    "ai-platform-config": {
+      "id": 1458904336,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-platform-config",
+      "visibility": "public",
+      "created_at": "2026-11-15T14:48:25Z"
+    },
+    "ai-platform-gitops": {
+      "id": 1458904423,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops",
+      "visibility": "public",
+      "created_at": "2026-11-15T14:48:30Z"
+    },
+    "ai-platform-pipelines": {
+      "id": 1458904499,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-platform-pipelines",
+      "visibility": "public",
+      "created_at": "2026-11-15T14:48:35Z"
+    }
+  },
+  "all_clones_clean_at_setup": true,
+  "existing_repo_ids_and_names_preserved": true,
+  "new_repositories_empty_no_workflows": true,
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false,
+  "global_git_changes": false,
+  "project_mapping_cutover": false,
+  "limitations": [
+    "Canonical clone names are local; three existing GitHub renames remain P2.15 work.",
+    "Three new repositories are empty; content and CI acceptance remain P2.13/P2.14."
+  ]
+}

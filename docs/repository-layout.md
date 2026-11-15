@@ -1,6 +1,6 @@
 # Workspace and GitHub delivery plan
 
-Selected target, 15 November 2026: the user chose seven repositories. [Final names, file mapping and ordered migration](repository-migration-plan.md) are now authoritative for the target. The existing four-repository layout below remains the actual workspace until cutover; no repository creation, rename or folder move has occurred.
+Current P2.12 status, 15 November 2026: seven public repositories exist; the three additions are empty. A parallel `AI-PLATFORM-LAB` workspace uses matching canonical folder names while the four existing GitHub names/IDs/history remain unchanged until P2.15. [Commands and actual path/identity map](workspace-compatibility.md). [Final names, file mapping and ordered migration](repository-migration-plan.md) remain authoritative for later steps. The four-repository layout below is the preserved rollback workspace and historical publication baseline.
 
 Personal GitHub administrator: **javedkumail**. Current repository owner: **AI-SRE-Oberveability**. On 28 October 2026 the user reported creation with public visibility. Read-only GitHub API checks verified all four repositories are **public and empty**. This replaces the initial private-visibility recommendation as the recorded actual state. Terraform remains the confirmed Azure IaC choice. Reviewed source has now been published to all four destinations; initial commit receipts are in ../evidence/publication-receipts.json.
 

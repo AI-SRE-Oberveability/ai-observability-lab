@@ -10,6 +10,8 @@ import subprocess
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit
 
+from workspace import Workspace
+
 LAB = Path(__file__).resolve().parents[1]
 BASE = LAB.parent
 DEFAULT = LAB / "releases/local-v0.1.0-source-candidate.json"
@@ -191,10 +193,10 @@ def validate(manifest, *, require_deployable=False):
 
 
 def read_source(manifest, role, name, base):
-    folder = REPOSITORIES[role][0]
+    folder = Workspace(base).repo(role)
     commit = manifest["repositories"][role]["commit"]
     result = subprocess.run(
-        ["git", "-C", str(base / folder), "show", commit + ":" + name],
+        ["git", "-C", str(folder), "show", commit + ":" + name],
         capture_output=True,
     )
     require(

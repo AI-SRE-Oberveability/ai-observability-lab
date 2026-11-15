@@ -32,21 +32,38 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/initial-inventory.md": "a9fb6eff80e5077118841124cc22eb8daacf063da19687e780b0accaa839bd77",
         "ai-observability-lab/evidence/publication-planning-revalidation.md": "9ac90a7998602ce0cfaefafde45ee5cee9d830752372e531debc3c07fa0956dd"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "0030505fc91cedda42df6f2396d58512ef2da1c70aa4f1d3ebf4d39366ce2ccd",
+        "source_hashes": {
+          "ai-observability-lab/evidence/initial-inventory.md": "d1508d4b1d6afc55d214ba5fe626f29720482dcfc99ec4004e21a16839bb2754"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/initial-inventory.md": "d1508d4b1d6afc55d214ba5fe626f29720482dcfc99ec4004e21a16839bb2754",
+          "ai-observability-lab/evidence/publication-planning-revalidation.md": "bf6123999cbf697ea3b980259962ded72aea2b395d212a1071a7d7d531d47118"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P0.2": {
       "status": "done",
-      "note": "Approved PR #26 merged; immutable four-repo rollback baseline verified and PR #25 reviewed with two reproduced corrections; publication review clarified GitHub authentication versus excluded credential-store contents",
-      "at": "2026-11-15T18:25:47+04:00",
+      "note": "Final HLD 0.25 and tracker choices/gaps accurately state completed local P2.12 acceptance, clean canonical equivalence, passing exact-source CI and remaining PR35 review/P2.13–P2.16 work.",
+      "at": "2026-11-15T19:58:06+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/pr26-merge.json",
-        "ai-observability-lab/evidence/migration-baseline-validation.json"
+        "ai-observability-lab/evidence/workspace-setup.json",
+        "ai-observability-lab/evidence/migration-path-compatibility.json",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json"
       ],
+      "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "3eb9bff35f987efbff315fda0b23a3610825a4a41a798cd5221a9b0f2e86f6da",
-        "ai-observability-lab/HLD.md": "0ec9553b2046c8b2eee04ccc86176f6f9796902578915f6504278c692b7e7e98",
-        "ai-observability-lab/docs/engineering-standards.md": "444ae1ca7a704f00dfcab19afd58cd4489413c02318b6473ec4eefd8c0ff3b5c",
-        "ai-observability-lab/docs/repository-layout.md": "a37d7f64843ec717f709cf9bc4c3c3c8e863c3f42602ed8bd1ca7fd36f2da401",
+        "ai-observability-lab/POC_PLAN.md": "3aa245472ee6f5f80aec55b2472fc8e51998ba635f92b0beb713e967a108dbce",
+        "ai-observability-lab/HLD.md": "91331d17a9200a77703084f0465d0724c736c003bc91decc59b0f68ff2ba63ec",
+        "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
+        "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
         "ai-observability-lab/docs/architecture.md": "e0c4ab25a2da99ae730ac0bff6fea9de4f584f34ef7438fd5d60a6161cd924f5",
         "ai-observability-lab/docs/architecture/assets/azure/acr.svg": "c134b0a442f203a7eeeb6f99a1f02ed34e51373d7fca59f96c9f125874c9d7d4",
@@ -78,36 +95,52 @@
         "ai-observability-lab/docs/architecture/telemetry.mmd": "1c17f6fcc0fd478a0e34d365286e26d9f2c5873733462bedcac6afec87a800a7",
         "ai-observability-lab/docs/architecture/telemetry.png": "f2894a83d44e9acf05dea4ee5abe712628bd589bfb9950ed43308e6a1f3c79aa",
         "ai-observability-lab/docs/platform-structure-review.md": "eb257bc256c476d06b623a7c8d9686dde301d9b0c2094f525bea9c7e7572a077",
-        "ai-observability-lab/docs/repository-migration-plan.md": "e1bfcf829c17d41728fc352c2aefb73c2ee5017647c5785b652cacba5a56060a",
+        "ai-observability-lab/docs/repository-migration-plan.md": "216c06f781a6b8e92d8250b15b683374e1408eef89336f2f634599659273f9c2",
         "ai-observability-lab/docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
-        "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4"
+        "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
+        "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/pr26-merge.json": "e17e0fef6e6c083ab403c21634d03bcfbcf61078137fbf9169d6ce63962eff64",
-        "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18"
+        "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4",
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "0d11066b74147b05028fad15072fe794a99d389ac36bf6663f7b70935aaad560",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json": "bb3a1924e9348a1c5d4c482ca22d83ad06d297cd011988784ba3ca1595fd9b53",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "dfc94d0a10e80c2eeeb2c940d5a29e0bca8d7324dc622c43f5af6eddc90c8180",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json": "0c4d3a1570922f61bdd0fc621ce6224bf8768b6582aa0925edf420ee1cec6211"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "48-task graph and 28 passing lab tests retained; baseline/report hashes recaptured after publication wording clarification, with no runtime or workflow change",
-      "at": "2026-11-15T18:25:50+04:00",
+      "note": "Final 68-test compatibility suite validates raw-proof-preserving LF envelopes, generated provider-cache exclusion, semantic/evidence tamper rejection and safe path/Project behavior.",
+      "at": "2026-11-15T19:54:08+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/migration-tracking-validation.json"
+        "ai-observability-lab/evidence/migration-path-compatibility.json",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json"
       ],
+      "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
+        "ai-observability-lab/scripts/poc_tracker.py": "14242d430deb2fe3f7f4aad36741a0566b958bc128a5471c9a2e8d9c7902efbb",
+        "ai-observability-lab/tests/lab_fixtures.py": "8ac9227ee9ca9362c242bd8109cad705438df28a9ab11d35b7bc5fe0ac1a152a",
+        "ai-observability-lab/tests/test_linux_proof.py": "9e9ab5d4f7808a9951b01c11568f3f39d997a7aa44b30a0bda1d800aea282a2c",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
-        "ai-observability-lab/tests/test_release.py": "8f1a5dcb5ec846fa9ccd94142c87eafad1c516b0df29a64fe66d5ade61be05ef",
-        "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "ca36b037f08cd7315f04fe52520eb94391e26a364a5d38381761756752ddffab",
-        "ai-observability-lab/TRACKER_GUIDE.md": "03668a4a4cd5bd17a59a7048877a26dfd8a8c9e935e40ea7b2381869572a2424",
-        "ai-observability-lab/AGENTS.md": "468cd7ee8ec0f0de59dce2df91379c976748e7cc9e643cc1a87fc8f58847763a",
-        "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
+        "ai-observability-lab/tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
+        "ai-observability-lab/tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
+        "ai-observability-lab/tests/test_tracker.py": "32585578cca1effc64c81f4a2aa52c3741cde3304095ca74b481d0d0215950db",
+        "ai-observability-lab/tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
+        "ai-observability-lab/tracking/plan.json": "631c757dfa1ae34bc1dbe96557016d08fadca9e188d188116e35d317f151334f",
+        "ai-observability-lab/TRACKER_GUIDE.md": "653c32f56715f955717cae55c75d34aef9a2b42444e321056699214aac554ddb",
+        "ai-observability-lab/AGENTS.md": "add0ca8bfb7fff426c10930d147bea63ca004400c2d4c4d400914340260c1452",
+        "ai-observability-lab/scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
+        "ai-observability-lab/scripts/workspace.py": "5ba453e873803a8cb049111cafda1b12bdcfb073fe68b85bc03cdad2a9c6174b",
+        "ai-observability-lab/tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/migration-tracking-validation.json": "0fa2ca3cc70ce7ad8eb9ae12dd38f367c67fecd9c70a4a2f0b320e799ae5b8db"
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "0d11066b74147b05028fad15072fe794a99d389ac36bf6663f7b70935aaad560",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "dfc94d0a10e80c2eeeb2c940d5a29e0bca8d7324dc622c43f5af6eddc90c8180",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432"
       }
     },
     "P2.2": {
@@ -124,6 +157,17 @@
         "ai-observability-lab/evidence/publication-review.md": "d21a42c966cb9c41b8d716ee038a9b34c09cde18b6fb4d2961e71e8a9635ab8d",
         "ai-observability-lab/evidence/publication-receipts.json": "87359cbc90ea4e211d1026fa4162079840efbfc51499e4e08f7d5c8fd963f5f6",
         "ai-observability-lab/evidence/publication-completion.md": "537d96a579a9f88e12b3f859c6755cfcd1a21628cacee850a5693ebe7c951bd9"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "63935b211e1de9f4764d26e771f499c9fca1cc48484475381e1d02d385e0a54f",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/publication-review.md": "d21a42c966cb9c41b8d716ee038a9b34c09cde18b6fb4d2961e71e8a9635ab8d",
+          "ai-observability-lab/evidence/publication-receipts.json": "cb7d2226705ce08f82d578ab71d19078a983720c70fb624b4e92e250d861384c",
+          "ai-observability-lab/evidence/publication-completion.md": "41ba7d3837d605b367420cc7b4ff7326c7790a8d701ace25b8ca0ecbc1fe6e0c"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.5": {
@@ -136,6 +180,15 @@
       "source_hashes": {},
       "evidence_hashes": {
         "ai-observability-lab/evidence/organization-created.json": "28ce7d56117cafcd4da2d5eeb6f1e505425fea8bd4f024453323ba1d8840a6f8"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "26c598603cefe88227fc7690f0ad9afeb4fd1214e84a1c4acfbc6b9a7370bba6",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/organization-created.json": "b04ea6d14f865b76b488acf42ae9bd980db213b55a99fddeeb4814a37219538a"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.6": {
@@ -148,6 +201,15 @@
       "source_hashes": {},
       "evidence_hashes": {
         "ai-observability-lab/evidence/repository-transfer-receipts.json": "64f0de255de777931edb2247b90ba31d02f001fecac3b966e0231597dc61c723"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "6bbb8e5e65eed4e9d49d7256b337bba75229cc03d6c72bd8747be86190d4f592",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/repository-transfer-receipts.json": "aa7d7dbe461f17163f5215c6467b2d5890c421d36340e096253ca2961a458ae1"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.7": {
@@ -160,6 +222,15 @@
       "source_hashes": {},
       "evidence_hashes": {
         "ai-observability-lab/evidence/shared-project-completion.json": "3a0e45c5e8d29fe31f88def56f45c2f4316d542a213c21fa73f19f7bd55d3d40"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "ac0b71ed3b75cc4548a3a2f05a9d019bb405bf9464543b8ce8cfa7719b147864",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/shared-project-completion.json": "750a14c06109efd561cdd02b75f2d254e715a82ccd6bb31999a8924bd1a0aef7"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.8": {
@@ -184,6 +255,27 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "9825acd3a0bd4d456e38c27008636e250212af21bb5e63ee1bb14d8aa924c2a0",
+        "source_hashes": {
+          "ai-observability-infra/.github/workflows/ci.yaml": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e",
+          "ai-agent-workloads/.github/workflows/ci.yaml": "3cf80dc2bb3224bd381c7202622b3ea8b872c4065ae1ba7750a20853cf23694e",
+          "ai-observability-config/.github/workflows/ci.yaml": "8c1ec08d45eaf74bcdaa6e9beb7838510127ea8e40fa2a383a3ffc61ca6bad9c",
+          "ai-observability-lab/.github/workflows/ci.yaml": "b91013fff52a7df7448075337166c25b296018eefa83f4274e7e53c32b62d834",
+          "ai-agent-workloads/requirements-dev.lock.txt": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506",
+          "ai-agent-workloads/requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "ai-agent-workloads/Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+          "ai-observability-config/requirements-ci.txt": "ffb1c8d1dfed561f430bff92499d46b65fe791c45e4492dcaf4798ff77100d7b",
+          "ai-observability-config/scripts/check_config.py": "de6ec28b500f3acfa4253c371305d0cf49c3ab9c6929bd20d6903408ee14d9fa",
+          "ai-observability-lab/requirements-ci.txt": "1c80175b2026277fbef779eb50099e1477c5437146b2aa5eaf7d90e5e7e5ee3e",
+          "ai-observability-infra/requirements-ci.txt": "1da72b5f1985267346a9dfeec8358f909b78637a70119b4e08bb4872a31abf22"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.9": {
@@ -211,6 +303,30 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
         "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "1fdb4179104cb6dbdeb1eaed2ebf538c29c0533b8319c892fd440cc4e5693f00",
+        "source_hashes": {
+          "ai-observability-infra/.github/workflows/ci.yaml": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e",
+          "ai-observability-infra/.github/workflows/terraform-deploy.yaml": "27fd0dba8867b3ff42fbdac32c52cff93fc4cebf3d6948f4b2db5594a97d9fbf",
+          "ai-observability-infra/foundation/.terraform.lock.hcl": "0eb93cf29237e7e73aaec364317b91dda3023338cefdb329214360f11f05eff8",
+          "ai-observability-infra/foundation/main.tf": "9284f699d625d55da0e2b79360d4712c68f3c74c21c94ce1299f9a35fecb0f4d",
+          "ai-observability-infra/foundation/tests/guardrails.tftest.hcl": "c76ebb913a42bc9a4d9735b57324eaf8c96467ef3290cd24f088851575783382",
+          "ai-observability-infra/foundation/variables.tf": "33943bc7fc9dfe9690ee8ca2fc7a3eea089d2e983cb67b869bc3a71bdfd4ff2d",
+          "ai-observability-infra/foundation/versions.tf": "de5c650badbc8a46697c56c85d9f9f747d943179f3735e51ba3c89e721fa3738",
+          "ai-observability-infra/scripts/deployment_guard.py": "0d29e66646d1f27756976223c96d0b2f8948a7e1e321bec30e3e22baa39df8f3",
+          "ai-observability-infra/scripts/plan_review.py": "d37673417e012c7eaeb5c3456df3cc431028063420d3bff9ab71f99a36a95301",
+          "ai-observability-infra/tests/test_deployment.py": "7104098f5860d85c51afcf210ca08188e51cbd0b734cbb47a1daa415caac1647"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
+          "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02"
+        },
+        "excluded_generated_source_paths": [
+          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/LICENSE.txt",
+          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/terraform-provider-azurerm_v5.11.0_x5.exe"
+        ]
       }
     },
     "P3.2": {
@@ -255,6 +371,32 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-workload-review.md": "b69d5c7a115232e5a6314001149f5b313660dacb3c4b7722f0af12beb7e83a34",
         "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "6eba1ecc6c7afd6b8e29cc48d1e79a2f72acfcc06deaed54775c7fdb9849d5d0",
+        "source_hashes": {
+          "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+          "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+          "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+          "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+          "ai-agent-workloads/src/ai_lab/policies.json": "7078cb59b5ed11a72bfe0642b59082606894752f9a8682f3dbf1826863039817",
+          "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+          "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+          "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+          "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+          "ai-agent-workloads/pyproject.toml": "f410dd8c146832e53de6cde373f1e929992aed30f1e97b678f5c9e54cf470ecf",
+          "ai-agent-workloads/uv.lock": "59f4edafc72d4bfec0d17ba1799345204fe5cd99396481ea5d24ae605ea0fde3",
+          "ai-agent-workloads/requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "ai-agent-workloads/requirements-dev.lock.txt": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506",
+          "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+          "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-workload-review.md": "b69d5c7a115232e5a6314001149f5b313660dacb3c4b7722f0af12beb7e83a34",
+          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.2": {
@@ -270,6 +412,18 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "586072fb677e3c7b511fc686af80a4acd4abb6ed0d2f9e8e96cbbcf001cf0f3c",
+        "source_hashes": {
+          "ai-agent-workloads/contracts/agent.openapi.yaml": "9e873b0ccb667eb429e109f71ac07f058284edcb2916517514dbb6051c36640e",
+          "ai-agent-workloads/contracts/retrieval.openapi.yaml": "03a6b989694beffdd61ba9bbc99f39bf16dda62196de5b6ff6a8c318b749bd5e"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.3": {
@@ -293,6 +447,26 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "fb844cf51f50e03941b229320ae6ff0d78b6d2a4dad282f2dc2683ef930f7199",
+        "source_hashes": {
+          "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+          "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+          "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+          "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+          "ai-agent-workloads/src/ai_lab/policies.json": "7078cb59b5ed11a72bfe0642b59082606894752f9a8682f3dbf1826863039817",
+          "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+          "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+          "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+          "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+          "ai-agent-workloads/evaluations/policy-v1.json": "d9b2d5bba3cdd9c6a52af5bacfd6dd8f19c6abf1d235eb2099b0b82234d7bb5a"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.4": {
@@ -309,6 +483,19 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "342b1c12ceb9979d9402a5c82aa6da27307972bd6375ed1e7e410262e0f50590",
+        "source_hashes": {
+          "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+          "ai-observability-config/telemetry-contract.md": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f",
+          "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P1.5": {
@@ -390,6 +577,25 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
         "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "e3a24f2816da86be157a4eede68add996c42b0c646dc43d7589f65d149c54e68",
+        "source_hashes": {
+          "ai-agent-workloads/.github/workflow-drafts/ci.yaml": "8a2f1b41480658d573691af38105120056ff93fa6986e486296b1bdc0b9cff45",
+          "ai-agent-workloads/.github/workflows/ci.yaml": "3cf80dc2bb3224bd381c7202622b3ea8b872c4065ae1ba7750a20853cf23694e",
+          "ai-agent-workloads/pyproject.toml": "f410dd8c146832e53de6cde373f1e929992aed30f1e97b678f5c9e54cf470ecf",
+          "ai-agent-workloads/uv.lock": "59f4edafc72d4bfec0d17ba1799345204fe5cd99396481ea5d24ae605ea0fde3",
+          "ai-agent-workloads/requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "ai-agent-workloads/Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+          "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+          "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
+          "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+        },
+        "excluded_generated_source_paths": []
       }
     },
     "P2.4": {
@@ -414,19 +620,22 @@
     },
     "P2.10": {
       "status": "done",
-      "note": "Finalized seven canonical names, preserved-history mapping, staged migration acceptance/rollback and post-setup Azure readiness checkpoint; no repo creation, rename or migration performed",
-      "at": "2026-11-15T17:49:39+04:00",
+      "note": "Approved seven names/ownership/ordered migration retained; planning snapshot explicitly distinguished from P2.12 execution update. No rename/Project cutover or Azure enablement.",
+      "at": "2026-11-15T19:37:37+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/seven-repository-plan.json"
+        "ai-observability-lab/evidence/seven-repository-plan.json",
+        "ai-observability-lab/evidence/workspace-setup.json"
       ],
+      "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/docs/repository-migration-plan.md": "e1bfcf829c17d41728fc352c2aefb73c2ee5017647c5785b652cacba5a56060a",
+        "ai-observability-lab/docs/repository-migration-plan.md": "216c06f781a6b8e92d8250b15b683374e1408eef89336f2f634599659273f9c2",
         "ai-observability-lab/docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/seven-repository-plan.json": "48c902a791a7453975e25b3ce1372d3a1e49f6bb02dab59071169b3f88f56a13"
+        "ai-observability-lab/evidence/seven-repository-plan.json": "48c902a791a7453975e25b3ce1372d3a1e49f6bb02dab59071169b3f88f56a13",
+        "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4"
       }
     },
     "P2.11": {
@@ -445,19 +654,82 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18",
         "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "2095485211007197fe680bdd94c18424da55efb2c0a8285bd66d9553ec1df870",
+        "source_hashes": {
+          "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
+          "ai-observability-lab/evidence/migration-baseline.json": "7d99b281b018744976f329c4c633e8deefb1f8ab61b41a2ba1e3f8f8a674c69a",
+          "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18",
+          "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+        },
+        "excluded_generated_source_paths": []
+      }
+    },
+    "P2.12": {
+      "status": "done",
+      "note": "Completed local/source acceptance: seven clean canonical clones and verified IDs, three empty read-only/disabled repos; PR25 R1/R2 fixed; 68-test suites, both Compose renders, historical object reads and exact-source CI pass. Tracker statuses match across layouts, original receipts/audits preserved and stale runtime proofs retained. PR35 review pending; Azure false and GitLab/global Git intact.",
+      "at": "2026-11-15T19:58:11+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/workspace-setup.json",
+        "ai-observability-lab/evidence/migration-path-compatibility.json",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json"
+      ],
+      "hash_policy": "utf8-lf-v1",
+      "source_hashes": {
+        "ai-observability-lab/docs/repository-migration-plan.md": "216c06f781a6b8e92d8250b15b683374e1408eef89336f2f634599659273f9c2",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
+        "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
+        "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
+        "ai-observability-lab/scripts/workspace.py": "5ba453e873803a8cb049111cafda1b12bdcfb073fe68b85bc03cdad2a9c6174b",
+        "ai-observability-lab/tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca",
+        "ai-observability-lab/tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
+        "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f",
+        "ai-observability-lab/scripts/poc_tracker.py": "14242d430deb2fe3f7f4aad36741a0566b958bc128a5471c9a2e8d9c7902efbb",
+        "ai-observability-lab/scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
+        "ai-observability-lab/scripts/install_local_backends.py": "8e389e89d7b28fcf2d70fc04720ed93d79307a572a8395b4ad7015ac2dc92495",
+        "ai-observability-lab/scripts/prove_local_backend.py": "aa57b85d70d68fa763f6a34e0c42f46695ce08cb9f31531231a9128f9102bfb9",
+        "ai-observability-lab/scripts/prove_linux_backend.py": "f1d3c403677097abf7ad9c5b34f1d23533c5ee982ca19c4acc754c0f0388eb53",
+        "ai-observability-lab/scripts/validate_release.py": "5804eb097b314cd3fcdaa649f89639e741882b1ac53607ef9cd2309ba1a30f40",
+        "ai-observability-lab/tests/lab_fixtures.py": "8ac9227ee9ca9362c242bd8109cad705438df28a9ab11d35b7bc5fe0ac1a152a",
+        "ai-observability-lab/tests/test_linux_proof.py": "9e9ab5d4f7808a9951b01c11568f3f39d997a7aa44b30a0bda1d800aea282a2c",
+        "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
+        "ai-observability-lab/tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
+        "ai-observability-lab/tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
+        "ai-observability-lab/tests/test_tracker.py": "32585578cca1effc64c81f4a2aa52c3741cde3304095ca74b481d0d0215950db",
+        "ai-observability-lab/AI-PLATFORM-LAB.code-workspace": "a38a68e3cff6c291f198e81e267d409d028f7a22ffe7e8f74b8eba7ce30e6c6e",
+        "ai-observability-lab/personal-ai-observability.code-workspace": "d0359fbd599502c1b945c15073d819d9cbcaca0f16360f2882c997793be14203",
+        "ai-agent-workloads/compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
+        "ai-observability-config/local/compose.yaml": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce",
+        "ai-observability-lab/compose.yaml": "50c833baf447e11dd8e48f5f0821e8a4f999293bca9d7e0bf8a0520337c26a68"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4",
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "0d11066b74147b05028fad15072fe794a99d389ac36bf6663f7b70935aaad560",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json": "bb3a1924e9348a1c5d4c482ca22d83ad06d297cd011988784ba3ca1595fd9b53",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "dfc94d0a10e80c2eeeb2c940d5a29e0bca8d7324dc622c43f5af6eddc90c8180",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json": "0c4d3a1570922f61bdd0fc621ce6224bf8768b6582aa0925edf420ee1cec6211"
       }
     }
   },
   "known_gaps": [
-    "Seven-repo migration started: PR #26 merged; baseline and PR #25 review complete. Repository creation, path compatibility, renames and cutover remain pending.",
-    "PR #25 has 51 passing Linux stdlib tests and two reproduced integration findings; correct runtime containment and platform-specific fixtures, reconcile six state/HLD conflicts, and preserve profile-specific evidence before integration.",
+    "P2.12 locally accepted in PR35: seven canonical clones and three new empty repos verified. P2.13 source/ownership, P2.14 seven-repo CI, P2.15 GitHub renames/Project cutover and P2.16 fresh canonical runtime/source baseline remain.",
+    "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
     "Managed entitlement/compatibility and paid/live model scope remain separate G4/G5 prerequisites.",
     "No Azure/bootstrap/cluster action occurs during repository planning and migration; GitLab credentials and global Git settings are preserved."
   ],
   "confirmed_choices": [
-    "Seven-repository target selected under AI-SRE-Oberveability; four public repositories currently exist. Three history-preserving renames and three new public repositories are planned; GitHub Project stays private.",
+    "Seven public repositories under AI-SRE-Oberveability: four preserve existing source/history, three additions are empty. Canonical folders verified; three identity-preserving GitHub renames remain P2.15 work. GitHub Project stays private.",
     "Terraform for Azure infrastructure; Helm/Kubernetes manifests for application and shared observability deployments.",
     "Preserve GitLab credentials/helpers/remotes; separate GitHub settings or optional WSL.",
     "Refresh tracker after each work step; always report HLD/current/change/next/remaining.",
@@ -465,9 +737,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "PR #26 merged; four rollback bundles restored and verified; PR #25 has 51 passing Linux tests and two integration findings. Next P2.12 path compatibility. Four live repos; AKS/APIM unchanged; Azure disabled; GitLab intact.",
+    "current": "Seven canonical clones verified clean alongside preserved legacy workspace; three new repos empty and four original GitHub names unchanged. PR35 exact-source CI and local compatibility pass; Terraform/AKS/APIM unchanged, Azure false, GitLab credentials preserved; fresh backend replay remains pending.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.11: Four verified mirror-restorable rollback bundles and exact PR #25 review complete; two corrections and six integration conflicts recorded, with credentials excluded from baseline artifacts and PR #25 unmerged"
+    "last_change": "P2.12: Completed local/source acceptance: seven clean canonical clones and verified IDs, three empty read-only/disabled repos; PR25 R1/R2 fixed; 68-test suites, both Compose renders, historical object reads and exact-source CI pass. Tracker statuses match across layouts, original receipts/audits preserved and stale runtime proofs retained. PR35 review pending; Azure false and GitLab/global Git intact."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -496,8 +768,8 @@
       "ai-observability-config",
       "ai-observability-lab"
     ],
-    "project_created": false,
-    "status": "all_transfers_verified_browser_reconnection_for_project_pending",
+    "project_created": true,
+    "status": "original_transfers_and_private_shared_project_verified",
     "organization_id": 349511736,
     "personal_owner": "javedkumail",
     "membership_role": "admin",
@@ -509,9 +781,11 @@
     "user_instruction": "Use the proposed seven-repo structure. Finalize repo names and step-by-step migration plan first; keep AI agents/APIM, Azure disabled and GitLab credentials intact.",
     "names_source": "tracking/repository-targets.json",
     "migration_started": true,
-    "current_live_repository_count": 4,
+    "current_live_repository_count": 7,
     "target_repository_count": 7,
-    "execution_authorization": "User approved plan, merging PR #26 and starting baseline preservation / PR #25 review on 15 November 2026; no Azure deployment authorization"
+    "execution_authorization": "User authorized merging PR34, starting P2.12, correcting PR25 R1/R2 and preparing/testing seven isolated clones; Azure remains disabled",
+    "source_populated_repository_count": 4,
+    "new_empty_repository_count": 3
   },
   "azure_readiness": {
     "owner_subscription_reported_by_user": true,
@@ -525,10 +799,21 @@
     "id": "20261115T141227Z",
     "status": "preserved_and_independently_restored",
     "repositories": 4,
-    "pr25_review": "two_corrections_before_integration",
+    "pr25_review": "R1_R2_corrected_forward_port_validated_in_both_layouts",
     "pr25_merged": false,
     "evidence": "evidence/migration-baseline.json",
-    "next": "P2.12",
+    "next": "Review PR35 then P2.13",
+    "azure_deployment_enabled": false
+  },
+  "migration_workspace": {
+    "status": "P2.12_local_acceptance_complete_review_branch",
+    "source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
+    "workspace": "AI-PLATFORM-LAB",
+    "canonical_clones": 7,
+    "new_empty_repositories": 3,
+    "github_rename_cutover": false,
+    "project_link_cutover": false,
+    "fresh_backend_replay": false,
     "azure_deployment_enabled": false
   }
 }

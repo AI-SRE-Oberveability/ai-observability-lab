@@ -1,0 +1,93 @@
+{
+  "at": "2026-11-15T19:52:05+04:00",
+  "policy": "explicit verified checkout compatibility; no fresh runtime evidence",
+  "migrated": {
+    "P0.1": {
+      "original_receipt_sha256": "0030505fc91cedda42df6f2396d58512ef2da1c70aa4f1d3ebf4d39366ce2ccd",
+      "source_files": 1,
+      "evidence_files": 2,
+      "excluded_generated_source_paths": []
+    },
+    "P2.2": {
+      "original_receipt_sha256": "63935b211e1de9f4764d26e771f499c9fca1cc48484475381e1d02d385e0a54f",
+      "source_files": 0,
+      "evidence_files": 3,
+      "excluded_generated_source_paths": []
+    },
+    "P2.5": {
+      "original_receipt_sha256": "26c598603cefe88227fc7690f0ad9afeb4fd1214e84a1c4acfbc6b9a7370bba6",
+      "source_files": 0,
+      "evidence_files": 1,
+      "excluded_generated_source_paths": []
+    },
+    "P2.6": {
+      "original_receipt_sha256": "6bbb8e5e65eed4e9d49d7256b337bba75229cc03d6c72bd8747be86190d4f592",
+      "source_files": 0,
+      "evidence_files": 1,
+      "excluded_generated_source_paths": []
+    },
+    "P2.7": {
+      "original_receipt_sha256": "ac0b71ed3b75cc4548a3a2f05a9d019bb405bf9464543b8ce8cfa7719b147864",
+      "source_files": 0,
+      "evidence_files": 1,
+      "excluded_generated_source_paths": []
+    },
+    "P2.8": {
+      "original_receipt_sha256": "9825acd3a0bd4d456e38c27008636e250212af21bb5e63ee1bb14d8aa924c2a0",
+      "source_files": 11,
+      "evidence_files": 1,
+      "excluded_generated_source_paths": []
+    },
+    "P2.9": {
+      "original_receipt_sha256": "1fdb4179104cb6dbdeb1eaed2ebf538c29c0533b8319c892fd440cc4e5693f00",
+      "source_files": 10,
+      "evidence_files": 2,
+      "excluded_generated_source_paths": [
+        "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/LICENSE.txt",
+        "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/terraform-provider-azurerm_v5.11.0_x5.exe"
+      ]
+    },
+    "P1.1": {
+      "original_receipt_sha256": "6eba1ecc6c7afd6b8e29cc48d1e79a2f72acfcc06deaed54775c7fdb9849d5d0",
+      "source_files": 15,
+      "evidence_files": 2,
+      "excluded_generated_source_paths": []
+    },
+    "P1.2": {
+      "original_receipt_sha256": "586072fb677e3c7b511fc686af80a4acd4abb6ed0d2f9e8e96cbbcf001cf0f3c",
+      "source_files": 2,
+      "evidence_files": 1,
+      "excluded_generated_source_paths": []
+    },
+    "P1.3": {
+      "original_receipt_sha256": "fb844cf51f50e03941b229320ae6ff0d78b6d2a4dad282f2dc2683ef930f7199",
+      "source_files": 10,
+      "evidence_files": 1,
+      "excluded_generated_source_paths": []
+    },
+    "P1.4": {
+      "original_receipt_sha256": "342b1c12ceb9979d9402a5c82aa6da27307972bd6375ed1e7e410262e0f50590",
+      "source_files": 3,
+      "evidence_files": 1,
+      "excluded_generated_source_paths": []
+    },
+    "P2.3": {
+      "original_receipt_sha256": "e3a24f2816da86be157a4eede68add996c42b0c646dc43d7589f65d149c54e68",
+      "source_files": 8,
+      "evidence_files": 2,
+      "excluded_generated_source_paths": []
+    },
+    "P2.11": {
+      "original_receipt_sha256": "2095485211007197fe680bdd94c18424da55efb2c0a8285bd66d9553ec1df870",
+      "source_files": 3,
+      "evidence_files": 2,
+      "excluded_generated_source_paths": []
+    }
+  },
+  "changed_receipts_left_stale": [
+    "P1.5",
+    "P1.6"
+  ],
+  "original_source_evidence_hashes_preserved": true,
+  "note": "P2.12 exact legacy raw receipts verified before explicit LF portability; generated .terraform provider cache omitted from portable source keys, original hashes retained. Changed P1.5/P1.6 runtime receipts remain stale."
+}

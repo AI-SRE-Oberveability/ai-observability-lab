@@ -12,9 +12,9 @@ import time
 import urllib.error
 import urllib.request
 from collections import Counter
-from pathlib import Path
 
 from poc_tracker import BASE, LAB, derive, now, write_json
+from workspace import Workspace
 
 ORG = "AI-SRE-Oberveability"
 USER = "javedkumail"
@@ -73,12 +73,61 @@ def ensure_issue_state(github, path, issue, desired):
             raise
 
 
-def managed_body(task, row):
+def evidence_ref(value):
+    if not isinstance(value, str) or (
+        value != "main"
+        and (not re.fullmatch(r"[0-9a-f]{40}", value) or value == "0" * 40)
+    ):
+        raise ValueError("Evidence ref must be main or an immutable commit SHA")
+    return value
+
+
+def verify_evidence_ref(github, rows, reference):
+    """Check published Git-normalized evidence before any shared-state mutation."""
+    reference = evidence_ref(reference)
+    prefix = f"/repos/{ORG}/{REPOSITORIES['lab']}"
+    if reference == "main":
+        reference = github.rest("GET", prefix + "/git/ref/heads/main")["object"]["sha"]
+    evidence_ref(reference)
+    commit = github.rest("GET", prefix + "/git/commits/" + reference)
+    if commit["sha"] != reference:
+        raise ValueError("Evidence commit identity mismatch")
+    tree = github.rest(
+        "GET", prefix + "/git/trees/" + commit["tree"]["sha"] + "?recursive=1"
+    )
+    if tree.get("truncated"):
+        raise ValueError("Evidence tree is truncated")
+    blobs = {
+        item["path"]: item["sha"] for item in tree["tree"] if item["type"] == "blob"
+    }
+    paths = {"HLD.md", "POC_TRACKER.md"}
+    for row in rows:
+        paths.update(Workspace(BASE).lab_relative(name) for name in row["evidence"])
+    for relative in paths:
+        path = (LAB / relative).resolve()
+        if not path.is_relative_to(LAB.resolve()) or not path.is_file():
+            raise ValueError("Evidence must remain inside the lab checkout")
+        hashed = subprocess.run(
+            ["git", "-C", str(LAB), "hash-object", "--path=" + relative, str(path)],
+            capture_output=True,
+            text=True,
+            timeout=10,
+        )
+        if hashed.returncode or blobs.get(relative) != hashed.stdout.strip():
+            raise ValueError(
+                "Publish current HLD/tracker/evidence and pass --evidence-ref with that commit: "
+                + relative
+            )
+    return reference
+
+
+def managed_body(task, row, reference="main"):
+    reference = evidence_ref(reference)
     evidence = []
     for name in row["evidence"]:
-        relative = Path(name).relative_to("ai-observability-lab").as_posix()
+        relative = Workspace(BASE).lab_relative(name)
         evidence.append(
-            f"- [{relative}](https://github.com/{ORG}/ai-observability-lab/blob/main/{relative})"
+            f"- [{relative}](https://github.com/{ORG}/{REPOSITORIES['lab']}/blob/{reference}/{relative})"
         )
     return "\n".join(
         [
@@ -102,7 +151,7 @@ def managed_body(task, row):
             "",
             "Source of truth: [POC tracker](https://github.com/"
             + ORG
-            + "/ai-observability-lab/blob/main/POC_TRACKER.md). Drafts and pending decisions do not count as delivery.",
+            + f"/{REPOSITORIES['lab']}/blob/{reference}/POC_TRACKER.md). Drafts and pending decisions do not count as delivery.",
             END,
         ]
     )
@@ -212,7 +261,7 @@ def project(github, config):
     return value
 
 
-def configure(github, config, current):
+def configure(github, config, current, reference="main"):
     readme = (
         "# AI SRE Observability POC\n\nShared delivery tracking for the four repositories. "
         "Terraform owns Azure infrastructure; workloads, observability configuration and lab "
@@ -220,8 +269,8 @@ def configure(github, config, current):
         "are the source of truth. Synchronize after each work step with "
         "scripts/sync_github_project.py --apply. Evidence status preserves draft, blocked and "
         "pending-decision details; Done requires local acceptance evidence.\n\n"
-        f"[HLD](https://github.com/{ORG}/ai-observability-lab/blob/main/HLD.md) · "
-        f"[POC tracker](https://github.com/{ORG}/ai-observability-lab/blob/main/POC_TRACKER.md)"
+        f"[HLD](https://github.com/{ORG}/{REPOSITORIES['lab']}/blob/{reference}/HLD.md) · "
+        f"[POC tracker](https://github.com/{ORG}/{REPOSITORIES['lab']}/blob/{reference}/POC_TRACKER.md)"
     )
     github.gql(
         """mutation($input:UpdateProjectV2Input!){updateProjectV2(input:$input){projectV2{id title url}}}""",
@@ -288,7 +337,8 @@ def configure(github, config, current):
         )
 
 
-def sync(github, config, plan, state, rows):
+def sync(github, config, plan, state, rows, reference="main"):
+    reference = verify_evidence_ref(github, rows, reference)
     current = project(github, config)
     fields = {field["name"]: field for field in current["fields"]["nodes"]}
     required = {
@@ -328,7 +378,7 @@ def sync(github, config, plan, state, rows):
         row = by_id[task["id"]]
         repo = repository_for(task)
         title = f"[{task['id']}] {task['title']}"
-        managed = managed_body(task, row)
+        managed = managed_body(task, row, reference)
         issue = existing.get(task["id"])
         if issue is None:
             issue = github.rest(
@@ -433,6 +483,7 @@ def sync(github, config, plan, state, rows):
         {
             "status": "ready",
             "verified_at": now(),
+            "evidence_ref": reference,
             "project_url": verified["url"],
             "task_count": len(plan["tasks"]),
             "visibility": "public" if verified["public"] else "private",
@@ -445,6 +496,7 @@ def sync(github, config, plan, state, rows):
         "project_url": verified["url"],
         "project_id": verified["id"],
         "verified_at": config["verified_at"],
+        "evidence_ref": reference,
         "tasks": len(mapping),
         "status_counts": dict(
             Counter(item["evidence_status"] for item in mapping.values())
@@ -473,6 +525,12 @@ def main():
         action="store_true",
         help="Configure the existing Project's name, links, fields and views",
     )
+    parser.add_argument(
+        "--evidence-ref",
+        type=evidence_ref,
+        default="main",
+        help="Published immutable evidence commit; default resolves current main",
+    )
     args = parser.parse_args()
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
     if config["organization"] != ORG or set(config["repository_names"]) != set(
@@ -490,6 +548,7 @@ def main():
                 {
                     "mode": "dry-run",
                     "tasks": len(rows),
+                    "requested_evidence_ref": args.evidence_ref,
                     "board_counts": dict(
                         Counter(board_status(row["status"]) for row in rows)
                     ),
@@ -501,8 +560,9 @@ def main():
     github = GitHub()
     current = project(github, config)
     if args.setup:
-        configure(github, config, current)
-    sync(github, config, plan, state, rows)
+        reference = verify_evidence_ref(github, rows, args.evidence_ref)
+        configure(github, config, current, reference)
+    sync(github, config, plan, state, rows, args.evidence_ref)
 
 
 if __name__ == "__main__":

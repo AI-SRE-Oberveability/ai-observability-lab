@@ -8,10 +8,12 @@ import json
 import time
 from collections import Counter
 from datetime import datetime, timedelta, timezone
-from pathlib import Path
+from pathlib import Path, PurePosixPath
+
+from workspace import Workspace
 
 BASE = Path(__file__).resolve().parents[2]
-LAB = BASE / "ai-observability-lab"
+LAB = Path(__file__).resolve().parents[1]
 TRACKING = LAB / "tracking"
 EXCLUDE = {".git", ".venv", ".runtime", "__pycache__", ".pytest_cache", ".ruff_cache"}
 
@@ -23,7 +25,9 @@ def now():
 def write_json(path, value):
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(
-        json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(value, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
     for attempt in range(6):
         try:
@@ -37,14 +41,13 @@ def write_json(path, value):
 
 
 def owned_path(base, name):
-    path = (base / name).resolve()
-    if not path.is_relative_to(base.resolve()):
-        raise ValueError("Tracker paths must stay inside the lab workspace")
-    return path
+    return Workspace(base).path(name)
 
 
-def snapshot(base, names):
+def snapshot(base, names, policy="raw-v1"):
     """Hash explicit evidence/source paths without reading credentials or runtime caches."""
+    if policy not in {"raw-v1", "utf8-lf-v1"}:
+        raise ValueError("Unknown receipt hash policy")
     result = {}
     for name in names:
         root = owned_path(base, name)
@@ -52,18 +55,78 @@ def snapshot(base, names):
         for path in paths:
             if not path.is_file() or set(path.relative_to(base).parts) & EXCLUDE:
                 continue
+            if policy == "utf8-lf-v1" and ".terraform" in path.relative_to(base).parts:
+                # Provider caches are generated runtime inputs, never authored source.
+                # Raw historical receipts keep their original comparison semantics.
+                continue
             if path.name.startswith(".env") or path.suffix in {
                 ".key",
                 ".pem",
                 ".tfvars",
             }:
                 continue
-            if not path.resolve().is_relative_to(base.resolve()):
-                raise ValueError("Source symlink leaves the workspace")
-            result[path.relative_to(base).as_posix()] = hashlib.sha256(
-                path.read_bytes()
-            ).hexdigest()
+            resolved = path.resolve()
+            boundary = root if root.is_dir() else root.parent
+            if not resolved.is_relative_to(boundary.resolve()):
+                raise ValueError("Source symlink leaves the watched ownership boundary")
+            if set(resolved.relative_to(base.resolve()).parts) & EXCLUDE:
+                continue
+            logical = PurePosixPath(name.replace("\\", "/"))
+            if root.is_dir():
+                logical = logical / path.relative_to(root).as_posix()
+            content = path.read_bytes()
+            if policy == "utf8-lf-v1" and (
+                path.suffix.lower()
+                in {
+                    ".py",
+                    ".md",
+                    ".json",
+                    ".jsonl",
+                    ".yaml",
+                    ".yml",
+                    ".txt",
+                    ".toml",
+                    ".tf",
+                    ".hcl",
+                    ".ps1",
+                    ".sh",
+                    ".xml",
+                    ".csv",
+                    ".code-workspace",
+                }
+                or path.name in {"Dockerfile", ".gitignore", ".gitattributes"}
+            ):
+                # Match this lab's Git LF policy. Never normalize opaque binary data.
+                content.decode("utf-8")
+                content = content.replace(b"\r\n", b"\n")
+            result[logical.as_posix()] = hashlib.sha256(content).hexdigest()
     return result
+
+
+def receipt_digest(record):
+    original = {key: record.get(key) for key in ("source_hashes", "evidence_hashes")}
+    return hashlib.sha256(json.dumps(original, sort_keys=True).encode()).hexdigest()
+
+
+def checkout_compatibility(base, task, record):
+    """Add portability only when the original raw receipt still matches exactly."""
+    if (
+        record.get("hash_policy", "raw-v1") != "raw-v1"
+        or not record.get("evidence_hashes")
+        or snapshot(base, task["watch"]) != record.get("source_hashes")
+        or snapshot(base, record.get("evidence", [])) != record.get("evidence_hashes")
+    ):
+        return None
+    sources = snapshot(base, task["watch"], "utf8-lf-v1")
+    return {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": receipt_digest(record),
+        "source_hashes": sources,
+        "evidence_hashes": snapshot(base, record["evidence"], "utf8-lf-v1"),
+        "excluded_generated_source_paths": sorted(
+            set(record["source_hashes"]) - set(sources)
+        ),
+    }
 
 
 def validate_plan(plan):
@@ -118,9 +181,18 @@ def derive(plan, state, base):
         missing = [name for name in task["artifacts"] if name not in present]
         status = record.get("status", "draft" if present else "planned")
         if status == "done":
-            unchanged = snapshot(base, task["watch"]) == record.get(
+            policy = record.get("hash_policy", "raw-v1")
+            expected = record
+            portable = record.get("checkout_compatibility", {})
+            if (
+                policy == "raw-v1"
+                and portable.get("policy") == "utf8-lf-v1"
+                and portable.get("original_receipt_sha256") == receipt_digest(record)
+            ):
+                policy, expected = "utf8-lf-v1", portable
+            unchanged = snapshot(base, task["watch"], policy) == expected.get(
                 "source_hashes"
-            ) and snapshot(base, record.get("evidence", [])) == record.get(
+            ) and snapshot(base, record.get("evidence", []), policy) == expected.get(
                 "evidence_hashes"
             )
             if not unchanged or missing or not record.get("evidence_hashes"):
@@ -156,7 +228,7 @@ def render(plan, state, base, lab):
     counts = Counter(row["status"] for row in rows)
     paused = state["decisions"].get("G0", {}).get("status") != "accepted"
     execution = (
-        "PAUSED — plan/HLD review pending (G0)"
+        "PAUSED â€” plan/HLD review pending (G0)"
         if paused
         else "Plan accepted; follow task gates"
     )
@@ -223,24 +295,24 @@ def render(plan, state, base, lab):
     for phase, title in plan["phases"].items():
         lines += [
             "",
-            f"## {phase} — {title}",
+            f"## {phase} â€” {title}",
             "",
             "| Step | Work / owner | Status | Depends on / waits for | Evidence |",
             "| --- | --- | --- | --- | --- |",
         ]
         for row in [r for r in rows if r["id"].split(".")[0] == phase]:
             waits = ", ".join(row["blocked_by"]) or (
-                "Ready for review" if row["ready"] else "—"
+                "Ready for review" if row["ready"] else "â€”"
             )
             evidence = (
                 ", ".join(
-                    f"[{Path(p).name}]({Path(p).relative_to(lab.name).as_posix()})"
+                    f"[{Path(p).name}]({Workspace(base).lab_relative(p)})"
                     for p in row["evidence"]
                 )
                 or "None recorded"
             )
             lines.append(
-                f"| {row['id']} | {cell(row['title'])} — {cell(row['owner'])} | {row['status']} | {cell(waits)} | {evidence} |"
+                f"| {row['id']} | {cell(row['title'])} â€” {cell(row['owner'])} | {row['status']} | {cell(waits)} | {evidence} |"
             )
     lines += ["", "## Known gaps", ""] + [
         f"- {gap}" for gap in state.get("known_gaps", [])
@@ -252,7 +324,9 @@ def render(plan, state, base, lab):
         "`done` requires recorded evidence, unchanged watched sources, satisfied dependencies and accepted applicable gates. `draft` means artifacts exist; `planned` means work is pending. `needs_revalidation` means proof/source files changed or evidence disappeared. `waiting_for_decision`, `blocked`, `failed` and `deferred` remain visible. Full acceptance criteria are in `tracking/plan.json`.",
         "",
     ]
-    (lab / "POC_TRACKER.md").write_text("\n".join(lines), encoding="utf-8")
+    (lab / "POC_TRACKER.md").write_text(
+        "\n".join(lines), encoding="utf-8", newline="\n"
+    )
     remaining = [
         "# What remains",
         "",
@@ -273,13 +347,15 @@ def render(plan, state, base, lab):
         ]
         if not items:
             continue
-        remaining += [f"## {phase} — {title}", ""]
+        remaining += [f"## {phase} â€” {title}", ""]
         for row in items:
             remaining += [
                 f"- **{row['id']} {row['title']}** ({row['status']}). Acceptance: {row['acceptance']}"
             ]
         remaining.append("")
-    (lab / "REMAINING.md").write_text("\n".join(remaining), encoding="utf-8")
+    (lab / "REMAINING.md").write_text(
+        "\n".join(remaining), encoding="utf-8", newline="\n"
+    )
     write_json(
         lab / "tracking/status.json",
         {
@@ -302,6 +378,11 @@ def main():
         "refresh",
         help="Inventory files, check evidence freshness, regenerate views; run no workloads",
     )
+    portability = sub.add_parser(
+        "port-receipts",
+        help="Verify matching historical raw receipts before adding explicit LF checkout compatibility; runs no workloads",
+    )
+    portability.add_argument("--note", required=True)
     step = sub.add_parser(
         "record", help="Record one actual work-step outcome and regenerate views"
     )
@@ -336,7 +417,39 @@ def main():
     plan = json.loads((TRACKING / "plan.json").read_text(encoding="utf-8"))
     state = json.loads((TRACKING / "state.json").read_text(encoding="utf-8"))
     tasks = validate_plan(plan)
-    if args.command == "decide":
+    if args.command == "port-receipts":
+        migrated, stale = {}, []
+        for task_id, record in state["steps"].items():
+            if (
+                record.get("status") != "done"
+                or record.get("hash_policy", "raw-v1") != "raw-v1"
+            ):
+                continue
+            portable = checkout_compatibility(BASE, tasks[task_id], record)
+            if portable is None:
+                stale.append(task_id)
+                continue
+            record["checkout_compatibility"] = portable
+            migrated[task_id] = {
+                "original_receipt_sha256": portable["original_receipt_sha256"],
+                "source_files": len(portable["source_hashes"]),
+                "evidence_files": len(portable["evidence_hashes"]),
+                "excluded_generated_source_paths": portable[
+                    "excluded_generated_source_paths"
+                ],
+            }
+        write_json(
+            LAB / "evidence/tracker-checkout-compatibility.json",
+            {
+                "at": now(),
+                "policy": "explicit verified checkout compatibility; no fresh runtime evidence",
+                "migrated": migrated,
+                "changed_receipts_left_stale": stale,
+                "original_source_evidence_hashes_preserved": True,
+                "note": args.note,
+            },
+        )
+    elif args.command == "decide":
         if args.gate not in plan["gates"]:
             parser.error("Unknown gate")
         state["decisions"][args.gate] = {
@@ -368,8 +481,9 @@ def main():
             "note": args.note,
             "at": now(),
             "evidence": args.evidence,
-            "source_hashes": snapshot(BASE, task["watch"]),
-            "evidence_hashes": snapshot(BASE, args.evidence),
+            "hash_policy": "utf8-lf-v1",
+            "source_hashes": snapshot(BASE, task["watch"], "utf8-lf-v1"),
+            "evidence_hashes": snapshot(BASE, args.evidence, "utf8-lf-v1"),
         }
         state.setdefault("hld", {})["last_change"] = f"{args.task}: {args.note}"
         if args.hld_current:
@@ -380,7 +494,9 @@ def main():
             "command": args.command,
             **{key: value for key, value in vars(args).items() if key != "command"},
         }
-        with (TRACKING / "events.jsonl").open("a", encoding="utf-8") as stream:
+        with (TRACKING / "events.jsonl").open(
+            "a", encoding="utf-8", newline="\n"
+        ) as stream:
             stream.write(json.dumps(event, ensure_ascii=False) + "\n")
         write_json(TRACKING / "state.json", state)
     render(plan, state, BASE, LAB)

@@ -2,6 +2,8 @@
 
 Finalized: 15 November 2026, Asia/Dubai. The user selected the seven-repository structure and requested this names-and-plan package first. **This package performs planning and tracking only. Repository creation, renames, folder moves and migration execution have not started.**
 
+Execution update: the paragraph above records the approved planning package's original scope. PR #26 and PR #34 are now merged under explicit authorization. P2.11 preserved/reviewed the baseline; P2.12 creates three empty public repos and a parallel seven-folder workspace with shared old/new path compatibility. See [current implementation and limits](workspace-compatibility.md). GitHub renames, Project cutover, new platform source/CI and canonical backend replay remain P2.13–P2.16; no cloud operation is enabled.
+
 ## Final names and ownership
 
 All seven target repositories belong to `AI-SRE-Oberveability`, use `main`, and have matching local folder names. Retain the existing public-source model; keep the shared GitHub Project private. New repositories contain reviewed personal lab source only. The Node reference backend and frontend are deferred and do not add repositories to this scope.
