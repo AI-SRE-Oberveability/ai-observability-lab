@@ -399,29 +399,19 @@
     },
     "P1.2": {
       "status": "done",
-      "note": "Both OpenAPI contracts and real HTTP authentication/input/outcome/limit cases passed",
-      "at": "2026-11-01T15:35:51+04:00",
+      "note": "New no-values Secret contract changed the watched folder; existing OpenAPI YAML bytes equal approved main and current clean PR/push CI passes API/schema/HTTP/capture tests plus 17 Secret/guard tests. Contract task revalidated from actual current evidence; no backend or live Azure/AKS delivery acceptance added.",
+      "at": "2026-11-15T23:49:31+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/local-workload-correction.json"
+        "ai-observability-lab/evidence/image-secret-contract-revalidation.json"
       ],
+      "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-agent-workloads/contracts/agent.openapi.yaml": "333c90b6fd807c385257fb2b484c6b5a289d3227ae063f3c18abaa75b416ab4a",
-        "ai-agent-workloads/contracts/retrieval.openapi.yaml": "73c266b6ff33bac6f3b05338ebe11759d013a2b1c9727aae70c6266bc911e532"
+        "ai-agent-workloads/contracts/agent.openapi.yaml": "9e873b0ccb667eb429e109f71ac07f058284edcb2916517514dbb6051c36640e",
+        "ai-agent-workloads/contracts/retrieval.openapi.yaml": "03a6b989694beffdd61ba9bbc99f39bf16dda62196de5b6ff6a8c318b749bd5e",
+        "ai-agent-workloads/contracts/secret-delivery.json": "391f04ee66d9e54ea5a20cfbd72592a6a7e4f68e1aaab28d6ee8b0505a2ea986"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
-      },
-      "checkout_compatibility": {
-        "policy": "utf8-lf-v1",
-        "original_receipt_sha256": "586072fb677e3c7b511fc686af80a4acd4abb6ed0d2f9e8e96cbbcf001cf0f3c",
-        "source_hashes": {
-          "ai-agent-workloads/contracts/agent.openapi.yaml": "9e873b0ccb667eb429e109f71ac07f058284edcb2916517514dbb6051c36640e",
-          "ai-agent-workloads/contracts/retrieval.openapi.yaml": "03a6b989694beffdd61ba9bbc99f39bf16dda62196de5b6ff6a8c318b749bd5e"
-        },
-        "evidence_hashes": {
-          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
-        },
-        "excluded_generated_source_paths": []
+        "ai-observability-lab/evidence/image-secret-contract-revalidation.json": "2571b734b55c4027b83143f41e4f415ffbc3d72b320db067050697c0d85f41ad"
       }
     },
     "P1.3": {
@@ -871,7 +861,7 @@
   "hld": {
     "current": "HLD 0.36: private GHCR digest published/pulled and synthetic auth/key rotation verified; temporary gate closed. Live Azure/AKS Secret delivery, full release and remaining platform gates retained; GitLab/global Git unchanged.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.13: Private GHCR image publication/pull and synthetic container auth/citation/coordinated rotation passed in run43753212328. Exact-SHA gate closed; 17 guard/Secret tests and green source CI; first port-probe failure retained/corrected. HLD/current choices aligned. Live Azure/AKS delivery, full release, attribution/GitOps/Argo/handover remain pending."
+    "last_change": "P1.2: New no-values Secret contract changed the watched folder; existing OpenAPI YAML bytes equal approved main and current clean PR/push CI passes API/schema/HTTP/capture tests plus 17 Secret/guard tests. Contract task revalidated from actual current evidence; no backend or live Azure/AKS delivery acceptance added."
   },
   "repository_verification": {
     "date": "2026-10-28",

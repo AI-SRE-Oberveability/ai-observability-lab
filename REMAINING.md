@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-11-15T23:42:14+04:00 (Asia/Dubai).
+Updated: 2026-11-15T23:49:35+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -8,9 +8,6 @@ Next action: select a ready step from POC_TRACKER.md.
 
 ## P1 â€” Prove the local vertical slice
 
-- **P1.2 Validate API and retrieval contracts** (needs_revalidation). Acceptance: Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.
-- **P1.3 Complete synthetic policy workload and adapter** (blocked). Acceptance: Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.
-- **P1.4 Validate propagation and metadata-only telemetry** (blocked). Acceptance: Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.
 - **P1.5 Prove local backend runner and lifecycle** (needs_revalidation). Acceptance: Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.
 - **P1.6 Record complete local trace and exported-data evidence** (needs_revalidation). Acceptance: Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated.
 

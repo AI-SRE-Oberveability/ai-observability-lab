@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-15T23:42:14+04:00",
+  "updated_at": "2026-11-15T23:49:35+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
-    "done": 13,
-    "needs_revalidation": 5,
-    "blocked": 3,
+    "done": 16,
+    "needs_revalidation": 4,
     "in_progress": 2,
+    "blocked": 1,
     "waiting_for_decision": 3,
     "draft": 2,
     "planned": 20
@@ -207,7 +207,7 @@
         "ai-agent-workloads/contracts/retrieval.openapi.yaml"
       ],
       "acceptance": "Schemas and examples validate; authentication, outcomes and bounds agree with intended behavior.",
-      "status": "needs_revalidation",
+      "status": "done",
       "blocked_by": [],
       "artifacts_present": [
         "ai-agent-workloads/contracts/agent.openapi.yaml",
@@ -215,10 +215,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/local-workload-correction.json"
+        "ai-observability-lab/evidence/image-secret-contract-revalidation.json"
       ],
-      "note": "Both OpenAPI contracts and real HTTP authentication/input/outcome/limit cases passed",
-      "ready": true
+      "note": "New no-values Secret contract changed the watched folder; existing OpenAPI YAML bytes equal approved main and current clean PR/push CI passes API/schema/HTTP/capture tests plus 17 Secret/guard tests. Contract task revalidated from actual current evidence; no backend or live Azure/AKS delivery acceptance added.",
+      "ready": false
     },
     {
       "id": "P1.3",
@@ -240,10 +240,8 @@
         "ai-agent-workloads/evaluations/policy-v1.json"
       ],
       "acceptance": "Real HTTP tool path and versioned expected-answer dataset pass; mock usage is explicitly unknown.",
-      "status": "blocked",
-      "blocked_by": [
-        "P1.2"
-      ],
+      "status": "done",
+      "blocked_by": [],
       "artifacts_present": [
         "ai-agent-workloads/src",
         "ai-agent-workloads/evaluations/policy-v1.json"
@@ -276,10 +274,8 @@
         "ai-observability-config/local/collector.yaml"
       ],
       "acceptance": "Service/version identity, exact span graph, low-cardinality metrics and content-capture boundaries are tested.",
-      "status": "blocked",
-      "blocked_by": [
-        "P1.3"
-      ],
+      "status": "done",
+      "blocked_by": [],
       "artifacts_present": [
         "ai-observability-config/telemetry-contract.md",
         "ai-observability-config/local/collector.yaml"
@@ -319,9 +315,7 @@
       ],
       "acceptance": "Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.",
       "status": "needs_revalidation",
-      "blocked_by": [
-        "P1.4"
-      ],
+      "blocked_by": [],
       "artifacts_present": [
         "ai-observability-lab/compose.yaml",
         "ai-observability-config/local/compose.yaml",
@@ -335,7 +329,7 @@
         "ai-observability-lab/evidence/local-proof-attempt-1.json"
       ],
       "note": "Pinned loopback native runner passed readiness, owned-process stop, released-listener and ephemeral restart checks; first failed assertion retained",
-      "ready": false
+      "ready": true
     },
     {
       "id": "P1.6",
@@ -1235,7 +1229,6 @@
       "acceptance": "Deterministic mode preserved; gateway-scoped identity contract, model allowlist and typed auth/rate/quota/timeout errors pass synthetic checks; retries and streaming bounded; no direct-endpoint fallback. Actual cloud/live claims require P3.5 and G5.",
       "status": "planned",
       "blocked_by": [
-        "P1.3",
         "P3.7"
       ],
       "artifacts_present": [],
