@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "validated_at": "2026-11-15T17:49:14+04:00",
+  "tests": 28,
+  "passed": 28,
+  "failed": 0,
+  "command": "python -m unittest discover -s ai-observability-lab/tests -v",
+  "actual_plan_graph_validation": {
+    "tasks": 48,
+    "new_migration_tasks": 7,
+    "cycles": 0,
+    "unknown_dependencies": 0
+  },
+  "blueprint_and_file_mapping_valid": true,
+  "local_links_valid": true,
+  "name_collisions": 0,
+  "release_manifest_validator_and_compose_unchanged": true,
+  "source_comparison": "Git-normalized object identity; existing Compose CRLF/LF representation differs without a Git content change",
+  "gitlab_or_global_config_changes": false,
+  "plan_evidence_sha256": "48c902a791a7453975e25b3ce1372d3a1e49f6bb02dab59071169b3f88f56a13"
+}

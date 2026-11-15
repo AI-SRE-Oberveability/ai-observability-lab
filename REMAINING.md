@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-11-15T17:30:32+04:00 (Asia/Dubai).
+Updated: 2026-11-15T17:49:43+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -9,6 +9,12 @@ Next action: select a ready step from POC_TRACKER.md.
 ## P2 — Establish personal GitHub delivery
 
 - **P2.4 Pin image digests and multi-repository release manifest** (in_progress). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
+- **P2.11 Preserve current repository baseline and reconcile in-flight PRs** (planned). Acceptance: Verify exact remote/main/in-flight refs including PRs 25/26, original repository/issue IDs, clean worktrees, locks and proof boundaries; retain rollback refs and Git configuration preservation receipts. Update watched implementation/CI inputs before accepting execution.
+- **P2.12 Prepare isolated seven-repository workspace and compatible path mapping** (planned). Acceptance: Verify three new repo IDs and reviewed empty/default setup; prepare isolated canonical clones and test old/new layout resolution across tracking, Project sync, runners, Compose, release validation and workspace files. No global Git changes. Update watched implementation/CI inputs before accepting execution.
+- **P2.13 Establish reviewed platform configuration, charts and GitOps ownership** (planned). Acceptance: Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution.
+- **P2.14 Validate independent CI and immutable shared templates for seven repositories** (planned). Acceptance: Observe passing exact-head CI for all seven repos; test dependency-aware change detection, clean builds, guarded Terraform and disabled deployment. PRs have no Azure identity; shared workflows/actions are pinned. Update watched implementation/CI inputs before accepting execution.
+- **P2.15 Perform verified repository rename, workspace and Project cutover** (planned). Acceptance: Verify all four original IDs/histories, three new repos, canonical GitHub-only origins, current path/watch/Project mappings, seven linked repos and preserved issue IDs/private Project. Keep Azure false and GitLab/global Git unchanged. Update watched implementation/CI inputs before accepting execution.
+- **P2.16 Revalidate canonical workspace and seven-repository source baseline** (planned). Acceptance: After authorized merges, verify seven exact-main CI runs, affected local backend/privacy/graph/cleanup proof, accurate platform-specific source receipts and runbook/rollback. Prepare a new seven-repo source candidate; do not claim a deployable image/replay without P2.4 evidence. Update watched implementation/CI inputs before accepting execution.
 
 ## P3 — Plan and deploy personal Azure
 

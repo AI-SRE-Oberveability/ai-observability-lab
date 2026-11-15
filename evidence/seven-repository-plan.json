@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "finalized_at": "2026-11-15T17:49:14+04:00",
+  "user_selected_structure": "seven_core_repositories",
+  "canonical_names": [
+    "ai-platform-infra",
+    "ai-platform-config",
+    "ai-platform-charts",
+    "ai-platform-gitops",
+    "ai-platform-pipelines",
+    "ai-agent-workloads",
+    "ai-platform-lab"
+  ],
+  "rename_count": 3,
+  "create_count": 3,
+  "retain_count": 1,
+  "existing_repo_ids_preserved_in_plan": true,
+  "mapped_existing_files": 173,
+  "task_count": 48,
+  "task_graph_valid": true,
+  "new_tasks": [
+    "P2.10",
+    "P2.11",
+    "P2.12",
+    "P2.13",
+    "P2.14",
+    "P2.15",
+    "P2.16"
+  ],
+  "plan_links_valid": true,
+  "name_preflight_evidence": "evidence/seven-repository-name-preflight.json",
+  "migration_started": false,
+  "repositories_created_or_renamed": false,
+  "cloud_or_cluster_calls": false,
+  "azure_deployment_enabled": false,
+  "azure_owner_subscription": "user_reported_not_independently_verified",
+  "cloud_gates_accepted": false,
+  "gitlab_credentials_changed": false,
+  "global_git_configuration_changed": false,
+  "source_hashes": {
+    "docs/repository-migration-plan.md": "e1bfcf829c17d41728fc352c2aefb73c2ee5017647c5785b652cacba5a56060a",
+    "docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
+    "tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
+    "tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
+    "tracking/plan.json": "267cee3aeb29a0467a91cae3656eb3db3370c7706f064d318a8473b7b0e4b2f8"
+  },
+  "scope": "Final names, ownership, file mapping, sequencing and acceptance only; live operational mappings remain on four repositories"
+}

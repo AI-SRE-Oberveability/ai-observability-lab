@@ -3,13 +3,18 @@
   "decisions": {
     "G0": {
       "status": "accepted",
-      "note": "User explicitly approved the plan and requested public source review and pushes to all four repositories; Terraform/cloud deployment remains separately gated",
-      "at": "2026-10-28T23:29:38+04:00"
+      "note": "User selected the proposed seven-repository structure and requested finalized names/plan first; earlier plan acceptance remains, while actual migration execution and Azure deployment are outside this planning step",
+      "at": "2026-11-15T17:47:38+04:00"
     },
     "G1": {
       "status": "accepted",
       "note": "User owns javedkumail, created the four public repositories, and explicitly authorized pushes to all four; preserve GitLab credentials; user now explicitly authorizes creating AI-SRE-Oberveability, transferring all four repositories, and creating a shared Project.",
       "at": "2026-10-28T23:29:38+04:00"
+    },
+    "G2": {
+      "status": "pending",
+      "note": "User reports Azure Owner subscription access; exact personal tenant/subscription, region and budget/currency remain unverified and will be confirmed after repository setup",
+      "at": "2026-11-15T17:47:43+04:00"
     }
   },
   "steps": {
@@ -31,17 +36,16 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "Structure review and proposed migration published in draft PR #26; current layout retained and existing Compose-proof draft PR #25 preserved; no migration or Azure operation",
-      "at": "2026-11-15T17:30:22+04:00",
+      "note": "Selected seven-repo ownership and canonical names finalized in plan/ADR/file map; preserve Python AI agents and APIM, run migration before new POC execution, keep Azure disabled",
+      "at": "2026-11-15T17:49:30+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/platform-structure-review.json",
-        "ai-observability-lab/evidence/platform-structure-publication.json"
+        "ai-observability-lab/evidence/seven-repository-plan.json"
       ],
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "b07aad6b0fbcdf221743f4c4590ebcc6d064bd1de0895fb0cd5595f5ac4f7261",
-        "ai-observability-lab/HLD.md": "685ba2a394ff86a4a88b686fda2f1f1a00d128b345f7dfaa68127d6e8998b173",
-        "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
-        "ai-observability-lab/docs/repository-layout.md": "7d28082c8089c530013357d0042e6d9d726da51a89e49120d82b1477203041e5",
+        "ai-observability-lab/POC_PLAN.md": "3eb9bff35f987efbff315fda0b23a3610825a4a41a798cd5221a9b0f2e86f6da",
+        "ai-observability-lab/HLD.md": "c27332f0cae8c2e187a7fbcd4776df0ab6f0b674cbffc78b1303cf8e4fd2febe",
+        "ai-observability-lab/docs/engineering-standards.md": "444ae1ca7a704f00dfcab19afd58cd4489413c02318b6473ec4eefd8c0ff3b5c",
+        "ai-observability-lab/docs/repository-layout.md": "a37d7f64843ec717f709cf9bc4c3c3c8e863c3f42602ed8bd1ca7fd36f2da401",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
         "ai-observability-lab/docs/architecture.md": "e0c4ab25a2da99ae730ac0bff6fea9de4f584f34ef7438fd5d60a6161cd924f5",
         "ai-observability-lab/docs/architecture/assets/azure/acr.svg": "c134b0a442f203a7eeeb6f99a1f02ed34e51373d7fca59f96c9f125874c9d7d4",
@@ -72,32 +76,35 @@
         "ai-observability-lab/docs/architecture/runtime.png": "8a92547094e943b54a9d1abd25ca37ad490db887c3051b596df36b4d8425fe60",
         "ai-observability-lab/docs/architecture/telemetry.mmd": "1c17f6fcc0fd478a0e34d365286e26d9f2c5873733462bedcac6afec87a800a7",
         "ai-observability-lab/docs/architecture/telemetry.png": "f2894a83d44e9acf05dea4ee5abe712628bd589bfb9950ed43308e6a1f3c79aa",
-        "ai-observability-lab/docs/platform-structure-review.md": "eb257bc256c476d06b623a7c8d9686dde301d9b0c2094f525bea9c7e7572a077"
+        "ai-observability-lab/docs/platform-structure-review.md": "eb257bc256c476d06b623a7c8d9686dde301d9b0c2094f525bea9c7e7572a077",
+        "ai-observability-lab/docs/repository-migration-plan.md": "e1bfcf829c17d41728fc352c2aefb73c2ee5017647c5785b652cacba5a56060a",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
+        "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
+        "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/platform-structure-review.json": "760fd64d5e5bde124d77ccf7281b1614115de2b6f3e0de501f97fd687593f3c2",
-        "ai-observability-lab/evidence/platform-structure-publication.json": "e9e0808126bceca91976a38a0c301aa3ad18d638dea9678e5ad159795c0e5381"
+        "ai-observability-lab/evidence/seven-repository-plan.json": "48c902a791a7453975e25b3ce1372d3a1e49f6bb02dab59071169b3f88f56a13"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "Tracker review watch list and unchanged 28-test validation retained with updated report/publication receipts; 41 stable tasks and no migration",
-      "at": "2026-11-15T17:30:26+04:00",
+      "note": "48-task migration graph and seven-role/173-file mapping validated; 28 existing tracker/sync/release tests pass; live operational repo mappings remain four until cutover",
+      "at": "2026-11-15T17:49:33+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/platform-structure-tracking-validation.json"
+        "ai-observability-lab/evidence/seven-repository-tracking-validation.json"
       ],
       "source_hashes": {
         "ai-observability-lab/scripts/poc_tracker.py": "19ebe467cebe3be0f1e51ec6871fee83f1438066628097de1508526bbe744c6a",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_release.py": "8f1a5dcb5ec846fa9ccd94142c87eafad1c516b0df29a64fe66d5ade61be05ef",
         "ai-observability-lab/tests/test_tracker.py": "16befaa87cb87a0a1e4533f89c5c4279472525c6aef2a2499dc7ab9a15fade13",
-        "ai-observability-lab/tracking/plan.json": "5dba380c335832c2a4319c5b9d3d859bfed8cb8282ec2ef27bb39cdc152e51b8",
-        "ai-observability-lab/TRACKER_GUIDE.md": "7daeba4e8ed99175b356d123228e6f0aa38cf3a2e2c72276836fbeede50c36ee",
-        "ai-observability-lab/AGENTS.md": "b488692f95371844c323d35694a6b6d2cbdd7db3e9cd4f54e2495bf5a2b7e3aa",
+        "ai-observability-lab/tracking/plan.json": "267cee3aeb29a0467a91cae3656eb3db3370c7706f064d318a8473b7b0e4b2f8",
+        "ai-observability-lab/TRACKER_GUIDE.md": "03668a4a4cd5bd17a59a7048877a26dfd8a8c9e935e40ea7b2381869572a2424",
+        "ai-observability-lab/AGENTS.md": "468cd7ee8ec0f0de59dce2df91379c976748e7cc9e643cc1a87fc8f58847763a",
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/platform-structure-tracking-validation.json": "389143f294fae46bec9946e5c5ca15d0b5e1aaf7759a974622fdba7fca5df5a7"
+        "ai-observability-lab/evidence/seven-repository-tracking-validation.json": "d14c074e565aa92ef6f9f36f5d1c31ca87b43e88e92443f2de48eb6ecec96575"
       }
     },
     "P2.2": {
@@ -401,27 +408,45 @@
         "ai-observability-lab/evidence/release-pinning-validation.json": "221052b9d4a408f13e3749b63462eec00a881615272dea0a96542131879c4eea",
         "ai-observability-lab/evidence/release-candidate-publication.json": "abe42a6c670df318822667fd24763185e833c89b7e863b90589136f60a6b28d6"
       }
+    },
+    "P2.10": {
+      "status": "done",
+      "note": "Finalized seven canonical names, preserved-history mapping, staged migration acceptance/rollback and post-setup Azure readiness checkpoint; no repo creation, rename or migration performed",
+      "at": "2026-11-15T17:49:39+04:00",
+      "evidence": [
+        "ai-observability-lab/evidence/seven-repository-plan.json"
+      ],
+      "source_hashes": {
+        "ai-observability-lab/docs/repository-migration-plan.md": "e1bfcf829c17d41728fc352c2aefb73c2ee5017647c5785b652cacba5a56060a",
+        "ai-observability-lab/docs/adr-0002-seven-repositories.md": "95ee4f0e1c79dd7569bca7eacd5813023650ed569c981c465f8b739069bb2c94",
+        "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
+        "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47"
+      },
+      "evidence_hashes": {
+        "ai-observability-lab/evidence/seven-repository-plan.json": "48c902a791a7453975e25b3ce1372d3a1e49f6bb02dab59071169b3f88f56a13"
+      }
     }
   },
   "known_gaps": [
-    "Plan approved; public-source review and initial pushes are authorized. Azure deployment and live-model spending remain separately gated.",
-    "Earlier local workload run: 18 passed, one deprecation warning; no saved JUnit artifact. Historical observation only.",
-    "Collector CLI configuration validation passed; complete export to Jaeger is unverified.",
-    "Docker engine was unreachable; the pinned native Windows backend alternative is not yet demonstrated end to end.",
-    "Inactive CI draft under .github/workflow-drafts references missing requirements-dev.lock.txt; no GitHub workflow has run.",
-    "Initial public source publication completed. Full local backend delivery, active CI, Azure targets/budget, Terraform implementation, Managed entitlement and live-model scope remain pending."
+    "Seven-repository names and migration plan are finalized; creation, renames, source moves and path resolver work have not started.",
+    "Four repos and their accepted historical evidence remain current. Draft PR #25 Linux Compose proof must be reviewed/reconciled; its description is not new acceptance in this branch.",
+    "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
+    "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
+    "Managed entitlement/compatibility and paid/live model scope remain separate G4/G5 prerequisites.",
+    "No Azure/bootstrap/cluster action occurs during repository planning and migration; GitLab credentials and global Git settings are preserved."
   ],
   "confirmed_choices": [
-    "Organization AI-SRE-Oberveability owns all four public repositories; javedkumail is its verified active personal administrator; IDs and published history preserved.",
+    "Seven-repository target selected under AI-SRE-Oberveability; four public repositories currently exist. Three history-preserving renames and three new public repositories are planned; GitHub Project stays private.",
     "Terraform for Azure infrastructure; Helm/Kubernetes manifests for application and shared observability deployments.",
     "Preserve GitLab credentials/helpers/remotes; separate GitHub settings or optional WSL.",
     "Refresh tracker after each work step; always report HLD/current/change/next/remaining.",
-    "Apply documented engineering standards and record validation or accepted deviations."
+    "Apply documented engineering standards and record validation or accepted deviations.",
+    "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "Current four-repo AKS/APIM design retained; scaffold assessment and unselected migration proposal in draft PR #26. PR #25 preserved; release acceptance pending. Azure disabled; GitLab intact.",
-    "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P0.3: Tracker review watch list and unchanged 28-test validation retained with updated report/publication receipts; 41 stable tasks and no migration"
+    "current": "Seven-repo target selected and names/plan finalized; four repos remain live. Next preserve/reconcile baseline, then path compatibility and staged cutover. Azure Owner access user-reported; deployment disabled; GitLab intact.",
+    "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
+    "last_change": "P2.10: Finalized seven canonical names, preserved-history mapping, staged migration acceptance/rollback and post-setup Azure readiness checkpoint; no repo creation, rename or migration performed"
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -456,5 +481,22 @@
     "personal_owner": "javedkumail",
     "membership_role": "admin",
     "plan": "free"
+  },
+  "repository_structure_decision": {
+    "status": "seven_repo_structure_selected_names_finalized",
+    "at": "2026-11-15",
+    "user_instruction": "Use the proposed seven-repo structure. Finalize repo names and step-by-step migration plan first; keep AI agents/APIM, Azure disabled and GitLab credentials intact.",
+    "names_source": "tracking/repository-targets.json",
+    "migration_started": false,
+    "current_live_repository_count": 4,
+    "target_repository_count": 7
+  },
+  "azure_readiness": {
+    "owner_subscription_reported_by_user": true,
+    "verification": "not_independently_verified",
+    "exact_targets_provided": false,
+    "budget_provided": false,
+    "azure_deployment_enabled": false,
+    "next_checkpoint": "After P2.16 repository setup: exact tenant/subscription, region and budget/currency, then costed Terraform scope"
   }
 }
