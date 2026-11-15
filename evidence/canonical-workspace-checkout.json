@@ -1,0 +1,5 @@
+{
+  "status": "pending_final_published_checkout",
+  "previous_attempt": "evidence/canonical-checkout-attempt-1.json",
+  "azure_deployment_enabled": false
+}

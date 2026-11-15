@@ -99,6 +99,28 @@ def snapshot(base, names, policy="raw-v1"):
     return result
 
 
+def receipt_digest(record):
+    original = {key: record.get(key) for key in ("source_hashes", "evidence_hashes")}
+    return hashlib.sha256(json.dumps(original, sort_keys=True).encode()).hexdigest()
+
+
+def checkout_compatibility(base, task, record):
+    """Add portability only when the original raw receipt still matches exactly."""
+    if (
+        record.get("hash_policy", "raw-v1") != "raw-v1"
+        or not record.get("evidence_hashes")
+        or snapshot(base, task["watch"]) != record.get("source_hashes")
+        or snapshot(base, record.get("evidence", [])) != record.get("evidence_hashes")
+    ):
+        return None
+    return {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": receipt_digest(record),
+        "source_hashes": snapshot(base, task["watch"], "utf8-lf-v1"),
+        "evidence_hashes": snapshot(base, record["evidence"], "utf8-lf-v1"),
+    }
+
+
 def validate_plan(plan):
     tasks = {task["id"]: task for task in plan["tasks"]}
     if len(tasks) != len(plan["tasks"]):
@@ -152,9 +174,17 @@ def derive(plan, state, base):
         status = record.get("status", "draft" if present else "planned")
         if status == "done":
             policy = record.get("hash_policy", "raw-v1")
-            unchanged = snapshot(base, task["watch"], policy) == record.get(
+            expected = record
+            portable = record.get("checkout_compatibility", {})
+            if (
+                policy == "raw-v1"
+                and portable.get("policy") == "utf8-lf-v1"
+                and portable.get("original_receipt_sha256") == receipt_digest(record)
+            ):
+                policy, expected = "utf8-lf-v1", portable
+            unchanged = snapshot(base, task["watch"], policy) == expected.get(
                 "source_hashes"
-            ) and snapshot(base, record.get("evidence", []), policy) == record.get(
+            ) and snapshot(base, record.get("evidence", []), policy) == expected.get(
                 "evidence_hashes"
             )
             if not unchanged or missing or not record.get("evidence_hashes"):
@@ -340,6 +370,11 @@ def main():
         "refresh",
         help="Inventory files, check evidence freshness, regenerate views; run no workloads",
     )
+    portability = sub.add_parser(
+        "port-receipts",
+        help="Verify matching historical raw receipts before adding explicit LF checkout compatibility; runs no workloads",
+    )
+    portability.add_argument("--note", required=True)
     step = sub.add_parser(
         "record", help="Record one actual work-step outcome and regenerate views"
     )
@@ -374,7 +409,36 @@ def main():
     plan = json.loads((TRACKING / "plan.json").read_text(encoding="utf-8"))
     state = json.loads((TRACKING / "state.json").read_text(encoding="utf-8"))
     tasks = validate_plan(plan)
-    if args.command == "decide":
+    if args.command == "port-receipts":
+        migrated, stale = {}, []
+        for task_id, record in state["steps"].items():
+            if (
+                record.get("status") != "done"
+                or record.get("hash_policy", "raw-v1") != "raw-v1"
+            ):
+                continue
+            portable = checkout_compatibility(BASE, tasks[task_id], record)
+            if portable is None:
+                stale.append(task_id)
+                continue
+            record["checkout_compatibility"] = portable
+            migrated[task_id] = {
+                "original_receipt_sha256": portable["original_receipt_sha256"],
+                "source_files": len(portable["source_hashes"]),
+                "evidence_files": len(portable["evidence_hashes"]),
+            }
+        write_json(
+            LAB / "evidence/tracker-checkout-compatibility.json",
+            {
+                "at": now(),
+                "policy": "explicit verified checkout compatibility; no fresh runtime evidence",
+                "migrated": migrated,
+                "changed_receipts_left_stale": stale,
+                "original_source_evidence_hashes_preserved": True,
+                "note": args.note,
+            },
+        )
+    elif args.command == "decide":
         if args.gate not in plan["gates"]:
             parser.error("Unknown gate")
         state["decisions"][args.gate] = {

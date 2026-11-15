@@ -1,5 +1,6 @@
 """Tracker safety checks only; these tests do not run application or cloud work."""
 
+import copy
 import importlib.util
 import sys
 import unittest
@@ -119,6 +120,38 @@ class TrackerChecks(unittest.TestCase):
             tracker.snapshot(self.base, ["image.bin"]),
             tracker.snapshot(self.base, ["image.bin"], "utf8-lf-v1"),
         )
+
+    def test_explicit_portability_preserves_original_and_rejects_changed_content(self):
+        source = self.base / "source.txt"
+        source.write_bytes(b"version 1\r\n")
+        self.completed()
+        record = self.state["steps"]["P1.1"]
+        original = copy.deepcopy(record)
+        portable = tracker.checkout_compatibility(self.base, self.task, record)
+        self.assertIsNotNone(portable)
+        record["checkout_compatibility"] = portable
+        self.assertEqual({key: record[key] for key in original}, original)
+        source.write_bytes(b"version 1\n")
+        self.assertEqual(self.status(), "done")
+        source.write_bytes(b"version 2\n")
+        self.assertEqual(self.status(), "needs_revalidation")
+        self.assertIsNone(tracker.checkout_compatibility(self.base, self.task, record))
+
+    def test_portability_is_bound_to_original_receipt_and_evidence(self):
+        self.completed()
+        record = self.state["steps"]["P1.1"]
+        record["checkout_compatibility"] = tracker.checkout_compatibility(
+            self.base, self.task, record
+        )
+        record["source_hashes"]["source.txt"] = "changed"
+        self.assertEqual(self.status(), "needs_revalidation")
+        self.completed()
+        record = self.state["steps"]["P1.1"]
+        record["checkout_compatibility"] = tracker.checkout_compatibility(
+            self.base, self.task, record
+        )
+        (self.base / "proof.txt").write_text("changed proof")
+        self.assertEqual(self.status(), "needs_revalidation")
 
     def test_missing_or_tampered_evidence_invalidates_pass(self):
         self.completed()

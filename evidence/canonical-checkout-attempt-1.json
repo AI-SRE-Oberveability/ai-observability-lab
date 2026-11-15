@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T19:41:56+04:00",
+  "source_commit": "6e9a27d6f71d14ee3311b561280decf8b7571238",
+  "canonical_lab_clean_at_verification": true,
+  "tested_source_hashes_match_clean_git_checkout": true,
+  "tracked_statuses_legacy": {
+    "done": 17,
+    "needs_revalidation": 2,
+    "blocked": 1,
+    "in_progress": 2,
+    "waiting_for_decision": 3,
+    "draft": 2,
+    "planned": 21
+  },
+  "tracked_statuses_canonical": {
+    "needs_revalidation": 14,
+    "blocked": 4,
+    "waiting_for_decision": 5,
+    "in_progress": 2,
+    "draft": 2,
+    "planned": 21
+  },
+  "status_differences": [
+    {
+      "task": "P0.1",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P0.2",
+      "legacy": "done",
+      "canonical": "blocked"
+    },
+    {
+      "task": "P0.3",
+      "legacy": "done",
+      "canonical": "blocked"
+    },
+    {
+      "task": "P0.4",
+      "legacy": "done",
+      "canonical": "waiting_for_decision"
+    },
+    {
+      "task": "P1.1",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P1.2",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P1.3",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P1.4",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.1",
+      "legacy": "done",
+      "canonical": "waiting_for_decision"
+    },
+    {
+      "task": "P2.2",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.3",
+      "legacy": "blocked",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.5",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.6",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.7",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.8",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.9",
+      "legacy": "done",
+      "canonical": "needs_revalidation"
+    },
+    {
+      "task": "P2.10",
+      "legacy": "done",
+      "canonical": "blocked"
+    },
+    {
+      "task": "P2.11",
+      "legacy": "done",
+      "canonical": "blocked"
+    }
+  ],
+  "local_overlay_preserved_in_private_stash": true,
+  "azure_deployment_enabled": false,
+  "limitations": [
+    "Clean checkout verifies the exact tested source bytes; it does not repeat backend traffic or accept historical stale proof."
+  ],
+  "status": "failed",
+  "reason": "Original historical raw CRLF receipts disagreed with LF clone; preserved before explicit portability correction"
+}

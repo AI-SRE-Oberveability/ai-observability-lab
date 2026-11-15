@@ -32,21 +32,32 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/initial-inventory.md": "a9fb6eff80e5077118841124cc22eb8daacf063da19687e780b0accaa839bd77",
         "ai-observability-lab/evidence/publication-planning-revalidation.md": "9ac90a7998602ce0cfaefafde45ee5cee9d830752372e531debc3c07fa0956dd"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "0030505fc91cedda42df6f2396d58512ef2da1c70aa4f1d3ebf4d39366ce2ccd",
+        "source_hashes": {
+          "ai-observability-lab/evidence/initial-inventory.md": "d1508d4b1d6afc55d214ba5fe626f29720482dcfc99ec4004e21a16839bb2754"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/initial-inventory.md": "d1508d4b1d6afc55d214ba5fe626f29720482dcfc99ec4004e21a16839bb2754",
+          "ai-observability-lab/evidence/publication-planning-revalidation.md": "bf6123999cbf697ea3b980259962ded72aea2b395d212a1071a7d7d531d47118"
+        }
       }
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.24 and ordered plan distinguish seven canonical clones/three empty repos, current four GitHub names, verified local checks and later source/CI/cutover/runtime steps. Terraform/AKS/APIM and pending cloud gates retained.",
-      "at": "2026-11-15T19:37:24+04:00",
+      "note": "HLD 0.25 distinguishes 68-test compatibility checks, explicit verified historical LF portability, preserved stale runner evidence and pending clean published checkout/cutover. AKS/APIM/Terraform and disabled cloud gates unchanged.",
+      "at": "2026-11-15T19:48:16+04:00",
       "evidence": [
         "ai-observability-lab/evidence/workspace-setup.json",
         "ai-observability-lab/evidence/migration-path-compatibility.json",
-        "ai-observability-lab/evidence/pr34-merge.json"
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "3aa245472ee6f5f80aec55b2472fc8e51998ba635f92b0beb713e967a108dbce",
-        "ai-observability-lab/HLD.md": "d3c447ac686fec58c05d7a9ee3fdcaeaf978452f88bbfa782f2c6b9eeb609915",
+        "ai-observability-lab/HLD.md": "2087426673822923abec43ef9d9295831fe2a703773f14ad2caa1dd7c467ab78",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -85,40 +96,42 @@
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
         "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
-        "ai-observability-lab/docs/workspace-compatibility.md": "e49378e8b5e329da21bd52a6dcea4ea85e14375bdc82b6461f147eee0b49fad1"
+        "ai-observability-lab/docs/workspace-compatibility.md": "003a19734330d549bdaf22108b016a132ab88aed20aadbf512c62cd2d8a5945b"
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4",
-        "ai-observability-lab/evidence/migration-path-compatibility.json": "5b79ddfed6d3d2ad80bdf70e3768d4bc1c603936bfc25707078f9ffcbe859831",
-        "ai-observability-lab/evidence/pr34-merge.json": "1ec96ca3cc3a820a74868071cf27b908cb8a0bdef3410dbfe82419b375c88f61"
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "85d312cf714e8d8ac0bac1a05c63d735c5ad0d2cb216713ec98ece275d00d38f",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "a54858be7ea640f500c5f2eddc6a3f32aa134e7d1e54377488a5ac9803c4222d"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "Tracker/sync/resolver validated by 66 tests in each real layout/OS; new UTF8-LF records preserve checkout compatibility, historical raw hashes retained, unpublished/stale Project evidence blocked before writes.",
-      "at": "2026-11-15T19:37:31+04:00",
+      "note": "68 tests pass in both layouts on Windows (3 skips) and Linux (0 skips). Explicit legacy receipt portability requires original raw byte matches and fingerprint binding; original hashes/history retained and semantic/evidence changes still fail.",
+      "at": "2026-11-15T19:48:21+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/migration-path-compatibility.json"
+        "ai-observability-lab/evidence/migration-path-compatibility.json",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/scripts/poc_tracker.py": "c9be50cba76ae34c95d21237d8d443c994c4d0e08ed8fd86210f240089d02f88",
+        "ai-observability-lab/scripts/poc_tracker.py": "c4a551dea902809358f2827467afad842023114d6c0aac92cfb13612b9c4c30b",
         "ai-observability-lab/tests/lab_fixtures.py": "8ac9227ee9ca9362c242bd8109cad705438df28a9ab11d35b7bc5fe0ac1a152a",
         "ai-observability-lab/tests/test_linux_proof.py": "9e9ab5d4f7808a9951b01c11568f3f39d997a7aa44b30a0bda1d800aea282a2c",
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
         "ai-observability-lab/tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
-        "ai-observability-lab/tests/test_tracker.py": "3c865fb388ba5a6c4a9631351d97744cd00bd09f1c78c3e60328c849038d129d",
+        "ai-observability-lab/tests/test_tracker.py": "779bac846eb99c1f06bed27038b4ba8e0c7aa059225d76560ab2ceeefe706716",
         "ai-observability-lab/tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
         "ai-observability-lab/tracking/plan.json": "9b422976ee9129ae5dabfa27bb83c465e72a3ee822aeccf717de4d884ffa1087",
-        "ai-observability-lab/TRACKER_GUIDE.md": "589d17eaed64a26e29cb7c3e3ce53ee1466f26e0c6d2ddc872837396e01d8c64",
+        "ai-observability-lab/TRACKER_GUIDE.md": "653c32f56715f955717cae55c75d34aef9a2b42444e321056699214aac554ddb",
         "ai-observability-lab/AGENTS.md": "add0ca8bfb7fff426c10930d147bea63ca004400c2d4c4d400914340260c1452",
         "ai-observability-lab/scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
         "ai-observability-lab/scripts/workspace.py": "5ba453e873803a8cb049111cafda1b12bdcfb073fe68b85bc03cdad2a9c6174b",
         "ai-observability-lab/tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/migration-path-compatibility.json": "5b79ddfed6d3d2ad80bdf70e3768d4bc1c603936bfc25707078f9ffcbe859831"
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "85d312cf714e8d8ac0bac1a05c63d735c5ad0d2cb216713ec98ece275d00d38f",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "a54858be7ea640f500c5f2eddc6a3f32aa134e7d1e54377488a5ac9803c4222d"
       }
     },
     "P2.2": {
@@ -135,6 +148,16 @@
         "ai-observability-lab/evidence/publication-review.md": "d21a42c966cb9c41b8d716ee038a9b34c09cde18b6fb4d2961e71e8a9635ab8d",
         "ai-observability-lab/evidence/publication-receipts.json": "87359cbc90ea4e211d1026fa4162079840efbfc51499e4e08f7d5c8fd963f5f6",
         "ai-observability-lab/evidence/publication-completion.md": "537d96a579a9f88e12b3f859c6755cfcd1a21628cacee850a5693ebe7c951bd9"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "63935b211e1de9f4764d26e771f499c9fca1cc48484475381e1d02d385e0a54f",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/publication-review.md": "d21a42c966cb9c41b8d716ee038a9b34c09cde18b6fb4d2961e71e8a9635ab8d",
+          "ai-observability-lab/evidence/publication-receipts.json": "cb7d2226705ce08f82d578ab71d19078a983720c70fb624b4e92e250d861384c",
+          "ai-observability-lab/evidence/publication-completion.md": "41ba7d3837d605b367420cc7b4ff7326c7790a8d701ace25b8ca0ecbc1fe6e0c"
+        }
       }
     },
     "P2.5": {
@@ -147,6 +170,14 @@
       "source_hashes": {},
       "evidence_hashes": {
         "ai-observability-lab/evidence/organization-created.json": "28ce7d56117cafcd4da2d5eeb6f1e505425fea8bd4f024453323ba1d8840a6f8"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "26c598603cefe88227fc7690f0ad9afeb4fd1214e84a1c4acfbc6b9a7370bba6",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/organization-created.json": "b04ea6d14f865b76b488acf42ae9bd980db213b55a99fddeeb4814a37219538a"
+        }
       }
     },
     "P2.6": {
@@ -159,6 +190,14 @@
       "source_hashes": {},
       "evidence_hashes": {
         "ai-observability-lab/evidence/repository-transfer-receipts.json": "64f0de255de777931edb2247b90ba31d02f001fecac3b966e0231597dc61c723"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "6bbb8e5e65eed4e9d49d7256b337bba75229cc03d6c72bd8747be86190d4f592",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/repository-transfer-receipts.json": "aa7d7dbe461f17163f5215c6467b2d5890c421d36340e096253ca2961a458ae1"
+        }
       }
     },
     "P2.7": {
@@ -171,6 +210,14 @@
       "source_hashes": {},
       "evidence_hashes": {
         "ai-observability-lab/evidence/shared-project-completion.json": "3a0e45c5e8d29fe31f88def56f45c2f4316d542a213c21fa73f19f7bd55d3d40"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "ac0b71ed3b75cc4548a3a2f05a9d019bb405bf9464543b8ce8cfa7719b147864",
+        "source_hashes": {},
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/shared-project-completion.json": "750a14c06109efd561cdd02b75f2d254e715a82ccd6bb31999a8924bd1a0aef7"
+        }
       }
     },
     "P2.8": {
@@ -195,6 +242,26 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "9825acd3a0bd4d456e38c27008636e250212af21bb5e63ee1bb14d8aa924c2a0",
+        "source_hashes": {
+          "ai-observability-infra/.github/workflows/ci.yaml": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e",
+          "ai-agent-workloads/.github/workflows/ci.yaml": "3cf80dc2bb3224bd381c7202622b3ea8b872c4065ae1ba7750a20853cf23694e",
+          "ai-observability-config/.github/workflows/ci.yaml": "8c1ec08d45eaf74bcdaa6e9beb7838510127ea8e40fa2a383a3ffc61ca6bad9c",
+          "ai-observability-lab/.github/workflows/ci.yaml": "b91013fff52a7df7448075337166c25b296018eefa83f4274e7e53c32b62d834",
+          "ai-agent-workloads/requirements-dev.lock.txt": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506",
+          "ai-agent-workloads/requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "ai-agent-workloads/Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+          "ai-observability-config/requirements-ci.txt": "ffb1c8d1dfed561f430bff92499d46b65fe791c45e4492dcaf4798ff77100d7b",
+          "ai-observability-config/scripts/check_config.py": "de6ec28b500f3acfa4253c371305d0cf49c3ab9c6929bd20d6903408ee14d9fa",
+          "ai-observability-lab/requirements-ci.txt": "1c80175b2026277fbef779eb50099e1477c5437146b2aa5eaf7d90e5e7e5ee3e",
+          "ai-observability-infra/requirements-ci.txt": "1da72b5f1985267346a9dfeec8358f909b78637a70119b4e08bb4872a31abf22"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663"
+        }
       }
     },
     "P2.9": {
@@ -222,6 +289,28 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
         "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "1fdb4179104cb6dbdeb1eaed2ebf538c29c0533b8319c892fd440cc4e5693f00",
+        "source_hashes": {
+          "ai-observability-infra/.github/workflows/ci.yaml": "7b8082a51a292e3f0658388677f8da4f645ab07895cc6f9b56b0dd9a492ceb1e",
+          "ai-observability-infra/.github/workflows/terraform-deploy.yaml": "27fd0dba8867b3ff42fbdac32c52cff93fc4cebf3d6948f4b2db5594a97d9fbf",
+          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/LICENSE.txt": "4e2bb185ebd706f76329206869ccb348b92b6236100cfb07775fe31530dab0d5",
+          "ai-observability-infra/foundation/.terraform/providers/registry.terraform.io/hashicorp/azurerm/5.11.0/windows_amd64/terraform-provider-azurerm_v5.11.0_x5.exe": "13af584640b372255c6fa3913505df5b4b7a1beb2081fd7d0e8c562533e1a950",
+          "ai-observability-infra/foundation/.terraform.lock.hcl": "0eb93cf29237e7e73aaec364317b91dda3023338cefdb329214360f11f05eff8",
+          "ai-observability-infra/foundation/main.tf": "9284f699d625d55da0e2b79360d4712c68f3c74c21c94ce1299f9a35fecb0f4d",
+          "ai-observability-infra/foundation/tests/guardrails.tftest.hcl": "c76ebb913a42bc9a4d9735b57324eaf8c96467ef3290cd24f088851575783382",
+          "ai-observability-infra/foundation/variables.tf": "33943bc7fc9dfe9690ee8ca2fc7a3eea089d2e983cb67b869bc3a71bdfd4ff2d",
+          "ai-observability-infra/foundation/versions.tf": "de5c650badbc8a46697c56c85d9f9f747d943179f3735e51ba3c89e721fa3738",
+          "ai-observability-infra/scripts/deployment_guard.py": "0d29e66646d1f27756976223c96d0b2f8948a7e1e321bec30e3e22baa39df8f3",
+          "ai-observability-infra/scripts/plan_review.py": "d37673417e012c7eaeb5c3456df3cc431028063420d3bff9ab71f99a36a95301",
+          "ai-observability-infra/tests/test_deployment.py": "7104098f5860d85c51afcf210ca08188e51cbd0b734cbb47a1daa415caac1647"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
+          "ai-observability-lab/evidence/actions-disabled-deployment-verification.json": "935efa2f1f1f102013c1e532ae069a38bed78733b3711b9a6786cb4048beae02"
+        }
       }
     },
     "P3.2": {
@@ -266,6 +355,31 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-workload-review.md": "b69d5c7a115232e5a6314001149f5b313660dacb3c4b7722f0af12beb7e83a34",
         "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "6eba1ecc6c7afd6b8e29cc48d1e79a2f72acfcc06deaed54775c7fdb9849d5d0",
+        "source_hashes": {
+          "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+          "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+          "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+          "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+          "ai-agent-workloads/src/ai_lab/policies.json": "7078cb59b5ed11a72bfe0642b59082606894752f9a8682f3dbf1826863039817",
+          "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+          "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+          "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+          "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+          "ai-agent-workloads/pyproject.toml": "f410dd8c146832e53de6cde373f1e929992aed30f1e97b678f5c9e54cf470ecf",
+          "ai-agent-workloads/uv.lock": "59f4edafc72d4bfec0d17ba1799345204fe5cd99396481ea5d24ae605ea0fde3",
+          "ai-agent-workloads/requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "ai-agent-workloads/requirements-dev.lock.txt": "32388ccab6e478c79851ce4d9a2956aabacd95f724a7069028444854938b2506",
+          "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+          "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-workload-review.md": "b69d5c7a115232e5a6314001149f5b313660dacb3c4b7722f0af12beb7e83a34",
+          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+        }
       }
     },
     "P1.2": {
@@ -281,6 +395,17 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "586072fb677e3c7b511fc686af80a4acd4abb6ed0d2f9e8e96cbbcf001cf0f3c",
+        "source_hashes": {
+          "ai-agent-workloads/contracts/agent.openapi.yaml": "9e873b0ccb667eb429e109f71ac07f058284edcb2916517514dbb6051c36640e",
+          "ai-agent-workloads/contracts/retrieval.openapi.yaml": "03a6b989694beffdd61ba9bbc99f39bf16dda62196de5b6ff6a8c318b749bd5e"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+        }
       }
     },
     "P1.3": {
@@ -304,6 +429,25 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "fb844cf51f50e03941b229320ae6ff0d78b6d2a4dad282f2dc2683ef930f7199",
+        "source_hashes": {
+          "ai-agent-workloads/src/ai_lab/__init__.py": "6b6dab26f2a4db902265b06c98f8786789e860f82c4a7b51053ace54a55b9e1d",
+          "ai-agent-workloads/src/ai_lab/agent.py": "aed20186e4c30ecfbd167d14bb8e44582a5ab07d3b35052dbf558fd15401bc1b",
+          "ai-agent-workloads/src/ai_lab/common.py": "bc011933ae8150fbff272257317b481c6f710e323cec8397604b93b3667151ee",
+          "ai-agent-workloads/src/ai_lab/models.py": "b4de3834d66384570c7f0cdd3d9380826ca450ef57709d85a7b3d1e9c634c596",
+          "ai-agent-workloads/src/ai_lab/policies.json": "7078cb59b5ed11a72bfe0642b59082606894752f9a8682f3dbf1826863039817",
+          "ai-agent-workloads/src/ai_lab/provider.py": "913047775a4ff2453859abf53d487aa096a73d9b150c70e8d3d4850d4d62906c",
+          "ai-agent-workloads/src/ai_lab/retrieval.py": "31cf1be5f4ec52107af18a65ac4cf7992079d25a4c70bebbab764f7d1cd24887",
+          "ai-agent-workloads/src/ai_lab/settings.py": "17367d682e67f43089e2a2a630ad85caa00866c0b18407e65c36a8da06e15b28",
+          "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+          "ai-agent-workloads/evaluations/policy-v1.json": "d9b2d5bba3cdd9c6a52af5bacfd6dd8f19c6abf1d235eb2099b0b82234d7bb5a"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
+        }
       }
     },
     "P1.4": {
@@ -320,6 +464,18 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "342b1c12ceb9979d9402a5c82aa6da27307972bd6375ed1e7e410262e0f50590",
+        "source_hashes": {
+          "ai-agent-workloads/src/ai_lab/telemetry.py": "f2cf3adee8833169572a5ee0d088845e4d66cd440d64a2372f30e1d53390556b",
+          "ai-observability-config/telemetry-contract.md": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f",
+          "ai-observability-config/local/collector.yaml": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+        }
       }
     },
     "P1.5": {
@@ -401,6 +557,24 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
         "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "e3a24f2816da86be157a4eede68add996c42b0c646dc43d7589f65d149c54e68",
+        "source_hashes": {
+          "ai-agent-workloads/.github/workflow-drafts/ci.yaml": "8a2f1b41480658d573691af38105120056ff93fa6986e486296b1bdc0b9cff45",
+          "ai-agent-workloads/.github/workflows/ci.yaml": "3cf80dc2bb3224bd381c7202622b3ea8b872c4065ae1ba7750a20853cf23694e",
+          "ai-agent-workloads/pyproject.toml": "f410dd8c146832e53de6cde373f1e929992aed30f1e97b678f5c9e54cf470ecf",
+          "ai-agent-workloads/uv.lock": "59f4edafc72d4bfec0d17ba1799345204fe5cd99396481ea5d24ae605ea0fde3",
+          "ai-agent-workloads/requirements.lock.txt": "2b26711ac7e17638ca61728826b8dabc4ac6db4ebff33af1d892a555377c3b7e",
+          "ai-agent-workloads/Dockerfile": "443649a59e3fcafdc004a7748a6a584fa6d443655438425362924a900ade489d",
+          "ai-agent-workloads/tests/conftest.py": "0c0b9c93e7e1fb7014c7080600e815806fb52e42ac948a7090fe68513607da6e",
+          "ai-agent-workloads/tests/test_slice.py": "b7caa5cdd519cb72b3a16d4bb1a66fb6d11c15b45acbfc50587cac49c1797f9c"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663",
+          "ai-observability-lab/evidence/local-backend-proof.json": "1bc6a53a90dc9b8f41b98c2803a442a500f35cb3fc104aaba6a3417b2ca03453"
+        }
       }
     },
     "P2.4": {
@@ -459,15 +633,30 @@
       "evidence_hashes": {
         "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18",
         "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+      },
+      "checkout_compatibility": {
+        "policy": "utf8-lf-v1",
+        "original_receipt_sha256": "2095485211007197fe680bdd94c18424da55efb2c0a8285bd66d9553ec1df870",
+        "source_hashes": {
+          "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
+          "ai-observability-lab/evidence/migration-baseline.json": "7d99b281b018744976f329c4c633e8deefb1f8ab61b41a2ba1e3f8f8a674c69a",
+          "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+        },
+        "evidence_hashes": {
+          "ai-observability-lab/evidence/migration-baseline-validation.json": "7c5ddcda9baadd7f301c80f71b2d73d6611e15ee07191853545a89184f110f18",
+          "ai-observability-lab/evidence/pr25-review.json": "4c40e037a81107883a44093a0f1bd0380850c85a82258281dc9071d29932b40d"
+        }
       }
     },
     "P2.12": {
       "status": "in_progress",
-      "note": "Both layouts pass 66 Windows tests (3 skips) and 66 Linux tests (0 skips), actual Compose config render and 18 pinned object reads. R1/R2 corrected; source publication and clean canonical checkout remain before final acceptance. Project sync waits for published evidence preflight.",
-      "at": "2026-11-15T19:37:46+04:00",
+      "note": "Final 68-test/Compose/release-source validation passes both layouts/OS profiles; GitHub/public-source and credential-preservation checks pass. Publishing explicit historical checkout correction before final clean canonical acceptance.",
+      "at": "2026-11-15T19:48:26+04:00",
       "evidence": [
         "ai-observability-lab/evidence/workspace-setup.json",
-        "ai-observability-lab/evidence/migration-path-compatibility.json"
+        "ai-observability-lab/evidence/migration-path-compatibility.json",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -478,8 +667,8 @@
         "ai-observability-lab/scripts/workspace.py": "5ba453e873803a8cb049111cafda1b12bdcfb073fe68b85bc03cdad2a9c6174b",
         "ai-observability-lab/tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca",
         "ai-observability-lab/tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
-        "ai-observability-lab/docs/workspace-compatibility.md": "e49378e8b5e329da21bd52a6dcea4ea85e14375bdc82b6461f147eee0b49fad1",
-        "ai-observability-lab/scripts/poc_tracker.py": "c9be50cba76ae34c95d21237d8d443c994c4d0e08ed8fd86210f240089d02f88",
+        "ai-observability-lab/docs/workspace-compatibility.md": "003a19734330d549bdaf22108b016a132ab88aed20aadbf512c62cd2d8a5945b",
+        "ai-observability-lab/scripts/poc_tracker.py": "c4a551dea902809358f2827467afad842023114d6c0aac92cfb13612b9c4c30b",
         "ai-observability-lab/scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
         "ai-observability-lab/scripts/install_local_backends.py": "8e389e89d7b28fcf2d70fc04720ed93d79307a572a8395b4ad7015ac2dc92495",
         "ai-observability-lab/scripts/prove_local_backend.py": "aa57b85d70d68fa763f6a34e0c42f46695ce08cb9f31531231a9128f9102bfb9",
@@ -490,7 +679,7 @@
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
         "ai-observability-lab/tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
-        "ai-observability-lab/tests/test_tracker.py": "3c865fb388ba5a6c4a9631351d97744cd00bd09f1c78c3e60328c849038d129d",
+        "ai-observability-lab/tests/test_tracker.py": "779bac846eb99c1f06bed27038b4ba8e0c7aa059225d76560ab2ceeefe706716",
         "ai-observability-lab/AI-PLATFORM-LAB.code-workspace": "a38a68e3cff6c291f198e81e267d409d028f7a22ffe7e8f74b8eba7ce30e6c6e",
         "ai-observability-lab/personal-ai-observability.code-workspace": "d0359fbd599502c1b945c15073d819d9cbcaca0f16360f2882c997793be14203",
         "ai-agent-workloads/compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
@@ -499,7 +688,9 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4",
-        "ai-observability-lab/evidence/migration-path-compatibility.json": "5b79ddfed6d3d2ad80bdf70e3768d4bc1c603936bfc25707078f9ffcbe859831"
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "85d312cf714e8d8ac0bac1a05c63d735c5ad0d2cb216713ec98ece275d00d38f",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "a54858be7ea640f500c5f2eddc6a3f32aa134e7d1e54377488a5ac9803c4222d",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432"
       }
     }
   },
@@ -522,7 +713,7 @@
   "hld": {
     "current": "Seven canonical folders prepared alongside preserved legacy workspace; four existing GitHub names retained and three new repos empty. Terraform/AKS agents/APIM outside AKS unchanged; Azure false, GitLab credentials preserved.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.12: Both layouts pass 66 Windows tests (3 skips) and 66 Linux tests (0 skips), actual Compose config render and 18 pinned object reads. R1/R2 corrected; source publication and clean canonical checkout remain before final acceptance. Project sync waits for published evidence preflight."
+    "last_change": "P2.12: Final 68-test/Compose/release-source validation passes both layouts/OS profiles; GitHub/public-source and credential-preservation checks pass. Publishing explicit historical checkout correction before final clean canonical acceptance."
   },
   "repository_verification": {
     "date": "2026-10-28",
