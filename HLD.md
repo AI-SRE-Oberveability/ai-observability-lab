@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.25 portable workspace compatibility. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #34 merged after approval; P2.12 local acceptance complete; reviewed source is in PR #35 and Azure execution remains disabled**.
+Version: 0.26 platform ownership planning. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #35 merged; P2.13 ownership planning started before manifest changes; Azure remains disabled**.
 
 ## Purpose
 
@@ -8,7 +8,15 @@ Provide three synthetic use cases: a policy assistant, a service-status agent an
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; three new empty public repositories now exist. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## P2.12 workspace setup and corrections — 15 November 2026
+## PR #35 merged; P2.13 planning started — 15 November 2026
+
+The user explicitly authorized merging PR #35 and starting P2.13 with ownership planning first. Approved head 26635b044344da0f39440889577d92cc0335f77b merged as 28fb2bfc8285f037843100f4a2f4bc2d533b04f8; exact-head PR/push CI and the new exact-main CI passed. See evidence/pr35-merge.json and evidence/platform-ownership-start.json. P2.12 path compatibility is now on main; original PR #25 and its receipts/history remain preserved.
+
+P2.13 first defines the configuration, charts and GitOps resource boundaries, exact future folders, dependency locks, bootstrap-to-Argo handover, negative checks, publication sequence and rollback. This step changes coordination documents/evidence only. The config/GitOps/pipelines repositories remain empty; no chart, manifest, controller, CRD, bootstrap installer or reusable workflow is added yet. Keep one source owner and one active spec writer for each resource.
+
+Runtime remains Python agents on AKS -> APIM outside AKS -> approved endpoints. Terraform owns Azure/APIM; metadata-only telemetry, separate identities and read-only SRE remain required. Next: inventory and publish the concrete P2.13 ownership plan before source implementation. Remaining: P2.13 source/renders/handover checks, P2.14 seven-repo CI, P2.15 rename/Project cutover, P2.16 canonical backend/source baseline, then exact targets/budget and costed Terraform planning. Azure is false; G2/G3/G4/G5 remain pending and GitLab credentials/global Git settings stay intact.
+
+## Earlier P2.12 workspace acceptance snapshot — 15 November 2026
 
 Created empty public config, gitops and pipelines repositories with verified IDs; all seven canonical sibling clones now exist under AI-PLATFORM-LAB. The three new repos have read-only workflow permissions, no PR approval permission, an explicit false Azure flag and no branches/workflows yet. Four original GitHub names, source histories and rollback workspace remain unchanged. See evidence/workspace-setup.json.
 

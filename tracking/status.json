@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-15T19:58:15+04:00",
+  "updated_at": "2026-11-15T20:13:37+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 18,
     "needs_revalidation": 2,
     "blocked": 1,
-    "in_progress": 1,
+    "in_progress": 2,
     "waiting_for_decision": 3,
     "draft": 2,
-    "planned": 21
+    "planned": 20
   },
   "tasks": [
     {
@@ -76,14 +76,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/workspace-setup.json",
-        "ai-observability-lab/evidence/migration-path-compatibility.json",
-        "ai-observability-lab/evidence/canonical-workspace-checkout.json",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
-        "ai-observability-lab/evidence/workspace-preservation-verification.json",
-        "ai-observability-lab/evidence/workspace-compatibility-publication.json"
+        "ai-observability-lab/evidence/pr35-merge.json",
+        "ai-observability-lab/evidence/platform-ownership-start.json"
       ],
-      "note": "Final HLD 0.25 and tracker choices/gaps accurately state completed local P2.12 acceptance, clean canonical equivalence, passing exact-source CI and remaining PR35 review/P2.13–P2.16 work.",
+      "note": "HLD 0.26 records approved PR35 merge, exact-main CI and P2.13 planning-first scope; runtime/ownership and cloud gates preserved.",
       "ready": false
     },
     {
@@ -1437,14 +1433,17 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "acceptance": "Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution.",
-      "status": "planned",
+      "status": "in_progress",
       "blocked_by": [],
       "artifacts_present": [],
       "artifacts_missing": [
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
-      "evidence": [],
-      "note": "",
+      "evidence": [
+        "ai-observability-lab/evidence/pr35-merge.json",
+        "ai-observability-lab/evidence/platform-ownership-start.json"
+      ],
+      "note": "Started ownership planning before manifest/chart changes. PR35 merged and exact-main CI passed; seven canonical clones/IDs preserved and three new repos remain empty. Next: concrete source boundaries, locked-input plan, bootstrap handover, offline validation and review sequence.",
       "ready": true
     },
     {
