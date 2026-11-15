@@ -48,15 +48,15 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.30 and the current delivery-plan paragraph describe the approved PR36 merge, locked inputs and first validated configuration slice in review; remaining chart/GitOps/handover and cloud gates are explicit.",
-      "at": "2026-11-15T21:56:56+04:00",
+      "note": "HLD 0.31 and Collector/GitOps step-by-step plan record approved foundation merges and exact-main CI, bounded implementation order and remaining gates.",
+      "at": "2026-11-15T22:07:02+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/configuration-foundations-validation.json"
+        "ai-observability-lab/evidence/p213-foundations-merge.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "f46544db8c26deadaf1910c4a66c7addf25a393385b8f46a9fdc2812dc1ce10a",
-        "ai-observability-lab/HLD.md": "740128a7c0cade3ae25129560af1d7657f645eeadd566a36adf798be36dde865",
+        "ai-observability-lab/POC_PLAN.md": "3171566a21b2a5cbfddc7d04a1a199167c9c119f698b11dc987dd19dacde9feb",
+        "ai-observability-lab/HLD.md": "2c6d1f9d92479719c784452d7487b9df96018f07066bdc381812a3867e84a76e",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -97,10 +97,10 @@
         "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
         "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f",
         "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "1ad52e122d7c35eba60ce9c43bdf84c79e82aed94e6b1a9e48b6782d7e5a8705"
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "907f99881676fff778c3ecb097ed551ab29fcf60be2d69261ddf9bca2af3a894"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/configuration-foundations-validation.json": "0303856eddff7948e03f626b6359eba3d1859c232cc95e670c095c27e318f0b5"
+        "ai-observability-lab/evidence/p213-foundations-merge.json": "93e337795da01d87afcca4a3005efec47add04ea6e9164850c4271fea8c7ecb9"
       }
     },
     "P0.3": {
@@ -715,10 +715,10 @@
     },
     "P2.13": {
       "status": "in_progress",
-      "note": "First dependency/configuration slice is implemented and source-CI validated: 32 configuration objects and 20 tests. Current plan/HLD and source/attempt/preservation receipts are aligned; component PR review and remaining chart/GitOps/handover work remain.",
-      "at": "2026-11-15T21:57:09+04:00",
+      "note": "Config #1/charts #6/lab #37 merged and exact-main push CI passed, including Windows/Linux config. Next Collector chart/manual GitOps slice planned before implementation; Azure remains disabled.",
+      "at": "2026-11-15T22:07:15+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/configuration-foundations-validation.json"
+        "ai-observability-lab/evidence/p213-foundations-merge.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -727,7 +727,7 @@
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
         "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "1ad52e122d7c35eba60ce9c43bdf84c79e82aed94e6b1a9e48b6782d7e5a8705",
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "907f99881676fff778c3ecb097ed551ab29fcf60be2d69261ddf9bca2af3a894",
         "ai-platform-config/.gitattributes": "f563c611822ae875f6c1e9ceb825cc8fc501a9d9d025137092188c5ff52e6d8d",
         "ai-platform-config/.github/workflows/ci.yaml": "8c932403c1cec92a76f3a79b85dd9edbd974a16a42a3102dc1194111dd164487",
         "ai-platform-config/.gitignore": "6d9c835289816cf23c68fa563941d280ed9395c6f16b6e445c60ff4f96405114",
@@ -796,12 +796,12 @@
         "ai-observability-lab/tracking/platform-render-matrix.json": "3f1dbc54c823ea92a0fb0dcf6502177ec1545aed6827449e4ed7749c3269a174"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/configuration-foundations-validation.json": "0303856eddff7948e03f626b6359eba3d1859c232cc95e670c095c27e318f0b5"
+        "ai-observability-lab/evidence/p213-foundations-merge.json": "93e337795da01d87afcca4a3005efec47add04ea6e9164850c4271fea8c7ecb9"
       }
     }
   },
   "known_gaps": [
-    "PR36 merged. Locked dependencies and first 32-object config slice are implemented with 20 tests and passing exact-source CI in config #1/charts #6; review/merge and remaining platform/application chart, GitOps and handover/combined checks precede P2.13 acceptance.",
+    "Foundations merged and three exact-main CIs pass. Next: planned Collector chart/manual GitOps slice, then remaining Jaeger/application/Argo and bootstrap/combined source checks before P2.13 acceptance.",
     "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
@@ -818,9 +818,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "P2.13 locked inputs and first 32-object configuration slice implemented/CI-passing in review branches; 20 tests, safe ownership and preserved baseline. Remaining chart/GitOps/handover work continues; Azure disabled and GitLab/global Git settings intact.",
+    "current": "HLD 0.31: foundations merged/main CI passed; bounded Collector chart/manual GitOps plan prepared; remaining charts/Argo/handover work and Azure gates retained.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.13: First dependency/configuration slice is implemented and source-CI validated: 32 configuration objects and 20 tests. Current plan/HLD and source/attempt/preservation receipts are aligned; component PR review and remaining chart/GitOps/handover work remain."
+    "last_change": "P2.13: Config #1/charts #6/lab #37 merged and exact-main push CI passed, including Windows/Linux config. Next Collector chart/manual GitOps slice planned before implementation; Azure remains disabled."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -887,7 +887,7 @@
     "azure_deployment_enabled": false
   },
   "migration_workspace": {
-    "status": "P2.13_inputs_locked_first_config_source_in_review",
+    "status": "foundations_merged_collector_gitops_start",
     "source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
     "workspace": "AI-PLATFORM-LAB",
     "canonical_clones": 7,
@@ -899,7 +899,7 @@
     "merge_commit": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8"
   },
   "platform_ownership_plan": {
-    "status": "approved_first_input_config_slice_validated_review_pending",
+    "status": "foundations_merged_next_collector_gitops_slice_planned",
     "document": "docs/platform-ownership-plan.md",
     "blueprint": "tracking/platform-ownership-plan.json",
     "substeps": 8,

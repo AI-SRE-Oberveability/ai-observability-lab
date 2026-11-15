@@ -1,6 +1,6 @@
-# High-level design — current, target and remaining work
+# High-level design â€” current, target and remaining work
 
-Version: 0.30 configuration foundations validated. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #36 merged; locked inputs and first configuration slice validated in review PRs; P2.13 continues; Azure disabled**.
+Version: 0.31 foundations merged; Collector/GitOps plan. Updated: 15 November 2026, Asia/Dubai. Execution: **config #1, charts #6 and lab #37 merged; exact-main CI passed; next P2.13 slice planned; Azure disabled**.
 
 ## Purpose
 
@@ -8,7 +8,7 @@ Provide three synthetic use cases: a policy assistant, a service-status agent an
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; the config addition now has a reviewed documentation baseline; GitOps and pipelines remain empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## First configuration slice validated — 15 November 2026
+## First configuration slice validated â€” 15 November 2026
 
 [Current implementation and remaining work](docs/platform-configuration-progress.md). Config #1 now binds rendered CRDs to the exact locked upstream objects, preventing an authored assembly from substituting a schema while leaving unused originals intact. All 20 configuration tests pass locally and clean Windows/Linux CI passes at the matrix's exact config commit. Three builds produce 32 unique configuration-owned objects: four Namespaces, two quotas, two LimitRanges, two unbound read-only Roles, nineteen NetworkPolicies and three original CRDs. No application ServiceAccount, RoleBinding, Deployment or controller is created. See evidence/configuration-foundations-validation.json.
 
@@ -16,7 +16,7 @@ Dependency/renderer checks and corrected charts #6 CI pass. The disabled scaffol
 
 Next: review the three concrete PRs, then finish platform/application chart profiles, GitOps immutable environment selections and bootstrap/combined checks. P2.13 remains in progress; source checks do not prove live admission/CEL, NetworkPolicy/PSA or backend behavior. Existing exact-main CI receipts are correctly stale/blocked after watched workflow changes until authorized merge/revalidation; branch CI does not replace them. P2.14 seven-repo CI, P2.15 cutover, P2.16 fresh canonical proof and exact-target/costed Terraform gates remain. AKS Python agents/APIM outside AKS, separate identities, safe telemetry and read-only SRE remain selected. Azure is false and GitLab credentials/global Git settings remain intact.
 
-## Earlier input-locking publication snapshot — 15 November 2026
+## Earlier input-locking publication snapshot â€” 15 November 2026
 
 Argo CD 3.6.1 / chart 10.18.0, Helm 4.3.1 and Kustomize 5.8.3 are locked to verified upstream source/archive/executable bytes. Helm 4.3.1 is an intentional private match to the selected upstream renderer; the global Helm 3.19.0 installation is unchanged. Kubernetes 1.35.0 is an offline API/schema baseline only, not an approved or independently verified AKS version. Original Argo CRDs, selected strict schemas, official apiextensions OpenAPI components and licences are preserved under a 12-artifact raw-byte lock. Python validators are hash-locked. See evidence/platform-input-locking.json and tracking/platform-render-matrix.json.
 
@@ -24,7 +24,7 @@ Config source is published in [config PR #1](https://github.com/AI-SRE-Oberveabi
 
 Next: finish configuration/source-preservation acceptance and publish its final receipts. Remaining: platform/application chart profiles and controller image/hardening/connectivity, GitOps environment pins and bootstrap handover/combined checks, seven-repo CI, identity-preserving cutover and fresh canonical runtime proof. Existing exact-main workflow receipts become stale when watched chart CI changes; PR CI does not replace post-merge main evidence. Azure remains false; AI agents/APIM/Terraform boundaries and GitLab/global Git settings are preserved.
 
-## Earlier approved implementation-start snapshot — 15 November 2026
+## Earlier approved implementation-start snapshot â€” 15 November 2026
 
 The user approved the ownership plan and explicitly authorized merging PR #36 and starting dependency locking/configuration manifests. Verified head eae5bfe9a12927ad6cd3d3e4204346d0358cbc21 merged as d947613b318e693584d7e637131d079df89f51ef; exact-head and new exact-main CI passed. See evidence/pr36-merge.json and evidence/platform-configuration-start.json.
 
@@ -32,7 +32,7 @@ The config repository now has a reviewed four-file documentation/ignore baseline
 
 Python agents remain on planned AKS through APIM outside AKS; Terraform owns Azure/APIM. Safe telemetry, read-only SRE and separate identities remain unchanged. Remaining: configuration validation/publication, platform/application charts, GitOps/handover checks, P2.14 seven-repo CI, P2.15 cutover, P2.16 fresh canonical proof, then exact targets/budget and costed cloud planning. Azure stays false and GitLab/global Git settings are preserved.
 
-## Earlier P2.13 planning snapshot — 15 November 2026
+## Earlier P2.13 planning snapshot â€” 15 November 2026
 
 [The detailed plan](docs/platform-ownership-plan.md) and [seven-role blueprint](tracking/platform-ownership-plan.json) define resource authorship, future folders, a small dev-first slice with offline qa parity, locked inputs, real-commit publication order, an explicit bootstrap freeze before Argo adoption, rollback and negative checks. Config owns namespace/foundation RBAC/policy and selected CRDs; charts owns generic platform templates; workloads owns the Python application chart; GitOps owns environment values and pinned release selections. Infra remains the Azure/APIM owner and only orchestrates temporary bootstrap writes from those same sources. No two desired-spec writers are allowed after handover.
 
@@ -40,7 +40,7 @@ The reference's 298 files still match the reviewed bytes, all seven retained tel
 
 P2.13 stays in progress. Next: review the plan, select/lock compatible tool/Argo/chart/CRD inputs, then establish config source, platform/application charts, GitOps and the offline ownership/handover checks in that order. Optional Gateway/mesh and extra reference services remain proposed deferrals in this review package. Remaining: actual P2.13 source/renders/publication; P2.14 seven-repo CI; P2.15 identity-preserving renames/Project cutover; P2.16 fresh canonical proof/source baseline; then exact Azure targets/budget and costed Terraform planning. Deployment remains disabled; Python AI agents/APIM boundaries, safe telemetry, read-only SRE and GitLab/global Git settings are preserved.
 
-## Earlier PR #35 merge/P2.13 start snapshot — 15 November 2026
+## Earlier PR #35 merge/P2.13 start snapshot â€” 15 November 2026
 
 The user explicitly authorized merging PR #35 and starting P2.13 with ownership planning first. Approved head 26635b044344da0f39440889577d92cc0335f77b merged as 28fb2bfc8285f037843100f4a2f4bc2d533b04f8; exact-head PR/push CI and the new exact-main CI passed. See evidence/pr35-merge.json and evidence/platform-ownership-start.json. P2.12 path compatibility is now on main; original PR #25 and its receipts/history remain preserved.
 
@@ -48,7 +48,7 @@ P2.13 first defines the configuration, charts and GitOps resource boundaries, ex
 
 Runtime remains Python agents on AKS -> APIM outside AKS -> approved endpoints. Terraform owns Azure/APIM; metadata-only telemetry, separate identities and read-only SRE remain required. Next: inventory and publish the concrete P2.13 ownership plan before source implementation. Remaining: P2.13 source/renders/handover checks, P2.14 seven-repo CI, P2.15 rename/Project cutover, P2.16 canonical backend/source baseline, then exact targets/budget and costed Terraform planning. Azure is false; G2/G3/G4/G5 remain pending and GitLab credentials/global Git settings stay intact.
 
-## Earlier P2.12 workspace acceptance snapshot — 15 November 2026
+## Earlier P2.12 workspace acceptance snapshot â€” 15 November 2026
 
 Created empty public config, gitops and pipelines repositories with verified IDs; all seven canonical sibling clones now exist under AI-PLATFORM-LAB. The three new repos have read-only workflow permissions, no PR approval permission, an explicit false Azure flag and no branches/workflows yet. Four original GitHub names, source histories and rollback workspace remain unchanged. See evidence/workspace-setup.json.
 
@@ -146,7 +146,7 @@ Native OneAgent telemetry follows its supported route independently of the arbit
 
 Personal targets/region/budget, node/storage/network/runner sizing, retention, model quota and active/idle costs remain open. This diagram records the intended design, not deployed resources or cloud authorization.
 
-## Read-only SRE path — planned
+## Read-only SRE path â€” planned
 
 ```mermaid
 flowchart LR
@@ -211,7 +211,7 @@ The lab receipt pins the initial reviewed source commit; later coordination upda
 
 Organization grouping changes repository ownership and future OIDC inputs, not component responsibilities. Verify the actual new owner/repository OIDC subject before configuring Azure federation. No Azure federation was deployed before this move.
 
-## Project setup continuation — 29 October 2026
+## Project setup continuation â€” 29 October 2026
 
 The existing organization Project #1 was completed after browser reconnection and verified as AI SRE Observability POC. Project-capable authentication is verified as javedkumail with the user-approved project scope; no duplicate Project was created. The CLI uses isolated local configuration, and Git authentication setup was declined. Existing GitHub repository authentication remains available; no GitLab credential/global helper changes were made.
 
@@ -221,21 +221,21 @@ Project #1 is shared across the four repositories. Managed issues mirror task ac
 
 The Project retains private visibility for authorized organization members. Public repository source and sanitized evidence remain public. Local plan/state are authoritative; human notes outside managed issue blocks are preserved. Draft, blocked and pending decisions remain distinct in Evidence status. A task moves to Done and its issue closes only when the local tracker accepts its evidence. Live verification checks issue identity/state, all managed fields, and repository links. Interrupted synchronization resumes from saved task mappings and discovers existing managed issues to avoid duplicates. See evidence/shared-project-completion.json for the setup receipt and evidence/shared-project-verification.json for the latest synchronization result.
 
-## Actions implementation boundary — 29 October 2026
+## Actions implementation boundary â€” 29 October 2026
 
 The user authorized four independent CI workflows plus guarded Terraform delivery. Current status: planning complete; implementation and GitHub runs pending. CI stays read only. Manual Terraform plan/apply will use separate protected environments and OIDC; the initial root covers only a tagged resource group. Cloud execution stays disabled until personal targets, budget, state and scoped identities are confirmed. No AKS/Managed resource or Azure identity is created in this setup. See docs/actions-delivery-plan.md. Next: implement CI, validate Terraform/guards, publish PRs, then capture actual workflow conclusions.
 
-### Actions step 2 — source checks and protected environment setup
+### Actions step 2 â€” source checks and protected environment setup
 
 Four CI definitions now exist on review branches. A fresh hash-locked workload environment passed 18 tests (one existing test-client deprecation warning); tracker tests passed 20/20; deployment guard tests passed 11/11. Five workflow definitions passed actionlint after correcting context availability. Config source checks passed; Docker build/Collector validation await hosted CI. Terraform provider initialization succeeded; cross-platform locking and final Terraform validation are still being checked.
 
 Both infra environments, azure-lab-plan and azure-lab-apply, are verified main-only with owner review and administrator bypass disabled. The repository deployment flag is false; no Azure values, identities or roles were configured. GitHub reports an immutable OIDC subject prefix using organization/repository IDs; actual environment token/federation validation remains an Azure bootstrap prerequisite. Next: finish Terraform checks and reviewed PR publication, then capture real CI results.
 
-### Actions step 3 — Terraform validation and review publication
+### Actions step 3 â€” Terraform validation and review publication
 
 Terraform foundation validation passed with AzureRM 5.11.0, and both mocked invalid-scope/expiry tests passed. Eleven Python safety tests cover disabled execution, branch/repository restrictions, target/context checks, reviewed-plan binding and destructive/scope-expanded plan rejection. Windows provider communication required a retry outside the restricted execution sandbox; no Azure login or cloud plan was run. Cross-platform package locking is still being collected; signed registry archive checksums already exist in the lock. Workload and observability PRs are open and hosted CI is running. Publication checks excluded generated Python cache files before the infra push. Next: complete all four PR checks and capture main-branch results; Azure execution stays disabled.
 
-### Actions step 4 — all four PR pipelines validated
+### Actions step 4 â€” all four PR pipelines validated
 
 All four implementation PRs passed hosted CI. Workloads passed 18 tests and built its container; observability passed Compose and the real Collector validator; lab passed 20 tracker/sync tests; infra passed 11 safety tests, strict backend-disabled Linux init/validate and two mocked Terraform scope tests. The Linux lock mismatch was fixed by generating its real package hash from an official archive verified against signed registry metadata; strict readonly checks remain enabled. No cloud authentication or provisioning ran. See evidence/actions-pr-validation.json and evidence/actions-provider-lock-review.json.
 
@@ -254,7 +254,7 @@ flowchart LR
   P --> A[Matching saved-plan apply: one resource group]
 ```
 
-### Actions step 5 — verified activation after approved merges
+### Actions step 5 â€” verified activation after approved merges
 
 The user explicitly approved the four named PR merges and the final HLD/tracker-only receipt update. All four PRs merged at their verified tested heads. All four resulting main-branch CI runs succeeded: workload tests/container build; observability source/Compose/Collector validation; lab tracker/sync tests; infra lint, 11 safety tests, strict locked Terraform initialization/validation and two mocked scope tests. The final documentation-only receipt PR is subject to the same CI checks.
 
@@ -262,13 +262,13 @@ The manually dispatched Terraform plan was intentionally tested with AZURE_DEPLO
 
 **Current delivery boundary:** CI is active in all four repositories; manual Terraform plan/apply code and protected environments are configured. Actual Azure execution remains disabled pending G2/G3, state bootstrap, separate scoped plan/apply identities and verification of environment-specific immutable OIDC claims. The concrete Terraform root currently owns one tagged resource group. AKS/platform resources, registry publication, workload rollout, local backend proof, Managed and live models remain later work.
 
-## Architecture step — 29 October 2026
+## Architecture step â€” 29 October 2026
 
 Three editable diagrams now cover the AKS application target, telemetry/read-only SRE profiles and the CI-to-Terraform-to-AKS implementation sequence. The implementation guide defines namespace/resource ownership, separate runner/pod identities, optional existing-resource checks, cost/access gates and stage exits. The user chose an optional Azure AI reuse path; no existing cloud project is assumed available. The current accepted count remains 11/38: diagram completion does not close P1 backend, P3 cost/deployment, Managed or live-model tasks.
 
 **Next implementation:** prove the local policy/telemetry slice, then confirm personal Azure targets and costs; build bootstrap/platform Terraform and image/release/Helm delivery before any approved AKS deployment. See docs/architecture/README.md for the full sequence and public design references. GitLab credentials and global Git configuration remain unchanged.
 
-## Historical Citadel reference review — 1 November 2026
+## Historical Citadel reference review â€” 1 November 2026
 
 The later selection below supersedes the optional-only recommendation in this review; the review remains historical evidence.
 
@@ -278,7 +278,7 @@ No gateway component, SKU, cloud scope or upstream code was adopted. Existing re
 
 **Next:** P1.1 local draft review, then real backend proof. **Remaining:** G2 personal targets/region/budget, G3 costed scope authorization, G4 Managed entitlement/compatibility, G5 live model/quota approval; platform Terraform, AKS delivery and experiments. The architecture proposal remains in PR #21; Azure execution remains disabled.
 
-## Citadel/APIM selected in the target — 1 November 2026
+## Citadel/APIM selected in the target â€” 1 November 2026
 
 The user requested inclusion of governance in the architecture and execution plan. [Three current views and retained baseline](docs/architecture/README.md) and the [governance work plan](docs/architecture/governance-plan.md) now cover AKS agents -> APIM outside AKS -> an approved new or verified existing Foundry/OpenAI model endpoint. This is design selection; resource sizing, costs and cloud execution remain unapproved.
 

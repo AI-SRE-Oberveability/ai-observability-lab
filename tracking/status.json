@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T21:57:18+04:00",
+  "updated_at": "2026-11-15T22:07:25+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 16,
@@ -78,9 +78,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/configuration-foundations-validation.json"
+        "ai-observability-lab/evidence/p213-foundations-merge.json"
       ],
-      "note": "HLD 0.30 and the current delivery-plan paragraph describe the approved PR36 merge, locked inputs and first validated configuration slice in review; remaining chart/GitOps/handover and cloud gates are explicit.",
+      "note": "HLD 0.31 and Collector/GitOps step-by-step plan record approved foundation merges and exact-main CI, bounded implementation order and remaining gates.",
       "ready": false
     },
     {
@@ -1458,9 +1458,9 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
-        "ai-observability-lab/evidence/configuration-foundations-validation.json"
+        "ai-observability-lab/evidence/p213-foundations-merge.json"
       ],
-      "note": "First dependency/configuration slice is implemented and source-CI validated: 32 configuration objects and 20 tests. Current plan/HLD and source/attempt/preservation receipts are aligned; component PR review and remaining chart/GitOps/handover work remain.",
+      "note": "Config #1/charts #6/lab #37 merged and exact-main push CI passed, including Windows/Linux config. Next Collector chart/manual GitOps slice planned before implementation; Azure remains disabled.",
       "ready": true
     },
     {
