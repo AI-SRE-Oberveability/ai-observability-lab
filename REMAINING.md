@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-11-15T19:54:10+04:00 (Asia/Dubai).
+Updated: 2026-11-15T19:58:15+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -15,7 +15,6 @@ Next action: select a ready step from POC_TRACKER.md.
 
 - **P2.3 Complete reproducible CI, contract tests and builds** (blocked). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (in_progress). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
-- **P2.12 Prepare isolated seven-repository workspace and compatible path mapping** (in_progress). Acceptance: Verify three new repo IDs and reviewed empty/default setup; prepare isolated canonical clones and test old/new layout resolution across tracking, Project sync, runners, Compose, release validation and workspace files. No global Git changes. Update watched implementation/CI inputs before accepting execution.
 - **P2.13 Establish reviewed platform configuration, charts and GitOps ownership** (planned). Acceptance: Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution.
 - **P2.14 Validate independent CI and immutable shared templates for seven repositories** (planned). Acceptance: Observe passing exact-head CI for all seven repos; test dependency-aware change detection, clean builds, guarded Terraform and disabled deployment. PRs have no Azure identity; shared workflows/actions are pinned. Update watched implementation/CI inputs before accepting execution.
 - **P2.15 Perform verified repository rename, workspace and Project cutover** (planned). Acceptance: Verify all four original IDs/histories, three new repos, canonical GitHub-only origins, current path/watch/Project mappings, seven linked repos and preserved issue IDs/private Project. Keep Azure false and GitLab/global Git unchanged. Update watched implementation/CI inputs before accepting execution.

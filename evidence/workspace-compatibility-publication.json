@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T19:56:49+04:00",
+  "pr": 35,
+  "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/35",
+  "validated_source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
+  "reviewed_source_tree": "72d4649e37fb3d2571ef4c79d2af949e62e424b9",
+  "confirmed_secrets": 0,
+  "verified_source_hash_findings": 10,
+  "ci_runs": [
+    {
+      "id": 43732501821,
+      "head": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
+      "event": "pull_request",
+      "conclusion": "success",
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/43732501821"
+    },
+    {
+      "id": 43732497807,
+      "head": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
+      "event": "push",
+      "conclusion": "success",
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-lab/actions/runs/43732497807"
+    }
+  ],
+  "clean_canonical_checkout_verified": true,
+  "tracker_layout_status_differences": 0,
+  "pr25_merged": false,
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false,
+  "limitations": [
+    "Validated source and CI are on PR35; it is not merged. Final tracking receipts are a later metadata commit.",
+    "P1.5/P1.6 are stale for changed runner source; no fresh backend replay or Azure deployment."
+  ]
+}

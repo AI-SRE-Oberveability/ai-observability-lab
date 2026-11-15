@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "verified_at": "2026-11-15T19:49:54+04:00",
-  "status": "failed",
-  "source_commit": "122b338d5672f5d49c5ca7e5b3e383f2330d11ea",
+  "verified_at": "2026-11-15T19:55:06+04:00",
+  "status": "passed",
+  "source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
   "canonical_lab_clean_at_verification": true,
   "tested_source_hashes_match_clean_git_checkout": true,
   "all_seven_checkout_worktrees_clean": true,
@@ -17,21 +17,15 @@
     "planned": 21
   },
   "tracked_statuses_canonical": {
-    "done": 16,
-    "needs_revalidation": 3,
+    "done": 17,
+    "needs_revalidation": 2,
     "blocked": 1,
     "in_progress": 2,
     "waiting_for_decision": 3,
     "draft": 2,
     "planned": 21
   },
-  "status_differences": [
-    {
-      "task": "P2.9",
-      "legacy": "done",
-      "canonical": "needs_revalidation"
-    }
-  ],
+  "status_differences": [],
   "local_overlay_preserved_in_private_stash": true,
   "azure_deployment_enabled": false,
   "limitations": [

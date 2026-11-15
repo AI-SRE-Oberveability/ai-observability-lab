@@ -48,17 +48,20 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.25 records both clean-checkout findings and the explicit source-only provider-cache exclusion; original receipts retained, runtime proofs still stale, remaining migration/disabled Azure gates unchanged.",
-      "at": "2026-11-15T19:54:04+04:00",
+      "note": "Final HLD 0.25 and tracker choices/gaps accurately state completed local P2.12 acceptance, clean canonical equivalence, passing exact-source CI and remaining PR35 review/P2.13–P2.16 work.",
+      "at": "2026-11-15T19:58:06+04:00",
       "evidence": [
+        "ai-observability-lab/evidence/workspace-setup.json",
         "ai-observability-lab/evidence/migration-path-compatibility.json",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json",
         "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
-        "ai-observability-lab/evidence/workspace-preservation-verification.json"
+        "ai-observability-lab/evidence/workspace-preservation-verification.json",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "3aa245472ee6f5f80aec55b2472fc8e51998ba635f92b0beb713e967a108dbce",
-        "ai-observability-lab/HLD.md": "92354c6861e481c547dad2e547ddd833c47ec11eda3d526ae0b086a794973d65",
+        "ai-observability-lab/HLD.md": "91331d17a9200a77703084f0465d0724c736c003bc91decc59b0f68ff2ba63ec",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -100,9 +103,12 @@
         "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f"
       },
       "evidence_hashes": {
+        "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4",
         "ai-observability-lab/evidence/migration-path-compatibility.json": "0d11066b74147b05028fad15072fe794a99d389ac36bf6663f7b70935aaad560",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json": "bb3a1924e9348a1c5d4c482ca22d83ad06d297cd011988784ba3ca1595fd9b53",
         "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "dfc94d0a10e80c2eeeb2c940d5a29e0bca8d7324dc622c43f5af6eddc90c8180",
-        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432"
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json": "0c4d3a1570922f61bdd0fc621ce6224bf8768b6582aa0925edf420ee1cec6211"
       }
     },
     "P0.3": {
@@ -665,14 +671,16 @@
       }
     },
     "P2.12": {
-      "status": "in_progress",
-      "note": "Final 68-test/Compose/release-source validation passes both layouts/OS profiles; GitHub/public-source and credential-preservation checks pass. Publishing explicit historical checkout correction before final clean canonical acceptance.",
-      "at": "2026-11-15T19:48:26+04:00",
+      "status": "done",
+      "note": "Completed local/source acceptance: seven clean canonical clones and verified IDs, three empty read-only/disabled repos; PR25 R1/R2 fixed; 68-test suites, both Compose renders, historical object reads and exact-source CI pass. Tracker statuses match across layouts, original receipts/audits preserved and stale runtime proofs retained. PR35 review pending; Azure false and GitLab/global Git intact.",
+      "at": "2026-11-15T19:58:11+04:00",
       "evidence": [
         "ai-observability-lab/evidence/workspace-setup.json",
         "ai-observability-lab/evidence/migration-path-compatibility.json",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json",
         "ai-observability-lab/evidence/tracker-checkout-compatibility.json",
-        "ai-observability-lab/evidence/workspace-preservation-verification.json"
+        "ai-observability-lab/evidence/workspace-preservation-verification.json",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -683,8 +691,8 @@
         "ai-observability-lab/scripts/workspace.py": "5ba453e873803a8cb049111cafda1b12bdcfb073fe68b85bc03cdad2a9c6174b",
         "ai-observability-lab/tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca",
         "ai-observability-lab/tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
-        "ai-observability-lab/docs/workspace-compatibility.md": "003a19734330d549bdaf22108b016a132ab88aed20aadbf512c62cd2d8a5945b",
-        "ai-observability-lab/scripts/poc_tracker.py": "c4a551dea902809358f2827467afad842023114d6c0aac92cfb13612b9c4c30b",
+        "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f",
+        "ai-observability-lab/scripts/poc_tracker.py": "14242d430deb2fe3f7f4aad36741a0566b958bc128a5471c9a2e8d9c7902efbb",
         "ai-observability-lab/scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
         "ai-observability-lab/scripts/install_local_backends.py": "8e389e89d7b28fcf2d70fc04720ed93d79307a572a8395b4ad7015ac2dc92495",
         "ai-observability-lab/scripts/prove_local_backend.py": "aa57b85d70d68fa763f6a34e0c42f46695ce08cb9f31531231a9128f9102bfb9",
@@ -695,7 +703,7 @@
         "ai-observability-lab/tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
         "ai-observability-lab/tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
         "ai-observability-lab/tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
-        "ai-observability-lab/tests/test_tracker.py": "779bac846eb99c1f06bed27038b4ba8e0c7aa059225d76560ab2ceeefe706716",
+        "ai-observability-lab/tests/test_tracker.py": "32585578cca1effc64c81f4a2aa52c3741cde3304095ca74b481d0d0215950db",
         "ai-observability-lab/AI-PLATFORM-LAB.code-workspace": "a38a68e3cff6c291f198e81e267d409d028f7a22ffe7e8f74b8eba7ce30e6c6e",
         "ai-observability-lab/personal-ai-observability.code-workspace": "d0359fbd599502c1b945c15073d819d9cbcaca0f16360f2882c997793be14203",
         "ai-agent-workloads/compose.yaml": "09d385e88eb8d8606c6e87f2e45166ec34c4cd283b94aec2b5f356aaa062590b",
@@ -704,22 +712,24 @@
       },
       "evidence_hashes": {
         "ai-observability-lab/evidence/workspace-setup.json": "ea9f1b6b7740438b4310f401d2b301c895ab3c590122c2ac31b31033e0701ce4",
-        "ai-observability-lab/evidence/migration-path-compatibility.json": "85d312cf714e8d8ac0bac1a05c63d735c5ad0d2cb216713ec98ece275d00d38f",
-        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "a54858be7ea640f500c5f2eddc6a3f32aa134e7d1e54377488a5ac9803c4222d",
-        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432"
+        "ai-observability-lab/evidence/migration-path-compatibility.json": "0d11066b74147b05028fad15072fe794a99d389ac36bf6663f7b70935aaad560",
+        "ai-observability-lab/evidence/canonical-workspace-checkout.json": "bb3a1924e9348a1c5d4c482ca22d83ad06d297cd011988784ba3ca1595fd9b53",
+        "ai-observability-lab/evidence/tracker-checkout-compatibility.json": "dfc94d0a10e80c2eeeb2c940d5a29e0bca8d7324dc622c43f5af6eddc90c8180",
+        "ai-observability-lab/evidence/workspace-preservation-verification.json": "871cdee57916a11cf82aa2de326cee35beb7194a68b529e79a9f5265315e2432",
+        "ai-observability-lab/evidence/workspace-compatibility-publication.json": "0c4d3a1570922f61bdd0fc621ce6224bf8768b6582aa0925edf420ee1cec6211"
       }
     }
   },
   "known_gaps": [
-    "Seven-repo migration started: PR #26 merged; baseline and PR #25 review complete. Repository creation, path compatibility, renames and cutover remain pending.",
-    "PR #25 has 51 passing Linux stdlib tests and two reproduced integration findings; correct runtime containment and platform-specific fixtures, reconcile six state/HLD conflicts, and preserve profile-specific evidence before integration.",
+    "P2.12 locally accepted in PR35: seven canonical clones and three new empty repos verified. P2.13 source/ownership, P2.14 seven-repo CI, P2.15 GitHub renames/Project cutover and P2.16 fresh canonical runtime/source baseline remain.",
+    "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
     "Managed entitlement/compatibility and paid/live model scope remain separate G4/G5 prerequisites.",
     "No Azure/bootstrap/cluster action occurs during repository planning and migration; GitLab credentials and global Git settings are preserved."
   ],
   "confirmed_choices": [
-    "Seven-repository target selected under AI-SRE-Oberveability; four public repositories currently exist. Three history-preserving renames and three new public repositories are planned; GitHub Project stays private.",
+    "Seven public repositories under AI-SRE-Oberveability: four preserve existing source/history, three additions are empty. Canonical folders verified; three identity-preserving GitHub renames remain P2.15 work. GitHub Project stays private.",
     "Terraform for Azure infrastructure; Helm/Kubernetes manifests for application and shared observability deployments.",
     "Preserve GitLab credentials/helpers/remotes; separate GitHub settings or optional WSL.",
     "Refresh tracker after each work step; always report HLD/current/change/next/remaining.",
@@ -727,9 +737,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "Seven canonical folders prepared alongside preserved legacy workspace; four existing GitHub names retained and three new repos empty. Terraform/AKS agents/APIM outside AKS unchanged; Azure false, GitLab credentials preserved.",
+    "current": "Seven canonical clones verified clean alongside preserved legacy workspace; three new repos empty and four original GitHub names unchanged. PR35 exact-source CI and local compatibility pass; Terraform/AKS/APIM unchanged, Azure false, GitLab credentials preserved; fresh backend replay remains pending.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P0.3: Final 68-test compatibility suite validates raw-proof-preserving LF envelopes, generated provider-cache exclusion, semantic/evidence tamper rejection and safe path/Project behavior."
+    "last_change": "P2.12: Completed local/source acceptance: seven clean canonical clones and verified IDs, three empty read-only/disabled repos; PR25 R1/R2 fixed; 68-test suites, both Compose renders, historical object reads and exact-source CI pass. Tracker statuses match across layouts, original receipts/audits preserved and stale runtime proofs retained. PR35 review pending; Azure false and GitLab/global Git intact."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -792,7 +802,18 @@
     "pr25_review": "R1_R2_corrected_forward_port_validated_in_both_layouts",
     "pr25_merged": false,
     "evidence": "evidence/migration-baseline.json",
-    "next": "P2.12 publication then P2.13",
+    "next": "Review PR35 then P2.13",
+    "azure_deployment_enabled": false
+  },
+  "migration_workspace": {
+    "status": "P2.12_local_acceptance_complete_review_branch",
+    "source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
+    "workspace": "AI-PLATFORM-LAB",
+    "canonical_clones": 7,
+    "new_empty_repositories": 3,
+    "github_rename_cutover": false,
+    "project_link_cutover": false,
+    "fresh_backend_replay": false,
     "azure_deployment_enabled": false
   }
 }
