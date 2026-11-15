@@ -64,12 +64,15 @@
   },
   "report": {
     "path": "docs/platform-structure-review.md",
-    "sha256": "49a9036da683ba5fd2073386f2ef4ce8b0573c068c9c6c3afbfd49e882bc8aee"
+    "sha256": "eb257bc256c476d06b623a7c8d9686dde301d9b0c2094f525bea9c7e7572a077"
   },
   "limitations": [
     "Rendering does not prove cluster API compatibility or runtime behavior",
     "Zero detector findings do not establish source provenance",
     "No claim of fresh exact-main CI or deployment is made by this review",
     "Existing immutable release candidate was not changed"
+  ],
+  "existing_open_prs_not_modified": [
+    25
   ]
 }

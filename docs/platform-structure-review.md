@@ -97,3 +97,5 @@ Source inventory: 298 files, no `.git` metadata. Source fingerprint and sanitize
 | Source preservation | All source hashes unchanged | No modifications to the supplied folder |
 
 No existing POC implementation acceptance was added by these checks. Release image publication/container replay, personal Azure/cost decisions, licensed Managed evidence and governed live-model evidence remain outstanding.
+
+A read-only check also found existing draft [lab PR #25](https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/25), titled "test: prove Linux rootless Compose telemetry". Its code, CI and evidence were not reviewed or adopted in this assessment. Reconcile that in-flight work before migrating runners, Compose paths or release acceptance. It was left untouched.

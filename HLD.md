@@ -16,6 +16,8 @@ Static review recorded 16 successful Helm renders, four Kustomize builds, 17 Jav
 
 PR #24 is now confirmed merged into lab main 7723a733b67e1992e3eb7a37e148e85be9321406 on 2 November 2026. Its candidate remains source-pinned and non-deployable; no existing release pin or historical evidence has been rewritten. Next: the user's structure selection, then exact old-to-new paths and isolated migration PRs. AKS, Terraform and APIM remain the target runtime boundaries; Istio/Argo additions remain proposals. Azure deployment is false, G2/G3/G4/G5 remain pending, and GitLab authentication/global Git configuration are preserved.
 
+[Draft documentation PR #26](https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/26) publishes the assessment and proposed mapping; it does not select a layout or request a migration. Existing draft Compose-proof PR #25 was observed and left untouched; reconcile it before moving runners or changing release acceptance. See evidence/platform-structure-publication.json. The shared Project remains at 18/41 accepted tasks.
+
 ## Verified local deterministic slice
 
 ```mermaid

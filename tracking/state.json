@@ -31,15 +31,15 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "Reviewed user-supplied platform scaffold and documented proposed ownership/migration sequence; target layout remains unselected, no migration or Azure operation",
-      "at": "2026-11-15T17:26:37+04:00",
+      "note": "Structure review and proposed migration published in draft PR #26; current layout retained and existing Compose-proof draft PR #25 preserved; no migration or Azure operation",
+      "at": "2026-11-15T17:30:22+04:00",
       "evidence": [
         "ai-observability-lab/evidence/platform-structure-review.json",
-        "ai-observability-lab/evidence/main-ci-revalidation.json"
+        "ai-observability-lab/evidence/platform-structure-publication.json"
       ],
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "b07aad6b0fbcdf221743f4c4590ebcc6d064bd1de0895fb0cd5595f5ac4f7261",
-        "ai-observability-lab/HLD.md": "9d2f2ca7f015510b59232179198deb303bb52e6acb0d83e546e7969aa3a8a1c5",
+        "ai-observability-lab/HLD.md": "685ba2a394ff86a4a88b686fda2f1f1a00d128b345f7dfaa68127d6e8998b173",
         "ai-observability-lab/docs/engineering-standards.md": "80e1ae78c1b64b0844c12781519b920feeee68a62cdd12a079fe55586d98af95",
         "ai-observability-lab/docs/repository-layout.md": "7d28082c8089c530013357d0042e6d9d726da51a89e49120d82b1477203041e5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -72,17 +72,17 @@
         "ai-observability-lab/docs/architecture/runtime.png": "8a92547094e943b54a9d1abd25ca37ad490db887c3051b596df36b4d8425fe60",
         "ai-observability-lab/docs/architecture/telemetry.mmd": "1c17f6fcc0fd478a0e34d365286e26d9f2c5873733462bedcac6afec87a800a7",
         "ai-observability-lab/docs/architecture/telemetry.png": "f2894a83d44e9acf05dea4ee5abe712628bd589bfb9950ed43308e6a1f3c79aa",
-        "ai-observability-lab/docs/platform-structure-review.md": "49a9036da683ba5fd2073386f2ef4ce8b0573c068c9c6c3afbfd49e882bc8aee"
+        "ai-observability-lab/docs/platform-structure-review.md": "eb257bc256c476d06b623a7c8d9686dde301d9b0c2094f525bea9c7e7572a077"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/platform-structure-review.json": "b9e357f3c5b8080bdea16dbe906c6cec379472d64da7771ab43ee260d56997de",
-        "ai-observability-lab/evidence/main-ci-revalidation.json": "b2293fa3c5b08f7b7e05702169f3f8748b9ea2b9d78363d658757cd0f96a8663"
+        "ai-observability-lab/evidence/platform-structure-review.json": "760fd64d5e5bde124d77ccf7281b1614115de2b6f3e0de501f97fd687593f3c2",
+        "ai-observability-lab/evidence/platform-structure-publication.json": "e9e0808126bceca91976a38a0c301aa3ad18d638dea9678e5ad159795c0e5381"
       }
     },
     "P0.3": {
       "status": "done",
-      "note": "Tracker watch list includes the structure review; all 28 tracker/sync/release tests pass; 41 stable tasks retained and migration remains unstarted",
-      "at": "2026-11-15T17:26:41+04:00",
+      "note": "Tracker review watch list and unchanged 28-test validation retained with updated report/publication receipts; 41 stable tasks and no migration",
+      "at": "2026-11-15T17:30:26+04:00",
       "evidence": [
         "ai-observability-lab/evidence/platform-structure-tracking-validation.json"
       ],
@@ -97,7 +97,7 @@
         "ai-observability-lab/scripts/sync_github_project.py": "3b324c57130d9ea1695cb46adff3175f0ed374a192f844830661d4b26042327d"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/platform-structure-tracking-validation.json": "3c495452519be1ea909585ab6cbe78761c4da90021f5dc0545c43e4a91f887f4"
+        "ai-observability-lab/evidence/platform-structure-tracking-validation.json": "389143f294fae46bec9946e5c5ca15d0b5e1aaf7759a974622fdba7fca5df5a7"
       }
     },
     "P2.2": {
@@ -419,9 +419,9 @@
     "Apply documented engineering standards and record validation or accepted deviations."
   ],
   "hld": {
-    "current": "Current four-repo AKS/APIM design retained; platform scaffold reviewed and migration layout proposed but unselected. PR #24 merged; release digest/replay pending. Azure disabled; GitLab intact.",
+    "current": "Current four-repo AKS/APIM design retained; scaffold assessment and unselected migration proposal in draft PR #26. PR #25 preserved; release acceptance pending. Azure disabled; GitLab intact.",
     "target": "AI-SRE-Oberveability organization -> four public repositories and one shared GitHub Project -> scoped Actions/OIDC -> Terraform-owned Azure/AKS; licensed Managed compatibility and separate read-only SRE evidence.",
-    "last_change": "P0.3: Tracker watch list includes the structure review; all 28 tracker/sync/release tests pass; 41 stable tasks retained and migration remains unstarted"
+    "last_change": "P0.3: Tracker review watch list and unchanged 28-test validation retained with updated report/publication receipts; 41 stable tasks and no migration"
   },
   "repository_verification": {
     "date": "2026-10-28",
