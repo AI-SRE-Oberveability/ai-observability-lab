@@ -1,6 +1,6 @@
 # Lab coordination, planning and evidence
 
-[P2.13 implemented input/configuration slice](docs/platform-configuration-progress.md): PR #36 is merged; locked dependencies, the first 32-object configuration source and CI are published in review PRs. [Approved ownership plan](docs/platform-ownership-plan.md). Overall P2.13 remains in progress, original GitHub names/history are preserved and Azure remains disabled.
+[Current P2.13 Collector/manual GitOps plan](docs/collector-gitops-plan.md): foundations merged/main CI passed; Collector chart and immutable manual GitOps source are validated in review PRs. HLD 0.32 and evidence/collector-gitops-validation.json carry source/CI bindings and limitations. Remaining chart/Argo/bootstrap/combined ownership work keeps P2.13 in progress. Azure stays disabled.
 
 Verified public repository: `AI-SRE-Oberveability/ai-observability-lab`; reviewed source published; see evidence/publication-receipts.json.
 

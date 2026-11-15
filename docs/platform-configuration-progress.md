@@ -1,5 +1,6 @@
 # P2.13 dependency and configuration implementation
 
+Historical first-configuration-slice snapshot. Config #1, charts #6 and lab #37 have since merged with passing main CI. Current Collector/manual GitOps progress is in HLD 0.32, docs/collector-gitops-plan.md and evidence/collector-gitops-validation.json.
 PR #36 is merged with passing exact-main CI. The approved plan's first input/configuration slice is implemented on review branches; the overall P2.13 task remains in progress.
 
 - [Config PR #1](https://github.com/AI-SRE-Oberveability/ai-platform-config/pull/1): immutable CRD/schema/licence inputs, hash-locked Python/Kustomize, three profile builds and 32 owned objects. Twenty tests and Linux/Windows CI pass, including rendered-CRD equality to locked upstream objects. No RoleBinding, application ServiceAccount/Deployment or controller is created.

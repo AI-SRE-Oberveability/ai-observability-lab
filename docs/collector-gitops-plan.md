@@ -2,6 +2,8 @@
 
 Status: user authorized planning and implementation after config #1, charts #6 and lab #37 merge/main revalidation. Their exact merged main CI passed; see ../evidence/p213-foundations-merge.json. This is the next bounded slice of the approved ownership plan, not completion of P2.13.
 
+Execution update: the bounded Collector/manual GitOps source slice now passes exact-source CI in charts #7 and GitOps #1. HLD 0.32 and evidence/collector-gitops-validation.json carry results and limitations; the remaining work below is retained.
+
 1. Preserve merged inputs and existing profile hashes; retain original four names/history, PR25, the old workspace, GitLab credentials and global Git configuration. Keep Azure false.
 2. Charts owns a dependency-free Collector chart with a disabled default, the existing Collector 0.164.0 digest, metadata allowlist, bounded queues, ClusterIP OTLP service, resource bounds, probes, non-root/read-only filesystem, dropped capabilities and a tokenless service account. No Namespace, CRD, Role/RoleBinding, ingress or cloud object. Config remains their owner. Preserve local/native files byte-for-byte under the LF hash policy.
 3. Validate actual Helm lint/renders, disabled/default behavior, dev/qa offline value profiles, selector/network/telemetry contracts and meaningful negative cases. Validate the generated Collector configuration with the same pinned distribution separately from Helm checks. No live-backend, image-UID, PSA or network enforcement acceptance is inferred.

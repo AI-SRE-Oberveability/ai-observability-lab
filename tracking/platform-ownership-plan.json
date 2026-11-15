@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "phase": "P2.13",
-  "status": "foundations_merged_chart_gitops_first_slice_planned",
+  "status": "collector_manual_gitops_first_slice_validated_source_review_pending",
   "document": "docs/platform-ownership-plan.md",
   "baseline_merge": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8",
   "execution_policy": "offline_source_implementation_no_cloud_cluster_or_registry_publication",
@@ -224,13 +224,13 @@
     {
       "order": 5,
       "title": "Establish platform and workload charts",
-      "status": "planned",
+      "status": "collector_first_profile_validated_remaining_jaeger_application_argocd",
       "required_exit": "Locked Helm renders, contract/security checks, unchanged local/native baseline"
     },
     {
       "order": 6,
       "title": "Establish GitOps and bootstrap handover contract",
-      "status": "planned",
+      "status": "manual_collector_gitops_partial_prepared_ledger_validated_full_handover_pending",
       "required_exit": "Scoped manual Applications, real immutable pins and one-writer state-machine/rollback checks"
     },
     {

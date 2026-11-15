@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T18:24:43.568692+00:00",
+  "status": "collector_manual_gitops_first_source_slice_validated_in_review",
+  "P2.13_complete": false,
+  "sources": {
+    "charts": {
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "pr": 7,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/7",
+      "commits": [
+        {
+          "head": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+          "tree": "b67b1fa5ba5defbd1a68120a03986e0b9b965a08",
+          "message": "Add safe Collector chart and offline profile contract checks",
+          "confirmed_secrets": 0
+        }
+      ],
+      "head": "0ada65843b85d2d9083f7237190a9a1828d35dbc"
+    },
+    "gitops": {
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "pr": 1,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/pull/1",
+      "commits": [
+        {
+          "head": "b44af177bc8ff4c2af795b344f80676d4f4e640e",
+          "tree": "1c98769c0862b003d84835c79bb1a9dd77caff7d",
+          "message": "Publish dev qa Collector values before catalog pinning",
+          "confirmed_secrets": 0
+        },
+        {
+          "head": "227f636739ca5b77ee727190b62fbd12da2ce082",
+          "tree": "4f20224c4ce8f43127378c58edd8b04463d256e6",
+          "message": "Add narrow manual Collector Applications and immutable release catalog",
+          "confirmed_secrets": 0
+        }
+      ],
+      "head": "227f636739ca5b77ee727190b62fbd12da2ce082"
+    }
+  },
+  "exact_source_ci": {
+    "charts": {
+      "role": "charts",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "pr": 7,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/7",
+      "head": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+      "passed": true,
+      "runs": [
+        {
+          "id": 43745579665,
+          "head": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/43745579665",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 43745574324,
+          "head": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/43745574324",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    "gitops": {
+      "role": "gitops",
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "pr": 1,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/pull/1",
+      "head": "227f636739ca5b77ee727190b62fbd12da2ce082",
+      "passed": true,
+      "runs": [
+        {
+          "id": 43746232084,
+          "head": "227f636739ca5b77ee727190b62fbd12da2ce082",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/actions/runs/43746232084",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 43746230727,
+          "head": "227f636739ca5b77ee727190b62fbd12da2ce082",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/actions/runs/43746230727",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "chart_local_validation": {
+    "status": "passed_offline_collector_chart_contract",
+    "profiles": {
+      "disabled": {
+        "objects": 0,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      "dev": {
+        "objects": 4,
+        "sha256": "20d82075821dfe3b4bc14289ea9863ae259a33c8c564137384a2a56ed78efc54"
+      },
+      "qa": {
+        "objects": 4,
+        "sha256": "d3cfa66772de32306e491655292ab6eeee43981104a58727995174f5dabbeb46"
+      }
+    },
+    "negative_cases_rejected": [
+      "tag_only_image",
+      "unknown_value",
+      "invalid_profile",
+      "public_service",
+      "token_mount",
+      "privilege",
+      "capture_change",
+      "namespace_escape",
+      "duplicate_owner"
+    ],
+    "api_schema_baseline": "1.35.0_offline_only",
+    "deployable": false,
+    "cluster_operations": false
+  },
+  "collector_generated_config_validation": {
+    "native_pinned_0_164_0_validate_exit_code": 0,
+    "observed_exec_session": 20277,
+    "ci_container_digest": "sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b",
+    "ci_check": "generated config validate with network none, read-only filesystem, UID10001, no capabilities; chart CI passed",
+    "runtime_start_or_backend_ingestion_proved": false
+  },
+  "gitops_local_validation": {
+    "tests": 16,
+    "skips": 0,
+    "observed_exec_session": 11839,
+    "public_locked_blobs_verified": 5,
+    "profiles": [
+      "dev",
+      "qa"
+    ],
+    "argo_objects": 4,
+    "schema_keywords": "derived original Argo3.6.1 Application/AppProject; no admission/CEL"
+  },
+  "gitops_documentation_bootstrap": {
+    "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+    "repository_id": 1458904423,
+    "main": "22f6fa68221266e051b3f774494f8998ea08943c",
+    "files": [
+      "README.md",
+      "AGENTS.md",
+      ".gitignore",
+      ".gitattributes"
+    ],
+    "confirmed_secrets": 0,
+    "azure_deployment_enabled": false,
+    "global_git_changes": false,
+    "credential_changes": false
+  },
+  "preservation": {
+    "seven_repo_ids_names_origins_preserved": true,
+    "six_non_lab_worktrees_clean": true,
+    "global_git_hashes_unchanged": true,
+    "original_four_remote_config_hashes_unchanged": true,
+    "seven_existing_profile_hashes_unchanged": true,
+    "pipelines_still_empty": true,
+    "azure_flags_false": true,
+    "pr25_unchanged_unmerged": true,
+    "credential_store_values_enumerated_or_exported": false,
+    "gitlab_or_global_git_mutations": false
+  },
+  "confirmed_source_secrets": 0,
+  "azure_deployment_enabled": false,
+  "cluster_operations": false,
+  "registry_publication": false,
+  "limitations": [
+    "No actual Kubernetes API/structural schema admission, PSA, image startup or network/backend acceptance from offline renders/config validate",
+    "Synthetic unregistered cluster names; dev/qa alternative Collector profiles, not two approved clusters",
+    "Manual Applications and partial PREPARED ownership record only; no bootstrap execution, freeze/adoption/rollback or full combined check",
+    "Current source/value pins refer to real published review commits; authorized merges/catalog promotions remain",
+    "Jaeger/application charts, complete Argo profile and config/platform GitOps ownership remain; P2.14-P2.16 and cloud gates remain"
+  ]
+}
