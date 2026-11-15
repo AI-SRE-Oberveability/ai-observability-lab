@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-15T18:20:52+04:00",
+  "pr": 25,
+  "repository": "AI-SRE-Oberveability/ai-observability-lab",
+  "reviewed_head": "dde301710f21fe7d8a99f1a9e20000291f836555",
+  "reviewed_runner_sha256": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf",
+  "historical_parent_runner_hash_matches": true,
+  "verdict": "needs_corrections_before_integration",
+  "findings": [
+    {
+      "id": "R1",
+      "priority": 2,
+      "path": "scripts/prove_linux_backend.py",
+      "line": 1022,
+      "title": "Reject repository-contained runtime roots independent of clone name",
+      "reproduction": {
+        "line": 1022,
+        "path_semantics": "POSIX (the supported Linux runner profile)",
+        "accepted_nested_repo_runtime_paths": {
+          "ai-observability-infra": true,
+          "AI-Observability-Infra": false,
+          "ai-observability-lab": false,
+          "ai-platform-infra": true,
+          "ai-platform-lab": true,
+          "ai-platform-config": true,
+          "ai-platform-charts": true,
+          "ai-platform-gitops": true,
+          "ai-platform-pipelines": true,
+          "ai-agent-workloads": false
+        },
+        "expected_all_false": true,
+        "filesystem_writes_or_docker_calls": false
+      }
+    },
+    {
+      "id": "R2",
+      "priority": 2,
+      "path": "tests/test_linux_proof.py",
+      "line": 250,
+      "title": "Keep the shared Windows unit-test entry point usable",
+      "reproduction": {
+        "host": "Windows",
+        "selected_test": "IsolationChecks.test_validator_failure_also_runs_owned_cleanup",
+        "exit_code": 1,
+        "reproduced_expected_failure": "Linux platform guard reached instead of mocked validator/cleanup path",
+        "docker_calls": false,
+        "timeout_process_group_test_not_executed_on_windows": true
+      },
+      "additional_static_check": "POSIX process-group timeout test has no Windows skip; not executed on Windows"
+    }
+  ],
+  "fresh_linux_unit_validation": {
+    "profile": "Ubuntu-24.04 WSL; Python standard library only (-S)",
+    "exit_code": 0,
+    "tests": 51,
+    "status": "passed",
+    "docker_or_cloud_calls": false,
+    "reviewed_head": "dde301710f21fe7d8a99f1a9e20000291f836555"
+  },
+  "historical_pr_ci": {
+    "id": 42435384537,
+    "status": "completed",
+    "conclusion": "success",
+    "head": "dde301710f21fe7d8a99f1a9e20000291f836555"
+  },
+  "fresh_docker_backend_replay": false,
+  "merge_check": {
+    "base_main": "36944db6ab12fdec949317cef4666cab1814337b",
+    "exit_code": 1,
+    "conflicting_files": [
+      "HLD.md",
+      "POC_TRACKER.md",
+      "REMAINING.md",
+      "tracking/events.jsonl",
+      "tracking/state.json",
+      "tracking/status.json"
+    ],
+    "worktree_merge_performed": false
+  },
+  "integration_sequence": [
+    "Preserve the selected 48-task/seven-repo plan and original task/issue identities",
+    "Correct path containment and platform-specific fixtures in isolated compatibility work",
+    "Integrate runner/tests/source-bound evidence/runbook through a reviewed branch",
+    "Append reconciled audit events and regenerate views; do not replace state/Project mapping from the 41-task checkout",
+    "Revalidate changed runner on its supported profile; obtain applicable authorization before merge"
+  ],
+  "original_feature_branch_modified": false,
+  "pr25_merged": false,
+  "azure_or_docker_calls": false,
+  "gitlab_credential_changes": false,
+  "report": {
+    "path": "docs/migration-baseline-review.md",
+    "sha256": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4"
+  },
+  "reviewed_source_hashes": {
+    "scripts/prove_linux_backend.py": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf",
+    "tests/test_linux_proof.py": "c082e0b1dd296fc3494c645ad393fc04d115b3fdf40e43b51d90801f8ccbb805",
+    "tests/test_review_fixes.py": "79f0d7b400f62abd2fe79366f280fb06e44eb485a87799f5f6371c81e9974ea8",
+    "tests/test_tracker.py": "104c1aa26f31285d1b307ed98d14c6a6f0ba53c48bb33562458cd5d34ee0edbe",
+    "docs/local-backend-runbook.md": "118f1018a0fa5eb4b9bfe679c56a5851b731dd35ab1139380d5d0ff032e98de5",
+    "evidence/linux-compose-proof.json": "24bdf4870f168de6e6a8a71c2901f1da6816e827edfe2f9f64c4cfd26935614f",
+    "evidence/linux-parent-verification.json": "0744e32a5721eb598ec1d7c74df7b0ef6b1f7b99d124b4d20a55237aad0c8e79",
+    "evidence/linux-feature-publication.json": "75e2337b353f80baf288d4de8e59e199212658dd009dabc618d6c7505d27e384"
+  },
+  "limitations": [
+    "Unit checks and static counterexamples do not establish fresh Docker/backend behavior",
+    "Historical Linux and Windows evidence retain their actual source bytes and platform limitations",
+    "Review findings are recorded; corrections and seven-repo compatibility are later execution work"
+  ]
+}

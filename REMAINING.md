@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-11-15T17:49:43+04:00 (Asia/Dubai).
+Updated: 2026-11-15T18:25:54+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -9,7 +9,6 @@ Next action: select a ready step from POC_TRACKER.md.
 ## P2 — Establish personal GitHub delivery
 
 - **P2.4 Pin image digests and multi-repository release manifest** (in_progress). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
-- **P2.11 Preserve current repository baseline and reconcile in-flight PRs** (planned). Acceptance: Verify exact remote/main/in-flight refs including PRs 25/26, original repository/issue IDs, clean worktrees, locks and proof boundaries; retain rollback refs and Git configuration preservation receipts. Update watched implementation/CI inputs before accepting execution.
 - **P2.12 Prepare isolated seven-repository workspace and compatible path mapping** (planned). Acceptance: Verify three new repo IDs and reviewed empty/default setup; prepare isolated canonical clones and test old/new layout resolution across tracking, Project sync, runners, Compose, release validation and workspace files. No global Git changes. Update watched implementation/CI inputs before accepting execution.
 - **P2.13 Establish reviewed platform configuration, charts and GitOps ownership** (planned). Acceptance: Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution.
 - **P2.14 Validate independent CI and immutable shared templates for seven repositories** (planned). Acceptance: Observe passing exact-head CI for all seven repos; test dependency-aware change detection, clean builds, guarded Terraform and disabled deployment. PRs have no Azure identity; shared workflows/actions are pinned. Update watched implementation/CI inputs before accepting execution.

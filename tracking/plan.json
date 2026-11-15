@@ -57,7 +57,8 @@
         "ai-observability-lab/docs/repository-migration-plan.md",
         "ai-observability-lab/docs/adr-0002-seven-repositories.md",
         "ai-observability-lab/tracking/repository-targets.json",
-        "ai-observability-lab/tracking/migration-file-map.json"
+        "ai-observability-lab/tracking/migration-file-map.json",
+        "ai-observability-lab/docs/migration-baseline-review.md"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -848,13 +849,14 @@
         "G1"
       ],
       "watch": [
-        "ai-observability-lab/docs/repository-migration-plan.md",
-        "ai-observability-lab/docs/adr-0002-seven-repositories.md",
-        "ai-observability-lab/tracking/repository-targets.json",
-        "ai-observability-lab/tracking/migration-file-map.json"
+        "ai-observability-lab/docs/migration-baseline-review.md",
+        "ai-observability-lab/evidence/migration-baseline.json",
+        "ai-observability-lab/evidence/pr25-review.json"
       ],
       "artifacts": [
-        "ai-observability-lab/evidence/migration-baseline.json"
+        "ai-observability-lab/evidence/migration-baseline.json",
+        "ai-observability-lab/evidence/pr25-review.json",
+        "ai-observability-lab/docs/migration-baseline-review.md"
       ],
       "acceptance": "Verify exact remote/main/in-flight refs including PRs 25/26, original repository/issue IDs, clean worktrees, locks and proof boundaries; retain rollback refs and Git configuration preservation receipts. Update watched implementation/CI inputs before accepting execution."
     },
