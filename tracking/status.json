@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T22:53:52+04:00",
+  "updated_at": "2026-11-15T23:49:35+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 16,
@@ -78,10 +78,11 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/jaeger-application-validation.json",
-        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
-      "note": "HLD 0.34/plan/matrix record actual Jaeger/application source and passing CI, preserved baselines and explicit image/Secret/attribution/runtime limitations.",
+      "note": "HLD 0.36/current choices aligned: chart sources are merged, the private approved-main image was published/replayed, and publication/Secret workflow source remains in review. Live Azure/AKS and full release gates retained.",
       "ready": false
     },
     {
@@ -214,9 +215,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/local-workload-correction.json"
+        "ai-observability-lab/evidence/image-secret-contract-revalidation.json"
       ],
-      "note": "Both OpenAPI contracts and real HTTP authentication/input/outcome/limit cases passed",
+      "note": "New no-values Secret contract changed the watched folder; existing OpenAPI YAML bytes equal approved main and current clean PR/push CI passes API/schema/HTTP/capture tests plus 17 Secret/guard tests. Contract task revalidated from actual current evidence; no backend or live Azure/AKS delivery acceptance added.",
       "ready": false
     },
     {
@@ -493,10 +494,11 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/release-pinning-validation.json",
-        "ai-observability-lab/evidence/release-candidate-publication.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
-      "note": "Candidate and pin validator published for review in PR #24; 18 Git source files verified, 28 tests passed, missing workload digest/replay still block release acceptance",
+      "note": "Private GHCR image published from approved main, pulled by observed digest with source labels/platform verified, and synthetic container auth/key-rotation replay passed. This is partial image evidence: P2.16 and seven-repo/backend/privacy release replay, manifest/pin acceptance and signed/scanned policy remain pending.",
       "ready": false
     },
     {
@@ -1459,10 +1461,11 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
-        "ai-observability-lab/evidence/jaeger-application-validation.json",
-        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
-      "note": "Jaeger chart default0/dev4/qa4, 11 negative cases and native/container config validate pass; application chart default0/dev6/qa6 with private fixture-only images and 15 negative cases passes. Exact-source CI green; Python/contracts/locks, GitOps catalog and existing profiles unchanged. Real image/Secret/attribution/runtime, promotion and Argo/bootstrap/combined gates remain; Azure false.",
+      "note": "Private GHCR image publication/pull and synthetic container auth/citation/coordinated rotation passed in run43753212328. Exact-SHA gate closed; 17 guard/Secret tests and green source CI; first port-probe failure retained/corrected. HLD/current choices aligned. Live Azure/AKS delivery, full release, attribution/GitOps/Argo/handover remain pending.",
       "ready": true
     },
     {

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "phase": "P2.13",
-  "status": "jaeger_application_chart_first_slice_validated_review_pending",
+  "status": "private_image_synthetic_secret_replay_passed_live_aks_and_combined_work_pending",
   "document": "docs/platform-ownership-plan.md",
   "baseline_merge": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8",
   "execution_policy": "offline_source_implementation_no_cloud_cluster_or_registry_publication",

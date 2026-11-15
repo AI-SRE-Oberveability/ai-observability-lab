@@ -48,16 +48,17 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.34/plan/matrix record actual Jaeger/application source and passing CI, preserved baselines and explicit image/Secret/attribution/runtime limitations.",
-      "at": "2026-11-15T22:53:44+04:00",
+      "note": "HLD 0.36/current choices aligned: chart sources are merged, the private approved-main image was published/replayed, and publication/Secret workflow source remains in review. Live Azure/AKS and full release gates retained.",
+      "at": "2026-11-15T23:41:50+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/jaeger-application-validation.json",
-        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "0e5cca8c7bd0b22b8bab05b15ef74ef1892c32a75e2f98c943205d35ab6c136e",
-        "ai-observability-lab/HLD.md": "2d00c4a70c5c0cce8b3d278b1453b3afa0bb85be11cfe0c2fca794cefed2cf75",
+        "ai-observability-lab/POC_PLAN.md": "5e7a0290ccc1b310fad0c305a7f69c727e82189ce64382ef1fb474848c8321f7",
+        "ai-observability-lab/HLD.md": "a95bf5ce0a98db316669fdc64e33f3e16fddd9b58032687b689058806a8447df",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -98,11 +99,12 @@
         "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
         "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f",
         "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "bced355bce8a07503b665adbf0a8ab918321128ca4cc072a2c6357e1aeb9eb8f"
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "dd6ac8d795ce1a99423d5f9650e903c90e10924a86ba083cb4a7c57e7db378ee"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/jaeger-application-validation.json": "87d464633cc0b1ca21d9c7be5980af828e255c011858a7cac14e1c55b0a59901",
-        "ai-observability-lab/evidence/p213-collector-gitops-merge.json": "e6d200b1278c022b7cb6d94f15571e7ce53e857027c95c25dea3d7bea3daa952"
+        "ai-observability-lab/evidence/image-secret-validation.json": "104193645b0667b31f6d6f984ae593b4f7de669d2b722afec374ea68617df1ce",
+        "ai-observability-lab/evidence/workload-image-publication.json": "d303be9133e5ae0c63ab393112a4c4e1716a9e1ca8f58d884d4948ace545be3e",
+        "ai-observability-lab/evidence/image-secret-attempts.json": "713cfff98cf93dfefbb3b7f774a47d031c26e82132575a8b41443b65da0c9926"
       }
     },
     "P0.3": {
@@ -397,29 +399,19 @@
     },
     "P1.2": {
       "status": "done",
-      "note": "Both OpenAPI contracts and real HTTP authentication/input/outcome/limit cases passed",
-      "at": "2026-11-01T15:35:51+04:00",
+      "note": "New no-values Secret contract changed the watched folder; existing OpenAPI YAML bytes equal approved main and current clean PR/push CI passes API/schema/HTTP/capture tests plus 17 Secret/guard tests. Contract task revalidated from actual current evidence; no backend or live Azure/AKS delivery acceptance added.",
+      "at": "2026-11-15T23:49:31+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/local-workload-correction.json"
+        "ai-observability-lab/evidence/image-secret-contract-revalidation.json"
       ],
+      "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-agent-workloads/contracts/agent.openapi.yaml": "333c90b6fd807c385257fb2b484c6b5a289d3227ae063f3c18abaa75b416ab4a",
-        "ai-agent-workloads/contracts/retrieval.openapi.yaml": "73c266b6ff33bac6f3b05338ebe11759d013a2b1c9727aae70c6266bc911e532"
+        "ai-agent-workloads/contracts/agent.openapi.yaml": "9e873b0ccb667eb429e109f71ac07f058284edcb2916517514dbb6051c36640e",
+        "ai-agent-workloads/contracts/retrieval.openapi.yaml": "03a6b989694beffdd61ba9bbc99f39bf16dda62196de5b6ff6a8c318b749bd5e",
+        "ai-agent-workloads/contracts/secret-delivery.json": "391f04ee66d9e54ea5a20cfbd72592a6a7e4f68e1aaab28d6ee8b0505a2ea986"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
-      },
-      "checkout_compatibility": {
-        "policy": "utf8-lf-v1",
-        "original_receipt_sha256": "586072fb677e3c7b511fc686af80a4acd4abb6ed0d2f9e8e96cbbcf001cf0f3c",
-        "source_hashes": {
-          "ai-agent-workloads/contracts/agent.openapi.yaml": "9e873b0ccb667eb429e109f71ac07f058284edcb2916517514dbb6051c36640e",
-          "ai-agent-workloads/contracts/retrieval.openapi.yaml": "03a6b989694beffdd61ba9bbc99f39bf16dda62196de5b6ff6a8c318b749bd5e"
-        },
-        "evidence_hashes": {
-          "ai-observability-lab/evidence/local-workload-correction.json": "22f86ec1958b286b4ad2e6bbfd5edbbfe582477f10b53c01d5d60d80fe833718"
-        },
-        "excluded_generated_source_paths": []
+        "ai-observability-lab/evidence/image-secret-contract-revalidation.json": "2571b734b55c4027b83143f41e4f415ffbc3d72b320db067050697c0d85f41ad"
       }
     },
     "P1.3": {
@@ -596,22 +588,25 @@
     },
     "P2.4": {
       "status": "in_progress",
-      "note": "Candidate and pin validator published for review in PR #24; 18 Git source files verified, 28 tests passed, missing workload digest/replay still block release acceptance",
-      "at": "2026-11-01T16:10:14+04:00",
+      "note": "Private GHCR image published from approved main, pulled by observed digest with source labels/platform verified, and synthetic container auth/key-rotation replay passed. This is partial image evidence: P2.16 and seven-repo/backend/privacy release replay, manifest/pin acceptance and signed/scanned policy remain pending.",
+      "at": "2026-11-15T23:39:32+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/release-pinning-validation.json",
-        "ai-observability-lab/evidence/release-candidate-publication.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
+      "hash_policy": "utf8-lf-v1",
       "source_hashes": {
         "ai-observability-lab/releases/local-v0.1.0-source-candidate.json": "172e9d8ecd1f074d9ea88b4a40fd9658b873d92551f139176c86d81e8ad7facc",
         "ai-observability-lab/releases/README.md": "623f12e0c6b15c05bd410cec3ba5e8e14f9a11c8741b815a943d736fc67f4c9c",
-        "ai-observability-lab/scripts/validate_release.py": "06f89976e8f6a5bbe507d866fe28c2cc892cdc55d880b49e2ef6245e915ba235",
-        "ai-observability-lab/tests/test_release.py": "8f1a5dcb5ec846fa9ccd94142c87eafad1c516b0df29a64fe66d5ade61be05ef",
+        "ai-observability-lab/scripts/validate_release.py": "5804eb097b314cd3fcdaa649f89639e741882b1ac53607ef9cd2309ba1a30f40",
+        "ai-observability-lab/tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
         "ai-observability-lab/docs/release-pinning-plan.md": "9c30b1627fa60bb92ee412cedd57b01240cab32ec20ae5fea948d32f69f21761"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/release-pinning-validation.json": "221052b9d4a408f13e3749b63462eec00a881615272dea0a96542131879c4eea",
-        "ai-observability-lab/evidence/release-candidate-publication.json": "abe42a6c670df318822667fd24763185e833c89b7e863b90589136f60a6b28d6"
+        "ai-observability-lab/evidence/image-secret-validation.json": "104193645b0667b31f6d6f984ae593b4f7de669d2b722afec374ea68617df1ce",
+        "ai-observability-lab/evidence/workload-image-publication.json": "d303be9133e5ae0c63ab393112a4c4e1716a9e1ca8f58d884d4948ace545be3e",
+        "ai-observability-lab/evidence/image-secret-attempts.json": "713cfff98cf93dfefbb3b7f774a47d031c26e82132575a8b41443b65da0c9926"
       }
     },
     "P2.10": {
@@ -717,11 +712,12 @@
     },
     "P2.13": {
       "status": "in_progress",
-      "note": "Jaeger chart default0/dev4/qa4, 11 negative cases and native/container config validate pass; application chart default0/dev6/qa6 with private fixture-only images and 15 negative cases passes. Exact-source CI green; Python/contracts/locks, GitOps catalog and existing profiles unchanged. Real image/Secret/attribution/runtime, promotion and Argo/bootstrap/combined gates remain; Azure false.",
-      "at": "2026-11-15T22:53:49+04:00",
+      "note": "Private GHCR image publication/pull and synthetic container auth/citation/coordinated rotation passed in run43753212328. Exact-SHA gate closed; 17 guard/Secret tests and green source CI; first port-probe failure retained/corrected. HLD/current choices aligned. Live Azure/AKS delivery, full release, attribution/GitOps/Argo/handover remain pending.",
+      "at": "2026-11-15T23:42:04+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/jaeger-application-validation.json",
-        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
+        "ai-observability-lab/evidence/image-secret-validation.json",
+        "ai-observability-lab/evidence/workload-image-publication.json",
+        "ai-observability-lab/evidence/image-secret-attempts.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -730,7 +726,7 @@
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
         "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "bced355bce8a07503b665adbf0a8ab918321128ca4cc072a2c6357e1aeb9eb8f",
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "dd6ac8d795ce1a99423d5f9650e903c90e10924a86ba083cb4a7c57e7db378ee",
         "ai-platform-config/.gitattributes": "f563c611822ae875f6c1e9ceb825cc8fc501a9d9d025137092188c5ff52e6d8d",
         "ai-platform-config/.github/workflows/ci.yaml": "8c932403c1cec92a76f3a79b85dd9edbd974a16a42a3102dc1194111dd164487",
         "ai-platform-config/.gitignore": "6d9c835289816cf23c68fa563941d280ed9395c6f16b6e445c60ff4f96405114",
@@ -836,16 +832,17 @@
         "ai-agent-workloads/charts/ai-lab/templates/application.yaml": "81ecccc175023a56f94903a91d1e98a085d79f8d800c45ba21c6fc032050aff1",
         "ai-agent-workloads/charts/ai-lab/values.schema.json": "0a990230ccc0d07ab2a5f4fa498741f422e083326eab9851e72cda11910e6cfa",
         "ai-agent-workloads/charts/ai-lab/values.yaml": "4ba206f3b13e4b15353498927f705bba2408b55d46f2687eb3ec5d0ee7cc99c0",
-        "ai-observability-lab/tracking/platform-render-matrix.json": "b40f15a8848c809f9683a4f0d44964b84599ce6bd2dd90da3767309504918c8f"
+        "ai-observability-lab/tracking/platform-render-matrix.json": "ad6bc05c40f6812feda9952db6238f9e4fc3995f56df7bc1945bb5f92f5bc6fb"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/jaeger-application-validation.json": "87d464633cc0b1ca21d9c7be5980af828e255c011858a7cac14e1c55b0a59901",
-        "ai-observability-lab/evidence/p213-collector-gitops-merge.json": "e6d200b1278c022b7cb6d94f15571e7ce53e857027c95c25dea3d7bea3daa952"
+        "ai-observability-lab/evidence/image-secret-validation.json": "104193645b0667b31f6d6f984ae593b4f7de669d2b722afec374ea68617df1ce",
+        "ai-observability-lab/evidence/workload-image-publication.json": "d303be9133e5ae0c63ab393112a4c4e1716a9e1ca8f58d884d4948ace545be3e",
+        "ai-observability-lab/evidence/image-secret-attempts.json": "713cfff98cf93dfefbb3b7f774a47d031c26e82132575a8b41443b65da0c9926"
       }
     }
   },
   "known_gaps": [
-    "Jaeger/application chart source passes CI in charts #8/workloads #12. App positives are private render-only image fixtures; real image/source provenance/replay, external Secret delivery and local telemetry attribution remain pending, alongside GitOps promotion, Argo/config ownership and full bootstrap/combined checks.",
+    "Private GHCR digest is published/pulled and synthetic auth/key rotation passed. Real Azure/AKS Key Vault/CSI/Secret/private pull delivery remains disabled, with attribution/GitOps/Argo/bootstrap/combined checks and P2.4/P2.16 full release gates pending; signed/scanned acceptance and retention decisions remain.",
     "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
@@ -854,7 +851,7 @@
     "Watched chart workflow/helper changes invalidate prior exact-main CI evidence until authorized merge and revalidation; passing PR CI is tracked separately."
   ],
   "confirmed_choices": [
-    "Seven public repositories under AI-SRE-Oberveability: four original histories preserved, config/Collector/manual GitOps foundations merged, Jaeger/application chart source in review, pipelines still empty. Renames/Project link cutover remain P2.15; Project stays private.",
+    "Seven public repositories under AI-SRE-Oberveability: four original histories preserved; config, Collector/manual GitOps and Jaeger/application charts merged. Private image publication/replay succeeded; publication/Secret workflow source is in review, pipelines still empty. Renames/Project link cutover remain P2.15; Project stays private.",
     "Terraform for Azure infrastructure; Helm/Kubernetes manifests for application and shared observability deployments.",
     "Preserve GitLab credentials/helpers/remotes; separate GitHub settings or optional WSL.",
     "Refresh tracker after each work step; always report HLD/current/change/next/remaining.",
@@ -862,9 +859,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "HLD 0.34: merged Collector/GitOps main CI passed; Jaeger/application source charts validated in review, fixture-only app renders. Image/Secret/attribution/runtime, GitOps/Argo/handover and cloud gates retained; GitLab/global Git unchanged.",
+    "current": "HLD 0.36: private GHCR digest published/pulled and synthetic auth/key rotation verified; temporary gate closed. Live Azure/AKS Secret delivery, full release and remaining platform gates retained; GitLab/global Git unchanged.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.13: Jaeger chart default0/dev4/qa4, 11 negative cases and native/container config validate pass; application chart default0/dev6/qa6 with private fixture-only images and 15 negative cases passes. Exact-source CI green; Python/contracts/locks, GitOps catalog and existing profiles unchanged. Real image/Secret/attribution/runtime, promotion and Argo/bootstrap/combined gates remain; Azure false."
+    "last_change": "P1.2: New no-values Secret contract changed the watched folder; existing OpenAPI YAML bytes equal approved main and current clean PR/push CI passes API/schema/HTTP/capture tests plus 17 Secret/guard tests. Contract task revalidated from actual current evidence; no backend or live Azure/AKS delivery acceptance added."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -931,7 +928,7 @@
     "azure_deployment_enabled": false
   },
   "migration_workspace": {
-    "status": "jaeger_application_chart_source_in_review",
+    "status": "private_image_and_offline_secret_contract_source_in_review",
     "source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
     "workspace": "AI-PLATFORM-LAB",
     "canonical_clones": 7,
@@ -943,12 +940,25 @@
     "merge_commit": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8"
   },
   "platform_ownership_plan": {
-    "status": "jaeger_application_chart_source_validated_review_pending",
+    "status": "private_image_synthetic_secret_replay_verified_live_delivery_pending",
     "document": "docs/platform-ownership-plan.md",
     "blueprint": "tracking/platform-ownership-plan.json",
     "substeps": 8,
     "implementation_started": true,
     "new_platform_renders_observed": true,
     "azure_deployment_enabled": false
+  },
+  "image_publication": {
+    "registry": "ghcr.io",
+    "repository": "ghcr.io/ai-sre-oberveability/ai-agent-workloads",
+    "visibility": "private",
+    "user_authorized": true,
+    "status": "published_private_digest_pulled_synthetic_rotation_verified",
+    "azure_deployment_enabled": false,
+    "image": "ghcr.io/ai-sre-oberveability/ai-agent-workloads@sha256:de08b02351ece93a256c36ba483731b67157046b1b6b966359d0498d6f22dc88",
+    "source_commit": "79c39e881d1da5b13f99299e4cac72c51367b58c",
+    "workflow_commit": "0d6699490a710ca0edf0abaaa488355734d34bf0",
+    "run_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/43753212328",
+    "temporary_publication_gate_closed": true
   }
 }

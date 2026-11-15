@@ -1,6 +1,6 @@
 # Lab coordination, planning and evidence
 
-[Current Jaeger/application chart plan](docs/jaeger-application-plan.md): Collector/GitOps merged/main CI passed; new chart source is validated in review PRs with explicit pending image/Secret/attribution/runtime gates. HLD 0.34 and evidence/jaeger-application-validation.json carry actual source/CI and preservation receipts. P2.13 remains in progress; Azure stays disabled.
+[Current private image/Secret-delivery plan](docs/image-secret-delivery-plan.md): charts merged/main CI passed; private GHCR digest publication/pull and synthetic auth/key-rotation replay succeeded with a closed temporary gate. HLD 0.36 and evidence/image-secret-validation.json carry source/artifact/attempt/preservation receipts. Live Azure/AKS Secret delivery, full release and remaining P2.13 work stay gated; Azure is disabled.
 
 Verified public repository: `AI-SRE-Oberveability/ai-observability-lab`; reviewed source published; see evidence/publication-receipts.json.
 

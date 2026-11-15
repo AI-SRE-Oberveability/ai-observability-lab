@@ -2,7 +2,7 @@
 
 Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial reviewed source published**.
 
-Current execution update, 15 November 2026: charts #7, GitOps #1 and lab #38 merged with exact-main CI passing. The planned Jaeger/application chart source slice now passes exact-source CI in charts #8/workloads #12; HLD 0.34 and evidence/jaeger-application-validation.json record actual results and fixture/image/Secret/attribution/runtime limits. GitOps promotion, Argo/config/bootstrap/combined checks and P2.14–P2.16 remain; Azure stays disabled.
+Current execution update, 15 November 2026: charts #8/workloads #12/lab #39 merged with exact-main CI passing. Private GHCR publication and pulled-digest synthetic Secret auth/rotation replay succeeded from approved main source via exact-SHA manual workflow; HLD 0.36 and evidence/image-secret-validation.json retain actual receipts and the corrected first attempt. The publication gate is closed. Live Azure/AKS Secret delivery, full release and remaining P2.13/P2.14–P2.16 gates stay pending; Azure stays disabled.
 
 The immediate deliverable is this plan, a maintained high-level design (HLD), and an automated progress tracker. The user has accepted the plan and authorized public-source review and pushes to all four repositories; cloud spending retains its separate gates. Previously created local files are retained as drafts and assessed against the plan; they do not imply acceptance or deployment.
 
