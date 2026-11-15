@@ -18,7 +18,7 @@ These choices follow the [Terraform style guide](https://developer.hashicorp.com
 
 ## Repositories and delivery
 
-- Seven independent target repositories selected on 15 November 2026, with four repositories currently published. Follow docs/repository-migration-plan.md for three identity-preserving renames, three additions and one retained workload repo. Each has README, ignore rules and one owner per resource. Each POC has identifiable code, contracts, fixtures and evidence. The parent workspace is not a nested-repository Git root.
+- Seven independent repositories selected on 15 November 2026: four contain published source and P2.12 adds three empty repositories. Follow docs/repository-migration-plan.md for three identity-preserving renames, three additions and one retained workload repo. Each populated repository needs README, ignore rules and one owner per resource. Each POC has identifiable code, contracts, fixtures and evidence. The parent workspace is not a nested-repository Git root.
 - Preserve GitLab credentials/helpers/remotes. Use separate GitHub destinations and repository-local identity/settings; WSL is optional. Verify the personal identity and exact remote before writing.
 - Review source and secret exclusions before initial push. Version authored source/configuration/docs; exclude credentials, virtual environments, downloaded binaries, state/plans and customer material. Use branches/PRs and available review controls after bootstrap; do not rely on unavailable GitHub-plan features.
 - Lock dependencies, pin action references, minimize workflow permissions, restrict deployment identities to authorized environments and keep untrusted fork code away from them. CI must build/test a clean checkout; images deploy by immutable digest.

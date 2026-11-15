@@ -2,6 +2,8 @@
 
 Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial reviewed source published**.
 
+Current execution update, 15 November 2026: P2.12 prepares the parallel seven-folder workspace and creates three empty public repositories. Four original GitHub names/history and the private 48-task Project links remain until P2.15. See HLD.md and docs/workspace-compatibility.md for current checks and remaining migration steps. Earlier starting-position/publication statements below are historical. Azure deployment remains disabled; finish repository setup before Azure target/budget planning and new POC execution.
+
 The immediate deliverable is this plan, a maintained high-level design (HLD), and an automated progress tracker. The user has accepted the plan and authorized public-source review and pushes to all four repositories; cloud spending retains its separate gates. Previously created local files are retained as drafts and assessed against the plan; they do not imply acceptance or deployment.
 
 Confirmed choices: Terraform for Azure IaC; a selected seven-repository target with four currently published repositories under organization `AI-SRE-Oberveability`, owned by the personal GitHub account `javedkumail`; GitLab credentials preserved; tracker updates after each work step; continuous HLD/current/next/remaining updates. The user created all four repositories as public; their existence and empty contents were verified on 28 October 2026. Source review passed and initial pushes to all four repositories were verified; receipts are in evidence/publication-receipts.json. [Engineering standards](docs/engineering-standards.md) are part of every work package's definition of done.

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "validated_at": "2026-11-15T19:35:57+04:00",
+  "status": "passed",
+  "source_stage": "Exact working-source overlay; canonical clone will be checked out clean at the published commit before final acceptance",
+  "checks": [
+    {
+      "layout": "legacy",
+      "command": "describe",
+      "status": "passed"
+    },
+    {
+      "layout": "legacy",
+      "command": "compose",
+      "status": "passed"
+    },
+    {
+      "layout": "legacy",
+      "command": "editor",
+      "status": "passed"
+    },
+    {
+      "layout": "legacy",
+      "command": "historical release Git objects",
+      "source_files_verified": 18,
+      "status": "passed"
+    },
+    {
+      "layout": "legacy",
+      "command": "native runner and installer path import",
+      "status": "passed",
+      "services_started": false
+    },
+    {
+      "layout": "canonical",
+      "command": "describe",
+      "status": "passed"
+    },
+    {
+      "layout": "canonical",
+      "command": "compose",
+      "status": "passed"
+    },
+    {
+      "layout": "canonical",
+      "command": "editor",
+      "status": "passed"
+    },
+    {
+      "layout": "canonical",
+      "command": "historical release Git objects",
+      "source_files_verified": 18,
+      "status": "passed"
+    },
+    {
+      "layout": "canonical",
+      "command": "native runner and installer path import",
+      "status": "passed",
+      "services_started": false
+    },
+    {
+      "layout": "legacy",
+      "host": "Windows",
+      "tests": 66,
+      "skipped": 3,
+      "status": "passed"
+    },
+    {
+      "layout": "canonical",
+      "host": "Windows",
+      "tests": 66,
+      "skipped": 3,
+      "status": "passed"
+    },
+    {
+      "layout": "legacy",
+      "host": "Ubuntu-24.04 WSL",
+      "tests": 66,
+      "skipped": 0,
+      "status": "passed"
+    },
+    {
+      "layout": "legacy",
+      "host": "Ubuntu-24.04 WSL",
+      "command": "historical release Git objects",
+      "source_files_verified": 18,
+      "status": "passed"
+    },
+    {
+      "layout": "canonical",
+      "host": "Ubuntu-24.04 WSL",
+      "tests": 66,
+      "skipped": 0,
+      "status": "passed"
+    },
+    {
+      "layout": "canonical",
+      "host": "Ubuntu-24.04 WSL",
+      "command": "historical release Git objects",
+      "source_files_verified": 18,
+      "status": "passed"
+    },
+    {
+      "layout": "legacy",
+      "command": "actual Compose config render",
+      "services": 4,
+      "loopback_bindings": true,
+      "status": "passed",
+      "engine_actions": false
+    },
+    {
+      "layout": "canonical",
+      "command": "actual Compose config render",
+      "services": 4,
+      "loopback_bindings": true,
+      "status": "passed",
+      "engine_actions": false
+    }
+  ],
+  "source_hashes": {
+    "scripts/install_local_backends.py": "8e389e89d7b28fcf2d70fc04720ed93d79307a572a8395b4ad7015ac2dc92495",
+    "scripts/poc_tracker.py": "c9be50cba76ae34c95d21237d8d443c994c4d0e08ed8fd86210f240089d02f88",
+    "scripts/prove_linux_backend.py": "f1d3c403677097abf7ad9c5b34f1d23533c5ee982ca19c4acc754c0f0388eb53",
+    "scripts/prove_local_backend.py": "aa57b85d70d68fa763f6a34e0c42f46695ce08cb9f31531231a9128f9102bfb9",
+    "scripts/sync_github_project.py": "694baff2a17c3d8f79e4e0452679b879b94f5a762e35bab5eb12434d7b4ecf09",
+    "scripts/validate_release.py": "5804eb097b314cd3fcdaa649f89639e741882b1ac53607ef9cd2309ba1a30f40",
+    "scripts/workspace.py": "5ba453e873803a8cb049111cafda1b12bdcfb073fe68b85bc03cdad2a9c6174b",
+    "tests/lab_fixtures.py": "8ac9227ee9ca9362c242bd8109cad705438df28a9ab11d35b7bc5fe0ac1a152a",
+    "tests/test_linux_proof.py": "9e9ab5d4f7808a9951b01c11568f3f39d997a7aa44b30a0bda1d800aea282a2c",
+    "tests/test_project_sync.py": "7137a76456db0cd900449c27fdf88ca4d866379d6112b09c8d078e86b675e9e3",
+    "tests/test_release.py": "6284bb0a3cd8228fa38e66b9eac30ae0d7f46dd8628772fb9e2ce19af7811fb1",
+    "tests/test_review_fixes.py": "a6a45209d7783b3255bf37cee7bdba6e8a237cb7da3af0e1558d1a2930f8eb45",
+    "tests/test_tracker.py": "3c865fb388ba5a6c4a9631351d97744cd00bd09f1c78c3e60328c849038d129d",
+    "tests/test_workspace.py": "47cac9041de1081971c0107d5ec84a8a802b82376952309dbe01dfecf7f1c1ed",
+    "tracking/workspace-layout.json": "406c409f92e20ea346980cf609dc58648b5139cb6e338a747b308fe97807dbca",
+    "AI-PLATFORM-LAB.code-workspace": "a38a68e3cff6c291f198e81e267d409d028f7a22ffe7e8f74b8eba7ce30e6c6e"
+  },
+  "runtime_findings_fixed": [
+    "R1 runtime containment independent of repo names",
+    "R2 platform-independent fixture and POSIX-only signal test"
+  ],
+  "azure_deployment_enabled": false,
+  "docker_engine_or_cluster_actions": false,
+  "registry_publication": false,
+  "retained_failed_attempt": {
+    "status": "failed",
+    "profile": "legacy Ubuntu WSL unit invocation",
+    "timeout_seconds": 120,
+    "result_accepted": false,
+    "owned_unittest_processes_after_timeout": 0,
+    "retry_change": "Use native POSIX temporary fixtures and Linux timeout process control; Windows fixture path unchanged"
+  },
+  "limitations": [
+    "Windows skipped the POSIX signal test and two symlink tests when privilege is unavailable; Linux executes all three.",
+    "No fresh Docker/backend replay or canonical native service startup is claimed; source-bound runtime proof remains P2.16 work."
+  ]
+}

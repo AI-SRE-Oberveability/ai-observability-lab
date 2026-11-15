@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-08",
+  "scope": "Feature-branch source publication; no main merge or deployment",
+  "lab": {
+    "repository": "AI-SRE-Oberveability/ai-observability-lab",
+    "branch": "feature/ai-sre-platform-lab",
+    "validated_source_commit": "a8419510d7c74b2211e255ee50639e50d2717da9",
+    "exact_remote_branch_sha_readback": "a8419510d7c74b2211e255ee50639e50d2717da9",
+    "runner_sha256": "90a86804488a032fdfab938bb7ebbffa532c6625728cc5ce1912a6c0e944e9cf",
+    "hosted_source_branch_ci": {"run_id": 42435140058, "head_sha": "a8419510d7c74b2211e255ee50639e50d2717da9", "status": "completed", "conclusion": "success"},
+    "review_pr": {"number": 25, "state": "OPEN", "draft": true, "base": "main", "head": "feature/ai-sre-platform-lab", "verified_head_sha": "a8419510d7c74b2211e255ee50639e50d2717da9"},
+    "note": "This receipt lives in a subsequent documentation commit. The validated source pin remains the code commit above; source-byte proof does not depend on the receipt commit's own hash."
+  },
+  "infrastructure": {
+    "repository": "AI-SRE-Oberveability/AI-Observability-Infra",
+    "branch": "feature/ai-sre-platform-lab",
+    "commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+    "source_changes": false,
+    "exact_remote_branch_sha_verified": true,
+    "hosted_branch_ci": {"run_id": 42433363253, "head_sha": "62f079f9c9a25e0c83f202931bd30bca18959a3a", "status": "completed", "conclusion": "success"}
+  },
+  "unchanged_siblings": {
+    "ai-agent-workloads": {"branch": "main", "commit": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb", "working_tree": "clean", "feature_branch_created": false},
+    "ai-observability-config": {"branch": "main", "commit": "ca193e79a75d7129e01ea507cf39c6e5de917b6a", "working_tree": "clean", "feature_branch_created": false}
+  },
+  "preserved_main_heads": {
+    "AI-Observability-Infra": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+    "ai-observability-lab": "7723a733b67e1992e3eb7a37e148e85be9321406",
+    "ai-agent-workloads": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+    "ai-observability-config": "ca193e79a75d7129e01ea507cf39c6e5de917b6a"
+  },
+  "local_proof_and_review": "evidence/linux-parent-verification.json; final independent code review passed; original failures retained in evidence/linux-compose-proof.json",
+  "project_sync": {"safe_dry_run": "passed", "live_updates": false, "deferred_reason": "Current helper hardcodes blob/main evidence URLs and has no branch-ref option; these files are feature-only. Do not publish broken evidence links or imply an authorized main merge."},
+  "deployment": {"main_merged": false, "azure_deployment_enabled": false, "azure_operations": false, "paid_inference": false, "registry_publication": false},
+  "remaining": ["Historical tracker/source-hash portability and dependency revalidation; strict tracker retains 0/41 accepted rather than inventing historical acceptance.", "Branch-aware Project evidence linking before live sync, or separately authorized eventual merge.", "P2.4 published workload digest and immutable-registry replay.", "G2/G3/G4/G5 remain pending; no cloud/model scope is unlocked by this source publication."]
+}

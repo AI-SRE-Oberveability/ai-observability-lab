@@ -8,16 +8,20 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-RUNTIME = ROOT / ".runtime" / "backends"
-LOCK = ROOT / "ai-observability-config/local/windows-binaries.lock.json"
+from workspace import current
+
+WORKSPACE = current()
+ROOT = WORKSPACE.root
+RUNTIME = WORKSPACE.runtime(ROOT / ".runtime/backends")
+LOCK = WORKSPACE.repo("charts", required=False) / "local/windows-binaries.lock.json"
 
 
 def main():
     if sys.platform != "win32":
         raise SystemExit("Use Docker Compose on non-Windows hosts.")
+    WORKSPACE.verify_clone("charts")
     for name, item in json.loads(LOCK.read_text()).items():
-        destination = RUNTIME / name
+        destination = WORKSPACE.runtime(RUNTIME / name)
         destination.mkdir(parents=True, exist_ok=True)
         archive = destination / item["url"].rsplit("/", 1)[1]
         if not archive.exists():

@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "name": "infra",
+      "path": "../ai-platform-infra"
+    },
+    {
+      "name": "config",
+      "path": "../ai-platform-config"
+    },
+    {
+      "name": "charts",
+      "path": "../ai-platform-charts"
+    },
+    {
+      "name": "gitops",
+      "path": "../ai-platform-gitops"
+    },
+    {
+      "name": "pipelines",
+      "path": "../ai-platform-pipelines"
+    },
+    {
+      "name": "workloads",
+      "path": "../ai-agent-workloads"
+    },
+    {
+      "name": "lab",
+      "path": "."
+    }
+  ]
+}

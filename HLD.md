@@ -1,12 +1,28 @@
 # High-level design — current, target and remaining work
 
-Version: 0.22 preserved migration baseline and PR review. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #26 merged; four repository rollback bundles restored and verified; PR #25 reviewed with two required corrections; four live repositories retained; Azure execution remains disabled**.
+Version: 0.24 validated workspace compatibility. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #34 merged after approval; P2.12 old/new layout checks and two PR #25 corrections validated locally; publication/clean checkout verification in progress; Azure execution remains disabled**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
-Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and the selected seven-repository target under `AI-SRE-Oberveability` separates resource ownership. Four repositories currently exist; three in-place renames and three new repositories are planned, with original IDs/history retained. The organization is owned by the personal account `javedkumail`. All four transferred repositories retain their IDs, published commits and public visibility. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
+Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; three new empty public repositories now exist. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
+
+## P2.12 workspace setup and corrections — 15 November 2026
+
+Created empty public config, gitops and pipelines repositories with verified IDs; all seven canonical sibling clones now exist under AI-PLATFORM-LAB. The three new repos have read-only workflow permissions, no PR approval permission, an explicit false Azure flag and no branches/workflows yet. Four original GitHub names, source histories and rollback workspace remain unchanged. See evidence/workspace-setup.json.
+
+The shared registry/resolver now connects tracker, Project evidence links, native/Linux runners, installer, generated Compose and historical release-object reads. PR #25's Linux source/tests and historical receipts/audit were selectively reconciled without importing its old 41-task state. R1 runtime containment no longer depends on clone names; R2 platform fixtures allow Windows tests while real POSIX signal tests run on Linux. New tracker records explicitly normalize authored UTF-8 text to LF; historical proof hashes remain unchanged. Project updates verify published evidence blobs and use immutable commit links before writes.
+
+Both real layouts passed 66 tests on Windows (three platform/privilege skips) and Ubuntu WSL (zero skips). Both actual Compose configuration renders passed with four services, correct sibling build contexts and loopback bindings; no engine action occurred. Both Windows/Linux layouts verified the 18 historical pinned source objects. Native installer/runner imports resolved the correct private runtime and sibling profiles. See evidence/migration-path-compatibility.json. This is path/unit/config validation, not fresh backend ingestion. Next: publish the compatibility PR, verify a clean canonical checkout and synchronize the Project to published evidence. Remaining: review/merge, P2.13 owned platform/GitOps source, P2.14 seven-repo CI, P2.15 rename/Project cutover, P2.16 fresh canonical runtime proof/source baseline, then target/budget and costed Terraform planning. Azure and paid/live inference remain disabled, and GitLab credentials/global Git configuration are preserved.
+
+## Earlier P2.12 start snapshot after approved PR #34 merge - 15 November 2026
+
+The user explicitly authorized merging PR #34, fixing the two PR #25 findings and preparing/testing the seven-repository workspace. PR #34 merged at 9fc2224161e4e080f24dfbc97c37c5fb7eb78904 after its exact approved head passed CI; see evidence/pr34-merge.json. The rollback baseline and original PR #25 branch remain preserved.
+
+Next: create the three planned empty public repos, prepare canonical isolated clones without renaming the four existing GitHub repositories, implement the shared safe old/new layout resolver, and correct runtime containment plus platform-specific tests. Validate tracking, Project evidence links, native/Linux runners, Compose, workspace files and historical release-object reads in both layouts. Keep the 48-task model and historical evidence; do not import the old feature's generated state wholesale.
+
+Runtime remains AI agents on AKS through APIM outside AKS. Azure deployment and paid/live inference remain disabled, G2/G3/G4/G5 stay pending, and GitLab credentials/global Git settings are preserved. Repository rename/Project cutover and fresh canonical runtime proof remain later work packages.
 
 ## Preserved baseline and completed PR #25 review - 15 November 2026
 

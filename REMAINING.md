@@ -1,21 +1,27 @@
 # What remains
 
-Updated: 2026-11-15T18:25:54+04:00 (Asia/Dubai).
+Updated: 2026-11-15T19:37:52+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
 Next action: select a ready step from POC_TRACKER.md.
 
-## P2 — Establish personal GitHub delivery
+## P1 â€” Prove the local vertical slice
 
+- **P1.5 Prove local backend runner and lifecycle** (needs_revalidation). Acceptance: Working chosen runner starts/stops owned services; backend readiness and ephemeral retention are documented.
+- **P1.6 Record complete local trace and exported-data evidence** (needs_revalidation). Acceptance: Fresh run saves machine-readable results, backend trace graph and canary checks against exported telemetry; bounded failure is demonstrated.
+
+## P2 â€” Establish personal GitHub delivery
+
+- **P2.3 Complete reproducible CI, contract tests and builds** (blocked). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (in_progress). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
-- **P2.12 Prepare isolated seven-repository workspace and compatible path mapping** (planned). Acceptance: Verify three new repo IDs and reviewed empty/default setup; prepare isolated canonical clones and test old/new layout resolution across tracking, Project sync, runners, Compose, release validation and workspace files. No global Git changes. Update watched implementation/CI inputs before accepting execution.
+- **P2.12 Prepare isolated seven-repository workspace and compatible path mapping** (in_progress). Acceptance: Verify three new repo IDs and reviewed empty/default setup; prepare isolated canonical clones and test old/new layout resolution across tracking, Project sync, runners, Compose, release validation and workspace files. No global Git changes. Update watched implementation/CI inputs before accepting execution.
 - **P2.13 Establish reviewed platform configuration, charts and GitOps ownership** (planned). Acceptance: Publish reviewed ownership-separated source; preserve AI/APIM and native telemetry; lock and render chart/CRD inputs, test resource collisions and bootstrap-to-Argo handover, with cloud/cluster operations disabled. Update watched implementation/CI inputs before accepting execution.
 - **P2.14 Validate independent CI and immutable shared templates for seven repositories** (planned). Acceptance: Observe passing exact-head CI for all seven repos; test dependency-aware change detection, clean builds, guarded Terraform and disabled deployment. PRs have no Azure identity; shared workflows/actions are pinned. Update watched implementation/CI inputs before accepting execution.
 - **P2.15 Perform verified repository rename, workspace and Project cutover** (planned). Acceptance: Verify all four original IDs/histories, three new repos, canonical GitHub-only origins, current path/watch/Project mappings, seven linked repos and preserved issue IDs/private Project. Keep Azure false and GitLab/global Git unchanged. Update watched implementation/CI inputs before accepting execution.
 - **P2.16 Revalidate canonical workspace and seven-repository source baseline** (planned). Acceptance: After authorized merges, verify seven exact-main CI runs, affected local backend/privacy/graph/cleanup proof, accurate platform-specific source receipts and runbook/rollback. Prepare a new seven-repo source candidate; do not claim a deployable image/replay without P2.4 evidence. Update watched implementation/CI inputs before accepting execution.
 
-## P3 — Plan and deploy personal Azure
+## P3 â€” Plan and deploy personal Azure
 
 - **P3.1 Confirm personal Azure targets, region and budget** (waiting_for_decision). Acceptance: Supplied exact tenant/subscription and personal identity are matched; region/budget/currency and model requirement recorded.
 - **P3.2 Produce costed Azure HLD and runner/network design** (draft). Acceptance: Dated active/idle costs, AKS/APIM SKU and network/runner reachability, identity boundaries, retention and optional Managed footprint documented; no cloud authorization inferred.
@@ -25,14 +31,14 @@ Next action: select a ready step from POC_TRACKER.md.
 - **P3.6 Verify cloud start/stop and scoped destroy/recreate** (planned). Acceptance: Owned lifecycle works for exact scope; remaining stopped-resource costs/state and evidence retention documented.
 - **P3.7 Prepare Terraform APIM governance and versioned policy contracts** (planned). Acceptance: Terraform/provider coverage, complete backend/access inventory, three identity boundaries, network/diagnostic ownership, offline policy checks and costed gateway plan reviewed before apply; one resource/state owner.
 
-## P4 — Validate Dynatrace Managed compatibility
+## P4 â€” Validate Dynatrace Managed compatibility
 
 - **P4.1 Confirm Managed entitlement and supported configuration** (waiting_for_decision). Acceptance: Licence/installer, cluster/agent compatibility, vendor sizing/OS/storage, connectivity, retention and cost envelope confirmed.
 - **P4.2 Provision and configure supported Managed backend** (planned). Acceptance: Licensed backend on supported dedicated hosts is installed/configured through documented reproducible steps.
 - **P4.3 Validate native and selected custom instrumentation** (planned). Acceptance: Separate native/custom cohorts validate endpoints, auth, enrichment, retention and duplicate spans for each signal.
 - **P4.4 Build supported views and tested compatibility matrix** (draft). Acceptance: Supported dashboards/alerts/read APIs and exact versions recorded; reference enterprise environment gaps and SaaS-only features explicitly labelled.
 
-## P5 — Add bounded investigation agents
+## P5 â€” Add bounded investigation agents
 
 - **P5.1 Define synthetic status tools and incident fixtures** (planned). Acceptance: Allowlisted health/version/failure schemas and versioned synthetic incidents have expected outcomes.
 - **P5.2 Implement bounded service-status investigation agent** (planned). Acceptance: Retries/steps/tools/time bounds and injected failure cases pass; token bounds are verified only when live provider is authorized.
@@ -40,7 +46,7 @@ Next action: select a ready step from POC_TRACKER.md.
 - **P5.4 Validate evidence-citing read-only SRE copilot** (planned). Acceptance: Timeline, causes, evidence IDs, uncertainty and human checks pass versioned incident tests; untrusted text cannot add write/shell tools.
 - **P5.5 Implement governed model adapter and bounded gateway behavior** (planned). Acceptance: Deterministic mode preserved; gateway-scoped identity contract, model allowlist and typed auth/rate/quota/timeout errors pass synthetic checks; retries and streaming bounded; no direct-endpoint fallback. Actual cloud/live claims require P3.5 and G5.
 
-## P6 — Experiment, demonstrate and hand over
+## P6 â€” Experiment, demonstrate and hand over
 
 - **P6.1 Define comparison cohorts and acceptance measurements** (planned). Acceptance: Matched load, expected graphs, baselines, versions and measurement scripts defined before experiments.
 - **P6.2 Run coverage, overhead, outage, redaction and rollout experiments** (planned). Acceptance: 100-request coverage, duplication/loss, p95 overhead, outage recovery and zero-prohibited-value results recorded with limitations.

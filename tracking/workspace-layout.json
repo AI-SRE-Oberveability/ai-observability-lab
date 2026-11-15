@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "repositories": [
+    {
+      "role": "infra",
+      "folder": "ai-platform-infra",
+      "legacy_folders": [
+        "ai-observability-infra",
+        "AI-Observability-Infra"
+      ],
+      "github_names": [
+        "AI-Observability-Infra",
+        "ai-platform-infra"
+      ],
+      "repository_id": 1437529000
+    },
+    {
+      "role": "config",
+      "folder": "ai-platform-config",
+      "legacy_folders": [],
+      "github_names": [
+        "ai-platform-config"
+      ],
+      "repository_id": 1458904336
+    },
+    {
+      "role": "charts",
+      "folder": "ai-platform-charts",
+      "legacy_folders": [
+        "ai-observability-config"
+      ],
+      "github_names": [
+        "ai-observability-config",
+        "ai-platform-charts"
+      ],
+      "repository_id": 1437530253
+    },
+    {
+      "role": "gitops",
+      "folder": "ai-platform-gitops",
+      "legacy_folders": [],
+      "github_names": [
+        "ai-platform-gitops"
+      ],
+      "repository_id": 1458904423
+    },
+    {
+      "role": "pipelines",
+      "folder": "ai-platform-pipelines",
+      "legacy_folders": [],
+      "github_names": [
+        "ai-platform-pipelines"
+      ],
+      "repository_id": 1458904499
+    },
+    {
+      "role": "workloads",
+      "folder": "ai-agent-workloads",
+      "legacy_folders": [],
+      "github_names": [
+        "ai-agent-workloads"
+      ],
+      "repository_id": 1437529826
+    },
+    {
+      "role": "lab",
+      "folder": "ai-platform-lab",
+      "legacy_folders": [
+        "ai-observability-lab"
+      ],
+      "github_names": [
+        "ai-observability-lab",
+        "ai-platform-lab"
+      ],
+      "repository_id": 1437531335
+    }
+  ]
+}

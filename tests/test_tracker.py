@@ -1,10 +1,14 @@
 """Tracker safety checks only; these tests do not run application or cloud work."""
 
 import importlib.util
-import tempfile
+import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
+
+from lab_fixtures import temporary_directory
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 SPEC = importlib.util.spec_from_file_location(
     "poc_tracker", Path(__file__).parents[1] / "scripts/poc_tracker.py"
@@ -47,9 +51,7 @@ class TrackerChecks(unittest.TestCase):
         self.assertEqual(tracker.json.loads(target.read_text()), {"old": True})
 
     def setUp(self):
-        runtime = Path(__file__).resolve().parents[2] / ".runtime" / "tracker-tests"
-        runtime.mkdir(parents=True, exist_ok=True)
-        self.temporary = tempfile.TemporaryDirectory(dir=runtime)
+        self.temporary = temporary_directory()
         self.addCleanup(self.temporary.cleanup)
         self.base = Path(self.temporary.name)
         (self.base / "source.txt").write_text("version 1")
@@ -90,6 +92,33 @@ class TrackerChecks(unittest.TestCase):
         self.assertEqual(self.status(), "done")
         (self.base / "source.txt").write_text("version 2")
         self.assertEqual(self.status(), "needs_revalidation")
+
+    def test_new_receipts_accept_lf_checkout_but_reject_semantic_change(self):
+        source = self.base / "source.txt"
+        source.write_bytes(b"version 1\r\n")
+        self.completed()
+        legacy = self.state["steps"]["P1.1"].copy()
+        record = self.state["steps"]["P1.1"]
+        record["hash_policy"] = "utf8-lf-v1"
+        record["source_hashes"] = tracker.snapshot(
+            self.base, ["source.txt"], "utf8-lf-v1"
+        )
+        record["evidence_hashes"] = tracker.snapshot(
+            self.base, ["proof.txt"], "utf8-lf-v1"
+        )
+        source.write_bytes(b"version 1\n")
+        self.assertEqual(self.status(), "done")
+        self.state["steps"]["P1.1"] = legacy
+        self.assertEqual(self.status(), "needs_revalidation")
+        self.state["steps"]["P1.1"] = record
+        source.write_bytes(b"version 2\n")
+        self.assertEqual(self.status(), "needs_revalidation")
+        binary = self.base / "image.bin"
+        binary.write_bytes(b"\x00\r\n")
+        self.assertEqual(
+            tracker.snapshot(self.base, ["image.bin"]),
+            tracker.snapshot(self.base, ["image.bin"], "utf8-lf-v1"),
+        )
 
     def test_missing_or_tampered_evidence_invalidates_pass(self):
         self.completed()
