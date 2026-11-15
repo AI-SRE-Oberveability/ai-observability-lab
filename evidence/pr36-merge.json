@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "repository": "AI-SRE-Oberveability/ai-observability-lab",
+  "pr": 36,
+  "approved_head": "eae5bfe9a12927ad6cd3d3e4204346d0358cbc21",
+  "merge_commit": "d947613b318e693584d7e637131d079df89f51ef",
+  "merged_at": "2026-11-15T16:51:32Z",
+  "verified_at": "2026-11-15T20:51:34+04:00",
+  "ci_runs": [
+    {
+      "id": 43735931088,
+      "event": "pull_request",
+      "head": "eae5bfe9a12927ad6cd3d3e4204346d0358cbc21",
+      "conclusion": "success"
+    },
+    {
+      "id": 43735926478,
+      "event": "push",
+      "head": "eae5bfe9a12927ad6cd3d3e4204346d0358cbc21",
+      "conclusion": "success"
+    }
+  ],
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false,
+  "git_global_settings_unchanged": true,
+  "four_original_remote_configs_unchanged": true,
+  "authorization": "User approved the plan and explicitly requested merge PR36 and start P2.13 dependency locking/configuration manifests"
+}

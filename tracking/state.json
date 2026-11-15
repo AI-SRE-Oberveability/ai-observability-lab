@@ -48,18 +48,17 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.27 and P2.13 plan/blueprint distinguish proposed source ownership, eight ordered steps, pin/lock/handover/rollback requirements and pending implementation; AKS agents/APIM/Azure gates preserved.",
-      "at": "2026-11-15T20:24:50+04:00",
+      "note": "HLD 0.28 reflects approved PR36 merge and config documentation bootstrap; dependency/config implementation is offline and cloud gates remain pending.",
+      "at": "2026-11-15T21:02:15+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/pr35-merge.json",
-        "ai-observability-lab/evidence/platform-ownership-start.json",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json"
+        "ai-observability-lab/evidence/pr36-merge.json",
+        "ai-observability-lab/evidence/platform-configuration-start.json",
+        "ai-observability-lab/evidence/config-repository-bootstrap.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
         "ai-observability-lab/POC_PLAN.md": "74dd7132e2d73cb979ebb597408232edef2d2b40b0cd289dbee7fb40f3d4a4e6",
-        "ai-observability-lab/HLD.md": "72d686c6787b03d46bca2b85303c5ed2353663ba7a1c1224912b8e17ac959000",
+        "ai-observability-lab/HLD.md": "03955a09940080ac5f86d2b02c8734123a792faee3839cdb0d69f2a78d589a35",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -100,13 +99,12 @@
         "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
         "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f",
         "ai-observability-lab/docs/platform-ownership-plan.md": "b42ca8b8d6b56b0e077171cb67c2a3a7fbe44aea49053d2488f31579daaaf5cc",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "5d08725050828aedd8af2611912a8bf0515c2cf09881bf59a34e75e74ce820ef"
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "8d3a7c94798d8b82f6df4cc487f1655be9803f8135e988ed2dc9a1673df49937"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/pr35-merge.json": "2452899741566ee5230eb6cdd5030c2649e1128ea8e3f2c55d5f4de2a570d39d",
-        "ai-observability-lab/evidence/platform-ownership-start.json": "16d314bdf407e8004cebfbee57db9e4de66b84c4140265a632cf8ed1ef0edaeb",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json": "88dc3c3880ef4961adeae7274c64ebed8b6f31a88efdc059be5f85c5d1135109",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json": "f5a2ec4f57d9d6c977d1dc5caab4f7fa6c78086543530f92b53380285c9fd75f"
+        "ai-observability-lab/evidence/pr36-merge.json": "1b3c89c61c6928094b504a93626236b231205fd20f5e71aad55dcef22d0fd71c",
+        "ai-observability-lab/evidence/platform-configuration-start.json": "4091d3584d35040499c582c0074e8d6b4f280a3f77ca75d543c6891d51aa8ff4",
+        "ai-observability-lab/evidence/config-repository-bootstrap.json": "dbe313f27899e0b302df4b0b89fdf01545e37b61ae941f421db248ddaf4473d2"
       }
     },
     "P0.3": {
@@ -721,14 +719,12 @@
     },
     "P2.13": {
       "status": "in_progress",
-      "note": "Ownership planning package prepared before manifest work: seven source roles, eight ordered substeps, lock/pin publication sequence, bootstrap freeze/adoption/rollback and combined negative checks. Reference/profile bytes and all repo identities preserved; three new repos remain empty. Existing tests/lint pass, Azure flags are false and GitLab/global Git settings are unchanged. Implementation and real renders remain pending.",
-      "at": "2026-11-15T20:27:21+04:00",
+      "note": "PR36 plan approved/merged with passing main CI. Config repository documentation baseline published and feature branch prepared using repository-local noreply identity. Selected upstream inputs are being verified; no manifest apply, cloud access or GitLab/global Git change.",
+      "at": "2026-11-15T21:02:23+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/pr35-merge.json",
-        "ai-observability-lab/evidence/platform-ownership-start.json",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json",
-        "ai-observability-lab/evidence/platform-ownership-preservation.json"
+        "ai-observability-lab/evidence/pr36-merge.json",
+        "ai-observability-lab/evidence/platform-configuration-start.json",
+        "ai-observability-lab/evidence/config-repository-bootstrap.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -737,7 +733,11 @@
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
         "ai-observability-lab/docs/platform-ownership-plan.md": "b42ca8b8d6b56b0e077171cb67c2a3a7fbe44aea49053d2488f31579daaaf5cc",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "5d08725050828aedd8af2611912a8bf0515c2cf09881bf59a34e75e74ce820ef",
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "8d3a7c94798d8b82f6df4cc487f1655be9803f8135e988ed2dc9a1673df49937",
+        "ai-platform-config/.gitattributes": "f563c611822ae875f6c1e9ceb825cc8fc501a9d9d025137092188c5ff52e6d8d",
+        "ai-platform-config/.gitignore": "6d9c835289816cf23c68fa563941d280ed9395c6f16b6e445c60ff4f96405114",
+        "ai-platform-config/AGENTS.md": "461a7e243aa7cbb32493badc3a8440db86b9c7a74ca5e9c5095215202f2670e3",
+        "ai-platform-config/README.md": "406a1870a8c2dc30adabd25a93146ff8f6715539891cc2acd23085939c3670ae",
         "ai-observability-config/.gitattributes": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
         "ai-observability-config/.github/workflows/ci.yaml": "8c1ec08d45eaf74bcdaa6e9beb7838510127ea8e40fa2a383a3ffc61ca6bad9c",
         "ai-observability-config/.gitignore": "3f93945732c42e55a9f3842605802b0c4314b63e2df03f85fa99ce75e7b2e864",
@@ -755,16 +755,14 @@
         "ai-observability-config/telemetry-contract.md": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/pr35-merge.json": "2452899741566ee5230eb6cdd5030c2649e1128ea8e3f2c55d5f4de2a570d39d",
-        "ai-observability-lab/evidence/platform-ownership-start.json": "16d314bdf407e8004cebfbee57db9e4de66b84c4140265a632cf8ed1ef0edaeb",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json": "88dc3c3880ef4961adeae7274c64ebed8b6f31a88efdc059be5f85c5d1135109",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json": "f5a2ec4f57d9d6c977d1dc5caab4f7fa6c78086543530f92b53380285c9fd75f",
-        "ai-observability-lab/evidence/platform-ownership-preservation.json": "7fc5493490f6396ae2cf2e180fa6a2546d3a02cdf745c8fb98ae1c2abe700ee7"
+        "ai-observability-lab/evidence/pr36-merge.json": "1b3c89c61c6928094b504a93626236b231205fd20f5e71aad55dcef22d0fd71c",
+        "ai-observability-lab/evidence/platform-configuration-start.json": "4091d3584d35040499c582c0074e8d6b4f280a3f77ca75d543c6891d51aa8ff4",
+        "ai-observability-lab/evidence/config-repository-bootstrap.json": "dbe313f27899e0b302df4b0b89fdf01545e37b61ae941f421db248ddaf4473d2"
       }
     }
   },
   "known_gaps": [
-    "PR35 compatibility merged and main CI passed. P2.13 ownership plan is prepared for review; actual config/chart/GitOps source, dependency locks, combined renders and handover checks remain. P2.14 seven-repo CI, P2.15 cutover and P2.16 fresh runtime/source baseline follow.",
+    "PR36 plan approved/merged and main CI passed. P2.13 dependency locking/configuration implementation has started; actual renders/publication, remaining charts/GitOps/handover and P2.14–P2.16 acceptance are still pending.",
     "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
@@ -772,7 +770,7 @@
     "No Azure/bootstrap/cluster action occurs during repository planning and migration; GitLab credentials and global Git settings are preserved."
   ],
   "confirmed_choices": [
-    "Seven public repositories under AI-SRE-Oberveability: four preserve existing source/history, three additions are empty. Canonical folders verified; three identity-preserving GitHub renames remain P2.15 work. GitHub Project stays private.",
+    "Seven public repositories under AI-SRE-Oberveability: four original histories preserved, config initialized with a reviewed documentation baseline, GitOps/pipelines still empty. Three identity-preserving renames remain P2.15; Project stays private.",
     "Terraform for Azure infrastructure; Helm/Kubernetes manifests for application and shared observability deployments.",
     "Preserve GitLab credentials/helpers/remotes; separate GitHub settings or optional WSL.",
     "Refresh tracker after each work step; always report HLD/current/change/next/remaining.",
@@ -780,9 +778,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "PR35 compatibility merged with passing main CI. HLD 0.27/P2.13 ownership plan prepared before configuration/chart/GitOps source; three new repos remain empty. Terraform/AKS agents/APIM outside AKS unchanged; Azure disabled and GitLab credentials preserved.",
+    "current": "Approved P2.13 plan merged; dependency/configuration implementation started offline. Terraform/AKS agents/APIM outside AKS retained; Azure disabled and GitLab credentials preserved.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.13: Ownership planning package prepared before manifest work: seven source roles, eight ordered substeps, lock/pin publication sequence, bootstrap freeze/adoption/rollback and combined negative checks. Reference/profile bytes and all repo identities preserved; three new repos remain empty. Existing tests/lint pass, Azure flags are false and GitLab/global Git settings are unchanged. Implementation and real renders remain pending."
+    "last_change": "P2.13: PR36 plan approved/merged with passing main CI. Config repository documentation baseline published and feature branch prepared using repository-local noreply identity. Selected upstream inputs are being verified; no manifest apply, cloud access or GitLab/global Git change."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -827,8 +825,8 @@
     "current_live_repository_count": 7,
     "target_repository_count": 7,
     "execution_authorization": "User authorized merging PR34, starting P2.12, correcting PR25 R1/R2 and preparing/testing seven isolated clones; Azure remains disabled",
-    "source_populated_repository_count": 4,
-    "new_empty_repository_count": 3
+    "source_populated_repository_count": 5,
+    "new_empty_repository_count": 2
   },
   "azure_readiness": {
     "owner_subscription_reported_by_user": true,
@@ -845,7 +843,7 @@
     "pr25_review": "R1_R2_corrected_forward_port_validated_in_both_layouts",
     "pr25_merged": false,
     "evidence": "evidence/migration-baseline.json",
-    "next": "P2.13 plan review, input locks and first config source PR",
+    "next": "P2.13 dependency locks and configuration source",
     "azure_deployment_enabled": false
   },
   "migration_workspace": {
@@ -861,11 +859,11 @@
     "merge_commit": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8"
   },
   "platform_ownership_plan": {
-    "status": "prepared_for_review_implementation_pending",
+    "status": "approved_implementation_started",
     "document": "docs/platform-ownership-plan.md",
     "blueprint": "tracking/platform-ownership-plan.json",
     "substeps": 8,
-    "implementation_started": false,
+    "implementation_started": true,
     "new_platform_renders_observed": false,
     "azure_deployment_enabled": false
   }

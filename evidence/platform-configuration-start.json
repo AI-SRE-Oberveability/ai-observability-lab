@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "approved_plan_implementation_started",
+  "merge_commit": "d947613b318e693584d7e637131d079df89f51ef",
+  "main_ci": [
+    {
+      "id": 43737827798,
+      "head": "d947613b318e693584d7e637131d079df89f51ef",
+      "conclusion": "success"
+    }
+  ],
+  "scope": "Dependency locking and first configuration manifests; no cluster/Azure operations",
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false
+}

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "phase": "P2.13",
-  "status": "plan_prepared_for_review_implementation_pending",
+  "status": "approved_dependency_locking_and_configuration_started",
   "document": "docs/platform-ownership-plan.md",
   "baseline_merge": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8",
-  "execution_policy": "planning_only_no_new_manifests_dependencies_or_cluster_operations",
+  "execution_policy": "offline_source_implementation_no_cloud_cluster_or_registry_publication",
   "proposed_first_slice": [
     "namespace-RBAC-policy foundation",
     "Collector/ephemeral Jaeger platform charts",
@@ -206,13 +206,13 @@
     {
       "order": 2,
       "title": "Review ownership and scope",
-      "status": "prepared_for_review",
+      "status": "approved",
       "required_exit": "Published plan/matrix; no implementation acceptance"
     },
     {
       "order": 3,
       "title": "Select and lock compatible inputs",
-      "status": "planned",
+      "status": "in_progress",
       "required_exit": "Actual supported tool/Argo/chart/CRD versions, archive checksums, licenses and dependency locks"
     },
     {
@@ -343,5 +343,6 @@
   "implementation_acceptance_receipt_created": false,
   "github_renames_or_project_link_cutover": false,
   "azure_deployment_enabled": false,
-  "gitlab_credential_changes": false
+  "gitlab_credential_changes": false,
+  "approval": "User explicitly approved plan, merge PR36 and start dependency locking/configuration manifests"
 }

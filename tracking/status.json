@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T20:27:28+04:00",
+  "updated_at": "2026-11-15T21:02:26+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 18,
@@ -78,12 +78,11 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/pr35-merge.json",
-        "ai-observability-lab/evidence/platform-ownership-start.json",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json"
+        "ai-observability-lab/evidence/pr36-merge.json",
+        "ai-observability-lab/evidence/platform-configuration-start.json",
+        "ai-observability-lab/evidence/config-repository-bootstrap.json"
       ],
-      "note": "HLD 0.27 and P2.13 plan/blueprint distinguish proposed source ownership, eight ordered steps, pin/lock/handover/rollback requirements and pending implementation; AKS agents/APIM/Azure gates preserved.",
+      "note": "HLD 0.28 reflects approved PR36 merge and config documentation bootstrap; dependency/config implementation is offline and cloud gates remain pending.",
       "ready": false
     },
     {
@@ -1459,13 +1458,11 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
-        "ai-observability-lab/evidence/pr35-merge.json",
-        "ai-observability-lab/evidence/platform-ownership-start.json",
-        "ai-observability-lab/evidence/platform-ownership-inventory.json",
-        "ai-observability-lab/evidence/platform-ownership-plan-review.json",
-        "ai-observability-lab/evidence/platform-ownership-preservation.json"
+        "ai-observability-lab/evidence/pr36-merge.json",
+        "ai-observability-lab/evidence/platform-configuration-start.json",
+        "ai-observability-lab/evidence/config-repository-bootstrap.json"
       ],
-      "note": "Ownership planning package prepared before manifest work: seven source roles, eight ordered substeps, lock/pin publication sequence, bootstrap freeze/adoption/rollback and combined negative checks. Reference/profile bytes and all repo identities preserved; three new repos remain empty. Existing tests/lint pass, Azure flags are false and GitLab/global Git settings are unchanged. Implementation and real renders remain pending.",
+      "note": "PR36 plan approved/merged with passing main CI. Config repository documentation baseline published and feature branch prepared using repository-local noreply identity. Selected upstream inputs are being verified; no manifest apply, cloud access or GitLab/global Git change.",
       "ready": true
     },
     {

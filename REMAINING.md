@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-11-15T20:27:28+04:00 (Asia/Dubai).
+Updated: 2026-11-15T21:02:26+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 

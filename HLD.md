@@ -1,14 +1,22 @@
 # High-level design — current, target and remaining work
 
-Version: 0.27 platform ownership plan prepared. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #35 merged; P2.13 ownership plan prepared for review before manifest implementation; Azure remains disabled**.
+Version: 0.28 dependency locking and configuration started. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #36 merged; approved P2.13 input/configuration implementation started; Azure disabled**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
-Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; three new empty public repositories now exist. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
+Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; the config addition now has a reviewed documentation baseline; GitOps and pipelines remain empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## P2.13 ownership plan prepared — 15 November 2026
+## Approved P2.13 implementation started — 15 November 2026
+
+The user approved the ownership plan and explicitly authorized merging PR #36 and starting dependency locking/configuration manifests. Verified head eae5bfe9a12927ad6cd3d3e4204346d0358cbc21 merged as d947613b318e693584d7e637131d079df89f51ef; exact-head and new exact-main CI passed. See evidence/pr36-merge.json and evidence/platform-configuration-start.json.
+
+The config repository now has a reviewed four-file documentation/ignore baseline on main, with a configuration implementation branch. Its commit uses a repository-local GitHub noreply identity; no global helper/credential setting changed. See evidence/config-repository-bootstrap.json. Next: verify/lock selected upstream bytes and implement namespace, policy, RBAC and CRD source with offline builds/negative checks. The approved first slice and ownership/handover rules apply. Dependency selection records an offline API/rendering baseline, not an approved AKS deployment version or cloud target. No installation, Argo sync, Azure authentication or resource operation is authorized by this step.
+
+Python agents remain on planned AKS through APIM outside AKS; Terraform owns Azure/APIM. Safe telemetry, read-only SRE and separate identities remain unchanged. Remaining: configuration validation/publication, platform/application charts, GitOps/handover checks, P2.14 seven-repo CI, P2.15 cutover, P2.16 fresh canonical proof, then exact targets/budget and costed cloud planning. Azure stays false and GitLab/global Git settings are preserved.
+
+## Earlier P2.13 planning snapshot — 15 November 2026
 
 [The detailed plan](docs/platform-ownership-plan.md) and [seven-role blueprint](tracking/platform-ownership-plan.json) define resource authorship, future folders, a small dev-first slice with offline qa parity, locked inputs, real-commit publication order, an explicit bootstrap freeze before Argo adoption, rollback and negative checks. Config owns namespace/foundation RBAC/policy and selected CRDs; charts owns generic platform templates; workloads owns the Python application chart; GitOps owns environment values and pinned release selections. Infra remains the Azure/APIM owner and only orchestrates temporary bootstrap writes from those same sources. No two desired-spec writers are allowed after handover.
 
