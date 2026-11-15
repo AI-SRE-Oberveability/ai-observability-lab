@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-15T22:40:01+04:00",
+  "updated_at": "2026-11-15T22:53:52+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 16,
-    "needs_revalidation": 3,
-    "blocked": 2,
+    "needs_revalidation": 4,
     "in_progress": 2,
+    "blocked": 1,
     "waiting_for_decision": 3,
     "draft": 2,
     "planned": 20
@@ -78,9 +78,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
+        "ai-observability-lab/evidence/jaeger-application-validation.json",
         "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
-      "note": "HLD 0.33/ordered Jaeger-application plan records approved merges/main CI and safe chart contracts before implementation, including pending image/Secret/runtime and telemetry-attribution gaps.",
+      "note": "HLD 0.34/plan/matrix record actual Jaeger/application source and passing CI, preserved baselines and explicit image/Secret/attribution/runtime limitations.",
       "ready": false
     },
     {
@@ -438,7 +439,7 @@
         "ai-agent-workloads/.github/workflow-drafts/ci.yaml"
       ],
       "acceptance": "Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.",
-      "status": "blocked",
+      "status": "needs_revalidation",
       "blocked_by": [
         "P1.6"
       ],
@@ -1458,9 +1459,10 @@
         "ai-observability-lab/evidence/migration-platform-validation.json"
       ],
       "evidence": [
+        "ai-observability-lab/evidence/jaeger-application-validation.json",
         "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
-      "note": "Charts #7/GitOps #1/lab #38 merged and each exact-main CI passed. Planned the next bounded Jaeger/application chart slice; published app image/Secret delivery, GitOps promotion, runtime and combined handover checks remain; Azure false.",
+      "note": "Jaeger chart default0/dev4/qa4, 11 negative cases and native/container config validate pass; application chart default0/dev6/qa6 with private fixture-only images and 15 negative cases passes. Exact-source CI green; Python/contracts/locks, GitOps catalog and existing profiles unchanged. Real image/Secret/attribution/runtime, promotion and Argo/bootstrap/combined gates remain; Azure false.",
       "ready": true
     },
     {

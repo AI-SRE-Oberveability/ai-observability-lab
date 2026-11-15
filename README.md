@@ -1,6 +1,6 @@
 # Lab coordination, planning and evidence
 
-[Current P2.13 Collector/manual GitOps plan](docs/collector-gitops-plan.md): foundations merged/main CI passed; Collector chart and immutable manual GitOps source are validated in review PRs. HLD 0.32 and evidence/collector-gitops-validation.json carry source/CI bindings and limitations. Remaining chart/Argo/bootstrap/combined ownership work keeps P2.13 in progress. Azure stays disabled.
+[Current Jaeger/application chart plan](docs/jaeger-application-plan.md): Collector/GitOps merged/main CI passed; new chart source is validated in review PRs with explicit pending image/Secret/attribution/runtime gates. HLD 0.34 and evidence/jaeger-application-validation.json carry actual source/CI and preservation receipts. P2.13 remains in progress; Azure stays disabled.
 
 Verified public repository: `AI-SRE-Oberveability/ai-observability-lab`; reviewed source published; see evidence/publication-receipts.json.
 

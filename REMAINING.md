@@ -1,6 +1,6 @@
 # What remains
 
-Updated: 2026-11-15T22:40:01+04:00 (Asia/Dubai).
+Updated: 2026-11-15T22:53:52+04:00 (Asia/Dubai).
 
 Execution: **Plan accepted; follow task gates**.
 
@@ -13,7 +13,7 @@ Next action: select a ready step from POC_TRACKER.md.
 
 ## P2 â€” Establish personal GitHub delivery
 
-- **P2.3 Complete reproducible CI, contract tests and builds** (blocked). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
+- **P2.3 Complete reproducible CI, contract tests and builds** (needs_revalidation). Acceptance: Required locks exist; clean-checkout CI and image build pass; immutable actions and restricted PR permissions verified.
 - **P2.4 Pin image digests and multi-repository release manifest** (in_progress). Acceptance: Known commits/releases and immutable images reproduce the local demo; scoped coordination credentials are documented.
 - **P2.8 Activate independent CI in all four repositories** (needs_revalidation). Acceptance: All four main-branch CI runs pass from independent checkouts; locked tools/actions, restricted permissions and workload container/config/Terraform/tracker checks have actual run evidence. This does not complete local backend or multi-repository release acceptance.
 - **P2.9 Configure guarded Terraform plan and deployment workflows** (blocked). Acceptance: Minimal resource-group Terraform foundation validates with a real provider lock; manual plan/apply, separate protected environments, reviewed-plan fingerprint and disabled/missing-target rejection are tested. Azure state/bootstrap/federation and actual execution remain gated by G2/G3.
