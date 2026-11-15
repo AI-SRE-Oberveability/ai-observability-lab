@@ -48,16 +48,16 @@
     },
     "P0.2": {
       "status": "done",
-      "note": "HLD 0.32/current plan and published-main/review matrix aligned; Windows UTF-8 documentation encoding corrected from preserved merged source. Collector/manual GitOps scope, evidence and remaining gates recorded.",
-      "at": "2026-11-15T22:25:55+04:00",
+      "note": "HLD 0.34/plan/matrix record actual Jaeger/application source and passing CI, preserved baselines and explicit image/Secret/attribution/runtime limitations.",
+      "at": "2026-11-15T22:53:44+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/collector-gitops-validation.json",
-        "ai-observability-lab/evidence/p213-foundations-merge.json"
+        "ai-observability-lab/evidence/jaeger-application-validation.json",
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
-        "ai-observability-lab/POC_PLAN.md": "2a4f9493d96e55097caa93af3f2ea20455bae021150aa79d4a7e2b16740da6ef",
-        "ai-observability-lab/HLD.md": "7e14d279ac09140bfc3b2d32cc1af2ab0d0c8b347323b757465a2c119f835a62",
+        "ai-observability-lab/POC_PLAN.md": "0e5cca8c7bd0b22b8bab05b15ef74ef1892c32a75e2f98c943205d35ab6c136e",
+        "ai-observability-lab/HLD.md": "2d00c4a70c5c0cce8b3d278b1453b3afa0bb85be11cfe0c2fca794cefed2cf75",
         "ai-observability-lab/docs/engineering-standards.md": "44a6ace38d4b81cfd1c2e9c1c463a9fab5e5acd723044fa63e01f2461ebe54c6",
         "ai-observability-lab/docs/repository-layout.md": "228f02520de435fde6af95b70ac8706a4cbc8cbf6f030ab760f6dde3688c9aa5",
         "ai-observability-lab/docs/actions-delivery-plan.md": "b0733c152371b03a5ca8fdd87e9986f44483a5e91dfdc0eeed8d83416f41cc28",
@@ -98,11 +98,11 @@
         "ai-observability-lab/docs/migration-baseline-review.md": "d1ed27459faa6080875b72b6b4f434ceace50562e0fe72644f86f686ec9648e4",
         "ai-observability-lab/docs/workspace-compatibility.md": "eb264dfbf10c9086e98eb0890181e5440ca94abbff42782a57ef85467edd213f",
         "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "fcaa183ad38c0660d8a32ec28edb20174769ae926aaf9f7039a01cc27aa235a7"
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "bced355bce8a07503b665adbf0a8ab918321128ca4cc072a2c6357e1aeb9eb8f"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/collector-gitops-validation.json": "788913544b31842f9a899043f794301adebdce3e07d55f0e4bf224b80b013c35",
-        "ai-observability-lab/evidence/p213-foundations-merge.json": "93e337795da01d87afcca4a3005efec47add04ea6e9164850c4271fea8c7ecb9"
+        "ai-observability-lab/evidence/jaeger-application-validation.json": "87d464633cc0b1ca21d9c7be5980af828e255c011858a7cac14e1c55b0a59901",
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json": "e6d200b1278c022b7cb6d94f15571e7ce53e857027c95c25dea3d7bea3daa952"
       }
     },
     "P0.3": {
@@ -717,11 +717,11 @@
     },
     "P2.13": {
       "status": "in_progress",
-      "note": "Collector/manual GitOps first slice validated: charts #7 and GitOps #1 exact-source CI pass; nine chart negative cases, 16 GitOps tests and five public blob checks. Foundations main CI is separate and passing. Remaining chart/Argo/config GitOps/bootstrap combined work and review/merge still pending; Azure false.",
-      "at": "2026-11-15T22:26:12+04:00",
+      "note": "Jaeger chart default0/dev4/qa4, 11 negative cases and native/container config validate pass; application chart default0/dev6/qa6 with private fixture-only images and 15 negative cases passes. Exact-source CI green; Python/contracts/locks, GitOps catalog and existing profiles unchanged. Real image/Secret/attribution/runtime, promotion and Argo/bootstrap/combined gates remain; Azure false.",
+      "at": "2026-11-15T22:53:49+04:00",
       "evidence": [
-        "ai-observability-lab/evidence/collector-gitops-validation.json",
-        "ai-observability-lab/evidence/p213-foundations-merge.json"
+        "ai-observability-lab/evidence/jaeger-application-validation.json",
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json"
       ],
       "hash_policy": "utf8-lf-v1",
       "source_hashes": {
@@ -730,7 +730,7 @@
         "ai-observability-lab/tracking/repository-targets.json": "a08215a04c997746866d1044f0cf8a7731e47f32db33d5f508e80768b85cfd2b",
         "ai-observability-lab/tracking/migration-file-map.json": "0fcb3e301fff7745ddeed72bfa9ec96de4427222da0e8bd71ca3bd3c666b8c47",
         "ai-observability-lab/docs/platform-ownership-plan.md": "a25dc087f294a361cdcb2407ac601fc17fa4d2781da02e58416cb54fa3abf799",
-        "ai-observability-lab/tracking/platform-ownership-plan.json": "fcaa183ad38c0660d8a32ec28edb20174769ae926aaf9f7039a01cc27aa235a7",
+        "ai-observability-lab/tracking/platform-ownership-plan.json": "bced355bce8a07503b665adbf0a8ab918321128ca4cc072a2c6357e1aeb9eb8f",
         "ai-platform-config/.gitattributes": "f563c611822ae875f6c1e9ceb825cc8fc501a9d9d025137092188c5ff52e6d8d",
         "ai-platform-config/.github/workflows/ci.yaml": "8c932403c1cec92a76f3a79b85dd9edbd974a16a42a3102dc1194111dd164487",
         "ai-platform-config/.gitignore": "6d9c835289816cf23c68fa563941d280ed9395c6f16b6e445c60ff4f96405114",
@@ -774,13 +774,19 @@
         "ai-platform-config/vendor/manifest-lock.json": "a7d70a5ac4bdbec22a652c2deead18f8c6aacec9a25c521fe3cbbb8db95bf3fa",
         "ai-platform-config/vendor/README.md": "adaac64157d81889283d09ddcb76fac0f80748b1417d4fa3d1e7e42cc1e64f47",
         "ai-observability-config/.gitattributes": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
-        "ai-observability-config/.github/workflows/ci.yaml": "107fd17ed0c6dda82b37d15a8193cf2105c2cfbeabef027f06d9b07e7b84da32",
+        "ai-observability-config/.github/workflows/ci.yaml": "30f3da8ec45aff0889f7fa8a312eabc04a270e28eb65e18e127201c05fd4c84b",
         "ai-observability-config/.gitignore": "ce6b970f8e1eef35ca113507b40f1d77e8c00daaea288f641467b9228a948928",
         "ai-observability-config/charts/argocd/.helmignore": "d08462f0428b46b220d8586c4aae45c1325069aced968776b70dd4c259a02c5f",
         "ai-observability-config/charts/argocd/Chart.lock": "11a11491535439c77047d41d8f49bd35bc2d1213e73c71cd74a51e187da72e93",
         "ai-observability-config/charts/argocd/Chart.yaml": "e812e0cbcf2ebaa891a65a9f5c289893661d3c8ac64dbde0717dfcae66d68e0d",
         "ai-observability-config/charts/argocd/README.md": "b6570c6a62668cb6d5ce4d952e0d6e5a5d36cd8a445bc7a9dd3fc3373c413fbc",
         "ai-observability-config/charts/argocd/values.yaml": "9dcb14ea81f8da2da92fcf3515ebf6b512b858e6a622eddc84be0aa319159db0",
+        "ai-observability-config/charts/jaeger/Chart.yaml": "4e0b2586f4896f9b69004a99fa2ee580a83814f3455de66fc4a34b994eaf7db6",
+        "ai-observability-config/charts/jaeger/files/config.yaml": "c55add936e6042d2ea2d63bbd145c1b27168035e4bf0e45ede4855d641321816",
+        "ai-observability-config/charts/jaeger/README.md": "3a9d6775084c1cd305a17e06aca000a670848648e97deebaffc36f224c09f0ae",
+        "ai-observability-config/charts/jaeger/templates/jaeger.yaml": "ce93f2279254e7fd48a2e3b5ab5c2f7d0b9212864e66512c1046295dc390c261",
+        "ai-observability-config/charts/jaeger/values.schema.json": "1164e5ed4b64cd782077c2c270dae0388a07964281e41afac1d76b47b9306c4d",
+        "ai-observability-config/charts/jaeger/values.yaml": "750b6866df971455484a0f7477a888e35fccfb1a5c88bda2ba3e380feb18b315",
         "ai-observability-config/charts/otel-collector/Chart.yaml": "82bdbdfa3372e9dfa36224e9be4b90b72007bee09d8827a7d9d85938b902dd42",
         "ai-observability-config/charts/otel-collector/files/config.yaml": "296b708d3eb14fc9a34dee8fc613f31dde8e7f1ba75a2c471eda563270fc9b83",
         "ai-observability-config/charts/otel-collector/README.md": "ac2dc4b975edf35e73192d96e821448e1a1c2f918c653d888c88c2b521377c7d",
@@ -802,6 +808,7 @@
         "ai-observability-config/scripts/check_collector_chart.py": "e4f9cf5d5b3af47f10a6290ada170046e174103448232b0b56d75acf3776b2c1",
         "ai-observability-config/scripts/check_config.py": "de6ec28b500f3acfa4253c371305d0cf49c3ab9c6929bd20d6903408ee14d9fa",
         "ai-observability-config/scripts/check_dependencies.py": "c7e36e623db14b21fa2048ebecacee59118296c038a1fe9ea21b33cf5c94cc8a",
+        "ai-observability-config/scripts/check_jaeger_chart.py": "feb4ab2e4533d6cf203f6eb0b36bdbc00ff385479bee152315560bd5b3c3600f",
         "ai-observability-config/telemetry-contract.md": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f",
         "ai-platform-gitops/.gitattributes": "f563c611822ae875f6c1e9ceb825cc8fc501a9d9d025137092188c5ff52e6d8d",
         "ai-platform-gitops/.github/workflows/ci.yaml": "9c47864d46e77c382de09513f3ff88d3f7b21ca7e9482ae1748692757a6bd54b",
@@ -824,16 +831,21 @@
         "ai-platform-gitops/vendor/argocd/AppProject.json": "014198b3d37b6f141f72aac9f184ee90b478b972e20cde5d250cf8ef488e9ac5",
         "ai-platform-gitops/vendor/LICENSE": "c996fc213c94f4a4a838407d355b081226caa7b103a4f239bb87fb8f1d8e3a60",
         "ai-platform-gitops/vendor/provenance.json": "a332f19fa6d8e487848fb9b64165a8aef35fbd6e917b0c4d39604a0f37696228",
-        "ai-observability-lab/tracking/platform-render-matrix.json": "8c4398bc18042eea34d42459b6bb92930a45b0db6a86e7838be315299f04ac01"
+        "ai-agent-workloads/charts/ai-lab/Chart.yaml": "1d051d06f2d36a112e57bb2cd180a4fdb1be4b8021b9df43400966ab16f8f6ab",
+        "ai-agent-workloads/charts/ai-lab/README.md": "0816cffbdc7222baa24241c5cdb928022bd889dac558bb9b9c6a911670f090c6",
+        "ai-agent-workloads/charts/ai-lab/templates/application.yaml": "81ecccc175023a56f94903a91d1e98a085d79f8d800c45ba21c6fc032050aff1",
+        "ai-agent-workloads/charts/ai-lab/values.schema.json": "0a990230ccc0d07ab2a5f4fa498741f422e083326eab9851e72cda11910e6cfa",
+        "ai-agent-workloads/charts/ai-lab/values.yaml": "4ba206f3b13e4b15353498927f705bba2408b55d46f2687eb3ec5d0ee7cc99c0",
+        "ai-observability-lab/tracking/platform-render-matrix.json": "b40f15a8848c809f9683a4f0d44964b84599ce6bd2dd90da3767309504918c8f"
       },
       "evidence_hashes": {
-        "ai-observability-lab/evidence/collector-gitops-validation.json": "788913544b31842f9a899043f794301adebdce3e07d55f0e4bf224b80b013c35",
-        "ai-observability-lab/evidence/p213-foundations-merge.json": "93e337795da01d87afcca4a3005efec47add04ea6e9164850c4271fea8c7ecb9"
+        "ai-observability-lab/evidence/jaeger-application-validation.json": "87d464633cc0b1ca21d9c7be5980af828e255c011858a7cac14e1c55b0a59901",
+        "ai-observability-lab/evidence/p213-collector-gitops-merge.json": "e6d200b1278c022b7cb6d94f15571e7ce53e857027c95c25dea3d7bea3daa952"
       }
     }
   },
   "known_gaps": [
-    "Collector chart/manual GitOps first slice passes source CI in charts #7/GitOps #1. Review/merge, Jaeger/application charts, complete Argo/config GitOps and bootstrap/combined checks remain before P2.13 acceptance; no live rollout is proved.",
+    "Jaeger/application chart source passes CI in charts #8/workloads #12. App positives are private render-only image fixtures; real image/source provenance/replay, external Secret delivery and local telemetry attribution remain pending, alongside GitOps promotion, Argo/config ownership and full bootstrap/combined checks.",
     "PR25 R1/R2 are corrected and forward-ported with historical receipts/audit into PR35, without importing old 41-task state. Original PR25 remains unchanged/unmerged. Changed P1.5/P1.6 runner proof needs fresh supported-profile replay; old backend results are historical.",
     "Original source candidate remains non-deployable; verified workload image digest and immutable replay are outstanding.",
     "User reports an Azure Owner subscription. Exact personal tenant/subscription, region, budget/currency and costed Terraform/APIM scope remain unverified; G2/G3 stay pending.",
@@ -842,7 +854,7 @@
     "Watched chart workflow/helper changes invalidate prior exact-main CI evidence until authorized merge and revalidation; passing PR CI is tracked separately."
   ],
   "confirmed_choices": [
-    "Seven public repositories under AI-SRE-Oberveability: four original histories preserved, config foundations merged, GitOps documentation baseline plus implementation in review, pipelines still empty. Renames/Project link cutover remain P2.15; Project stays private.",
+    "Seven public repositories under AI-SRE-Oberveability: four original histories preserved, config/Collector/manual GitOps foundations merged, Jaeger/application chart source in review, pipelines still empty. Renames/Project link cutover remain P2.15; Project stays private.",
     "Terraform for Azure infrastructure; Helm/Kubernetes manifests for application and shared observability deployments.",
     "Preserve GitLab credentials/helpers/remotes; separate GitHub settings or optional WSL.",
     "Refresh tracker after each work step; always report HLD/current/change/next/remaining.",
@@ -850,9 +862,9 @@
     "User reports Azure Owner subscription access; independently verify exact personal targets and budget after repository setup. Azure remains disabled."
   ],
   "hld": {
-    "current": "HLD 0.32: foundations merged/main CI passed; first Collector/manual GitOps source slice validated in review. Remaining charts/Argo/config GitOps/bootstrap combined checks and Azure gates retained; GitLab/global Git unchanged.",
+    "current": "HLD 0.34: merged Collector/GitOps main CI passed; Jaeger/application source charts validated in review, fixture-only app renders. Image/Secret/attribution/runtime, GitOps/Argo/handover and cloud gates retained; GitLab/global Git unchanged.",
     "target": "Seven canonical repositories: infra, config, charts, GitOps, pipelines, Python AI workloads and lab coordination; Terraform-owned AKS/APIM, separate identities, read-only SRE and conditional Managed compatibility.",
-    "last_change": "P2.13: Collector/manual GitOps first slice validated: charts #7 and GitOps #1 exact-source CI pass; nine chart negative cases, 16 GitOps tests and five public blob checks. Foundations main CI is separate and passing. Remaining chart/Argo/config GitOps/bootstrap combined work and review/merge still pending; Azure false."
+    "last_change": "P2.13: Jaeger chart default0/dev4/qa4, 11 negative cases and native/container config validate pass; application chart default0/dev6/qa6 with private fixture-only images and 15 negative cases passes. Exact-source CI green; Python/contracts/locks, GitOps catalog and existing profiles unchanged. Real image/Secret/attribution/runtime, promotion and Argo/bootstrap/combined gates remain; Azure false."
   },
   "repository_verification": {
     "date": "2026-10-28",
@@ -919,7 +931,7 @@
     "azure_deployment_enabled": false
   },
   "migration_workspace": {
-    "status": "collector_manual_gitops_first_slice_in_review",
+    "status": "jaeger_application_chart_source_in_review",
     "source_commit": "337676f7c44012e0fe2302a8eb004bd0cf53b70c",
     "workspace": "AI-PLATFORM-LAB",
     "canonical_clones": 7,
@@ -931,7 +943,7 @@
     "merge_commit": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8"
   },
   "platform_ownership_plan": {
-    "status": "collector_manual_gitops_first_slice_validated_source_review_pending",
+    "status": "jaeger_application_chart_source_validated_review_pending",
     "document": "docs/platform-ownership-plan.md",
     "blueprint": "tracking/platform-ownership-plan.json",
     "substeps": 8,

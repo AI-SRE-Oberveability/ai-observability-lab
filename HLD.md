@@ -1,14 +1,30 @@
 # High-level design — current, target and remaining work
 
-Version: 0.32 Collector/manual GitOps slice validated. Updated: 15 November 2026, Asia/Dubai. Execution: **foundations merged/main CI passed; Collector and pinned manual GitOps implemented in review PRs; P2.13 continues; Azure disabled**.
+Version: 0.34 Jaeger/application chart source validated. Updated: 15 November 2026, Asia/Dubai. Execution: **Collector/GitOps merges and main CI passed; Jaeger/application charts implemented in review; P2.13 continues; Azure disabled**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
-Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; config foundations are merged, GitOps now has a reviewed documentation baseline plus source in review, and pipelines remains empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
+Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; config and Collector/manual GitOps foundations are merged, Jaeger/application chart source is in review, and pipelines remains empty. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## Collector/manual GitOps source implemented — 15 November 2026
+## Jaeger/application chart source implemented — 15 November 2026
+
+[The prior step plan](docs/jaeger-application-plan.md) is implemented as a bounded source slice. [Charts #8](https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/8) adds pinned ephemeral Jaeger: default zero/dev four/qa four objects, one memory-backed instance capped at 1000 traces, memory/batch/resource bounds, tokenless restricted settings, internal OTLP and loopback-only query listeners. Eleven negative cases pass. Generated config validates in the pinned native and digest-container distributions; socket/config checks are not backend/readiness, image-startup or pressure acceptance.
+
+[Workloads #12](https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/12) adds the existing mock agent/retrieval chart: default zero/dev six/qa six objects, distinct tokenless identities, internal Services, HTTP probes, restricted resources/security and bounded memory /tmp. Fifteen negative cases pass, including missing/zero images/source, inline keys, public service, faults and endpoint escapes. Positive renders use private labelled synthetic fixture images only. Enabling real source requires image/source/Secret-reference inputs; no published workload image, matching provenance, Secret delivery or runtime startup is established. Existing Python code still emits `local` telemetry attribution; profile labels do not fix it.
+
+Both exact-source CIs pass, including existing application tests/build and chart/Collector checks. All old workload files except the extended CI workflow, seven retained telemetry profiles, the merged GitOps catalog, seven repository identities and global Git/original remote hashes are unchanged; see evidence/jaeger-application-validation.json and the matrix. No fixture values are committed or promoted into GitOps. Collector/GitOps approved main CI remains separate in evidence/p213-collector-gitops-merge.json.
+
+Next: review the charts/workload/lab PRs, then address real workload image publication/replay and Secret delivery, telemetry environment attribution, GitOps values/catalog promotion, complete Argo/config ownership and full bootstrap/combined checks. P2.13 stays in progress, followed by P2.14–P2.16 and exact-target/costed Terraform gates. Azure stays false and GitLab/global Git is preserved; AKS Python agents, APIM outside AKS and Terraform ownership remain selected. Offline API baseline 1.35.0 is not an approved AKS target/version.
+
+## Earlier Collector/GitOps merged; next chart slice planned — 15 November 2026
+
+Charts #7, GitOps #1 and lab #38 are merged at their approved heads and exact resulting main CI passes; see evidence/p213-collector-gitops-merge.json. [The ordered next plan](docs/jaeger-application-plan.md) starts a pinned ephemeral Jaeger chart in charts and a disabled-by-default Python agent/retrieval chart in workloads. Config retains namespace/policy/CRD ownership. Application enablement requires image/source/Secret-reference inputs; no published workload image is yet recorded. Private render fixtures are explicitly not rollout evidence. Existing explicit `local` telemetry attribution is a known gap, not changed by profile labels.
+
+Next: implement and validate both source charts with safe settings, then publish independent PRs and actual receipts. Remaining: workload image publication/replay, GitOps promotion, Argo/config GitOps and full bootstrap/combined checks; P2.14–P2.16 and exact-target/budget gates. Azure stays false, Python agents/APIM/Terraform boundaries are retained and GitLab/global Git settings are preserved.
+
+## Earlier Collector/manual GitOps source implemented — 15 November 2026
 
 [The step plan](docs/collector-gitops-plan.md) is implemented for this bounded slice. [Charts #7](https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/7) adds the digest-pinned Collector chart: zero default objects; dev/qa alternative renders each contain four namespaced objects, with tokenless identity, restricted security settings, bounded resources, process probes and preserved metadata processors. Nine negative cases pass. Generated config validates with the pinned native binary and the exact digest container in CI; this is not image startup/backend or Kubernetes admission proof.
 

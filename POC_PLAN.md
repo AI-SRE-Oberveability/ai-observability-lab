@@ -2,7 +2,7 @@
 
 Prepared: 28 October 2026, Asia/Dubai. Status: **approved by the user; initial reviewed source published**.
 
-Current execution update, 15 November 2026: config #1, charts #6 and lab #37 merged and exact-main CI passed. The planned next P2.13 Collector/manual-GitOps slice is implemented with passing source CI in charts #7 and GitOps #1; HLD 0.32 and evidence/collector-gitops-validation.json record actual results and remaining work. GitOps is initialized; pipelines remains empty. P2.13 stays in progress; P2.14–P2.16 and exact-target/budget gates remain, with Azure disabled.
+Current execution update, 15 November 2026: charts #7, GitOps #1 and lab #38 merged with exact-main CI passing. The planned Jaeger/application chart source slice now passes exact-source CI in charts #8/workloads #12; HLD 0.34 and evidence/jaeger-application-validation.json record actual results and fixture/image/Secret/attribution/runtime limits. GitOps promotion, Argo/config/bootstrap/combined checks and P2.14–P2.16 remain; Azure stays disabled.
 
 The immediate deliverable is this plan, a maintained high-level design (HLD), and an automated progress tracker. The user has accepted the plan and authorized public-source review and pushes to all four repositories; cloud spending retains its separate gates. Previously created local files are retained as drafts and assessed against the plan; they do not imply acceptance or deployment.
 

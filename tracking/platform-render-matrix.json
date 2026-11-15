@@ -24,13 +24,18 @@
     },
     "charts": {
       "repository": "AI-SRE-Oberveability/ai-observability-config",
-      "commit": "0ada65843b85d2d9083f7237190a9a1828d35dbc",
-      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/7"
+      "commit": "fbc07c0788df1072725c073d1dcf919718a53f12",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/8"
     },
     "gitops": {
       "repository": "AI-SRE-Oberveability/ai-platform-gitops",
       "commit": "227f636739ca5b77ee727190b62fbd12da2ce082",
       "pr_url": "https://github.com/AI-SRE-Oberveability/ai-platform-gitops/pull/1"
+    },
+    "workloads": {
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "commit": "0789088f4b8db54839aa31de15193fdfcc3d8811",
+      "pr_url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/12"
     }
   },
   "config_input_paths": [
@@ -44,11 +49,14 @@
     "locks/dependencies.json",
     "locks/toolchain.json"
   ],
-  "future_workload_chart_revision": null,
   "image_digest_deployability": false,
   "azure_deployment_enabled": false,
   "configuration_validation_evidence": "evidence/configuration-foundations-validation.json",
   "gitops_catalog_revision": "227f636739ca5b77ee727190b62fbd12da2ce082",
   "collector_gitops_validation_evidence": "evidence/collector-gitops-validation.json",
-  "configuration_main_validation_evidence": "evidence/p213-foundations-merge.json"
+  "configuration_main_validation_evidence": "evidence/p213-foundations-merge.json",
+  "workload_chart_revision": "0789088f4b8db54839aa31de15193fdfcc3d8811",
+  "gitops_merged_main": "5359b7357b7faf19a90fd56be333340ef302a98f",
+  "jaeger_application_validation_evidence": "evidence/jaeger-application-validation.json",
+  "application_image_release_proved": false
 }

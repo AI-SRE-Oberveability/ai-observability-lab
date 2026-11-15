@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-11-15T18:53:41.899321+00:00",
+  "status": "jaeger_application_chart_source_slice_validated_in_review",
+  "P2.13_complete": false,
+  "sources": {
+    "charts": {
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "pr": 8,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/8",
+      "commits": [
+        {
+          "head": "fbc07c0788df1072725c073d1dcf919718a53f12",
+          "tree": "99f5bb8691aad6ae10c090a5024cbf0b14023105",
+          "message": "Add pinned ephemeral Jaeger chart and config validation",
+          "confirmed_secrets": 0
+        }
+      ],
+      "head": "fbc07c0788df1072725c073d1dcf919718a53f12"
+    },
+    "workloads": {
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "pr": 12,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/12",
+      "commits": [
+        {
+          "head": "0789088f4b8db54839aa31de15193fdfcc3d8811",
+          "tree": "056e6c85bc011b216e61176bf962ff526d18173b",
+          "message": "Add gated Python agent retrieval chart and render safety checks",
+          "confirmed_secrets": 0
+        }
+      ],
+      "head": "0789088f4b8db54839aa31de15193fdfcc3d8811"
+    }
+  },
+  "exact_source_ci": {
+    "charts": {
+      "role": "charts",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "pr": 8,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/pull/8",
+      "head": "fbc07c0788df1072725c073d1dcf919718a53f12",
+      "passed": true,
+      "runs": [
+        {
+          "id": 43748888130,
+          "head": "fbc07c0788df1072725c073d1dcf919718a53f12",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/43748888130",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 43748882504,
+          "head": "fbc07c0788df1072725c073d1dcf919718a53f12",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-observability-config/actions/runs/43748882504",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    "workloads": {
+      "role": "workloads",
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "pr": 12,
+      "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/pull/12",
+      "head": "0789088f4b8db54839aa31de15193fdfcc3d8811",
+      "passed": true,
+      "runs": [
+        {
+          "id": 43748953972,
+          "head": "0789088f4b8db54839aa31de15193fdfcc3d8811",
+          "event": "pull_request",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/43748953972",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 43748944894,
+          "head": "0789088f4b8db54839aa31de15193fdfcc3d8811",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/AI-SRE-Oberveability/ai-agent-workloads/actions/runs/43748944894",
+          "jobs": [
+            {
+              "name": "validate",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "jaeger_local_validation": {
+    "status": "passed_offline_jaeger_chart_contract",
+    "profiles": {
+      "disabled": {
+        "objects": 0,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      "dev": {
+        "objects": 4,
+        "sha256": "5aa990a042595266554f3583ea3289dcfadadc5d5a6639196da6665d073b63f4"
+      },
+      "qa": {
+        "objects": 4,
+        "sha256": "6e536726fec3ae06c1d720b4e44c13b474ca0ef52949c783fede8700c209d9ea"
+      }
+    },
+    "negative_cases_rejected": [
+      "tag_only_image",
+      "unknown_public_ui",
+      "unapproved_profile",
+      "public_service",
+      "ui_port",
+      "token_mount",
+      "privilege",
+      "persistent_storage",
+      "query_exposure",
+      "namespace_escape",
+      "duplicate_owner"
+    ],
+    "ephemeral_max_traces": 1000,
+    "api_schema_baseline": "1.35.0_offline_only",
+    "deployable": false,
+    "cluster_operations": false
+  },
+  "application_local_validation": {
+    "status": "passed_offline_application_chart_contract",
+    "profiles": {
+      "disabled": {
+        "objects": 0,
+        "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+      },
+      "dev": {
+        "objects": 6,
+        "sha256": "55fa93ea9951d50613e081bc1af8d24ff398e453e0b18377e7d648e5845345a9"
+      },
+      "qa": {
+        "objects": 6,
+        "sha256": "54b67ce8aff59b3a7309afc629d818c5e040a1dc6444600c43a308b39904dc67"
+      }
+    },
+    "negative_cases_rejected": [
+      "missing_rollout_inputs",
+      "tag_only_image",
+      "zero_image",
+      "zero_source",
+      "missing_secret",
+      "inline_key_option",
+      "inline_secret",
+      "public_service",
+      "token_mount",
+      "privilege",
+      "external_tool",
+      "faults_enabled",
+      "namespace_escape",
+      "duplicate_owner",
+      "unsafe_tmp"
+    ],
+    "positive_mode": "private_synthetic_render_fixtures_only",
+    "published_workload_image_proved": false,
+    "secret_delivery_or_startup_proved": false,
+    "source_revision_used_for_fixture": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+    "telemetry_environment_gap": "Existing Python code explicitly emits local; chart labels do not fix attribution",
+    "api_schema_baseline": "1.35.0_offline_only",
+    "deployable": false,
+    "cluster_operations": false
+  },
+  "jaeger_generated_config_validation": {
+    "native_2_22_0_validate_exit_code": 0,
+    "observed_exec_chunk": "2b6f9e",
+    "ci_digest": "sha256:836b967b5abcf1f7758066aa6b348619267a2f1459f72d472840570f9bd88a17",
+    "ci_check": "generated config validate with network none, read-only root, UID10001, dropped capabilities; exact-source CI passed",
+    "startup_backend_or_retention_pressure_acceptance": false
+  },
+  "preservation": {
+    "seven_repo_ids_names_origins_preserved": true,
+    "six_non_lab_worktrees_clean": true,
+    "global_git_file_hashes_unchanged": true,
+    "four_original_remote_config_hashes_unchanged": true,
+    "seven_existing_telemetry_profiles_unchanged": true,
+    "all_preexisting_workload_files_except_extended_ci_unchanged": true,
+    "workload_baseline": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+    "gitops_catalog_sources_unchanged_at_main": "5359b7357b7faf19a90fd56be333340ef302a98f",
+    "pipelines_still_empty": true,
+    "azure_flags_false": true,
+    "pr25_unchanged_unmerged": true,
+    "credential_store_enumeration_or_export": false,
+    "gitlab_or_global_git_mutations": false
+  },
+  "confirmed_source_secrets": 0,
+  "azure_deployment_enabled": false,
+  "cluster_operations": false,
+  "registry_publication": false,
+  "limitations": [
+    "App positive renders use private synthetic example.invalid fixture images, not built/published workload images or rollout values; image/source provenance and P2.4 replay remain",
+    "Existing Secret delivery/value length/rotation and pod startup are not proved",
+    "Existing Python code explicitly emits local telemetry environment; chart labels do not correct attribution",
+    "Offline schemas/contract checks and process/socket probes do not prove API admission/CEL/PSA, network/TLS/identity, image startup, backend ingestion or persistence/pressure behavior",
+    "GitOps remains at the merged Collector catalog until separate values/catalog promotion; Argo/config ownership, bootstrap/full combined checks and P2.14-P2.16 remain"
+  ]
+}
