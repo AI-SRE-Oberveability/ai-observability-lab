@@ -160,3 +160,9 @@ Diagram deliverables: [editable draw.io with official Azure icons](docs/architec
 ## Release pinning started - 1 November 2026
 
 The local-proof PRs are merged and fresh CI passed on all four exact main commits. P2.3/P2.8/P2.9 are revalidated. P2.4 now has a [source-pinned candidate](releases/README.md), an offline validator and negative readiness tests. See docs/release-pinning-plan.md. Workload image publication/digest, target-platform verification and immutable container replay remain pending; P2.4 stays in progress. No registry publication, release tag or Azure operation occurs in this preparation.
+
+## Repository structure review - 15 November 2026
+
+The user supplied the AI-PLATFORM-LAB folder for assessment. The [structure review and proposed migration](docs/platform-structure-review.md) preserve the current four repository histories and local acceptance evidence while proposing separate platform, GitOps and reusable-pipeline ownership. The proposal has not been selected; this review does not amend the accepted repository count or authorize new repositories, renames, source imports or deployment. Existing task IDs, shared Project mappings and G2/G3/G4/G5 decisions remain unchanged.
+
+Next order: select exact core/optional repository layout -> file-by-file mapping and ADR -> preserve baseline and rollback refs -> isolated path-map and boundary migrations -> offline safety/render checks and affected runtime proof -> reviewed PRs and exact-main CI -> a new release candidate. The prior immutable manifest remains historical. P2.4 still needs a published/verified workload digest and container replay; Azure deployment stays disabled throughout restructuring.

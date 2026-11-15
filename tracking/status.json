@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T16:10:15+04:00",
+  "updated_at": "2026-11-15T17:26:43+04:00",
   "execution": "Plan accepted; follow task gates",
   "counts": {
     "done": 18,
@@ -52,7 +52,8 @@
         "ai-observability-lab/docs/repository-layout.md",
         "ai-observability-lab/docs/actions-delivery-plan.md",
         "ai-observability-lab/docs/architecture.md",
-        "ai-observability-lab/docs/architecture"
+        "ai-observability-lab/docs/architecture",
+        "ai-observability-lab/docs/platform-structure-review.md"
       ],
       "artifacts": [
         "ai-observability-lab/POC_PLAN.md",
@@ -67,10 +68,10 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/main-ci-revalidation.json",
-        "ai-observability-lab/evidence/release-candidate-publication.json"
+        "ai-observability-lab/evidence/platform-structure-review.json",
+        "ai-observability-lab/evidence/main-ci-revalidation.json"
       ],
-      "note": "Three requested PRs merged and all main CI revalidated; candidate preparation published in PR #24 with readiness limits explicit",
+      "note": "Reviewed user-supplied platform scaffold and documented proposed ownership/migration sequence; target layout remains unselected, no migration or Azure operation",
       "ready": false
     },
     {
@@ -105,9 +106,9 @@
       ],
       "artifacts_missing": [],
       "evidence": [
-        "ai-observability-lab/evidence/release-pinning-validation.json"
+        "ai-observability-lab/evidence/platform-structure-tracking-validation.json"
       ],
-      "note": "Release task watches added; 28 tests passed, including 20 tracker/sync and 8 release pin/readiness checks",
+      "note": "Tracker watch list includes the structure review; all 28 tracker/sync/release tests pass; 41 stable tasks retained and migration remains unstarted",
       "ready": false
     },
     {

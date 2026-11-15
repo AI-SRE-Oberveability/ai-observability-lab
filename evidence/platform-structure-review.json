@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-15T17:12:36+04:00",
+  "review_type": "static_local_structure_review",
+  "source_label": "user-supplied AI-PLATFORM-LAB scaffold",
+  "source_files": 298,
+  "source_tree_sha256": "007e4ff6e44d7875638ea7c3073f882f93ad4366b48b6b934a5f4b85f2ae2e71",
+  "git_metadata_count": 0,
+  "source_unchanged": true,
+  "json_parsed": 10,
+  "yaml_parsed": 116,
+  "yaml_errors": 0,
+  "checks": {
+    "helm_template": {
+      "passed": 16,
+      "failed": 3
+    },
+    "kustomize": {
+      "passed": 4,
+      "failed": 2
+    },
+    "node_syntax": {
+      "passed": 17,
+      "failed": 0
+    },
+    "terraform_format": {
+      "passed": 0,
+      "failed": 1
+    },
+    "terraform_format_copy": {
+      "passed": 1,
+      "failed": 0
+    }
+  },
+  "powershell_parse": {
+    "passed": 5,
+    "failed": 0
+  },
+  "gitleaks": {
+    "exit_code": 0,
+    "findings": 0
+  },
+  "incomplete_inputs": [
+    "Three upstream monitoring Helm dependencies have not been fetched or locked",
+    "Gateway API CRD bundle is absent"
+  ],
+  "terraform_format_note": "Direct read by Terraform was denied; formatting passed on an identical local source copy. No init/validate/plan/apply.",
+  "structure_decision": "proposal_not_selected",
+  "migration_started": false,
+  "repositories_created_or_renamed": false,
+  "source_imported": false,
+  "runtime_tests_or_ui_build_executed": false,
+  "cluster_or_azure_operations": false,
+  "bootstrap_scripts_executed": false,
+  "dependencies_installed": false,
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false,
+  "git_global_config_changes": false,
+  "existing_lab_main": "7723a733b67e1992e3eb7a37e148e85be9321406",
+  "prior_release_pr": {
+    "number": 24,
+    "merged": true,
+    "merged_at": "2026-11-02T04:56:18Z"
+  },
+  "report": {
+    "path": "docs/platform-structure-review.md",
+    "sha256": "49a9036da683ba5fd2073386f2ef4ce8b0573c068c9c6c3afbfd49e882bc8aee"
+  },
+  "limitations": [
+    "Rendering does not prove cluster API compatibility or runtime behavior",
+    "Zero detector findings do not establish source provenance",
+    "No claim of fresh exact-main CI or deployment is made by this review",
+    "Existing immutable release candidate was not changed"
+  ]
+}

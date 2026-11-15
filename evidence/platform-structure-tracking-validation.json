@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-11-15",
+  "timezone": "Asia/Dubai",
+  "command": "python -m unittest discover -s ai-observability-lab/tests -v",
+  "tests": 28,
+  "passed": 28,
+  "failed": 0,
+  "purpose": "Validate tracker watch-list update and preserve release guards during documentation-only review",
+  "report_sha256": "49a9036da683ba5fd2073386f2ef4ce8b0573c068c9c6c3afbfd49e882bc8aee",
+  "review_evidence_sha256": "b9e357f3c5b8080bdea16dbe906c6cec379472d64da7771ab43ee260d56997de",
+  "supplied_source_unchanged": true,
+  "terraform_copy_matches_source": true,
+  "release_manifest_validator_tests_unchanged": true,
+  "azure_deployment_enabled": false,
+  "migration_started": false
+}

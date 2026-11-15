@@ -1,12 +1,20 @@
 # High-level design — current, target and remaining work
 
-Version: 0.17 source-pinned release candidate. Updated: 1 November 2026, Asia/Dubai. Execution: **local proof and four main CI runs verified; source-pinned release candidate prepared; Azure execution remains disabled**.
+Version: 0.18 repository structure review. Updated: 15 November 2026, Asia/Dubai. Execution: **existing local proof and CI evidence retained; supplied platform scaffold reviewed; migration proposal unselected; Azure execution remains disabled**.
 
 ## Purpose
 
 Provide three synthetic use cases: a policy assistant, a service-status agent and a read-only SRE copilot. Observe AI workload behavior separately from using AI to investigate monitoring evidence. Use personal Azure/GitHub targets; preserve Dynatrace Managed as the preferred later compatibility profile.
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, Helm/Kubernetes manifests own workload/observability deployments, and four repositories under `AI-SRE-Oberveability` separate resource ownership. The organization is owned by the personal account `javedkumail`. All four transferred repositories retain their IDs, published commits and public visibility. The infrastructure destination is `AI-Observability-Infra`; other names match the source folders. Reviewed source is published to all four repositories; initial commit receipts are recorded below. GitLab credentials remain intact. Engineering standards are defined in `docs/engineering-standards.md`.
+
+## Repository structure review - 15 November 2026
+
+The user supplied an AI-PLATFORM-LAB scaffold for review. [The assessment, proposed mapping and migration sequence](docs/platform-structure-review.md) distinguish its seven intended repositories from our current four Git histories. Its separation of Terraform, cluster configuration, charts, Argo desired state and reusable CI is useful; the Python AI workloads and evidence-backed lab tracker must remain explicit owners. A seven-core-repository layout plus two optional synthetic application repositories is proposed, not selected. No clone alias, remote, repository, source layout or runtime design has changed.
+
+Static review recorded 16 successful Helm renders, four Kustomize builds, 17 JavaScript syntax checks, five PowerShell parses, ten JSON and 116 non-template YAML parses, Terraform formatting on an identical copied source tree, and zero Gitleaks findings. Three chart dependencies and the referenced Gateway API CRD bundle are missing. The scaffold's automatic apply, PR-trusted privileged identity and admin Kubernetes access must not replace our guarded delivery. See evidence/platform-structure-review.json; none of these checks proves deployment or runtime acceptance.
+
+PR #24 is now confirmed merged into lab main 7723a733b67e1992e3eb7a37e148e85be9321406 on 2 November 2026. Its candidate remains source-pinned and non-deployable; no existing release pin or historical evidence has been rewritten. Next: the user's structure selection, then exact old-to-new paths and isolated migration PRs. AKS, Terraform and APIM remain the target runtime boundaries; Istio/Argo additions remain proposals. Azure deployment is false, G2/G3/G4/G5 remain pending, and GitLab authentication/global Git configuration are preserved.
 
 ## Verified local deterministic slice
 
@@ -238,4 +246,4 @@ The candidate has no workload registry digest and cannot pass --require-deployab
 
 [Lab PR #24](https://github.com/AI-SRE-Oberveability/ai-observability-lab/pull/24) contains the candidate, validator/tests, exact-main CI receipts and merge receipts. See evidence/release-candidate-publication.json. The shared Project is at 18/41 accepted deliverables, with P2.4 in progress and no stale CI receipt. The candidate is not deployable: the workload image remains unpublished/unpinned, and the immutable container replay is pending.
 
-The three requested PRs are merged. This new preparation PR remains open for review. Azure deployment is still false; no registry publication, release tag, Azure authentication or resource operation took place. Global Git settings match the preservation baseline and GitLab credentials were not changed.
+The three requested PRs are merged. At this 1 November publication snapshot the preparation PR remained open; it was subsequently merged on 2 November, as recorded in the current structure-review section above. Azure deployment is still false; no registry publication, release tag, Azure authentication or resource operation took place. Global Git settings match the preservation baseline and GitLab credentials were not changed.

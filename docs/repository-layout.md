@@ -1,5 +1,7 @@
 # Workspace and GitHub delivery plan
 
+Current review, 15 November 2026: the user supplied a new platform scaffold. See [the assessment, proposed repository mapping and staged migration](platform-structure-review.md). The existing four-repository layout below is still in force; no migration or rename has been selected or performed.
+
 Personal GitHub administrator: **javedkumail**. Current repository owner: **AI-SRE-Oberveability**. On 28 October 2026 the user reported creation with public visibility. Read-only GitHub API checks verified all four repositories are **public and empty**. This replaces the initial private-visibility recommendation as the recorded actual state. Terraform remains the confirmed Azure IaC choice. Reviewed source has now been published to all four destinations; initial commit receipts are in ../evidence/publication-receipts.json.
 
 ```text
