@@ -1,6 +1,6 @@
 # High-level design — current, target and remaining work
 
-Version: 0.26 platform ownership planning. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #35 merged; P2.13 ownership planning started before manifest changes; Azure remains disabled**.
+Version: 0.27 platform ownership plan prepared. Updated: 15 November 2026, Asia/Dubai. Execution: **PR #35 merged; P2.13 ownership plan prepared for review before manifest implementation; Azure remains disabled**.
 
 ## Purpose
 
@@ -8,7 +8,15 @@ Provide three synthetic use cases: a policy assistant, a service-status agent an
 
 Confirmed implementation choices: **Terraform owns Azure infrastructure**, AKS hosts Python agents/tools, and APIM outside AKS governs approved inference. The selected seven-repository organization separates resource ownership. The original four public repositories retain names/IDs/history; three new empty public repositories now exist. Canonical local folders are prepared in the parallel AI-PLATFORM-LAB workspace; GitHub renames and Project cutover wait for P2.15. The private shared Project retains 48 task/issue identities and its four existing links. GitLab credentials/global Git settings remain intact. See docs/workspace-compatibility.md and docs/engineering-standards.md.
 
-## PR #35 merged; P2.13 planning started — 15 November 2026
+## P2.13 ownership plan prepared — 15 November 2026
+
+[The detailed plan](docs/platform-ownership-plan.md) and [seven-role blueprint](tracking/platform-ownership-plan.json) define resource authorship, future folders, a small dev-first slice with offline qa parity, locked inputs, real-commit publication order, an explicit bootstrap freeze before Argo adoption, rollback and negative checks. Config owns namespace/foundation RBAC/policy and selected CRDs; charts owns generic platform templates; workloads owns the Python application chart; GitOps owns environment values and pinned release selections. Infra remains the Azure/APIM owner and only orchestrates temporary bootstrap writes from those same sources. No two desired-spec writers are allowed after handover.
+
+The reference's 298 files still match the reviewed bytes, all seven retained telemetry/profile files match, and three new repos remain empty. The coherent plan preserves the 48-task graph and registers actual/future implementation watch paths. Existing code passes the 68-test Windows suite (65 executed, three platform/privilege skips) and Ruff checks; merge/main CI is separately evidenced. See evidence/platform-ownership-inventory.json and evidence/platform-ownership-plan-review.json. These checks do not implement a resource validator or prove Helm/Kustomize renders, live Argo handover, AKS security or backend traffic.
+
+P2.13 stays in progress. Next: review the plan, select/lock compatible tool/Argo/chart/CRD inputs, then establish config source, platform/application charts, GitOps and the offline ownership/handover checks in that order. Optional Gateway/mesh and extra reference services remain proposed deferrals in this review package. Remaining: actual P2.13 source/renders/publication; P2.14 seven-repo CI; P2.15 identity-preserving renames/Project cutover; P2.16 fresh canonical proof/source baseline; then exact Azure targets/budget and costed Terraform planning. Deployment remains disabled; Python AI agents/APIM boundaries, safe telemetry, read-only SRE and GitLab/global Git settings are preserved.
+
+## Earlier PR #35 merge/P2.13 start snapshot — 15 November 2026
 
 The user explicitly authorized merging PR #35 and starting P2.13 with ownership planning first. Approved head 26635b044344da0f39440889577d92cc0335f77b merged as 28fb2bfc8285f037843100f4a2f4bc2d533b04f8; exact-head PR/push CI and the new exact-main CI passed. See evidence/pr35-merge.json and evidence/platform-ownership-start.json. P2.12 path compatibility is now on main; original PR #25 and its receipts/history remain preserved.
 

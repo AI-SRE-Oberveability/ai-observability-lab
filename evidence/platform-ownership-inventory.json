@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "inventoried_at": "2026-11-15T20:16:28+04:00",
+  "scope": "read-only source planning inventory; no platform manifests or dependencies adopted",
+  "repositories": [
+    {
+      "role": "infra",
+      "repository": "AI-SRE-Oberveability/AI-Observability-Infra",
+      "repository_id": 1437529000,
+      "folder": "ai-platform-infra",
+      "commit": "62f079f9c9a25e0c83f202931bd30bca18959a3a",
+      "tracked_files": 17,
+      "source_present": true
+    },
+    {
+      "role": "config",
+      "repository": "AI-SRE-Oberveability/ai-platform-config",
+      "repository_id": 1458904336,
+      "folder": "ai-platform-config",
+      "commit": null,
+      "tracked_files": 0,
+      "source_present": false
+    },
+    {
+      "role": "charts",
+      "repository": "AI-SRE-Oberveability/ai-observability-config",
+      "repository_id": 1437530253,
+      "folder": "ai-platform-charts",
+      "commit": "ca193e79a75d7129e01ea507cf39c6e5de917b6a",
+      "tracked_files": 15,
+      "source_present": true
+    },
+    {
+      "role": "gitops",
+      "repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "repository_id": 1458904423,
+      "folder": "ai-platform-gitops",
+      "commit": null,
+      "tracked_files": 0,
+      "source_present": false
+    },
+    {
+      "role": "pipelines",
+      "repository": "AI-SRE-Oberveability/ai-platform-pipelines",
+      "repository_id": 1458904499,
+      "folder": "ai-platform-pipelines",
+      "commit": null,
+      "tracked_files": 0,
+      "source_present": false
+    },
+    {
+      "role": "workloads",
+      "repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "repository_id": 1437529826,
+      "folder": "ai-agent-workloads",
+      "commit": "aff0a686b0f4a8a9cc5dec9ccfef2f3fa3d3d7cb",
+      "tracked_files": 29,
+      "source_present": true
+    },
+    {
+      "role": "lab",
+      "repository": "AI-SRE-Oberveability/ai-observability-lab",
+      "repository_id": 1437531335,
+      "folder": "ai-platform-lab",
+      "commit": "e6314a79807bfcc46cd98314ad8521b57620649a",
+      "tracked_files": 149,
+      "source_present": true
+    }
+  ],
+  "reference_scaffold": {
+    "file_count": 298,
+    "matches_prior_review_byte_for_byte": true,
+    "source_preserved": true,
+    "public_reference_paths_exported": false
+  },
+  "preserve_chart_profile_files": [
+    {
+      "repository_role": "charts",
+      "path": "local/collector.yaml",
+      "git_lf_sha256": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/compose.yaml",
+      "git_lf_sha256": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/native/collector.yaml",
+      "git_lf_sha256": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/native/jaeger.yaml",
+      "git_lf_sha256": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/windows-binaries.lock.json",
+      "git_lf_sha256": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47"
+    },
+    {
+      "repository_role": "charts",
+      "path": "profiles/compatibility.md",
+      "git_lf_sha256": "29e118b11b2e2ed3eff2abbf48c057ef679b31454916b853564e3c262e75bfff"
+    },
+    {
+      "repository_role": "charts",
+      "path": "telemetry-contract.md",
+      "git_lf_sha256": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f"
+    }
+  ],
+  "existing_observability_images": {
+    "collector": "otel/opentelemetry-collector-contrib:0.164.0@sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b",
+    "jaeger": "cr.jaegertracing.io/jaegertracing/jaeger:2.22.0@sha256:836b967b5abcf1f7758066aa6b348619267a2f1459f72d472840570f9bd88a17"
+  },
+  "observed_local_tool_versions": {
+    "helm": "v3.19.0+g3d8990f",
+    "kubectl": {
+      "clientVersion": {
+        "major": "1",
+        "minor": "34",
+        "gitVersion": "v1.34.0",
+        "gitCommit": "f28b4c9efbca5c5c0af716d9f2d5702667ee8a45",
+        "gitTreeState": "clean",
+        "buildDate": "2025-08-27T10:17:33Z",
+        "goVersion": "go1.24.6",
+        "compiler": "gc",
+        "platform": "windows/amd64"
+      },
+      "kustomizeVersion": "v5.7.1"
+    }
+  },
+  "versions_selected_for_future_argo_aks": false,
+  "current_cloud_deployment_enabled": false,
+  "azure_operations": false,
+  "cluster_operations": false,
+  "existing_backend_proofs_replayed": false,
+  "limitations": [
+    "Installed client versions are inventory, not an approved/tested Argo/AKS compatibility matrix.",
+    "No Helm/Kustomize render, dependency fetch, CRD installation or registry publication was performed for new platform source.",
+    "Prior reference render results remain historical; its unsafe workflows/defaults are not adopted."
+  ]
+}

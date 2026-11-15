@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "phase": "P2.13",
+  "status": "plan_prepared_for_review_implementation_pending",
+  "document": "docs/platform-ownership-plan.md",
+  "baseline_merge": "28fb2bfc8285f037843100f4a2f4bc2d533b04f8",
+  "execution_policy": "planning_only_no_new_manifests_dependencies_or_cluster_operations",
+  "proposed_first_slice": [
+    "namespace-RBAC-policy foundation",
+    "Collector/ephemeral Jaeger platform charts",
+    "existing Python agent/retrieval application chart",
+    "pinned Argo control-plane/desired-state source"
+  ],
+  "logical_environments": [
+    "dev",
+    "qa"
+  ],
+  "environment_meaning": "dev first, qa offline parity; no Azure cluster count or target approved",
+  "repositories": [
+    {
+      "role": "infra",
+      "canonical_folder": "ai-platform-infra",
+      "current_github_repository": "AI-SRE-Oberveability/AI-Observability-Infra",
+      "repository_id": 1437529000,
+      "planned_roots": [
+        "foundation/",
+        "bootstrap/"
+      ],
+      "owns": "Azure/APIM Terraform and bounded bootstrap orchestration",
+      "excludes": "No copied Kubernetes templates or concurrent writer for Argo-owned objects"
+    },
+    {
+      "role": "config",
+      "canonical_folder": "ai-platform-config",
+      "current_github_repository": "AI-SRE-Oberveability/ai-platform-config",
+      "repository_id": 1458904336,
+      "planned_roots": [
+        "namespaces/",
+        "policies/",
+        "rbac/",
+        "vendor/",
+        "environments/dev/",
+        "environments/qa/"
+      ],
+      "owns": "Namespace/foundation policy/RBAC and selected CRD source",
+      "excludes": "No chart-owned runtime service accounts or Azure resources"
+    },
+    {
+      "role": "charts",
+      "canonical_folder": "ai-platform-charts",
+      "current_github_repository": "AI-SRE-Oberveability/ai-observability-config",
+      "repository_id": 1437530253,
+      "planned_roots": [
+        "local/",
+        "profiles/",
+        "telemetry-contract.md",
+        "charts/otel-collector/",
+        "charts/jaeger/",
+        "charts/argocd/"
+      ],
+      "owns": "Platform/control-plane templates and generic defaults",
+      "excludes": "No duplicate Namespace/CRD author or environment-specific release selections"
+    },
+    {
+      "role": "gitops",
+      "canonical_folder": "ai-platform-gitops",
+      "current_github_repository": "AI-SRE-Oberveability/ai-platform-gitops",
+      "repository_id": 1458904423,
+      "planned_roots": [
+        "projects/",
+        "applications/",
+        "bootstrap/",
+        "environments/dev/",
+        "environments/qa/"
+      ],
+      "owns": "Argo control objects, environment values and immutable release selection",
+      "excludes": "No copied application/platform templates or default automatic sync/prune/self-heal"
+    },
+    {
+      "role": "pipelines",
+      "canonical_folder": "ai-platform-pipelines",
+      "current_github_repository": "AI-SRE-Oberveability/ai-platform-pipelines",
+      "repository_id": 1458904499,
+      "planned_roots": [
+        ".github/workflows/"
+      ],
+      "owns": "Reusable CI/guarded delivery tooling in P2.14",
+      "excludes": "No concurrent spec writer after Argo handover; stays empty in this planning step"
+    },
+    {
+      "role": "workloads",
+      "canonical_folder": "ai-agent-workloads",
+      "current_github_repository": "AI-SRE-Oberveability/ai-agent-workloads",
+      "repository_id": 1437529826,
+      "planned_roots": [
+        "src/ai_lab/",
+        "contracts/",
+        "tests/",
+        "charts/ai-lab/"
+      ],
+      "owns": "Python services/contracts/fixtures and application Kubernetes templates",
+      "excludes": "No platform chart/CRD/APIM resource ownership or behavior refactor"
+    },
+    {
+      "role": "lab",
+      "canonical_folder": "ai-platform-lab",
+      "current_github_repository": "AI-SRE-Oberveability/ai-observability-lab",
+      "repository_id": 1437531335,
+      "planned_roots": [
+        "docs/",
+        "tracking/",
+        "evidence/",
+        "releases/",
+        "scripts/"
+      ],
+      "owns": "Plan/tracker, combined render/ownership checks and release coordination",
+      "excludes": "No sibling resource definitions or placeholder implementation-success receipt"
+    }
+  ],
+  "resource_families": [
+    {
+      "id": "azure-apim",
+      "source_owner": "infra",
+      "source_roots": "foundation/",
+      "initial_writer": "Terraform",
+      "steady_writer": "Terraform"
+    },
+    {
+      "id": "bootstrap-orchestration",
+      "source_owner": "infra",
+      "source_roots": "bootstrap/",
+      "initial_writer": "none in P2.13",
+      "steady_writer": "bounded installer for enumerated temporary writes only"
+    },
+    {
+      "id": "namespaces-foundation-policy",
+      "source_owner": "config",
+      "source_roots": "namespaces/, policies/, rbac/",
+      "initial_writer": "bootstrap for enumerated prerequisites only",
+      "steady_writer": "Argo after frozen handover"
+    },
+    {
+      "id": "selected-crds",
+      "source_owner": "config",
+      "source_roots": "vendor/",
+      "initial_writer": "bootstrap for enumerated prerequisites only",
+      "steady_writer": "Argo after frozen handover"
+    },
+    {
+      "id": "platform-controller-templates",
+      "source_owner": "charts",
+      "source_roots": "charts/argocd/",
+      "initial_writer": "bootstrap for enumerated prerequisites only",
+      "steady_writer": "Argo after frozen handover"
+    },
+    {
+      "id": "monitoring-runtime-templates",
+      "source_owner": "charts",
+      "source_roots": "charts/otel-collector/, charts/jaeger/",
+      "initial_writer": "none until gated deployment",
+      "steady_writer": "Argo"
+    },
+    {
+      "id": "application-runtime-templates",
+      "source_owner": "workloads",
+      "source_roots": "charts/ai-lab/",
+      "initial_writer": "none until gated deployment",
+      "steady_writer": "Argo"
+    },
+    {
+      "id": "argo-control-objects",
+      "source_owner": "gitops",
+      "source_roots": "projects/, applications/, bootstrap/",
+      "initial_writer": "bootstrap for seed objects only",
+      "steady_writer": "Argo after frozen handover"
+    },
+    {
+      "id": "environment-release-selection",
+      "source_owner": "gitops",
+      "source_roots": "environments/",
+      "initial_writer": "reviewed Git changes",
+      "steady_writer": "reviewed Git changes consumed by Argo"
+    },
+    {
+      "id": "ci-templates",
+      "source_owner": "pipelines",
+      "source_roots": ".github/workflows/",
+      "initial_writer": "none in P2.13",
+      "steady_writer": "CI validation; deployment only under later gates"
+    },
+    {
+      "id": "combined-acceptance",
+      "source_owner": "lab",
+      "source_roots": "docs/, tracking/, evidence/, scripts/",
+      "initial_writer": "local/offline coordination",
+      "steady_writer": "local/offline coordination"
+    }
+  ],
+  "substeps": [
+    {
+      "order": 1,
+      "title": "Preserve and inventory",
+      "status": "performed_for_planning",
+      "required_exit": "Merged PR35/exact-main CI, IDs/heads, retained profile hashes and unchanged reference fingerprint"
+    },
+    {
+      "order": 2,
+      "title": "Review ownership and scope",
+      "status": "prepared_for_review",
+      "required_exit": "Published plan/matrix; no implementation acceptance"
+    },
+    {
+      "order": 3,
+      "title": "Select and lock compatible inputs",
+      "status": "planned",
+      "required_exit": "Actual supported tool/Argo/chart/CRD versions, archive checksums, licenses and dependency locks"
+    },
+    {
+      "order": 4,
+      "title": "Establish config source",
+      "status": "planned",
+      "required_exit": "Independent reviewed namespace/RBAC/policy/CRD source and offline builds/schema checks"
+    },
+    {
+      "order": 5,
+      "title": "Establish platform and workload charts",
+      "status": "planned",
+      "required_exit": "Locked Helm renders, contract/security checks, unchanged local/native baseline"
+    },
+    {
+      "order": 6,
+      "title": "Establish GitOps and bootstrap handover contract",
+      "status": "planned",
+      "required_exit": "Scoped manual Applications, real immutable pins and one-writer state-machine/rollback checks"
+    },
+    {
+      "order": 7,
+      "title": "Validate combined source and negative cases",
+      "status": "planned",
+      "required_exit": "Resource identity collisions, scopes, pins, invalid dependencies, handover and preservation results"
+    },
+    {
+      "order": 8,
+      "title": "Review/publication and stage exit",
+      "status": "planned",
+      "required_exit": "Reviewed source/locks/checks through separate repo PRs; real migration-platform-validation receipt before P2.14"
+    }
+  ],
+  "resource_identity": [
+    "logical_cluster",
+    "api_group_without_version",
+    "kind",
+    "effective_namespace",
+    "name"
+  ],
+  "handover_states": [
+    "PREPARED",
+    "BOOTSTRAP_ONLY",
+    "FROZEN",
+    "ARGO_ONLY"
+  ],
+  "handover_rule": "Freeze/disable bootstrap write path before Argo adoption; rollback stops current writer before enabling another",
+  "publication_sequence": [
+    "config_commit_C",
+    "platform_and_workload_chart_commits_H_W",
+    "values_commit_V",
+    "application_catalog_commit_G_referencing_C_H_W_V",
+    "lab_release_record_selects_G"
+  ],
+  "immutable_pins_status": "not_yet_bound_to_new_source_commits_do_not_render_as_deployable",
+  "required_negative_cases": [
+    "duplicate object including alternate API version",
+    "duplicate Namespace/ServiceAccount/CRD",
+    "unknown resource scope/schema",
+    "wildcard/unapproved repo/path/destination/kind",
+    "workload deployment into argocd or cluster-admin grant",
+    "missing/zero/nonexistent commit or mutable rollout ref",
+    "tag-only image, missing lock/CRD or changed archive",
+    "unresolved value/missing file/inline credential",
+    "public listener/anonymous admin/prohibited telemetry/direct-model bypass",
+    "concurrent bootstrap/Argo writer or adoption before freeze",
+    "rollback before stopping current writer",
+    "rewritten profile/proof/history or unplanned repo/Git change"
+  ],
+  "proposed_deferred_components": [
+    "unselected Gateway/mesh rollout",
+    "Grafana/Prometheus wrappers",
+    "RabbitMQ",
+    "Kiali",
+    "k6",
+    "Node/UI targets"
+  ],
+  "preserve_chart_profile_files": [
+    {
+      "repository_role": "charts",
+      "path": "local/collector.yaml",
+      "git_lf_sha256": "af882d23648ff2674c9da1c45f4ffc43b21f1523ef759b64868ddffc9a674685"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/compose.yaml",
+      "git_lf_sha256": "a14a99e7faacb6ffe726452aea22947da755bd2c9ecf158f2218b2955e5a49ce"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/native/collector.yaml",
+      "git_lf_sha256": "2addc0d469c7e5f98f4c2c1c5edf9825b902efca9a54a8bc2d0816ff65118654"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/native/jaeger.yaml",
+      "git_lf_sha256": "da8b93450d264322ba38e5884487d7b4af358546e8eb137c90dc5b87ae0caaea"
+    },
+    {
+      "repository_role": "charts",
+      "path": "local/windows-binaries.lock.json",
+      "git_lf_sha256": "00645179ea36a6bd51df0060632fb61134d31cdec01ccb488a0ae375be2a1e47"
+    },
+    {
+      "repository_role": "charts",
+      "path": "profiles/compatibility.md",
+      "git_lf_sha256": "29e118b11b2e2ed3eff2abbf48c057ef679b31454916b853564e3c262e75bfff"
+    },
+    {
+      "repository_role": "charts",
+      "path": "telemetry-contract.md",
+      "git_lf_sha256": "1ff1e6d58b7f24ac3a54ef93b564ec4b6326625425b1c591717c0c505daec09f"
+    }
+  ],
+  "retained_image_pins": {
+    "collector": "otel/opentelemetry-collector-contrib:0.164.0@sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b",
+    "jaeger": "cr.jaegertracing.io/jaegertracing/jaeger:2.22.0@sha256:836b967b5abcf1f7758066aa6b348619267a2f1459f72d472840570f9bd88a17"
+  },
+  "reviewed_external_guidance": [
+    "https://argo-cd.readthedocs.io/en/stable/user-guide/helm/",
+    "https://argo-cd.readthedocs.io/en/stable/user-guide/projects/",
+    "https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/",
+    "https://argo-cd.readthedocs.io/en/stable/user-guide/multiple_sources/",
+    "https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/",
+    "https://helm.sh/docs/v3/helm/helm_dependency_build/"
+  ],
+  "implementation_acceptance_receipt": "evidence/migration-platform-validation.json",
+  "implementation_acceptance_receipt_created": false,
+  "github_renames_or_project_link_cutover": false,
+  "azure_deployment_enabled": false,
+  "gitlab_credential_changes": false
+}

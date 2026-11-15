@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-15T20:24:42+04:00",
+  "status": "planning_package_coherent_implementation_pending",
+  "validation_kind": "Plan/schema/source-preservation checks only; no resource renderer/ownership-enforcement implementation",
+  "checks": {
+    "seven_unique_roles_and_verified_ids": true,
+    "eleven_single_source_owner_families": true,
+    "eight_ordered_substeps": true,
+    "unchanged_48_task_graph": true,
+    "future_watch_paths_registered": true,
+    "seven_profile_hashes_preserved": true,
+    "three_new_repos_still_empty": true,
+    "implementation_success_receipt_absent": true,
+    "authored_runtime_and_workflow_code_unchanged": true
+  },
+  "planning_source_hashes": {
+    "docs/platform-ownership-plan.md": "b42ca8b8d6b56b0e077171cb67c2a3a7fbe44aea49053d2488f31579daaaf5cc",
+    "tracking/platform-ownership-plan.json": "5d08725050828aedd8af2611912a8bf0515c2cf09881bf59a34e75e74ce820ef"
+  },
+  "actual_local_checks": {
+    "python_unittest": {
+      "observed_exec_session": 80597,
+      "host": "Windows",
+      "tests_discovered": 68,
+      "executed": 65,
+      "skipped": 3,
+      "exit_code": 0
+    },
+    "ruff_lint": "passed existing code",
+    "ruff_format": "14 files already formatted"
+  },
+  "new_helm_kustomize_schema_renders": false,
+  "new_crd_dependency_fetches": false,
+  "new_handover_runtime_or_negative_resource_cases_executed": false,
+  "azure_operations": false,
+  "cluster_operations": false,
+  "gitlab_credential_changes": false,
+  "limitations": [
+    "Planning consistency does not establish P2.13 source/renders/handover acceptance.",
+    "PR35 exact-main CI is separately recorded; the new plan branch CI is verified after publication."
+  ]
+}
